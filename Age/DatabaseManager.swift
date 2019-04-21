@@ -1,5 +1,5 @@
 //
-//  BirthdaysManager.swift
+//  DatabaseManager.swift
 //  Age
 //
 //  Created by Amin on 2019-04-21.
@@ -71,6 +71,7 @@ class DatabaseManager {
     ///
     /// - Returns: FetchResultsController for the list of the birthdays. It's the responsibility of the caller (e.g. The view controller) to retain this and assign a delegate to it.
     func getBirthdays() -> NSFetchedResultsController<BirthdayModel> {
-        fatalError("Not implemented yet!")
+        let fetchRequest = NSFetchRequest<BirthdayModel>(entityName: "Birthday")
+        fetchRequest.sortDescriptors = [NSSortDescriptor(key: "created", ascending: false)]
     }
 }
