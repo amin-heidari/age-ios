@@ -57,21 +57,46 @@ class DatabaseManager {
         }
     }
     
-    weak var fetchedResultsControllerDelegate: NSFetchedResultsControllerDelegate?
+    // 
     
-    func addBirthday() {
-        persistentContainer.newBackgroundContext()
+    // method for add birthday with bg context.
+    func addBirthday(_ birthday: Birthday) -> BirthdayModel {
+        guard let birthdayModel = NSEntityDescription.insertNewObject(forEntityName: "Birthday", into: persistentContainer.viewContext) as? BirthdayModel else {
+            fatalError("Failed!")
+        }
+        birthdayModel.birth_date = birthday.birthDate
+        birthdayModel.name = birthday.name
+        birthdayModel.created = Date()
         
-//        NSEntityDescription.insertNewObject(forEntityName: "Birthday", into: <#T##NSManagedObjectContext#>)
-        fatalError("Not implemented yet!")
+        return birthdayModel
     }
     
+    // method for updating a birthday.
+    func updateBirthday(_ birthdayModel: BirthdayModel, with newBirthday: Birthday) {
+        birthdayModel.birth_date = newBirthday.birthDate
+        birthdayModel.name = newBirthday.name
+    }
     
-    /// Creates and returns a fetchedResultsController.
+    // method for remove birthday with bg context.
+    func deleteBirthday(_ birthdayModel: BirthdayModel) {
+        persistentContainer.viewContext.delete(birthdayModel)
+    }
+    
+    /// A fetchedResultsController.
     ///
-    /// - Returns: FetchResultsController for the list of the birthdays. It's the responsibility of the caller (e.g. The view controller) to retain this and assign a delegate to it.
-    func getBirthdays() -> NSFetchedResultsController<BirthdayModel> {
+    /// - Returns: FetchResultsController for the list of the birthdays.
+    lazy var birthdays: NSFetchedResultsController<BirthdayModel> = {
         let fetchRequest = NSFetchRequest<BirthdayModel>(entityName: "Birthday")
         fetchRequest.sortDescriptors = [NSSortDescriptor(key: "created", ascending: false)]
-    }
+        let controller = NSFetchedResultsController(fetchRequest: fetchRequest,
+                                                    managedObjectContext: persistentContainer.viewContext,
+                                                    sectionNameKeyPath: nil,
+                                                    cacheName: nil)
+        do {
+            try controller.performFetch()
+        } catch {
+            fatalError("Unresolved error: \(error)")
+        }
+        return controller
+    }()
 }

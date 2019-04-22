@@ -2,11 +2,10 @@
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="14460.32" systemVersion="17G65" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="Birthday" representedClassName="BirthdayModel" syncable="YES" codeGenerationType="class">
         <attribute name="birth_date" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
-        <attribute name="birthday_id" attributeType="UUID" usesScalarValueType="NO" syncable="YES"/>
         <attribute name="created" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
         <attribute name="name" attributeType="String" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Birthday" positionX="-3632.27734375" positionY="-3531.25" width="128" height="105"/>
+        <element name="Birthday" positionX="-3717.0390625" positionY="-3343.28125" width="128" height="90"/>
     </elements>
 </model>

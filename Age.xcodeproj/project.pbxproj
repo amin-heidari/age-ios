@@ -15,6 +15,7 @@
 		274EC0A3226118D000D5E263 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 274EC0A1226118D000D5E263 /* LaunchScreen.storyboard */; };
 		27A3CA57226C403500577985 /* DatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27A3CA56226C403500577985 /* DatabaseManager.swift */; };
 		27A3CA59226CEACE00577985 /* UserDefaultsUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27A3CA58226CEACE00577985 /* UserDefaultsUtil.swift */; };
+		27A3CA5D226D779A00577985 /* Birthday.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27A3CA5C226D779A00577985 /* Birthday.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		274EC0A4226118D000D5E263 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		27A3CA56226C403500577985 /* DatabaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseManager.swift; sourceTree = "<group>"; };
 		27A3CA58226CEACE00577985 /* UserDefaultsUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsUtil.swift; sourceTree = "<group>"; };
+		27A3CA5C226D779A00577985 /* Birthday.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Birthday.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +66,7 @@
 				274EC097226118CC00D5E263 /* ViewController.swift */,
 				27A3CA56226C403500577985 /* DatabaseManager.swift */,
 				27A3CA58226CEACE00577985 /* UserDefaultsUtil.swift */,
+				27A3CA5C226D779A00577985 /* Birthday.swift */,
 				274EC099226118CC00D5E263 /* Main.storyboard */,
 				274EC09F226118D000D5E263 /* Assets.xcassets */,
 				274EC0A1226118D000D5E263 /* LaunchScreen.storyboard */,
@@ -148,6 +151,7 @@
 				274EC098226118CC00D5E263 /* ViewController.swift in Sources */,
 				274EC09E226118CC00D5E263 /* Age.xcdatamodeld in Sources */,
 				27A3CA57226C403500577985 /* DatabaseManager.swift in Sources */,
+				27A3CA5D226D779A00577985 /* Birthday.swift in Sources */,
 				274EC096226118CC00D5E263 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
