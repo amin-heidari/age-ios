@@ -9,7 +9,11 @@
 import UIKit
 import CoreData
 
+// Other constants
+private let BirthdayEntityName = "BirthdayModel"
+
 class DatabaseManager {
+    // Singleton instance.
     static let shared = DatabaseManager()
     
     // MARK: - Core Data stack
@@ -61,7 +65,7 @@ class DatabaseManager {
     
     // method for add birthday with bg context.
     func addBirthday(_ birthday: Birthday) -> BirthdayModel {
-        guard let birthdayModel = NSEntityDescription.insertNewObject(forEntityName: "Birthday", into: persistentContainer.viewContext) as? BirthdayModel else {
+        guard let birthdayModel = NSEntityDescription.insertNewObject(forEntityName: BirthdayEntityName, into: persistentContainer.viewContext) as? BirthdayModel else {
             fatalError("Failed!")
         }
         birthdayModel.birth_date = birthday.birthDate
