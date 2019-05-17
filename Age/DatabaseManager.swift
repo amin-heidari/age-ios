@@ -9,16 +9,21 @@
 import UIKit
 import CoreData
 
-// Other constants
-private let BirthdayEntityName = "BirthdayModel"
-
 class DatabaseManager {
     // Singleton instance.
     static let shared = DatabaseManager()
     
+    // MARK: - Other constants/types
+    
+    typealias Completion = (_ success: Bool) -> Void
+    
+    enum Entity: String {
+        case BirthdayEntity
+    }
+    
     // MARK: - Core Data stack
     
-    lazy var persistentContainer: NSPersistentContainer = {
+    lazy private(set) var persistentContainer: NSPersistentContainer = {
         /*
          The persistent container for the application. This implementation
          creates and returns a container, having loaded the store for the
@@ -42,7 +47,24 @@ class DatabaseManager {
                 fatalError("Unresolved error \(error), \(error.userInfo)")
             }
         })
+        
+        // Merge the changes from other contexts automatically.
+        // See this sample code for more details:
+        // https://developer.apple.com/documentation/coredata/loading_and_displaying_a_large_data_feed
+        container.viewContext.automaticallyMergesChangesFromParent = true
+        container.viewContext.mergePolicy = NSMergeByPropertyObjectTrumpMergePolicy
+        container.viewContext.undoManager = nil
+        container.viewContext.shouldDeleteInaccessibleFaults = true
+        
         return container
+    }()
+    
+    // In order to do things asyncronously.
+    lazy private var backgroundContext: NSManagedObjectContext = {
+        let taskContext = self.persistentContainer.newBackgroundContext()
+        taskContext.mergePolicy = NSMergeByPropertyObjectTrumpMergePolicy
+        taskContext.undoManager = nil
+        return taskContext
     }()
     
     // MARK: - Core Data Saving support
@@ -63,34 +85,49 @@ class DatabaseManager {
     
     // 
     
-    // method for add birthday with bg context.
-    func addBirthday(_ birthday: Birthday) -> BirthdayModel {
-        guard let birthdayModel = NSEntityDescription.insertNewObject(forEntityName: BirthdayEntityName, into: persistentContainer.viewContext) as? BirthdayModel else {
+    // Async.
+    func addBirthday(_ birthday: Birthday, completion: @escaping Completion) {
+        backgroundContext.perform {
+            guard let BirthdayEntity = NSEntityDescription.insertNewObject(forEntityName: Entity.BirthdayEntity.rawValue, into: self.backgroundContext) as? BirthdayEntity else {
+                fatalError("Failed!")
+            }
+            
+            BirthdayEntity.birth_date = birthday.birthDate
+            BirthdayEntity.name = birthday.name
+            BirthdayEntity.created = Date()
+            
+            completion(true)
+        }
+    }
+    
+    // Sync.
+    func addBirthday(_ birthday: Birthday) -> BirthdayEntity {
+        guard let BirthdayEntity = NSEntityDescription.insertNewObject(forEntityName: Entity.BirthdayEntity.rawValue, into: persistentContainer.viewContext) as? BirthdayEntity else {
             fatalError("Failed!")
         }
-        birthdayModel.birth_date = birthday.birthDate
-        birthdayModel.name = birthday.name
-        birthdayModel.created = Date()
+        BirthdayEntity.birth_date = birthday.birthDate
+        BirthdayEntity.name = birthday.name
+        BirthdayEntity.created = Date()
         
-        return birthdayModel
+        return BirthdayEntity
     }
     
     // method for updating a birthday.
-    func updateBirthday(_ birthdayModel: BirthdayModel, with newBirthday: Birthday) {
-        birthdayModel.birth_date = newBirthday.birthDate
-        birthdayModel.name = newBirthday.name
+    func updateBirthday(_ BirthdayEntity: BirthdayEntity, with newBirthday: Birthday) {
+        BirthdayEntity.birth_date = newBirthday.birthDate
+        BirthdayEntity.name = newBirthday.name
     }
     
     // method for remove birthday with bg context.
-    func deleteBirthday(_ birthdayModel: BirthdayModel) {
-        persistentContainer.viewContext.delete(birthdayModel)
+    func deleteBirthday(_ BirthdayEntity: BirthdayEntity) {
+        persistentContainer.viewContext.delete(BirthdayEntity)
     }
     
     /// A fetchedResultsController.
     ///
     /// - Returns: FetchResultsController for the list of the birthdays.
-    lazy var birthdays: NSFetchedResultsController<BirthdayModel> = {
-        let fetchRequest = NSFetchRequest<BirthdayModel>(entityName: "Birthday")
+    lazy var birthdaysFetchResultsController: NSFetchedResultsController<BirthdayEntity> = {
+        let fetchRequest = NSFetchRequest<BirthdayEntity>(entityName: "Birthday")
         fetchRequest.sortDescriptors = [NSSortDescriptor(key: "created", ascending: false)]
         let controller = NSFetchedResultsController(fetchRequest: fetchRequest,
                                                     managedObjectContext: persistentContainer.viewContext,
