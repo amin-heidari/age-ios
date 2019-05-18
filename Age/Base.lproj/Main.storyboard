@@ -1,24 +1,119 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina5_9" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Ages View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="AgesViewController" customModule="Age" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Bft-Jd-HtC">
+                                <rect key="frame" x="0.0" y="44" width="375" height="768"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <view key="tableFooterView" contentMode="scaleToFill" id="tio-Je-zpn">
+                                    <rect key="frame" x="0.0" y="113" width="375" height="44"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <subviews>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tkh-ad-Ju8">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                            <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                            <state key="normal" title="Add New Birthday"/>
+                                            <connections>
+                                                <segue destination="zHl-dr-dNN" kind="presentation" id="atA-5g-Dez"/>
+                                            </connections>
+                                        </button>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="trailing" secondItem="Tkh-ad-Ju8" secondAttribute="trailing" id="T0p-EP-c1e"/>
+                                        <constraint firstAttribute="bottom" secondItem="Tkh-ad-Ju8" secondAttribute="bottom" id="UjT-le-Tv9"/>
+                                        <constraint firstItem="Tkh-ad-Ju8" firstAttribute="top" secondItem="tio-Je-zpn" secondAttribute="top" id="Y9m-GC-rfD"/>
+                                        <constraint firstItem="Tkh-ad-Ju8" firstAttribute="leading" secondItem="tio-Je-zpn" secondAttribute="leading" id="mHo-DS-8Sa"/>
+                                    </constraints>
+                                </view>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="age" rowHeight="85" id="tHW-R0-GNd" customClass="AgeTableViewCell" customModule="Age" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="85"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="tHW-R0-GNd" id="dJ3-RG-L0q">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="84.666666666666671"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xe1-9D-kd2">
+                                                    <rect key="frame" x="20" y="19.999999999999996" width="42" height="44.666666666666657"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="xe1-9D-kd2" firstAttribute="top" secondItem="dJ3-RG-L0q" secondAttribute="top" constant="20" id="2a8-5B-rbY"/>
+                                                <constraint firstAttribute="bottom" secondItem="xe1-9D-kd2" secondAttribute="bottom" constant="20" id="HLU-NL-kP0"/>
+                                                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="xe1-9D-kd2" secondAttribute="trailing" constant="20" symbolic="YES" id="HrW-t5-xXd"/>
+                                                <constraint firstItem="xe1-9D-kd2" firstAttribute="leading" secondItem="dJ3-RG-L0q" secondAttribute="leading" constant="20" id="fCt-aa-Yii"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="SKc-0Z-qDm"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="H7b-ci-kde"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="Bft-Jd-HtC" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="0jj-Is-neE"/>
+                            <constraint firstItem="Bft-Jd-HtC" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="9MI-cA-TO9"/>
+                            <constraint firstAttribute="bottom" secondItem="Bft-Jd-HtC" secondAttribute="bottom" id="gMD-IO-2rJ"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Bft-Jd-HtC" secondAttribute="trailing" id="xr6-tg-fB0"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="tableView" destination="Bft-Jd-HtC" id="73M-OM-LuE"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+        </scene>
+        <!--New Age View Controller-->
+        <scene sceneID="KTh-Ed-DuL">
+            <objects>
+                <viewController id="zHl-dr-dNN" customClass="NewAgeViewController" customModule="Age" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="zAj-Db-pET">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Oae-t9-Wa1">
+                                <rect key="frame" x="143" y="391" width="89" height="30"/>
+                                <state key="normal" title="Add Birthday"/>
+                                <connections>
+                                    <action selector="saveButtonTapped:" destination="zHl-dr-dNN" eventType="touchUpInside" id="tuO-M9-lQd"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Oae-t9-Wa1" firstAttribute="centerX" secondItem="zAj-Db-pET" secondAttribute="centerX" id="Ii1-Wy-sWW"/>
+                            <constraint firstItem="Oae-t9-Wa1" firstAttribute="centerY" secondItem="zAj-Db-pET" secondAttribute="centerY" id="SZU-VO-ian"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="A0a-No-Eui"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="CMq-W0-4BF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1734" y="23"/>
         </scene>
     </scenes>
 </document>

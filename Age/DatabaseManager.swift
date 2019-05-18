@@ -127,7 +127,7 @@ class DatabaseManager {
     ///
     /// - Returns: FetchResultsController for the list of the birthdays.
     lazy var birthdaysFetchResultsController: NSFetchedResultsController<BirthdayEntity> = {
-        let fetchRequest = NSFetchRequest<BirthdayEntity>(entityName: "Birthday")
+        let fetchRequest = NSFetchRequest<BirthdayEntity>(entityName: Entity.BirthdayEntity.rawValue)
         fetchRequest.sortDescriptors = [NSSortDescriptor(key: "created", ascending: false)]
         let controller = NSFetchedResultsController(fetchRequest: fetchRequest,
                                                     managedObjectContext: persistentContainer.viewContext,

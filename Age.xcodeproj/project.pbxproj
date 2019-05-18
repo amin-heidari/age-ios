@@ -8,11 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		274EC096226118CC00D5E263 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 274EC095226118CC00D5E263 /* AppDelegate.swift */; };
-		274EC098226118CC00D5E263 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 274EC097226118CC00D5E263 /* ViewController.swift */; };
 		274EC09B226118CC00D5E263 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 274EC099226118CC00D5E263 /* Main.storyboard */; };
 		274EC09E226118CC00D5E263 /* Age.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 274EC09C226118CC00D5E263 /* Age.xcdatamodeld */; };
 		274EC0A0226118D000D5E263 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 274EC09F226118D000D5E263 /* Assets.xcassets */; };
 		274EC0A3226118D000D5E263 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 274EC0A1226118D000D5E263 /* LaunchScreen.storyboard */; };
+		2780C48D228F8EAF00C706CE /* AgesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2780C48C228F8EAF00C706CE /* AgesViewController.swift */; };
+		2780C48F228F8FB100C706CE /* AgeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2780C48E228F8FB100C706CE /* AgeTableViewCell.swift */; };
+		2780C491228F91D200C706CE /* CoreDataUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2780C490228F91D200C706CE /* CoreDataUtils.swift */; };
+		2780C493228F98C300C706CE /* NewAgeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2780C492228F98C300C706CE /* NewAgeViewController.swift */; };
 		27A3CA57226C403500577985 /* DatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27A3CA56226C403500577985 /* DatabaseManager.swift */; };
 		27A3CA59226CEACE00577985 /* UserDefaultsUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27A3CA58226CEACE00577985 /* UserDefaultsUtil.swift */; };
 		27A3CA5D226D779A00577985 /* Birthday.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27A3CA5C226D779A00577985 /* Birthday.swift */; };
@@ -21,12 +24,15 @@
 /* Begin PBXFileReference section */
 		274EC092226118CC00D5E263 /* Age.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Age.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		274EC095226118CC00D5E263 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		274EC097226118CC00D5E263 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		274EC09A226118CC00D5E263 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		274EC09D226118CC00D5E263 /* Age.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Age.xcdatamodel; sourceTree = "<group>"; };
 		274EC09F226118D000D5E263 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		274EC0A2226118D000D5E263 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		274EC0A4226118D000D5E263 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2780C48C228F8EAF00C706CE /* AgesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AgesViewController.swift; sourceTree = "<group>"; };
+		2780C48E228F8FB100C706CE /* AgeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgeTableViewCell.swift; sourceTree = "<group>"; };
+		2780C490228F91D200C706CE /* CoreDataUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataUtils.swift; sourceTree = "<group>"; };
+		2780C492228F98C300C706CE /* NewAgeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewAgeViewController.swift; sourceTree = "<group>"; };
 		27A3CA56226C403500577985 /* DatabaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseManager.swift; sourceTree = "<group>"; };
 		27A3CA58226CEACE00577985 /* UserDefaultsUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsUtil.swift; sourceTree = "<group>"; };
 		27A3CA5C226D779A00577985 /* Birthday.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Birthday.swift; sourceTree = "<group>"; };
@@ -63,8 +69,11 @@
 			isa = PBXGroup;
 			children = (
 				274EC095226118CC00D5E263 /* AppDelegate.swift */,
-				274EC097226118CC00D5E263 /* ViewController.swift */,
 				27A3CA56226C403500577985 /* DatabaseManager.swift */,
+				2780C490228F91D200C706CE /* CoreDataUtils.swift */,
+				2780C48C228F8EAF00C706CE /* AgesViewController.swift */,
+				2780C492228F98C300C706CE /* NewAgeViewController.swift */,
+				2780C48E228F8FB100C706CE /* AgeTableViewCell.swift */,
 				27A3CA58226CEACE00577985 /* UserDefaultsUtil.swift */,
 				27A3CA5C226D779A00577985 /* Birthday.swift */,
 				274EC099226118CC00D5E263 /* Main.storyboard */,
@@ -147,10 +156,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2780C493228F98C300C706CE /* NewAgeViewController.swift in Sources */,
 				27A3CA59226CEACE00577985 /* UserDefaultsUtil.swift in Sources */,
-				274EC098226118CC00D5E263 /* ViewController.swift in Sources */,
 				274EC09E226118CC00D5E263 /* Age.xcdatamodeld in Sources */,
+				2780C491228F91D200C706CE /* CoreDataUtils.swift in Sources */,
+				2780C48D228F8EAF00C706CE /* AgesViewController.swift in Sources */,
 				27A3CA57226C403500577985 /* DatabaseManager.swift in Sources */,
+				2780C48F228F8FB100C706CE /* AgeTableViewCell.swift in Sources */,
 				27A3CA5D226D779A00577985 /* Birthday.swift in Sources */,
 				274EC096226118CC00D5E263 /* AppDelegate.swift in Sources */,
 			);
