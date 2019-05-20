@@ -16,4 +16,9 @@ class Birthday: Codable {
         self.birthDate = birthDate
         self.name = name
     }
+    
+    private enum CodingKeys: String, CodingKey {
+        case birthDate
+        case name
+    }
 }
