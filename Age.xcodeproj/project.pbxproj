@@ -19,6 +19,7 @@
 		2780C495229231D100C706CE /* RemoteConfigManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2780C494229231D100C706CE /* RemoteConfigManager.swift */; };
 		2780C49B2292352800C706CE /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2780C49A2292352800C706CE /* Constants.swift */; };
 		2780C49D2292357700C706CE /* RemoteConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2780C49C2292357700C706CE /* RemoteConfig.swift */; };
+		2780C49F22926E1A00C706CE /* LoadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2780C49E22926E1A00C706CE /* LoadingViewController.swift */; };
 		27A3CA57226C403500577985 /* DatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27A3CA56226C403500577985 /* DatabaseManager.swift */; };
 		27A3CA59226CEACE00577985 /* UserDefaultsUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27A3CA58226CEACE00577985 /* UserDefaultsUtil.swift */; };
 		27A3CA5D226D779A00577985 /* Birthday.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27A3CA5C226D779A00577985 /* Birthday.swift */; };
@@ -39,6 +40,7 @@
 		2780C494229231D100C706CE /* RemoteConfigManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteConfigManager.swift; sourceTree = "<group>"; };
 		2780C49A2292352800C706CE /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		2780C49C2292357700C706CE /* RemoteConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteConfig.swift; sourceTree = "<group>"; };
+		2780C49E22926E1A00C706CE /* LoadingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingViewController.swift; sourceTree = "<group>"; };
 		27A3CA56226C403500577985 /* DatabaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseManager.swift; sourceTree = "<group>"; };
 		27A3CA58226CEACE00577985 /* UserDefaultsUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsUtil.swift; sourceTree = "<group>"; };
 		27A3CA5C226D779A00577985 /* Birthday.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Birthday.swift; sourceTree = "<group>"; };
@@ -77,6 +79,7 @@
 				274EC095226118CC00D5E263 /* AppDelegate.swift */,
 				27A3CA56226C403500577985 /* DatabaseManager.swift */,
 				2780C490228F91D200C706CE /* CoreDataUtils.swift */,
+				2780C49E22926E1A00C706CE /* LoadingViewController.swift */,
 				2780C48C228F8EAF00C706CE /* AgesViewController.swift */,
 				2780C492228F98C300C706CE /* NewAgeViewController.swift */,
 				2780C48E228F8FB100C706CE /* AgeTableViewCell.swift */,
@@ -176,6 +179,7 @@
 				2780C48F228F8FB100C706CE /* AgeTableViewCell.swift in Sources */,
 				2780C495229231D100C706CE /* RemoteConfigManager.swift in Sources */,
 				27A3CA5D226D779A00577985 /* Birthday.swift in Sources */,
+				2780C49F22926E1A00C706CE /* LoadingViewController.swift in Sources */,
 				274EC096226118CC00D5E263 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

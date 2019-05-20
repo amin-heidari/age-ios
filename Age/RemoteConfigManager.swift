@@ -23,7 +23,7 @@ class RemoteConfigManager: NSObject {
         case error(_ error: ConfigError)
     }
     
-    private lazy var session: URLSession = {
+    private lazy var urlSession: URLSession = {
         let configuration = URLSessionConfiguration.ephemeral
         return URLSession(
             configuration: configuration,
@@ -32,8 +32,12 @@ class RemoteConfigManager: NSObject {
         )
     }()
     
-    func fetchConfig(completion: Completion) {
-        completion(.error(.connection))
+    func fetchConfig(completion: @escaping Completion) {
+        urlSession.dataTask(with: URL(string: Constants.RemoteConfig.URL)!) { (data, urlResponse, error) in
+            DispatchQueue.main.async {
+                completion(.error(.connection))
+            }
+        }.resume()
     }
     
 }
