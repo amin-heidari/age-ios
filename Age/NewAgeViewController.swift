@@ -28,8 +28,10 @@ class NewAgeViewController: UIViewController {
     */
     
     @IBAction func saveButtonTapped(_ sender: Any) {
-        _ = DatabaseManager.shared.addBirthday(Birthday(birthDate: Date(), name: "Amin"))
-        dismiss(animated: true, completion: nil)
+//        _ = DatabaseManager.shared.addBirthday(Birthday(birthDate: Date(), name: "Amin"))
+        _ = DatabaseManager.shared.addBirthday(Birthday(birthDate: Date(), name: "Amin")) { [weak self] _ in
+            self?.dismiss(animated: true, completion: nil)
+        }
     }
 
 }

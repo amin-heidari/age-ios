@@ -15,7 +15,7 @@ class DatabaseManager {
     
     // MARK: - Other constants/types
     
-    typealias Completion = (_ success: Bool) -> Void
+    typealias Completion = (_ birthdayEntity: BirthdayEntity) -> Void
     
     enum Entity: String {
         case BirthdayEntity
@@ -88,39 +88,43 @@ class DatabaseManager {
     // Async.
     func addBirthday(_ birthday: Birthday, completion: @escaping Completion) {
         backgroundContext.perform {
-            guard let BirthdayEntity = NSEntityDescription.insertNewObject(forEntityName: Entity.BirthdayEntity.rawValue, into: self.backgroundContext) as? BirthdayEntity else {
+            guard let birthdayEntity = NSEntityDescription.insertNewObject(forEntityName: Entity.BirthdayEntity.rawValue, into: self.backgroundContext) as? BirthdayEntity else {
                 fatalError("Failed!")
             }
             
-            BirthdayEntity.birth_date = birthday.birthDate
-            BirthdayEntity.name = birthday.name
-            BirthdayEntity.created = Date()
+            birthdayEntity.birth_date = birthday.birthDate
+            birthdayEntity.name = birthday.name
+            birthdayEntity.created = Date()
             
-            completion(true)
+            try? self.backgroundContext.save()
+            
+            DispatchQueue.main.async {
+                completion(birthdayEntity)
+            }
         }
     }
     
     // Sync.
     func addBirthday(_ birthday: Birthday) -> BirthdayEntity {
-        guard let BirthdayEntity = NSEntityDescription.insertNewObject(forEntityName: Entity.BirthdayEntity.rawValue, into: persistentContainer.viewContext) as? BirthdayEntity else {
+        guard let birthdayEntity = NSEntityDescription.insertNewObject(forEntityName: Entity.BirthdayEntity.rawValue, into: persistentContainer.viewContext) as? BirthdayEntity else {
             fatalError("Failed!")
         }
-        BirthdayEntity.birth_date = birthday.birthDate
-        BirthdayEntity.name = birthday.name
-        BirthdayEntity.created = Date()
+        birthdayEntity.birth_date = birthday.birthDate
+        birthdayEntity.name = birthday.name
+        birthdayEntity.created = Date()
         
-        return BirthdayEntity
+        return birthdayEntity
     }
     
     // method for updating a birthday.
-    func updateBirthday(_ BirthdayEntity: BirthdayEntity, with newBirthday: Birthday) {
-        BirthdayEntity.birth_date = newBirthday.birthDate
-        BirthdayEntity.name = newBirthday.name
+    func updateBirthday(_ birthdayEntity: BirthdayEntity, with newBirthday: Birthday) {
+        birthdayEntity.birth_date = newBirthday.birthDate
+        birthdayEntity.name = newBirthday.name
     }
     
     // method for remove birthday with bg context.
-    func deleteBirthday(_ BirthdayEntity: BirthdayEntity) {
-        persistentContainer.viewContext.delete(BirthdayEntity)
+    func deleteBirthday(_ birthdayEntity: BirthdayEntity) {
+        persistentContainer.viewContext.delete(birthdayEntity)
     }
     
     /// A fetchedResultsController.
