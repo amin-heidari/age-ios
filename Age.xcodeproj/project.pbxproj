@@ -20,6 +20,8 @@
 		2780C49B2292352800C706CE /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2780C49A2292352800C706CE /* Constants.swift */; };
 		2780C49D2292357700C706CE /* RemoteConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2780C49C2292357700C706CE /* RemoteConfig.swift */; };
 		2780C49F22926E1A00C706CE /* LoadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2780C49E22926E1A00C706CE /* LoadingViewController.swift */; };
+		2780C4A3229629A300C706CE /* ConfigCert.cer in Resources */ = {isa = PBXBuildFile; fileRef = 2780C4A2229629A300C706CE /* ConfigCert.cer */; };
+		2780C4A52296E20D00C706CE /* ErrorUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2780C4A42296E20D00C706CE /* ErrorUtil.swift */; };
 		27A3CA57226C403500577985 /* DatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27A3CA56226C403500577985 /* DatabaseManager.swift */; };
 		27A3CA59226CEACE00577985 /* UserDefaultsUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27A3CA58226CEACE00577985 /* UserDefaultsUtil.swift */; };
 		27A3CA5D226D779A00577985 /* Birthday.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27A3CA5C226D779A00577985 /* Birthday.swift */; };
@@ -41,6 +43,8 @@
 		2780C49A2292352800C706CE /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		2780C49C2292357700C706CE /* RemoteConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteConfig.swift; sourceTree = "<group>"; };
 		2780C49E22926E1A00C706CE /* LoadingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingViewController.swift; sourceTree = "<group>"; };
+		2780C4A2229629A300C706CE /* ConfigCert.cer */ = {isa = PBXFileReference; lastKnownFileType = file; path = ConfigCert.cer; sourceTree = "<group>"; };
+		2780C4A42296E20D00C706CE /* ErrorUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorUtil.swift; sourceTree = "<group>"; };
 		27A3CA56226C403500577985 /* DatabaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseManager.swift; sourceTree = "<group>"; };
 		27A3CA58226CEACE00577985 /* UserDefaultsUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsUtil.swift; sourceTree = "<group>"; };
 		27A3CA5C226D779A00577985 /* Birthday.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Birthday.swift; sourceTree = "<group>"; };
@@ -84,6 +88,7 @@
 				2780C492228F98C300C706CE /* NewAgeViewController.swift */,
 				2780C48E228F8FB100C706CE /* AgeTableViewCell.swift */,
 				27A3CA58226CEACE00577985 /* UserDefaultsUtil.swift */,
+				2780C4A42296E20D00C706CE /* ErrorUtil.swift */,
 				27A3CA5C226D779A00577985 /* Birthday.swift */,
 				2780C49C2292357700C706CE /* RemoteConfig.swift */,
 				2780C494229231D100C706CE /* RemoteConfigManager.swift */,
@@ -91,6 +96,7 @@
 				274EC099226118CC00D5E263 /* Main.storyboard */,
 				274EC09F226118D000D5E263 /* Assets.xcassets */,
 				274EC0A1226118D000D5E263 /* LaunchScreen.storyboard */,
+				2780C4A2229629A300C706CE /* ConfigCert.cer */,
 				274EC0A4226118D000D5E263 /* Info.plist */,
 				274EC09C226118CC00D5E263 /* Age.xcdatamodeld */,
 			);
@@ -157,6 +163,7 @@
 			files = (
 				274EC0A3226118D000D5E263 /* LaunchScreen.storyboard in Resources */,
 				274EC0A0226118D000D5E263 /* Assets.xcassets in Resources */,
+				2780C4A3229629A300C706CE /* ConfigCert.cer in Resources */,
 				274EC09B226118CC00D5E263 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -180,6 +187,7 @@
 				2780C495229231D100C706CE /* RemoteConfigManager.swift in Sources */,
 				27A3CA5D226D779A00577985 /* Birthday.swift in Sources */,
 				2780C49F22926E1A00C706CE /* LoadingViewController.swift in Sources */,
+				2780C4A52296E20D00C706CE /* ErrorUtil.swift in Sources */,
 				274EC096226118CC00D5E263 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
