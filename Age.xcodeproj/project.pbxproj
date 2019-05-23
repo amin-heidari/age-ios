@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2720782F229746FA00450603 /* AgeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2720782E229746FA00450603 /* AgeViewController.swift */; };
 		274EC096226118CC00D5E263 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 274EC095226118CC00D5E263 /* AppDelegate.swift */; };
 		274EC09B226118CC00D5E263 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 274EC099226118CC00D5E263 /* Main.storyboard */; };
 		274EC09E226118CC00D5E263 /* Age.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 274EC09C226118CC00D5E263 /* Age.xcdatamodeld */; };
@@ -28,6 +29,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2720782E229746FA00450603 /* AgeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgeViewController.swift; sourceTree = "<group>"; };
 		274EC092226118CC00D5E263 /* Age.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Age.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		274EC095226118CC00D5E263 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		274EC09A226118CC00D5E263 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -87,6 +89,7 @@
 				2780C48C228F8EAF00C706CE /* AgesViewController.swift */,
 				2780C492228F98C300C706CE /* NewAgeViewController.swift */,
 				2780C48E228F8FB100C706CE /* AgeTableViewCell.swift */,
+				2720782E229746FA00450603 /* AgeViewController.swift */,
 				27A3CA58226CEACE00577985 /* UserDefaultsUtil.swift */,
 				2780C4A42296E20D00C706CE /* ErrorUtil.swift */,
 				27A3CA5C226D779A00577985 /* Birthday.swift */,
@@ -177,6 +180,7 @@
 			files = (
 				2780C493228F98C300C706CE /* NewAgeViewController.swift in Sources */,
 				2780C49B2292352800C706CE /* Constants.swift in Sources */,
+				2720782F229746FA00450603 /* AgeViewController.swift in Sources */,
 				27A3CA59226CEACE00577985 /* UserDefaultsUtil.swift in Sources */,
 				274EC09E226118CC00D5E263 /* Age.xcdatamodeld in Sources */,
 				2780C491228F91D200C706CE /* CoreDataUtils.swift in Sources */,

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="oA4-2j-OUW">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="PGv-fd-9SQ">
     <device id="retina5_9" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -30,7 +30,7 @@
                                             <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                             <state key="normal" title="Add New Birthday"/>
                                             <connections>
-                                                <segue destination="zHl-dr-dNN" kind="presentation" id="atA-5g-Dez"/>
+                                                <segue destination="zHl-dr-dNN" kind="presentation" identifier="add" id="atA-5g-Dez"/>
                                             </connections>
                                         </button>
                                     </subviews>
@@ -86,7 +86,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="311" y="23"/>
+            <point key="canvasLocation" x="2087" y="941"/>
         </scene>
         <!--New Age View Controller-->
         <scene sceneID="KTh-Ed-DuL">
@@ -111,10 +111,29 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="A0a-No-Eui"/>
                     </view>
+                    <connections>
+                        <segue destination="ueg-9m-lRh" kind="show" identifier="age" id="lVK-B6-Itq"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CMq-W0-4BF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1734" y="23"/>
+            <point key="canvasLocation" x="713" y="-299"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="YGP-27-Rvy">
+            <objects>
+                <navigationController navigationBarHidden="YES" id="PGv-fd-9SQ" sceneMemberID="viewController">
+                    <nil key="simulatedTopBarMetrics"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="VK6-YX-Vch">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="oA4-2j-OUW" kind="relationship" relationship="rootViewController" id="UH4-VX-DCP"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Oa3-O1-Qce" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-3134" y="522"/>
         </scene>
         <!--Loading View Controller-->
         <scene sceneID="831-OF-9zU">
@@ -136,10 +155,39 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="DYL-Z4-kpy"/>
                     </view>
+                    <navigationItem key="navigationItem" id="Mon-Z6-AzX"/>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <connections>
+                        <segue destination="ueg-9m-lRh" kind="show" identifier="age" id="bEz-d8-EvV"/>
+                        <segue destination="zHl-dr-dNN" kind="show" identifier="add" id="SgZ-8b-CBo"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LQh-nn-plD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1212" y="23"/>
+            <point key="canvasLocation" x="-2007" y="523"/>
+        </scene>
+        <!--Age View Controller-->
+        <scene sceneID="5d8-Bd-4GG">
+            <objects>
+                <viewController id="ueg-9m-lRh" customClass="AgeViewController" customModule="Age" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="LT6-ND-lG0">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="Hjn-sw-q9H"/>
+                    </view>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="show" identifier="ages" id="DbE-vn-EuT"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YOX-YP-LFI" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="713" y="941"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="DbE-vn-EuT"/>
+        <segue reference="lVK-B6-Itq"/>
+        <segue reference="atA-5g-Dez"/>
+    </inferredMetricsTieBreakers>
 </document>
