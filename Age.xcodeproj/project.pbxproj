@@ -7,57 +7,86 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2720782F229746FA00450603 /* AgeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2720782E229746FA00450603 /* AgeViewController.swift */; };
 		274EC096226118CC00D5E263 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 274EC095226118CC00D5E263 /* AppDelegate.swift */; };
-		274EC09B226118CC00D5E263 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 274EC099226118CC00D5E263 /* Main.storyboard */; };
-		274EC09E226118CC00D5E263 /* Age.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 274EC09C226118CC00D5E263 /* Age.xcdatamodeld */; };
 		274EC0A0226118D000D5E263 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 274EC09F226118D000D5E263 /* Assets.xcassets */; };
-		274EC0A3226118D000D5E263 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 274EC0A1226118D000D5E263 /* LaunchScreen.storyboard */; };
-		2780C48D228F8EAF00C706CE /* AgesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2780C48C228F8EAF00C706CE /* AgesViewController.swift */; };
-		2780C48F228F8FB100C706CE /* AgeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2780C48E228F8FB100C706CE /* AgeTableViewCell.swift */; };
-		2780C491228F91D200C706CE /* CoreDataUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2780C490228F91D200C706CE /* CoreDataUtils.swift */; };
-		2780C493228F98C300C706CE /* NewAgeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2780C492228F98C300C706CE /* NewAgeViewController.swift */; };
-		2780C495229231D100C706CE /* RemoteConfigManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2780C494229231D100C706CE /* RemoteConfigManager.swift */; };
-		2780C49B2292352800C706CE /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2780C49A2292352800C706CE /* Constants.swift */; };
-		2780C49D2292357700C706CE /* RemoteConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2780C49C2292357700C706CE /* RemoteConfig.swift */; };
-		2780C49F22926E1A00C706CE /* LoadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2780C49E22926E1A00C706CE /* LoadingViewController.swift */; };
-		2780C4A3229629A300C706CE /* ConfigCert.cer in Resources */ = {isa = PBXBuildFile; fileRef = 2780C4A2229629A300C706CE /* ConfigCert.cer */; };
-		2780C4A52296E20D00C706CE /* ErrorUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2780C4A42296E20D00C706CE /* ErrorUtil.swift */; };
-		27A3CA57226C403500577985 /* DatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27A3CA56226C403500577985 /* DatabaseManager.swift */; };
-		27A3CA59226CEACE00577985 /* UserDefaultsUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27A3CA58226CEACE00577985 /* UserDefaultsUtil.swift */; };
-		27A3CA5D226D779A00577985 /* Birthday.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27A3CA5C226D779A00577985 /* Birthday.swift */; };
-		27AA5AC02299DD700059D1A2 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27AA5ABF2299DD700059D1A2 /* RootViewController.swift */; };
-		27AEA4D42298EBC6003E0FCD /* ExportOptions.plist in Resources */ = {isa = PBXBuildFile; fileRef = 27AEA4D32298EBC6003E0FCD /* ExportOptions.plist */; };
+		27AA5AE02299F8B90059D1A2 /* Birthday.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27AA5AC22299F8B80059D1A2 /* Birthday.swift */; };
+		27AA5AE12299F8B90059D1A2 /* RemoteConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27AA5AC32299F8B80059D1A2 /* RemoteConfig.swift */; };
+		27AA5AE22299F8B90059D1A2 /* Age.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 27AA5AC52299F8B80059D1A2 /* Age.xcdatamodeld */; };
+		27AA5AE32299F8B90059D1A2 /* DatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27AA5AC72299F8B80059D1A2 /* DatabaseManager.swift */; };
+		27AA5AE42299F8B90059D1A2 /* CoreDataUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27AA5AC82299F8B80059D1A2 /* CoreDataUtils.swift */; };
+		27AA5AE52299F8B90059D1A2 /* ErrorUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27AA5ACA2299F8B80059D1A2 /* ErrorUtil.swift */; };
+		27AA5AE62299F8B90059D1A2 /* UserDefaultsUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27AA5ACB2299F8B80059D1A2 /* UserDefaultsUtil.swift */; };
+		27AA5AE72299F8B90059D1A2 /* RemoteConfigManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27AA5ACD2299F8B80059D1A2 /* RemoteConfigManager.swift */; };
+		27AA5AEA2299F8B90059D1A2 /* AgeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27AA5AD22299F8B90059D1A2 /* AgeTableViewCell.swift */; };
+		27AA5AEB2299F8B90059D1A2 /* ConfigCert.cer in Resources */ = {isa = PBXBuildFile; fileRef = 27AA5AD42299F8B90059D1A2 /* ConfigCert.cer */; };
+		27AA5AEC2299F8B90059D1A2 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27AA5AD62299F8B90059D1A2 /* RootViewController.swift */; };
+		27AA5AED2299F8B90059D1A2 /* NewAgeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27AA5AD72299F8B90059D1A2 /* NewAgeViewController.swift */; };
+		27AA5AEE2299F8B90059D1A2 /* AgesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27AA5AD82299F8B90059D1A2 /* AgesViewController.swift */; };
+		27AA5AEF2299F8B90059D1A2 /* AgeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27AA5AD92299F8B90059D1A2 /* AgeViewController.swift */; };
+		27AA5AF02299F8B90059D1A2 /* LoadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27AA5ADA2299F8B90059D1A2 /* LoadingViewController.swift */; };
+		27AA5AF12299F8B90059D1A2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 27AA5ADC2299F8B90059D1A2 /* LaunchScreen.storyboard */; };
+		27AA5AF22299F8B90059D1A2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 27AA5ADE2299F8B90059D1A2 /* Main.storyboard */; };
+		27AA5AF52299FB0E0059D1A2 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27AA5AF42299FB0E0059D1A2 /* Constants.swift */; };
+		27AA5AFA2299FC090059D1A2 /* UserDefaultsUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27AA5ACB2299F8B80059D1A2 /* UserDefaultsUtil.swift */; };
+		27AA5AFB2299FC090059D1A2 /* AgeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27AA5AD92299F8B90059D1A2 /* AgeViewController.swift */; };
+		27AA5AFC2299FC090059D1A2 /* LoadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27AA5ADA2299F8B90059D1A2 /* LoadingViewController.swift */; };
+		27AA5AFD2299FC090059D1A2 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27AA5AD62299F8B90059D1A2 /* RootViewController.swift */; };
+		27AA5AFE2299FC090059D1A2 /* NewAgeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27AA5AD72299F8B90059D1A2 /* NewAgeViewController.swift */; };
+		27AA5AFF2299FC090059D1A2 /* CoreDataUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27AA5AC82299F8B80059D1A2 /* CoreDataUtils.swift */; };
+		27AA5B002299FC090059D1A2 /* ErrorUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27AA5ACA2299F8B80059D1A2 /* ErrorUtil.swift */; };
+		27AA5B022299FC090059D1A2 /* AgeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27AA5AD22299F8B90059D1A2 /* AgeTableViewCell.swift */; };
+		27AA5B032299FC090059D1A2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 274EC095226118CC00D5E263 /* AppDelegate.swift */; };
+		27AA5B042299FC090059D1A2 /* DatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27AA5AC72299F8B80059D1A2 /* DatabaseManager.swift */; };
+		27AA5B052299FC090059D1A2 /* Age.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 27AA5AC52299F8B80059D1A2 /* Age.xcdatamodeld */; };
+		27AA5B062299FC090059D1A2 /* AgesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27AA5AD82299F8B90059D1A2 /* AgesViewController.swift */; };
+		27AA5B072299FC090059D1A2 /* RemoteConfigManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27AA5ACD2299F8B80059D1A2 /* RemoteConfigManager.swift */; };
+		27AA5B082299FC090059D1A2 /* Birthday.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27AA5AC22299F8B80059D1A2 /* Birthday.swift */; };
+		27AA5B092299FC090059D1A2 /* RemoteConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27AA5AC32299F8B80059D1A2 /* RemoteConfig.swift */; };
+		27AA5B0C2299FC090059D1A2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 274EC09F226118D000D5E263 /* Assets.xcassets */; };
+		27AA5B0F2299FC090059D1A2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 27AA5ADE2299F8B90059D1A2 /* Main.storyboard */; };
+		27AA5B102299FC090059D1A2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 27AA5ADC2299F8B90059D1A2 /* LaunchScreen.storyboard */; };
+		27AA5B1B2299FC640059D1A2 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27AA5AF72299FB210059D1A2 /* Constants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		2720782E229746FA00450603 /* AgeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgeViewController.swift; sourceTree = "<group>"; };
 		274EC092226118CC00D5E263 /* Age.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Age.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		274EC095226118CC00D5E263 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		274EC09A226118CC00D5E263 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		274EC09D226118CC00D5E263 /* Age.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Age.xcdatamodel; sourceTree = "<group>"; };
 		274EC09F226118D000D5E263 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		274EC0A2226118D000D5E263 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		274EC0A4226118D000D5E263 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		2780C48C228F8EAF00C706CE /* AgesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AgesViewController.swift; sourceTree = "<group>"; };
-		2780C48E228F8FB100C706CE /* AgeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgeTableViewCell.swift; sourceTree = "<group>"; };
-		2780C490228F91D200C706CE /* CoreDataUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataUtils.swift; sourceTree = "<group>"; };
-		2780C492228F98C300C706CE /* NewAgeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewAgeViewController.swift; sourceTree = "<group>"; };
-		2780C494229231D100C706CE /* RemoteConfigManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteConfigManager.swift; sourceTree = "<group>"; };
-		2780C49A2292352800C706CE /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
-		2780C49C2292357700C706CE /* RemoteConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteConfig.swift; sourceTree = "<group>"; };
-		2780C49E22926E1A00C706CE /* LoadingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingViewController.swift; sourceTree = "<group>"; };
-		2780C4A2229629A300C706CE /* ConfigCert.cer */ = {isa = PBXFileReference; lastKnownFileType = file; path = ConfigCert.cer; sourceTree = "<group>"; };
-		2780C4A42296E20D00C706CE /* ErrorUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorUtil.swift; sourceTree = "<group>"; };
-		27A3CA56226C403500577985 /* DatabaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseManager.swift; sourceTree = "<group>"; };
-		27A3CA58226CEACE00577985 /* UserDefaultsUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsUtil.swift; sourceTree = "<group>"; };
-		27A3CA5C226D779A00577985 /* Birthday.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Birthday.swift; sourceTree = "<group>"; };
-		27AA5ABF2299DD700059D1A2 /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
-		27AEA4D32298EBC6003E0FCD /* ExportOptions.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = ExportOptions.plist; sourceTree = "<group>"; };
+		27AA5AC22299F8B80059D1A2 /* Birthday.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Birthday.swift; sourceTree = "<group>"; };
+		27AA5AC32299F8B80059D1A2 /* RemoteConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RemoteConfig.swift; sourceTree = "<group>"; };
+		27AA5AC62299F8B80059D1A2 /* Age.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Age.xcdatamodel; sourceTree = "<group>"; };
+		27AA5AC72299F8B80059D1A2 /* DatabaseManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatabaseManager.swift; sourceTree = "<group>"; };
+		27AA5AC82299F8B80059D1A2 /* CoreDataUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataUtils.swift; sourceTree = "<group>"; };
+		27AA5ACA2299F8B80059D1A2 /* ErrorUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorUtil.swift; sourceTree = "<group>"; };
+		27AA5ACB2299F8B80059D1A2 /* UserDefaultsUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDefaultsUtil.swift; sourceTree = "<group>"; };
+		27AA5ACD2299F8B80059D1A2 /* RemoteConfigManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RemoteConfigManager.swift; sourceTree = "<group>"; };
+		27AA5ACF2299F8B90059D1A2 /* ExportOptions.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = ExportOptions.plist; sourceTree = "<group>"; };
+		27AA5AD02299F8B90059D1A2 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		27AA5AD22299F8B90059D1A2 /* AgeTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AgeTableViewCell.swift; sourceTree = "<group>"; };
+		27AA5AD42299F8B90059D1A2 /* ConfigCert.cer */ = {isa = PBXFileReference; lastKnownFileType = file; path = ConfigCert.cer; sourceTree = "<group>"; };
+		27AA5AD62299F8B90059D1A2 /* RootViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
+		27AA5AD72299F8B90059D1A2 /* NewAgeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewAgeViewController.swift; sourceTree = "<group>"; };
+		27AA5AD82299F8B90059D1A2 /* AgesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AgesViewController.swift; sourceTree = "<group>"; };
+		27AA5AD92299F8B90059D1A2 /* AgeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AgeViewController.swift; sourceTree = "<group>"; };
+		27AA5ADA2299F8B90059D1A2 /* LoadingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingViewController.swift; sourceTree = "<group>"; };
+		27AA5ADD2299F8B90059D1A2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		27AA5ADF2299F8B90059D1A2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		27AA5AF42299FB0E0059D1A2 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		27AA5AF72299FB210059D1A2 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		27AA5B142299FC090059D1A2 /* Age Dev.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Age Dev.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		27AA5B172299FC530059D1A2 /* ExportOptions.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = ExportOptions.plist; sourceTree = "<group>"; };
+		27AA5B182299FC530059D1A2 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		274EC08F226118CC00D5E263 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		27AA5B0A2299FC090059D1A2 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -79,6 +108,7 @@
 			isa = PBXGroup;
 			children = (
 				274EC092226118CC00D5E263 /* Age.app */,
+				27AA5B142299FC090059D1A2 /* Age Dev.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -87,29 +117,128 @@
 			isa = PBXGroup;
 			children = (
 				274EC095226118CC00D5E263 /* AppDelegate.swift */,
-				27A3CA56226C403500577985 /* DatabaseManager.swift */,
-				2780C490228F91D200C706CE /* CoreDataUtils.swift */,
-				2780C49E22926E1A00C706CE /* LoadingViewController.swift */,
-				27AA5ABF2299DD700059D1A2 /* RootViewController.swift */,
-				2780C48C228F8EAF00C706CE /* AgesViewController.swift */,
-				2780C492228F98C300C706CE /* NewAgeViewController.swift */,
-				2780C48E228F8FB100C706CE /* AgeTableViewCell.swift */,
-				2720782E229746FA00450603 /* AgeViewController.swift */,
-				27A3CA58226CEACE00577985 /* UserDefaultsUtil.swift */,
-				2780C4A42296E20D00C706CE /* ErrorUtil.swift */,
-				27A3CA5C226D779A00577985 /* Birthday.swift */,
-				2780C49C2292357700C706CE /* RemoteConfig.swift */,
-				2780C494229231D100C706CE /* RemoteConfigManager.swift */,
-				2780C49A2292352800C706CE /* Constants.swift */,
-				274EC099226118CC00D5E263 /* Main.storyboard */,
+				27AA5AF32299FB0E0059D1A2 /* Constants */,
+				27AA5AD12299F8B90059D1A2 /* Cells */,
+				27AA5AD32299F8B90059D1A2 /* Certificates */,
+				27AA5AC42299F8B80059D1A2 /* Database */,
+				27AA5AC12299F8B80059D1A2 /* Models */,
+				27AA5ACE2299F8B90059D1A2 /* Plists */,
+				27AA5ACC2299F8B80059D1A2 /* RemoteConfig */,
+				27AA5ADB2299F8B90059D1A2 /* Storyboards */,
+				27AA5AC92299F8B80059D1A2 /* Utils */,
+				27AA5AD52299F8B90059D1A2 /* ViewControllers */,
 				274EC09F226118D000D5E263 /* Assets.xcassets */,
-				274EC0A1226118D000D5E263 /* LaunchScreen.storyboard */,
-				2780C4A2229629A300C706CE /* ConfigCert.cer */,
-				274EC0A4226118D000D5E263 /* Info.plist */,
-				27AEA4D32298EBC6003E0FCD /* ExportOptions.plist */,
-				274EC09C226118CC00D5E263 /* Age.xcdatamodeld */,
 			);
 			path = Age;
+			sourceTree = "<group>";
+		};
+		27AA5AC12299F8B80059D1A2 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				27AA5AC22299F8B80059D1A2 /* Birthday.swift */,
+				27AA5AC32299F8B80059D1A2 /* RemoteConfig.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		27AA5AC42299F8B80059D1A2 /* Database */ = {
+			isa = PBXGroup;
+			children = (
+				27AA5AC52299F8B80059D1A2 /* Age.xcdatamodeld */,
+				27AA5AC72299F8B80059D1A2 /* DatabaseManager.swift */,
+				27AA5AC82299F8B80059D1A2 /* CoreDataUtils.swift */,
+			);
+			path = Database;
+			sourceTree = "<group>";
+		};
+		27AA5AC92299F8B80059D1A2 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				27AA5ACA2299F8B80059D1A2 /* ErrorUtil.swift */,
+				27AA5ACB2299F8B80059D1A2 /* UserDefaultsUtil.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		27AA5ACC2299F8B80059D1A2 /* RemoteConfig */ = {
+			isa = PBXGroup;
+			children = (
+				27AA5ACD2299F8B80059D1A2 /* RemoteConfigManager.swift */,
+			);
+			path = RemoteConfig;
+			sourceTree = "<group>";
+		};
+		27AA5ACE2299F8B90059D1A2 /* Plists */ = {
+			isa = PBXGroup;
+			children = (
+				27AA5ACF2299F8B90059D1A2 /* ExportOptions.plist */,
+				27AA5AD02299F8B90059D1A2 /* Info.plist */,
+				27AA5B162299FC530059D1A2 /* Dev */,
+			);
+			path = Plists;
+			sourceTree = "<group>";
+		};
+		27AA5AD12299F8B90059D1A2 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				27AA5AD22299F8B90059D1A2 /* AgeTableViewCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		27AA5AD32299F8B90059D1A2 /* Certificates */ = {
+			isa = PBXGroup;
+			children = (
+				27AA5AD42299F8B90059D1A2 /* ConfigCert.cer */,
+			);
+			path = Certificates;
+			sourceTree = "<group>";
+		};
+		27AA5AD52299F8B90059D1A2 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				27AA5AD62299F8B90059D1A2 /* RootViewController.swift */,
+				27AA5AD72299F8B90059D1A2 /* NewAgeViewController.swift */,
+				27AA5AD82299F8B90059D1A2 /* AgesViewController.swift */,
+				27AA5AD92299F8B90059D1A2 /* AgeViewController.swift */,
+				27AA5ADA2299F8B90059D1A2 /* LoadingViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		27AA5ADB2299F8B90059D1A2 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				27AA5ADC2299F8B90059D1A2 /* LaunchScreen.storyboard */,
+				27AA5ADE2299F8B90059D1A2 /* Main.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		27AA5AF32299FB0E0059D1A2 /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				27AA5AF42299FB0E0059D1A2 /* Constants.swift */,
+				27AA5AF62299FB210059D1A2 /* Dev */,
+			);
+			path = Constants;
+			sourceTree = "<group>";
+		};
+		27AA5AF62299FB210059D1A2 /* Dev */ = {
+			isa = PBXGroup;
+			children = (
+				27AA5AF72299FB210059D1A2 /* Constants.swift */,
+			);
+			path = Dev;
+			sourceTree = "<group>";
+		};
+		27AA5B162299FC530059D1A2 /* Dev */ = {
+			isa = PBXGroup;
+			children = (
+				27AA5B172299FC530059D1A2 /* ExportOptions.plist */,
+				27AA5B182299FC530059D1A2 /* Info.plist */,
+			);
+			path = Dev;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -130,6 +259,23 @@
 			name = Age;
 			productName = Age;
 			productReference = 274EC092226118CC00D5E263 /* Age.app */;
+			productType = "com.apple.product-type.application";
+		};
+		27AA5AF82299FC090059D1A2 /* Age Dev */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 27AA5B112299FC090059D1A2 /* Build configuration list for PBXNativeTarget "Age Dev" */;
+			buildPhases = (
+				27AA5AF92299FC090059D1A2 /* Sources */,
+				27AA5B0A2299FC090059D1A2 /* Frameworks */,
+				27AA5B0B2299FC090059D1A2 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Age Dev";
+			productName = Age;
+			productReference = 27AA5B142299FC090059D1A2 /* Age Dev.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -161,6 +307,7 @@
 			projectRoot = "";
 			targets = (
 				274EC091226118CC00D5E263 /* Age */,
+				27AA5AF82299FC090059D1A2 /* Age Dev */,
 			);
 		};
 /* End PBXProject section */
@@ -170,11 +317,20 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				274EC0A3226118D000D5E263 /* LaunchScreen.storyboard in Resources */,
-				27AEA4D42298EBC6003E0FCD /* ExportOptions.plist in Resources */,
 				274EC0A0226118D000D5E263 /* Assets.xcassets in Resources */,
-				2780C4A3229629A300C706CE /* ConfigCert.cer in Resources */,
-				274EC09B226118CC00D5E263 /* Main.storyboard in Resources */,
+				27AA5AEB2299F8B90059D1A2 /* ConfigCert.cer in Resources */,
+				27AA5AF22299F8B90059D1A2 /* Main.storyboard in Resources */,
+				27AA5AF12299F8B90059D1A2 /* LaunchScreen.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		27AA5B0B2299FC090059D1A2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				27AA5B0C2299FC090059D1A2 /* Assets.xcassets in Resources */,
+				27AA5B0F2299FC090059D1A2 /* Main.storyboard in Resources */,
+				27AA5B102299FC090059D1A2 /* LaunchScreen.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -185,42 +341,65 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2780C493228F98C300C706CE /* NewAgeViewController.swift in Sources */,
-				2780C49B2292352800C706CE /* Constants.swift in Sources */,
-				2720782F229746FA00450603 /* AgeViewController.swift in Sources */,
-				27A3CA59226CEACE00577985 /* UserDefaultsUtil.swift in Sources */,
-				274EC09E226118CC00D5E263 /* Age.xcdatamodeld in Sources */,
-				2780C491228F91D200C706CE /* CoreDataUtils.swift in Sources */,
-				27AA5AC02299DD700059D1A2 /* RootViewController.swift in Sources */,
-				2780C48D228F8EAF00C706CE /* AgesViewController.swift in Sources */,
-				27A3CA57226C403500577985 /* DatabaseManager.swift in Sources */,
-				2780C49D2292357700C706CE /* RemoteConfig.swift in Sources */,
-				2780C48F228F8FB100C706CE /* AgeTableViewCell.swift in Sources */,
-				2780C495229231D100C706CE /* RemoteConfigManager.swift in Sources */,
-				27A3CA5D226D779A00577985 /* Birthday.swift in Sources */,
-				2780C49F22926E1A00C706CE /* LoadingViewController.swift in Sources */,
-				2780C4A52296E20D00C706CE /* ErrorUtil.swift in Sources */,
+				27AA5AE62299F8B90059D1A2 /* UserDefaultsUtil.swift in Sources */,
+				27AA5AEF2299F8B90059D1A2 /* AgeViewController.swift in Sources */,
+				27AA5AF02299F8B90059D1A2 /* LoadingViewController.swift in Sources */,
+				27AA5AEC2299F8B90059D1A2 /* RootViewController.swift in Sources */,
+				27AA5AED2299F8B90059D1A2 /* NewAgeViewController.swift in Sources */,
+				27AA5AE42299F8B90059D1A2 /* CoreDataUtils.swift in Sources */,
+				27AA5AE52299F8B90059D1A2 /* ErrorUtil.swift in Sources */,
+				27AA5AF52299FB0E0059D1A2 /* Constants.swift in Sources */,
+				27AA5AEA2299F8B90059D1A2 /* AgeTableViewCell.swift in Sources */,
 				274EC096226118CC00D5E263 /* AppDelegate.swift in Sources */,
+				27AA5AE32299F8B90059D1A2 /* DatabaseManager.swift in Sources */,
+				27AA5AE22299F8B90059D1A2 /* Age.xcdatamodeld in Sources */,
+				27AA5AEE2299F8B90059D1A2 /* AgesViewController.swift in Sources */,
+				27AA5AE72299F8B90059D1A2 /* RemoteConfigManager.swift in Sources */,
+				27AA5AE02299F8B90059D1A2 /* Birthday.swift in Sources */,
+				27AA5AE12299F8B90059D1A2 /* RemoteConfig.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		27AA5AF92299FC090059D1A2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				27AA5AFA2299FC090059D1A2 /* UserDefaultsUtil.swift in Sources */,
+				27AA5AFB2299FC090059D1A2 /* AgeViewController.swift in Sources */,
+				27AA5AFC2299FC090059D1A2 /* LoadingViewController.swift in Sources */,
+				27AA5AFD2299FC090059D1A2 /* RootViewController.swift in Sources */,
+				27AA5AFE2299FC090059D1A2 /* NewAgeViewController.swift in Sources */,
+				27AA5AFF2299FC090059D1A2 /* CoreDataUtils.swift in Sources */,
+				27AA5B002299FC090059D1A2 /* ErrorUtil.swift in Sources */,
+				27AA5B1B2299FC640059D1A2 /* Constants.swift in Sources */,
+				27AA5B022299FC090059D1A2 /* AgeTableViewCell.swift in Sources */,
+				27AA5B032299FC090059D1A2 /* AppDelegate.swift in Sources */,
+				27AA5B042299FC090059D1A2 /* DatabaseManager.swift in Sources */,
+				27AA5B052299FC090059D1A2 /* Age.xcdatamodeld in Sources */,
+				27AA5B062299FC090059D1A2 /* AgesViewController.swift in Sources */,
+				27AA5B072299FC090059D1A2 /* RemoteConfigManager.swift in Sources */,
+				27AA5B082299FC090059D1A2 /* Birthday.swift in Sources */,
+				27AA5B092299FC090059D1A2 /* RemoteConfig.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		274EC099226118CC00D5E263 /* Main.storyboard */ = {
+		27AA5ADC2299F8B90059D1A2 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				274EC09A226118CC00D5E263 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		274EC0A1226118D000D5E263 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				274EC0A2226118D000D5E263 /* Base */,
+				27AA5ADD2299F8B90059D1A2 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		27AA5ADE2299F8B90059D1A2 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				27AA5ADF2299F8B90059D1A2 /* Base */,
+			);
+			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -277,6 +456,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_FILE = Age/Plists/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -332,6 +512,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_FILE = Age/Plists/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
@@ -348,7 +529,6 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = T25FTV2NX7;
-				INFOPLIST_FILE = Age/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -366,12 +546,47 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = T25FTV2NX7;
-				INFOPLIST_FILE = Age/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.aminheidari.Age;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		27AA5B122299FC090059D1A2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = T25FTV2NX7;
+				INFOPLIST_FILE = Age/Plists/Dev/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.aminheidari.Age.dev;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		27AA5B132299FC090059D1A2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = T25FTV2NX7;
+				INFOPLIST_FILE = Age/Plists/Dev/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.aminheidari.Age.dev;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -399,15 +614,24 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
+		27AA5B112299FC090059D1A2 /* Build configuration list for PBXNativeTarget "Age Dev" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				27AA5B122299FC090059D1A2 /* Debug */,
+				27AA5B132299FC090059D1A2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		274EC09C226118CC00D5E263 /* Age.xcdatamodeld */ = {
+		27AA5AC52299F8B80059D1A2 /* Age.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				274EC09D226118CC00D5E263 /* Age.xcdatamodel */,
+				27AA5AC62299F8B80059D1A2 /* Age.xcdatamodel */,
 			);
-			currentVersion = 274EC09D226118CC00D5E263 /* Age.xcdatamodel */;
+			currentVersion = 27AA5AC62299F8B80059D1A2 /* Age.xcdatamodel */;
 			path = Age.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
