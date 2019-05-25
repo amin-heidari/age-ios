@@ -26,6 +26,7 @@
 		27A3CA57226C403500577985 /* DatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27A3CA56226C403500577985 /* DatabaseManager.swift */; };
 		27A3CA59226CEACE00577985 /* UserDefaultsUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27A3CA58226CEACE00577985 /* UserDefaultsUtil.swift */; };
 		27A3CA5D226D779A00577985 /* Birthday.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27A3CA5C226D779A00577985 /* Birthday.swift */; };
+		27AEA4D42298EBC6003E0FCD /* ExportOptions.plist in Resources */ = {isa = PBXBuildFile; fileRef = 27AEA4D32298EBC6003E0FCD /* ExportOptions.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +51,7 @@
 		27A3CA56226C403500577985 /* DatabaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseManager.swift; sourceTree = "<group>"; };
 		27A3CA58226CEACE00577985 /* UserDefaultsUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsUtil.swift; sourceTree = "<group>"; };
 		27A3CA5C226D779A00577985 /* Birthday.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Birthday.swift; sourceTree = "<group>"; };
+		27AEA4D32298EBC6003E0FCD /* ExportOptions.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = ExportOptions.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +103,7 @@
 				274EC0A1226118D000D5E263 /* LaunchScreen.storyboard */,
 				2780C4A2229629A300C706CE /* ConfigCert.cer */,
 				274EC0A4226118D000D5E263 /* Info.plist */,
+				27AEA4D32298EBC6003E0FCD /* ExportOptions.plist */,
 				274EC09C226118CC00D5E263 /* Age.xcdatamodeld */,
 			);
 			path = Age;
@@ -165,6 +168,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				274EC0A3226118D000D5E263 /* LaunchScreen.storyboard in Resources */,
+				27AEA4D42298EBC6003E0FCD /* ExportOptions.plist in Resources */,
 				274EC0A0226118D000D5E263 /* Assets.xcassets in Resources */,
 				2780C4A3229629A300C706CE /* ConfigCert.cer in Resources */,
 				274EC09B226118CC00D5E263 /* Main.storyboard in Resources */,
