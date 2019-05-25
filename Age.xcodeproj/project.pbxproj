@@ -26,6 +26,7 @@
 		27A3CA57226C403500577985 /* DatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27A3CA56226C403500577985 /* DatabaseManager.swift */; };
 		27A3CA59226CEACE00577985 /* UserDefaultsUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27A3CA58226CEACE00577985 /* UserDefaultsUtil.swift */; };
 		27A3CA5D226D779A00577985 /* Birthday.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27A3CA5C226D779A00577985 /* Birthday.swift */; };
+		27AA5AC02299DD700059D1A2 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27AA5ABF2299DD700059D1A2 /* RootViewController.swift */; };
 		27AEA4D42298EBC6003E0FCD /* ExportOptions.plist in Resources */ = {isa = PBXBuildFile; fileRef = 27AEA4D32298EBC6003E0FCD /* ExportOptions.plist */; };
 /* End PBXBuildFile section */
 
@@ -51,6 +52,7 @@
 		27A3CA56226C403500577985 /* DatabaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseManager.swift; sourceTree = "<group>"; };
 		27A3CA58226CEACE00577985 /* UserDefaultsUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsUtil.swift; sourceTree = "<group>"; };
 		27A3CA5C226D779A00577985 /* Birthday.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Birthday.swift; sourceTree = "<group>"; };
+		27AA5ABF2299DD700059D1A2 /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
 		27AEA4D32298EBC6003E0FCD /* ExportOptions.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = ExportOptions.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -88,6 +90,7 @@
 				27A3CA56226C403500577985 /* DatabaseManager.swift */,
 				2780C490228F91D200C706CE /* CoreDataUtils.swift */,
 				2780C49E22926E1A00C706CE /* LoadingViewController.swift */,
+				27AA5ABF2299DD700059D1A2 /* RootViewController.swift */,
 				2780C48C228F8EAF00C706CE /* AgesViewController.swift */,
 				2780C492228F98C300C706CE /* NewAgeViewController.swift */,
 				2780C48E228F8FB100C706CE /* AgeTableViewCell.swift */,
@@ -188,6 +191,7 @@
 				27A3CA59226CEACE00577985 /* UserDefaultsUtil.swift in Sources */,
 				274EC09E226118CC00D5E263 /* Age.xcdatamodeld in Sources */,
 				2780C491228F91D200C706CE /* CoreDataUtils.swift in Sources */,
+				27AA5AC02299DD700059D1A2 /* RootViewController.swift in Sources */,
 				2780C48D228F8EAF00C706CE /* AgesViewController.swift in Sources */,
 				27A3CA57226C403500577985 /* DatabaseManager.swift in Sources */,
 				2780C49D2292357700C706CE /* RemoteConfig.swift in Sources */,
