@@ -10,8 +10,8 @@
 	<string>iOS Distribution</string>
 	<key>provisioningProfiles</key>
 	<dict>
-		<key>com.aminheidari.Age</key>
-		<string>Age</string>
+		<key>com.aminheidari.Age.dev</key>
+		<string>Age Dev</string>
 	</dict>
 	<key>signingStyle</key>
 	<string>manual</string>
