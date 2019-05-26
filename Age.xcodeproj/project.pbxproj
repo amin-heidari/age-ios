@@ -46,6 +46,7 @@
 		27AA5B0F2299FC090059D1A2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 27AA5ADE2299F8B90059D1A2 /* Main.storyboard */; };
 		27AA5B102299FC090059D1A2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 27AA5ADC2299F8B90059D1A2 /* LaunchScreen.storyboard */; };
 		27AA5B1B2299FC640059D1A2 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27AA5AF72299FB210059D1A2 /* Constants.swift */; };
+		27AA5B1E229A0F910059D1A2 /* ConfigCert.cer in Resources */ = {isa = PBXBuildFile; fileRef = 27AA5B1D229A0F910059D1A2 /* ConfigCert.cer */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -76,6 +77,7 @@
 		27AA5B142299FC090059D1A2 /* Age Dev.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Age Dev.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		27AA5B172299FC530059D1A2 /* ExportOptions.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = ExportOptions.plist; sourceTree = "<group>"; };
 		27AA5B182299FC530059D1A2 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		27AA5B1D229A0F910059D1A2 /* ConfigCert.cer */ = {isa = PBXFileReference; lastKnownFileType = file; path = ConfigCert.cer; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -190,6 +192,7 @@
 			isa = PBXGroup;
 			children = (
 				27AA5AD42299F8B90059D1A2 /* ConfigCert.cer */,
+				27AA5B1C229A0F910059D1A2 /* Dev */,
 			);
 			path = Certificates;
 			sourceTree = "<group>";
@@ -237,6 +240,14 @@
 			children = (
 				27AA5B172299FC530059D1A2 /* ExportOptions.plist */,
 				27AA5B182299FC530059D1A2 /* Info.plist */,
+			);
+			path = Dev;
+			sourceTree = "<group>";
+		};
+		27AA5B1C229A0F910059D1A2 /* Dev */ = {
+			isa = PBXGroup;
+			children = (
+				27AA5B1D229A0F910059D1A2 /* ConfigCert.cer */,
 			);
 			path = Dev;
 			sourceTree = "<group>";
@@ -330,6 +341,7 @@
 			files = (
 				27AA5B0C2299FC090059D1A2 /* Assets.xcassets in Resources */,
 				27AA5B0F2299FC090059D1A2 /* Main.storyboard in Resources */,
+				27AA5B1E229A0F910059D1A2 /* ConfigCert.cer in Resources */,
 				27AA5B102299FC090059D1A2 /* LaunchScreen.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
