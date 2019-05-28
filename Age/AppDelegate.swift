@@ -45,3 +45,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 }
 
+// Template to be used on all types:
+
+// MARK: - Constants/Types
+
+// MARK: - API
+
+// MARK: - Life Cycle
+
+// MARK: - Properties
+
+// MARK: - Methods
+
+// MARK: - Delegate
+
+// MARK: - Delegate
+

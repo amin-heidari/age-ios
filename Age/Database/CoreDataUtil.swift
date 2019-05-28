@@ -9,8 +9,10 @@
 import Foundation
 
 extension BirthdayEntity {
+    
     var birthday: Birthday? {
         guard let birthDate = birth_date, let name = name else { return nil }
         return Birthday(birthDate: birthDate, name: name)
     }
+    
 }

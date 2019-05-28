@@ -10,20 +10,20 @@ import Foundation
 
 class RemoteConfigManager: NSObject {
     
+    // MARK: - Constants/Types
+    
     private struct CachedRemoteConfig: Codable {
         let remoteConfig: RemoteConfig
         let cachedTime: Date
         
         var isFresh: Bool {
-            return cachedTime.compare(Date().addingTimeInterval(-Constants.RemoteConfig.FreshCacheTime)) == .orderedDescending
+            return cachedTime.compare(Date().addingTimeInterval(-Constants.RemoteConfig.freshCacheTime)) == .orderedDescending
         }
         
         var isExpired: Bool {
-            return cachedTime.compare(Date().addingTimeInterval(-Constants.RemoteConfig.ExpireTime)) == .orderedAscending
+            return cachedTime.compare(Date().addingTimeInterval(-Constants.RemoteConfig.expireTime)) == .orderedAscending
         }
     }
-    
-    static let shared = RemoteConfigManager()
     
     typealias Completion = (_ result: Result) -> Void
     
@@ -39,20 +39,16 @@ class RemoteConfigManager: NSObject {
         case error(_ error: ConfigError)
     }
     
-    private lazy var urlSession: URLSession = {
-        let configuration = URLSessionConfiguration.ephemeral
-        return URLSession(
-            configuration: configuration,
-            delegate: self,
-            delegateQueue: nil
-        )
-    }()
+    // Singleton instance.
+    static let shared = RemoteConfigManager()
+    
+    // MARK: - API
     
     func fetchConfig(completion: @escaping Completion) {
         // Check if there's a fresh copy of the remote config cached.
         guard let freshCache = cachedRemoteConfig, freshCache.isFresh else {
             // There either isn't a cache, or if there is one, it's not fresh. So try to make the api call.
-            urlSession.dataTask(with: URL(string: Constants.RemoteConfig.URL)!) { [unowned self] (data, urlResponse, error) in
+            urlSession.dataTask(with: URL(string: Constants.RemoteConfig.url)!) { [unowned self] (data, urlResponse, error) in
                 if let error = error {
                     if error.code == NSURLErrorCancelled {
                         // Error code being NSURLErrorCancelled doesn't mean certificate pinning has failed,
@@ -93,6 +89,22 @@ class RemoteConfigManager: NSObject {
         return config
     }
     
+    // MARK: - Life Cycle
+    
+    // In order to avoid instances other than `shared` to be created for this type.
+    private override init() { }
+    
+    // MARK: - Properties
+    
+    private lazy var urlSession: URLSession = {
+        let configuration = URLSessionConfiguration.ephemeral
+        return URLSession(
+            configuration: configuration,
+            delegate: self,
+            delegateQueue: nil
+        )
+    }()
+    
     private var cachedRemoteConfig: CachedRemoteConfig? {
         get {
             guard let data = UserDefaults.standard.object(forKey: UserDefaultsUtil.Keys.CachedRemoteConfig.rawValue) as? Data,
@@ -111,6 +123,7 @@ class RemoteConfigManager: NSObject {
     
 }
 
+// MARK: - URLSessionDelegate
 extension RemoteConfigManager: URLSessionDelegate {
     
     func urlSession(_ session: URLSession, didReceive challenge: URLAuthenticationChallenge, completionHandler: @escaping (URLSession.AuthChallengeDisposition, URLCredential?) -> Void) {
@@ -128,7 +141,7 @@ extension RemoteConfigManager: URLSessionDelegate {
                         let size = CFDataGetLength(serverCertificateData);
                         let remoteCert = NSData(bytes: data, length: size)
                         
-                        if remoteCert.isEqual(to: try! NSData(contentsOfFile: Bundle.main.path(forResource: "ConfigCert", ofType: "cer")!) as Data) {
+                        if remoteCert.isEqual(to: try! NSData(contentsOfFile: Bundle.main.path(forResource: "Config", ofType: "cer")!) as Data) {
                             completionHandler(URLSession.AuthChallengeDisposition.useCredential, URLCredential(trust:serverTrust))
                             return
                         }

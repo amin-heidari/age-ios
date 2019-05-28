@@ -15,10 +15,8 @@ class UserDefaultsUtil {
         case CachedRemoteConfig
     }
     
-    static let shared = UserDefaultsUtil()
-    
     // https://fluffy.es/saving-custom-object-into-userdefaults/
-    var defaultBirthday: Birthday? {
+    static var defaultBirthday: Birthday? {
         get {
             guard let data = UserDefaults.standard.object(forKey: Keys.DefaultBirthday.rawValue) as? Data,
                 let birthday = try? PropertyListDecoder().decode(Birthday.self, from: data) else { return nil }

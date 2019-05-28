@@ -10,64 +10,21 @@ import UIKit
 import CoreData
 
 class DatabaseManager {
-    // Singleton instance.
-    static let shared = DatabaseManager()
     
-    // MARK: - Other constants/types
+    // MARK: - Constants/Types
     
     typealias Completion = (_ birthdayEntity: BirthdayEntity) -> Void
     
-    enum Entity: String {
+    private enum Entity: String {
         case BirthdayEntity
     }
     
-    // MARK: - Core Data stack
+    // Singleton instance.
+    static let shared = DatabaseManager()
     
-    lazy private(set) var persistentContainer: NSPersistentContainer = {
-        /*
-         The persistent container for the application. This implementation
-         creates and returns a container, having loaded the store for the
-         application to it. This property is optional since there are legitimate
-         error conditions that could cause the creation of the store to fail.
-         */
-        let container = NSPersistentContainer(name: "Age")
-        container.loadPersistentStores(completionHandler: { (storeDescription, error) in
-            if let error = error as NSError? {
-                // Replace this implementation with code to handle the error appropriately.
-                // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
-                
-                /*
-                 Typical reasons for an error here include:
-                 * The parent directory does not exist, cannot be created, or disallows writing.
-                 * The persistent store is not accessible, due to permissions or data protection when the device is locked.
-                 * The device is out of space.
-                 * The store could not be migrated to the current model version.
-                 Check the error message to determine what the actual problem was.
-                 */
-                fatalError("Unresolved error \(error), \(error.userInfo)")
-            }
-        })
-        
-        // Merge the changes from other contexts automatically.
-        // See this sample code for more details:
-        // https://developer.apple.com/documentation/coredata/loading_and_displaying_a_large_data_feed
-        container.viewContext.automaticallyMergesChangesFromParent = true
-        container.viewContext.mergePolicy = NSMergeByPropertyObjectTrumpMergePolicy
-        container.viewContext.undoManager = nil
-        container.viewContext.shouldDeleteInaccessibleFaults = true
-        
-        return container
-    }()
+    // MARK: - API
     
-    // In order to do things asyncronously.
-    lazy private var backgroundContext: NSManagedObjectContext = {
-        let taskContext = self.persistentContainer.newBackgroundContext()
-        taskContext.mergePolicy = NSMergeByPropertyObjectTrumpMergePolicy
-        taskContext.undoManager = nil
-        return taskContext
-    }()
-    
-    // MARK: - Core Data Saving support
+    // MARK: Core Data Saving support
     
     func saveContext () {
         let context = persistentContainer.viewContext
@@ -83,7 +40,7 @@ class DatabaseManager {
         }
     }
     
-    // 
+    // MARK: Database Operations
     
     // Async.
     func addBirthday(_ birthday: Birthday, completion: @escaping Completion) {
@@ -143,5 +100,58 @@ class DatabaseManager {
             fatalError("Unresolved error: \(error)")
         }
         return controller
+    }()
+    
+    // MARK: - Life Cycle
+    
+    // In order to avoid instances other than `shared` to be created for this type.
+    private init() { }
+    
+    // MARK: - Properties
+    
+    // MARK: Core Data stack
+    
+    lazy private(set) var persistentContainer: NSPersistentContainer = {
+        /*
+         The persistent container for the application. This implementation
+         creates and returns a container, having loaded the store for the
+         application to it. This property is optional since there are legitimate
+         error conditions that could cause the creation of the store to fail.
+         */
+        let container = NSPersistentContainer(name: "Age")
+        container.loadPersistentStores(completionHandler: { (storeDescription, error) in
+            if let error = error as NSError? {
+                // Replace this implementation with code to handle the error appropriately.
+                // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
+                
+                /*
+                 Typical reasons for an error here include:
+                 * The parent directory does not exist, cannot be created, or disallows writing.
+                 * The persistent store is not accessible, due to permissions or data protection when the device is locked.
+                 * The device is out of space.
+                 * The store could not be migrated to the current model version.
+                 Check the error message to determine what the actual problem was.
+                 */
+                fatalError("Unresolved error \(error), \(error.userInfo)")
+            }
+        })
+        
+        // Merge the changes from other contexts automatically.
+        // See this sample code for more details:
+        // https://developer.apple.com/documentation/coredata/loading_and_displaying_a_large_data_feed
+        container.viewContext.automaticallyMergesChangesFromParent = true
+        container.viewContext.mergePolicy = NSMergeByPropertyObjectTrumpMergePolicy
+        container.viewContext.undoManager = nil
+        container.viewContext.shouldDeleteInaccessibleFaults = true
+        
+        return container
+    }()
+    
+    // In order to do things asyncronously.
+    lazy private var backgroundContext: NSManagedObjectContext = {
+        let taskContext = self.persistentContainer.newBackgroundContext()
+        taskContext.mergePolicy = NSMergeByPropertyObjectTrumpMergePolicy
+        taskContext.undoManager = nil
+        return taskContext
     }()
 }
