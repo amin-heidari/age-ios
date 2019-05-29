@@ -49,6 +49,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 // MARK: - Constants/Types
 
+// MARK: - Static
+
 // MARK: - API
 
 // MARK: - Life Cycle

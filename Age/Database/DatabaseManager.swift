@@ -13,11 +13,11 @@ class DatabaseManager {
     
     // MARK: - Constants/Types
     
-    typealias Completion = (_ birthdayEntity: BirthdayEntity) -> Void
-    
     private enum Entity: String {
         case BirthdayEntity
     }
+    
+    // MARK: - Static
     
     // Singleton instance.
     static let shared = DatabaseManager()
@@ -43,7 +43,7 @@ class DatabaseManager {
     // MARK: Database Operations
     
     // Async.
-    func addBirthday(_ birthday: Birthday, completion: @escaping Completion) {
+    func addBirthday(_ birthday: Birthday, completion: @escaping Completion<BirthdayEntity>) {
         backgroundContext.perform {
             guard let birthdayEntity = NSEntityDescription.insertNewObject(forEntityName: Entity.BirthdayEntity.rawValue, into: self.backgroundContext) as? BirthdayEntity else {
                 fatalError("Failed!")
@@ -56,7 +56,7 @@ class DatabaseManager {
             try? self.backgroundContext.save()
             
             DispatchQueue.main.async {
-                completion(birthdayEntity)
+                completion(.success(birthdayEntity))
             }
         }
     }

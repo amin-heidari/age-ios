@@ -25,8 +25,6 @@ class RemoteConfigManager: NSObject {
         }
     }
     
-    typealias Completion = (_ result: Result) -> Void
-    
     enum ConfigError: Error {
         case connection // Failed to connect.
         case certificateExpired // The pinned certificate is expired. An app update should be in the store with the new certificate soon.
@@ -34,17 +32,14 @@ class RemoteConfigManager: NSObject {
         case unknown // Other (unknown) errors.
     }
     
-    enum Result {
-        case success(_ remoteConfig: RemoteConfig)
-        case error(_ error: ConfigError)
-    }
+    // MARK: - Static
     
     // Singleton instance.
     static let shared = RemoteConfigManager()
     
     // MARK: - API
     
-    func fetchConfig(completion: @escaping Completion) {
+    func fetchConfig(completion: @escaping Completion<RemoteConfig>) {
         // Check if there's a fresh copy of the remote config cached.
         guard let freshCache = cachedRemoteConfig, freshCache.isFresh else {
             // There either isn't a cache, or if there is one, it's not fresh. So try to make the api call.
