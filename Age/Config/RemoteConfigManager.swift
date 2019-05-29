@@ -49,7 +49,7 @@ class RemoteConfigManager: NSObject {
                         // Error code being NSURLErrorCancelled doesn't mean certificate pinning has failed,
                         // but certificate pinning failure will give NSURLErrorCancelled always.
                         // So there may be some false positives here, but that's alright for now.
-                        DispatchQueue.main.async { completion(.error(ConfigError.certificateExpired)) }
+                        DispatchQueue.main.async { completion(.failure(ConfigError.certificateExpired)) }
                     } else if error.code == NSURLErrorNotConnectedToInternet {
                         // There was no internet connection, see if there's a non-expired cached copy to use.
                         // The !cache.isExpired is kinda redundant because the property accessor would have deleted the cache if it was expired.
@@ -57,14 +57,14 @@ class RemoteConfigManager: NSObject {
                         if let cached = self.cachedRemoteConfig, !cached.isExpired {
                             DispatchQueue.main.async { completion(.success(cached.remoteConfig)) }
                         } else {
-                            DispatchQueue.main.async { completion(.error(ConfigError.connection)) }
+                            DispatchQueue.main.async { completion(.failure(ConfigError.connection)) }
                         }
                     } else {
-                        DispatchQueue.main.async { completion(.error(ConfigError.unknown)) }
+                        DispatchQueue.main.async { completion(.failure(ConfigError.unknown)) }
                     }
                 } else {
                     guard let data = data, let remoteConfig = try? JSONDecoder().decode(RemoteConfig.self, from: data) else {
-                        DispatchQueue.main.async { completion(.error(ConfigError.parsing)) }
+                        DispatchQueue.main.async { completion(.failure(ConfigError.parsing)) }
                         return
                     }
                     self.cachedRemoteConfig = CachedRemoteConfig(remoteConfig: remoteConfig, cachedTime: Date())

@@ -17,7 +17,7 @@ class LoadingViewController: UIViewController {
         
         RemoteConfigManager.shared.fetchConfig { (result) in
             switch result {
-            case .error(let error):
+            case .failure(let error):
                 _ = error
             case .success(_):
                 let a = 3
