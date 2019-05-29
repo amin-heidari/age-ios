@@ -10,5 +10,5 @@ import Foundation
 
 enum Either<T> {
     case success(_ data: T)
-    case error(_ error: Error)
+    case failure(_ error: Error)
 }
