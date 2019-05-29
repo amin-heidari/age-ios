@@ -15,7 +15,6 @@
 		27AA5AE32299F8B90059D1A2 /* DatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27AA5AC72299F8B80059D1A2 /* DatabaseManager.swift */; };
 		27AA5AE52299F8B90059D1A2 /* ErrorUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27AA5ACA2299F8B80059D1A2 /* ErrorUtil.swift */; };
 		27AA5AE62299F8B90059D1A2 /* UserDefaultsUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27AA5ACB2299F8B80059D1A2 /* UserDefaultsUtil.swift */; };
-		27AA5AE72299F8B90059D1A2 /* RemoteConfigManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27AA5ACD2299F8B80059D1A2 /* RemoteConfigManager.swift */; };
 		27AA5AEA2299F8B90059D1A2 /* AgeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27AA5AD22299F8B90059D1A2 /* AgeTableViewCell.swift */; };
 		27AA5AEC2299F8B90059D1A2 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27AA5AD62299F8B90059D1A2 /* RootViewController.swift */; };
 		27AA5AED2299F8B90059D1A2 /* NewAgeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27AA5AD72299F8B90059D1A2 /* NewAgeViewController.swift */; };
@@ -36,7 +35,6 @@
 		27AA5B042299FC090059D1A2 /* DatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27AA5AC72299F8B80059D1A2 /* DatabaseManager.swift */; };
 		27AA5B052299FC090059D1A2 /* Age.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 27AA5AC52299F8B80059D1A2 /* Age.xcdatamodeld */; };
 		27AA5B062299FC090059D1A2 /* AgesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27AA5AD82299F8B90059D1A2 /* AgesViewController.swift */; };
-		27AA5B072299FC090059D1A2 /* RemoteConfigManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27AA5ACD2299F8B80059D1A2 /* RemoteConfigManager.swift */; };
 		27AA5B082299FC090059D1A2 /* Birthday.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27AA5AC22299F8B80059D1A2 /* Birthday.swift */; };
 		27AA5B092299FC090059D1A2 /* RemoteConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27AA5AC32299F8B80059D1A2 /* RemoteConfig.swift */; };
 		27AA5B0C2299FC090059D1A2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 274EC09F226118D000D5E263 /* Assets.xcassets */; };
@@ -47,6 +45,8 @@
 		27AA5B2C229DF7AA0059D1A2 /* Config.cer in Resources */ = {isa = PBXBuildFile; fileRef = 27AA5B28229DF7AA0059D1A2 /* Config.cer */; };
 		27AA5B2E229DFD520059D1A2 /* CoreDataUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27AA5B2D229DFD520059D1A2 /* CoreDataUtil.swift */; };
 		27AA5B2F229DFD520059D1A2 /* CoreDataUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27AA5B2D229DFD520059D1A2 /* CoreDataUtil.swift */; };
+		27C257CA229F0CEA00EFAA33 /* RemoteConfigManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27C257C9229F0CEA00EFAA33 /* RemoteConfigManager.swift */; };
+		27C257CB229F0CEA00EFAA33 /* RemoteConfigManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27C257C9229F0CEA00EFAA33 /* RemoteConfigManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -59,7 +59,6 @@
 		27AA5AC72299F8B80059D1A2 /* DatabaseManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatabaseManager.swift; sourceTree = "<group>"; };
 		27AA5ACA2299F8B80059D1A2 /* ErrorUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorUtil.swift; sourceTree = "<group>"; };
 		27AA5ACB2299F8B80059D1A2 /* UserDefaultsUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDefaultsUtil.swift; sourceTree = "<group>"; };
-		27AA5ACD2299F8B80059D1A2 /* RemoteConfigManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RemoteConfigManager.swift; sourceTree = "<group>"; };
 		27AA5ACF2299F8B90059D1A2 /* ExportOptions.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = ExportOptions.plist; sourceTree = "<group>"; };
 		27AA5AD02299F8B90059D1A2 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		27AA5AD22299F8B90059D1A2 /* AgeTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AgeTableViewCell.swift; sourceTree = "<group>"; };
@@ -78,6 +77,7 @@
 		27AA5B26229DF7AA0059D1A2 /* Config.cer */ = {isa = PBXFileReference; lastKnownFileType = file; path = Config.cer; sourceTree = "<group>"; };
 		27AA5B28229DF7AA0059D1A2 /* Config.cer */ = {isa = PBXFileReference; lastKnownFileType = file; path = Config.cer; sourceTree = "<group>"; };
 		27AA5B2D229DFD520059D1A2 /* CoreDataUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CoreDataUtil.swift; path = Age/Database/CoreDataUtil.swift; sourceTree = SOURCE_ROOT; };
+		27C257C9229F0CEA00EFAA33 /* RemoteConfigManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RemoteConfigManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,7 +125,7 @@
 				27AA5AC42299F8B80059D1A2 /* Database */,
 				27AA5AC12299F8B80059D1A2 /* Models */,
 				27AA5ACE2299F8B90059D1A2 /* Plists */,
-				27AA5ACC2299F8B80059D1A2 /* RemoteConfig */,
+				27C257C8229F0CEA00EFAA33 /* Config */,
 				27AA5ADB2299F8B90059D1A2 /* Storyboards */,
 				27AA5AC92299F8B80059D1A2 /* Utils */,
 				27AA5AD52299F8B90059D1A2 /* ViewControllers */,
@@ -160,14 +160,6 @@
 				27AA5B2D229DFD520059D1A2 /* CoreDataUtil.swift */,
 			);
 			path = Utils;
-			sourceTree = "<group>";
-		};
-		27AA5ACC2299F8B80059D1A2 /* RemoteConfig */ = {
-			isa = PBXGroup;
-			children = (
-				27AA5ACD2299F8B80059D1A2 /* RemoteConfigManager.swift */,
-			);
-			path = RemoteConfig;
 			sourceTree = "<group>";
 		};
 		27AA5ACE2299F8B90059D1A2 /* Plists */ = {
@@ -250,6 +242,14 @@
 				27AA5B28229DF7AA0059D1A2 /* Config.cer */,
 			);
 			path = Dev;
+			sourceTree = "<group>";
+		};
+		27C257C8229F0CEA00EFAA33 /* Config */ = {
+			isa = PBXGroup;
+			children = (
+				27C257C9229F0CEA00EFAA33 /* RemoteConfigManager.swift */,
+			);
+			path = Config;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -354,6 +354,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				27AA5AE62299F8B90059D1A2 /* UserDefaultsUtil.swift in Sources */,
+				27C257CA229F0CEA00EFAA33 /* RemoteConfigManager.swift in Sources */,
 				27AA5AEF2299F8B90059D1A2 /* AgeViewController.swift in Sources */,
 				27AA5AF02299F8B90059D1A2 /* LoadingViewController.swift in Sources */,
 				27AA5AEC2299F8B90059D1A2 /* RootViewController.swift in Sources */,
@@ -365,7 +366,6 @@
 				27AA5AE32299F8B90059D1A2 /* DatabaseManager.swift in Sources */,
 				27AA5AE22299F8B90059D1A2 /* Age.xcdatamodeld in Sources */,
 				27AA5AEE2299F8B90059D1A2 /* AgesViewController.swift in Sources */,
-				27AA5AE72299F8B90059D1A2 /* RemoteConfigManager.swift in Sources */,
 				27AA5AE02299F8B90059D1A2 /* Birthday.swift in Sources */,
 				27AA5B2E229DFD520059D1A2 /* CoreDataUtil.swift in Sources */,
 				27AA5AE12299F8B90059D1A2 /* RemoteConfig.swift in Sources */,
@@ -377,6 +377,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				27AA5AFA2299FC090059D1A2 /* UserDefaultsUtil.swift in Sources */,
+				27C257CB229F0CEA00EFAA33 /* RemoteConfigManager.swift in Sources */,
 				27AA5AFB2299FC090059D1A2 /* AgeViewController.swift in Sources */,
 				27AA5AFC2299FC090059D1A2 /* LoadingViewController.swift in Sources */,
 				27AA5AFD2299FC090059D1A2 /* RootViewController.swift in Sources */,
@@ -388,7 +389,6 @@
 				27AA5B042299FC090059D1A2 /* DatabaseManager.swift in Sources */,
 				27AA5B052299FC090059D1A2 /* Age.xcdatamodeld in Sources */,
 				27AA5B062299FC090059D1A2 /* AgesViewController.swift in Sources */,
-				27AA5B072299FC090059D1A2 /* RemoteConfigManager.swift in Sources */,
 				27AA5B082299FC090059D1A2 /* Birthday.swift in Sources */,
 				27AA5B2F229DFD520059D1A2 /* CoreDataUtil.swift in Sources */,
 				27AA5B092299FC090059D1A2 /* RemoteConfig.swift in Sources */,
