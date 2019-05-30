@@ -12,7 +12,7 @@ class RemoteConfigManager: NSObject {
     
     // MARK: - Constants/Types
     
-    private struct CachedRemoteConfig: Codable {
+    struct CachedRemoteConfig: Codable {
         let remoteConfig: RemoteConfig
         let cachedTime: Date
         
@@ -29,7 +29,6 @@ class RemoteConfigManager: NSObject {
         case connection // Failed to connect.
         case certificateExpired // The pinned certificate is expired. An app update should be in the store with the new certificate soon.
         case parsing // Failed to parse remote config response payload.
-        case unknown // Other (unknown) errors.
     }
     
     // MARK: - Static
@@ -60,7 +59,7 @@ class RemoteConfigManager: NSObject {
                             DispatchQueue.main.async { completion(.failure(ConfigError.connection)) }
                         }
                     } else {
-                        DispatchQueue.main.async { completion(.failure(ConfigError.unknown)) }
+                        DispatchQueue.main.async { completion(.failure(error)) }
                     }
                 } else {
                     guard let data = data, let remoteConfig = try? JSONDecoder().decode(RemoteConfig.self, from: data) else {
@@ -100,19 +99,19 @@ class RemoteConfigManager: NSObject {
         )
     }()
     
+    /// This computed property is the only place in the app wherein `UserDefaultsUtil.cachedRemoteConfig` is used.
     private var cachedRemoteConfig: CachedRemoteConfig? {
         get {
-            guard let data = UserDefaults.standard.object(forKey: UserDefaultsUtil.Keys.CachedRemoteConfig.rawValue) as? Data,
-                let cachedRemoteConfig = try? PropertyListDecoder().decode(CachedRemoteConfig.self, from: data) else { return nil }
+            guard let cachedRemoteConfig = UserDefaultsUtil.cachedRemoteConfig else { return nil }
             if (cachedRemoteConfig.isExpired) {
-                UserDefaults.standard.set(nil, forKey: UserDefaultsUtil.Keys.CachedRemoteConfig.rawValue)
+                UserDefaultsUtil.cachedRemoteConfig = nil
                 return nil
             } else {
                 return cachedRemoteConfig
             }
         }
         set(newValue){
-            UserDefaults.standard.set(try? PropertyListEncoder().encode(newValue), forKey: UserDefaultsUtil.Keys.CachedRemoteConfig.rawValue)
+            UserDefaultsUtil.cachedRemoteConfig = newValue
         }
     }
     
