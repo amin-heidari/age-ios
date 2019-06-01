@@ -53,6 +53,7 @@ class RemoteConfigManager: NSObject {
                         completion(.failure(error))
                     }
                 case .success(let data):
+                    // Update the cache.
                     self.cachedRemoteConfig = CachedRemoteConfig(remoteConfig: data, cachedTime: Date())
                     completion(.success(data))
                 }

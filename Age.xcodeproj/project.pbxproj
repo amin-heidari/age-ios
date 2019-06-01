@@ -55,6 +55,12 @@
 		27C257D422A20F5200EFAA33 /* URLSessionUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27C257D222A20F5200EFAA33 /* URLSessionUtil.swift */; };
 		27C257D622A2102600EFAA33 /* AppError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27C257D522A2102600EFAA33 /* AppError.swift */; };
 		27C257D722A2102600EFAA33 /* AppError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27C257D522A2102600EFAA33 /* AppError.swift */; };
+		27C257E022A30AA100EFAA33 /* ReplaceRootSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27C257DF22A30AA100EFAA33 /* ReplaceRootSegue.swift */; };
+		27C257E122A30AA100EFAA33 /* ReplaceRootSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27C257DF22A30AA100EFAA33 /* ReplaceRootSegue.swift */; };
+		27C257E622A30B7800EFAA33 /* AppNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27C257E522A30B7800EFAA33 /* AppNavigationController.swift */; };
+		27C257E722A30B7800EFAA33 /* AppNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27C257E522A30B7800EFAA33 /* AppNavigationController.swift */; };
+		27C257E922A3138400EFAA33 /* UpgradeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27C257E822A3138400EFAA33 /* UpgradeViewController.swift */; };
+		27C257EA22A3138400EFAA33 /* UpgradeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27C257E822A3138400EFAA33 /* UpgradeViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -90,6 +96,9 @@
 		27C257CF229F131E00EFAA33 /* Completion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Completion.swift; sourceTree = "<group>"; };
 		27C257D222A20F5200EFAA33 /* URLSessionUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionUtil.swift; sourceTree = "<group>"; };
 		27C257D522A2102600EFAA33 /* AppError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppError.swift; sourceTree = "<group>"; };
+		27C257DF22A30AA100EFAA33 /* ReplaceRootSegue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReplaceRootSegue.swift; sourceTree = "<group>"; };
+		27C257E522A30B7800EFAA33 /* AppNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppNavigationController.swift; sourceTree = "<group>"; };
+		27C257E822A3138400EFAA33 /* UpgradeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpgradeViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -140,6 +149,7 @@
 				27C257C8229F0CEA00EFAA33 /* Config */,
 				27AA5ADB2299F8B90059D1A2 /* Storyboards */,
 				27AA5AC92299F8B80059D1A2 /* Utils */,
+				27C257D822A30A2E00EFAA33 /* Navigation */,
 				27AA5AD52299F8B90059D1A2 /* ViewControllers */,
 				274EC09F226118D000D5E263 /* Assets.xcassets */,
 			);
@@ -209,6 +219,7 @@
 			isa = PBXGroup;
 			children = (
 				27AA5AD62299F8B90059D1A2 /* RootViewController.swift */,
+				27C257E822A3138400EFAA33 /* UpgradeViewController.swift */,
 				27AA5AD72299F8B90059D1A2 /* NewAgeViewController.swift */,
 				27AA5AD82299F8B90059D1A2 /* AgesViewController.swift */,
 				27AA5AD92299F8B90059D1A2 /* AgeViewController.swift */,
@@ -266,6 +277,15 @@
 				27C257C9229F0CEA00EFAA33 /* RemoteConfigManager.swift */,
 			);
 			path = Config;
+			sourceTree = "<group>";
+		};
+		27C257D822A30A2E00EFAA33 /* Navigation */ = {
+			isa = PBXGroup;
+			children = (
+				27C257DF22A30AA100EFAA33 /* ReplaceRootSegue.swift */,
+				27C257E522A30B7800EFAA33 /* AppNavigationController.swift */,
+			);
+			path = Navigation;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -376,15 +396,18 @@
 				27AA5AEC2299F8B90059D1A2 /* RootViewController.swift in Sources */,
 				27AA5AED2299F8B90059D1A2 /* NewAgeViewController.swift in Sources */,
 				27AA5AE52299F8B90059D1A2 /* ErrorUtil.swift in Sources */,
+				27C257E622A30B7800EFAA33 /* AppNavigationController.swift in Sources */,
 				27AA5AF52299FB0E0059D1A2 /* Constants.swift in Sources */,
 				27AA5AEA2299F8B90059D1A2 /* AgeTableViewCell.swift in Sources */,
 				274EC096226118CC00D5E263 /* AppDelegate.swift in Sources */,
 				27C257CD229F127A00EFAA33 /* Either.swift in Sources */,
+				27C257E922A3138400EFAA33 /* UpgradeViewController.swift in Sources */,
 				27AA5AE32299F8B90059D1A2 /* DatabaseManager.swift in Sources */,
 				27C257D622A2102600EFAA33 /* AppError.swift in Sources */,
 				27AA5AE22299F8B90059D1A2 /* Age.xcdatamodeld in Sources */,
 				27AA5AEE2299F8B90059D1A2 /* AgesViewController.swift in Sources */,
 				27AA5AE02299F8B90059D1A2 /* Birthday.swift in Sources */,
+				27C257E022A30AA100EFAA33 /* ReplaceRootSegue.swift in Sources */,
 				27C257D0229F131E00EFAA33 /* Completion.swift in Sources */,
 				27C257D322A20F5200EFAA33 /* URLSessionUtil.swift in Sources */,
 				27AA5B2E229DFD520059D1A2 /* CoreDataUtil.swift in Sources */,
@@ -403,15 +426,18 @@
 				27AA5AFD2299FC090059D1A2 /* RootViewController.swift in Sources */,
 				27AA5AFE2299FC090059D1A2 /* NewAgeViewController.swift in Sources */,
 				27AA5B002299FC090059D1A2 /* ErrorUtil.swift in Sources */,
+				27C257E722A30B7800EFAA33 /* AppNavigationController.swift in Sources */,
 				27AA5B1B2299FC640059D1A2 /* Constants.swift in Sources */,
 				27AA5B022299FC090059D1A2 /* AgeTableViewCell.swift in Sources */,
 				27AA5B032299FC090059D1A2 /* AppDelegate.swift in Sources */,
 				27C257CE229F127A00EFAA33 /* Either.swift in Sources */,
+				27C257EA22A3138400EFAA33 /* UpgradeViewController.swift in Sources */,
 				27AA5B042299FC090059D1A2 /* DatabaseManager.swift in Sources */,
 				27C257D722A2102600EFAA33 /* AppError.swift in Sources */,
 				27AA5B052299FC090059D1A2 /* Age.xcdatamodeld in Sources */,
 				27AA5B062299FC090059D1A2 /* AgesViewController.swift in Sources */,
 				27AA5B082299FC090059D1A2 /* Birthday.swift in Sources */,
+				27C257E122A30AA100EFAA33 /* ReplaceRootSegue.swift in Sources */,
 				27C257D1229F131E00EFAA33 /* Completion.swift in Sources */,
 				27C257D422A20F5200EFAA33 /* URLSessionUtil.swift in Sources */,
 				27AA5B2F229DFD520059D1A2 /* CoreDataUtil.swift in Sources */,

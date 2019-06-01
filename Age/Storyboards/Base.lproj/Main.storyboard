@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="PGv-fd-9SQ">
-    <device id="retina5_9" orientation="portrait">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="cNp-9p-4l4">
+    <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -15,23 +15,20 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="AgesViewController" customModule="Age" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Bft-Jd-HtC">
-                                <rect key="frame" x="0.0" y="44" width="375" height="768"/>
+                                <rect key="frame" x="0.0" y="20" width="414" height="716"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <view key="tableFooterView" contentMode="scaleToFill" id="tio-Je-zpn">
-                                    <rect key="frame" x="0.0" y="113" width="375" height="44"/>
+                                    <rect key="frame" x="0.0" y="113" width="414" height="44"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <subviews>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tkh-ad-Ju8">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                                             <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                             <state key="normal" title="Add New Birthday"/>
-                                            <connections>
-                                                <segue destination="zHl-dr-dNN" kind="presentation" identifier="add" id="atA-5g-Dez"/>
-                                            </connections>
                                         </button>
                                     </subviews>
                                     <constraints>
@@ -43,10 +40,10 @@
                                 </view>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="age" rowHeight="85" id="tHW-R0-GNd" customClass="AgeTableViewCell" customModule="Age" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="85"/>
+                                        <rect key="frame" x="0.0" y="28" width="414" height="85"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="tHW-R0-GNd" id="dJ3-RG-L0q">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="84.666666666666671"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="84.666666666666671"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xe1-9D-kd2">
@@ -82,22 +79,23 @@
                     </view>
                     <connections>
                         <outlet property="tableView" destination="Bft-Jd-HtC" id="73M-OM-LuE"/>
+                        <segue destination="RgY-1j-0ud" kind="presentation" identifier="add-age" id="4UU-jf-VE9"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2087" y="941"/>
+            <point key="canvasLocation" x="642" y="990"/>
         </scene>
         <!--New Age View Controller-->
         <scene sceneID="KTh-Ed-DuL">
             <objects>
-                <viewController id="zHl-dr-dNN" customClass="NewAgeViewController" customModule="Age" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="NewAgeViewController" id="zHl-dr-dNN" customClass="NewAgeViewController" customModule="Age" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="zAj-Db-pET">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Oae-t9-Wa1">
-                                <rect key="frame" x="143" y="391" width="89" height="30"/>
+                                <rect key="frame" x="162.66666666666666" y="353" width="89" height="30"/>
                                 <state key="normal" title="Add Birthday"/>
                                 <connections>
                                     <action selector="saveButtonTapped:" destination="zHl-dr-dNN" eventType="touchUpInside" id="tuO-M9-lQd"/>
@@ -112,12 +110,41 @@
                         <viewLayoutGuide key="safeArea" id="A0a-No-Eui"/>
                     </view>
                     <connections>
-                        <segue destination="ueg-9m-lRh" kind="show" identifier="age" id="lVK-B6-Itq"/>
+                        <segue destination="ueg-9m-lRh" kind="show" identifier="age" customClass="ReplaceRootSegue" customModule="Age" customModuleProvider="target" id="lVK-B6-Itq"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CMq-W0-4BF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="713" y="-299"/>
+            <point key="canvasLocation" x="-600" y="-14"/>
+        </scene>
+        <!--Root View Controller-->
+        <scene sceneID="NjT-8s-USH">
+            <objects>
+                <viewController id="cNp-9p-4l4" customClass="RootViewController" customModule="Age" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="DnE-E9-U0d">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vsg-pJ-CAY">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                                <connections>
+                                    <segue destination="PGv-fd-9SQ" kind="embed" id="6Qq-TS-dAw"/>
+                                </connections>
+                            </containerView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="vsg-pJ-CAY" secondAttribute="trailing" id="2As-Hk-2Ve"/>
+                            <constraint firstItem="vsg-pJ-CAY" firstAttribute="top" secondItem="DnE-E9-U0d" secondAttribute="top" id="FkJ-f2-T7l"/>
+                            <constraint firstItem="vsg-pJ-CAY" firstAttribute="leading" secondItem="DnE-E9-U0d" secondAttribute="leading" id="in8-cU-oap"/>
+                            <constraint firstAttribute="bottom" secondItem="vsg-pJ-CAY" secondAttribute="bottom" id="oTJ-aC-7Jn"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="I52-TB-HAv"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="umf-YJ-VNL" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-4938" y="-35"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="YGP-27-Rvy">
@@ -133,18 +160,37 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Oa3-O1-Qce" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-3134" y="522"/>
+            <point key="canvasLocation" x="-3845" y="-35"/>
+        </scene>
+        <!--Upgrade View Controller-->
+        <scene sceneID="Eqm-E8-8sa">
+            <objects>
+                <viewController id="6aZ-Ug-Eqs" customClass="UpgradeViewController" customModule="Age" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="oaH-dq-wJV">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="9mn-hu-A8I"/>
+                    </view>
+                    <connections>
+                        <segue destination="zHl-dr-dNN" kind="show" identifier="add-age" customClass="ReplaceRootSegue" customModule="Age" customModuleProvider="target" id="gv6-WD-V1K"/>
+                        <segue destination="ueg-9m-lRh" kind="show" identifier="age" customClass="ReplaceRootSegue" customModule="Age" customModuleProvider="target" id="ji9-ug-faE"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ylv-Vq-ThZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2765" y="990"/>
         </scene>
         <!--Loading View Controller-->
         <scene sceneID="831-OF-9zU">
             <objects>
                 <viewController id="oA4-2j-OUW" customClass="LoadingViewController" customModule="Age" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5j2-53-59A">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="8TH-yn-xqy">
-                                <rect key="frame" x="169" y="387.66666666666669" width="37" height="37"/>
+                                <rect key="frame" x="188.66666666666666" y="349.66666666666669" width="37" height="37"/>
                                 <color key="color" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             </activityIndicatorView>
                         </subviews>
@@ -158,20 +204,21 @@
                     <navigationItem key="navigationItem" id="Mon-Z6-AzX"/>
                     <nil key="simulatedTopBarMetrics"/>
                     <connections>
-                        <segue destination="ueg-9m-lRh" kind="show" identifier="age" id="bEz-d8-EvV"/>
-                        <segue destination="zHl-dr-dNN" kind="show" identifier="add" id="SgZ-8b-CBo"/>
+                        <segue destination="ueg-9m-lRh" kind="show" identifier="age" customClass="ReplaceRootSegue" customModule="Age" customModuleProvider="target" id="bEz-d8-EvV"/>
+                        <segue destination="zHl-dr-dNN" kind="show" identifier="add-age" customClass="ReplaceRootSegue" customModule="Age" customModuleProvider="target" id="SgZ-8b-CBo"/>
+                        <segue destination="6aZ-Ug-Eqs" kind="show" identifier="upgrade" customClass="ReplaceRootSegue" customModule="Age" customModuleProvider="target" id="dVE-Eo-gK5"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LQh-nn-plD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2007" y="523"/>
+            <point key="canvasLocation" x="-2764" y="-35"/>
         </scene>
         <!--Age View Controller-->
         <scene sceneID="5d8-Bd-4GG">
             <objects>
                 <viewController id="ueg-9m-lRh" customClass="AgeViewController" customModule="Age" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="LT6-ND-lG0">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="Hjn-sw-q9H"/>
@@ -182,12 +229,19 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YOX-YP-LFI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="713" y="941"/>
+            <point key="canvasLocation" x="-635" y="990"/>
+        </scene>
+        <!--NewAgeViewController-->
+        <scene sceneID="eLg-sL-UqZ">
+            <objects>
+                <viewControllerPlaceholder referencedIdentifier="NewAgeViewController" id="RgY-1j-0ud" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yuO-Q8-wfe" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1505" y="990"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="DbE-vn-EuT"/>
         <segue reference="lVK-B6-Itq"/>
-        <segue reference="atA-5g-Dez"/>
+        <segue reference="SgZ-8b-CBo"/>
     </inferredMetricsTieBreakers>
 </document>
