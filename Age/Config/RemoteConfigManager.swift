@@ -25,12 +25,6 @@ class RemoteConfigManager: NSObject {
         }
     }
     
-    enum ConfigError: Error {
-        case connection // Failed to connect.
-        case certificateExpired // The pinned certificate is expired. An app update should be in the store with the new certificate soon.
-        case parsing // Failed to parse remote config response payload.
-    }
-    
     // MARK: - Static
     
     // Singleton instance.
@@ -40,40 +34,31 @@ class RemoteConfigManager: NSObject {
     
     func fetchConfig(completion: @escaping Completion<RemoteConfig>) {
         // Check if there's a fresh copy of the remote config cached.
-        guard let freshCache = cachedRemoteConfig, freshCache.isFresh else {
+        if let freshCache = cachedRemoteConfig, freshCache.isFresh {
+            completion(.success(freshCache.remoteConfig))
+        } else {
             // There either isn't a cache, or if there is one, it's not fresh. So try to make the api call.
-            urlSession.dataTask(with: URL(string: Constants.RemoteConfig.url)!) { [unowned self] (data, urlResponse, error) in
-                if let error = error {
-                    if error.code == NSURLErrorCancelled {
-                        // Error code being NSURLErrorCancelled doesn't mean certificate pinning has failed,
-                        // but certificate pinning failure will give NSURLErrorCancelled always.
-                        // So there may be some false positives here, but that's alright for now.
-                        DispatchQueue.main.async { completion(.failure(ConfigError.certificateExpired)) }
-                    } else if error.code == NSURLErrorNotConnectedToInternet {
-                        // There was no internet connection, see if there's a non-expired cached copy to use.
-                        // The !cache.isExpired is kinda redundant because the property accessor would have deleted the cache if it was expired.
-                        // But that's fine.
+            // https://stackoverflow.com/a/30788735
+            let dataTaskCompletion: Completion<RemoteConfig> = { [unowned self] (result) in
+                switch result {
+                case .failure(let error):
+                    switch (error) {
+                    case AppError.connection:
                         if let cached = self.cachedRemoteConfig, !cached.isExpired {
-                            DispatchQueue.main.async { completion(.success(cached.remoteConfig)) }
+                            completion(.success(cached.remoteConfig))
                         } else {
-                            DispatchQueue.main.async { completion(.failure(ConfigError.connection)) }
+                            completion(.failure(error))
                         }
-                    } else {
-                        DispatchQueue.main.async { completion(.failure(error)) }
+                    default:
+                        completion(.failure(error))
                     }
-                } else {
-                    guard let data = data, let remoteConfig = try? JSONDecoder().decode(RemoteConfig.self, from: data) else {
-                        DispatchQueue.main.async { completion(.failure(ConfigError.parsing)) }
-                        return
-                    }
-                    self.cachedRemoteConfig = CachedRemoteConfig(remoteConfig: remoteConfig, cachedTime: Date())
-                    DispatchQueue.main.async { completion(.success(remoteConfig)) }
+                case .success(let data):
+                    self.cachedRemoteConfig = CachedRemoteConfig(remoteConfig: data, cachedTime: Date())
+                    completion(.success(data))
                 }
-                }.resume()
-            return
+            }
+            urlSession.dataTask(with: URL(string: Constants.RemoteConfig.url)!, completionHandler: urlSessionCompletion(dataTaskCompletion)).resume()
         }
-        // A fresh cached copy of the remote config is cached. So we'll use that one and will avoice making a new api call.
-        completion(.success(freshCache.remoteConfig))
     }
     
     var remoteConfig: RemoteConfig {

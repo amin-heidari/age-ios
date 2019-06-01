@@ -51,6 +51,10 @@
 		27C257CE229F127A00EFAA33 /* Either.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27C257CC229F127A00EFAA33 /* Either.swift */; };
 		27C257D0229F131E00EFAA33 /* Completion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27C257CF229F131E00EFAA33 /* Completion.swift */; };
 		27C257D1229F131E00EFAA33 /* Completion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27C257CF229F131E00EFAA33 /* Completion.swift */; };
+		27C257D322A20F5200EFAA33 /* URLSessionUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27C257D222A20F5200EFAA33 /* URLSessionUtil.swift */; };
+		27C257D422A20F5200EFAA33 /* URLSessionUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27C257D222A20F5200EFAA33 /* URLSessionUtil.swift */; };
+		27C257D622A2102600EFAA33 /* AppError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27C257D522A2102600EFAA33 /* AppError.swift */; };
+		27C257D722A2102600EFAA33 /* AppError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27C257D522A2102600EFAA33 /* AppError.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -84,6 +88,8 @@
 		27C257C9229F0CEA00EFAA33 /* RemoteConfigManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RemoteConfigManager.swift; sourceTree = "<group>"; };
 		27C257CC229F127A00EFAA33 /* Either.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Either.swift; sourceTree = "<group>"; };
 		27C257CF229F131E00EFAA33 /* Completion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Completion.swift; sourceTree = "<group>"; };
+		27C257D222A20F5200EFAA33 /* URLSessionUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionUtil.swift; sourceTree = "<group>"; };
+		27C257D522A2102600EFAA33 /* AppError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppError.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -144,6 +150,7 @@
 			isa = PBXGroup;
 			children = (
 				27AA5AC22299F8B80059D1A2 /* Birthday.swift */,
+				27C257D522A2102600EFAA33 /* AppError.swift */,
 				27C257CC229F127A00EFAA33 /* Either.swift */,
 				27AA5AC32299F8B80059D1A2 /* RemoteConfig.swift */,
 				27C257CF229F131E00EFAA33 /* Completion.swift */,
@@ -166,6 +173,7 @@
 				27AA5ACA2299F8B80059D1A2 /* ErrorUtil.swift */,
 				27AA5ACB2299F8B80059D1A2 /* UserDefaultsUtil.swift */,
 				27AA5B2D229DFD520059D1A2 /* CoreDataUtil.swift */,
+				27C257D222A20F5200EFAA33 /* URLSessionUtil.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -373,10 +381,12 @@
 				274EC096226118CC00D5E263 /* AppDelegate.swift in Sources */,
 				27C257CD229F127A00EFAA33 /* Either.swift in Sources */,
 				27AA5AE32299F8B90059D1A2 /* DatabaseManager.swift in Sources */,
+				27C257D622A2102600EFAA33 /* AppError.swift in Sources */,
 				27AA5AE22299F8B90059D1A2 /* Age.xcdatamodeld in Sources */,
 				27AA5AEE2299F8B90059D1A2 /* AgesViewController.swift in Sources */,
 				27AA5AE02299F8B90059D1A2 /* Birthday.swift in Sources */,
 				27C257D0229F131E00EFAA33 /* Completion.swift in Sources */,
+				27C257D322A20F5200EFAA33 /* URLSessionUtil.swift in Sources */,
 				27AA5B2E229DFD520059D1A2 /* CoreDataUtil.swift in Sources */,
 				27AA5AE12299F8B90059D1A2 /* RemoteConfig.swift in Sources */,
 			);
@@ -398,10 +408,12 @@
 				27AA5B032299FC090059D1A2 /* AppDelegate.swift in Sources */,
 				27C257CE229F127A00EFAA33 /* Either.swift in Sources */,
 				27AA5B042299FC090059D1A2 /* DatabaseManager.swift in Sources */,
+				27C257D722A2102600EFAA33 /* AppError.swift in Sources */,
 				27AA5B052299FC090059D1A2 /* Age.xcdatamodeld in Sources */,
 				27AA5B062299FC090059D1A2 /* AgesViewController.swift in Sources */,
 				27AA5B082299FC090059D1A2 /* Birthday.swift in Sources */,
 				27C257D1229F131E00EFAA33 /* Completion.swift in Sources */,
+				27C257D422A20F5200EFAA33 /* URLSessionUtil.swift in Sources */,
 				27AA5B2F229DFD520059D1A2 /* CoreDataUtil.swift in Sources */,
 				27AA5B092299FC090059D1A2 /* RemoteConfig.swift in Sources */,
 			);
