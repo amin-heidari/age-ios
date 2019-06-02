@@ -45,6 +45,8 @@
 		27AA5B2C229DF7AA0059D1A2 /* Config.cer in Resources */ = {isa = PBXBuildFile; fileRef = 27AA5B28229DF7AA0059D1A2 /* Config.cer */; };
 		27AA5B2E229DFD520059D1A2 /* CoreDataUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27AA5B2D229DFD520059D1A2 /* CoreDataUtil.swift */; };
 		27AA5B2F229DFD520059D1A2 /* CoreDataUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27AA5B2D229DFD520059D1A2 /* CoreDataUtil.swift */; };
+		27AA5B3122A422EB0059D1A2 /* BundleUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27AA5B3022A422EB0059D1A2 /* BundleUtil.swift */; };
+		27AA5B3222A422EB0059D1A2 /* BundleUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27AA5B3022A422EB0059D1A2 /* BundleUtil.swift */; };
 		27C257CA229F0CEA00EFAA33 /* RemoteConfigManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27C257C9229F0CEA00EFAA33 /* RemoteConfigManager.swift */; };
 		27C257CB229F0CEA00EFAA33 /* RemoteConfigManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27C257C9229F0CEA00EFAA33 /* RemoteConfigManager.swift */; };
 		27C257CD229F127A00EFAA33 /* Either.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27C257CC229F127A00EFAA33 /* Either.swift */; };
@@ -91,6 +93,7 @@
 		27AA5B26229DF7AA0059D1A2 /* Config.cer */ = {isa = PBXFileReference; lastKnownFileType = file; path = Config.cer; sourceTree = "<group>"; };
 		27AA5B28229DF7AA0059D1A2 /* Config.cer */ = {isa = PBXFileReference; lastKnownFileType = file; path = Config.cer; sourceTree = "<group>"; };
 		27AA5B2D229DFD520059D1A2 /* CoreDataUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CoreDataUtil.swift; path = Age/Database/CoreDataUtil.swift; sourceTree = SOURCE_ROOT; };
+		27AA5B3022A422EB0059D1A2 /* BundleUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BundleUtil.swift; sourceTree = "<group>"; };
 		27C257C9229F0CEA00EFAA33 /* RemoteConfigManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RemoteConfigManager.swift; sourceTree = "<group>"; };
 		27C257CC229F127A00EFAA33 /* Either.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Either.swift; sourceTree = "<group>"; };
 		27C257CF229F131E00EFAA33 /* Completion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Completion.swift; sourceTree = "<group>"; };
@@ -184,6 +187,7 @@
 				27AA5ACB2299F8B80059D1A2 /* UserDefaultsUtil.swift */,
 				27AA5B2D229DFD520059D1A2 /* CoreDataUtil.swift */,
 				27C257D222A20F5200EFAA33 /* URLSessionUtil.swift */,
+				27AA5B3022A422EB0059D1A2 /* BundleUtil.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -219,11 +223,11 @@
 			isa = PBXGroup;
 			children = (
 				27AA5AD62299F8B90059D1A2 /* RootViewController.swift */,
-				27C257E822A3138400EFAA33 /* UpgradeViewController.swift */,
-				27AA5AD72299F8B90059D1A2 /* NewAgeViewController.swift */,
-				27AA5AD82299F8B90059D1A2 /* AgesViewController.swift */,
-				27AA5AD92299F8B90059D1A2 /* AgeViewController.swift */,
 				27AA5ADA2299F8B90059D1A2 /* LoadingViewController.swift */,
+				27C257E822A3138400EFAA33 /* UpgradeViewController.swift */,
+				27AA5AD92299F8B90059D1A2 /* AgeViewController.swift */,
+				27AA5AD82299F8B90059D1A2 /* AgesViewController.swift */,
+				27AA5AD72299F8B90059D1A2 /* NewAgeViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -400,6 +404,7 @@
 				27AA5AF52299FB0E0059D1A2 /* Constants.swift in Sources */,
 				27AA5AEA2299F8B90059D1A2 /* AgeTableViewCell.swift in Sources */,
 				274EC096226118CC00D5E263 /* AppDelegate.swift in Sources */,
+				27AA5B3122A422EB0059D1A2 /* BundleUtil.swift in Sources */,
 				27C257CD229F127A00EFAA33 /* Either.swift in Sources */,
 				27C257E922A3138400EFAA33 /* UpgradeViewController.swift in Sources */,
 				27AA5AE32299F8B90059D1A2 /* DatabaseManager.swift in Sources */,
@@ -430,6 +435,7 @@
 				27AA5B1B2299FC640059D1A2 /* Constants.swift in Sources */,
 				27AA5B022299FC090059D1A2 /* AgeTableViewCell.swift in Sources */,
 				27AA5B032299FC090059D1A2 /* AppDelegate.swift in Sources */,
+				27AA5B3222A422EB0059D1A2 /* BundleUtil.swift in Sources */,
 				27C257CE229F127A00EFAA33 /* Either.swift in Sources */,
 				27C257EA22A3138400EFAA33 /* UpgradeViewController.swift in Sources */,
 				27AA5B042299FC090059D1A2 /* DatabaseManager.swift in Sources */,

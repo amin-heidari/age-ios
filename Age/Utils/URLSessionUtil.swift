@@ -9,7 +9,7 @@
 import Foundation
 
 /// This function always invokes the `completion` closure on the main thread.
-func urlSessionCompletion<T: Decodable>(_ completion: @escaping Completion<T>) -> ((Data?, URLResponse?, Error?) -> Void) {
+func urlSessionHttpCompletion<T: Decodable>(_ completion: @escaping Completion<T>) -> ((Data?, URLResponse?, Error?) -> Void) {
     return { (data, urlResponse, error) in
         if let error = error {
             if error.code == NSURLErrorCancelled {
@@ -22,10 +22,23 @@ func urlSessionCompletion<T: Decodable>(_ completion: @escaping Completion<T>) -
             } else {
                 DispatchQueue.main.async { completion(.failure(error)) }
             }
-        } else if let data = data, let parsedData = try? JSONDecoder().decode(T.self, from: data) {
-            DispatchQueue.main.async { completion(.success(parsedData)) }
         } else {
-            DispatchQueue.main.async { completion(.failure(AppError.parsing)) }
+            if let urlResponse = urlResponse as? HTTPURLResponse {
+                switch (urlResponse.statusCode) {
+                case 403:
+                    DispatchQueue.main.async { completion(.failure(AppError.authentication)) }
+                case 200:
+                    if let data = data, let parsedData = try? JSONDecoder().decode(T.self, from: data) {
+                        DispatchQueue.main.async { completion(.success(parsedData)) }
+                    } else {
+                        DispatchQueue.main.async { completion(.failure(AppError.parsing)) }
+                    }
+                default:
+                    DispatchQueue.main.async { completion(.failure(AppError.unknown)) }
+                }
+            } else {
+                DispatchQueue.main.async { completion(.failure(AppError.unknown)) }
+            }
         }
     }
 }

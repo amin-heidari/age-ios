@@ -11,5 +11,7 @@ import Foundation
 enum AppError: Error {
     case connection
     case certificateExpired
+    case authentication
     case parsing
+    case unknown
 }

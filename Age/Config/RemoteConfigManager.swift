@@ -58,7 +58,13 @@ class RemoteConfigManager: NSObject {
                     completion(.success(data))
                 }
             }
-            urlSession.dataTask(with: URL(string: Constants.RemoteConfig.url)!, completionHandler: urlSessionCompletion(dataTaskCompletion)).resume()
+            
+            // Prepare the request.
+            var request = URLRequest(url: URL(string: Constants.RemoteConfig.url)!)
+            request.addValue(Constants.RemoteConfig.apiKeyHeaderValue, forHTTPHeaderField: Constants.RemoteConfig.apiKeyHeaderField)
+            
+            // Send the request.
+            urlSession.dataTask(with: request, completionHandler: urlSessionHttpCompletion(dataTaskCompletion)).resume()
         }
     }
     

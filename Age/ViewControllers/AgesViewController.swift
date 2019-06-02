@@ -21,7 +21,6 @@ class AgesViewController: UIViewController {
         DatabaseManager.shared.birthdaysFetchResultsController.delegate = self
     }
 
-
 }
 
 extension AgesViewController: UITableViewDataSource {

@@ -16,6 +16,7 @@ class UserDefaultsUtil {
     private enum Keys: String {
         case defaultBirthday
         case cachedRemoteConfig
+        case skippedLatestVersion // The version which was skipped.
     }
     
     // MARK: - API
@@ -40,6 +41,15 @@ class UserDefaultsUtil {
         }
         set(newValue){
             UserDefaults.standard.set(try? PropertyListEncoder().encode(newValue), forKey: Keys.cachedRemoteConfig.rawValue)
+        }
+    }
+    
+    static var skippedLatestVersion: String? {
+        get {
+            return UserDefaults.standard.string(forKey: Keys.skippedLatestVersion.rawValue)
+        }
+        set(newValue) {
+            UserDefaults.standard.set(newValue, forKey: Keys.skippedLatestVersion.rawValue)
         }
     }
     
