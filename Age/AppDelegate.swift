@@ -57,7 +57,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 // MARK: - Properties
 
+// MARK: - Outlets
+
 // MARK: - Methods
+
+// MARK: - Actions
 
 // MARK: - Delegate
 

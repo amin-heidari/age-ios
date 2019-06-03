@@ -12,12 +12,6 @@ class LoadingViewController: UIViewController {
     
     // MARK: - Constants/Types
     
-    private enum FailureScenario {
-        case generic
-        case connection
-        case certificate
-    }
-    
     // MARK: - Static
     
     // MARK: - API
@@ -28,25 +22,55 @@ class LoadingViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        loadConfig()
+    }
+    
+    // MARK: - Properties
+    
+    // MARK: - Outlets
+    
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+    @IBOutlet weak var errorStackView: UIStackView!
+    
+    @IBOutlet weak var errorTitleLabel: UILabel!
+    @IBOutlet weak var errorDescriptionLabel: UILabel!
+    @IBOutlet weak var retryButton: UIButton!
+    
+    // MARK: - Methods
+    
+    private func loadConfig() {
+        activityIndicator.isHidden = false
+        errorStackView.isHidden = true
         
         RemoteConfigManager.shared.fetchConfig { [weak self] (result) in
             guard let `self` = self else { return }
             
+            self.activityIndicator.isHidden = true
+            
             switch result {
             case .failure(let error):
+                self.errorStackView.isHidden = false
+                
                 switch (error) {
                 case AppError.connection:
                     // Not connected to the internet.
-                    _ = 1
+                    self.errorTitleLabel.text = "No Internet!"
+                    self.errorDescriptionLabel.text = "It looks like you're not connected to the internet. Please connect and try again!"
+                    self.retryButton.isHidden = false
                 case AppError.certificateExpired:
                     // Please udpate the app.
-                    _ = 1
+                    self.errorTitleLabel.text = "Please upgrade!"
+                    self.errorDescriptionLabel.text = "Please upgrade the application from the app store!"
+                    self.retryButton.isHidden = true
                 default:
                     // Generic message.
-                    _ = 1
+                    self.errorTitleLabel.text = "Error!"
+                    self.errorDescriptionLabel.text = "An error occured, please try again!"
+                    self.retryButton.isHidden = false
                 }
             case .success(let remoteConfig):
-                _ = remoteConfig
+                self.errorStackView.isHidden = true
+                
                 if (Bundle.main.versionNumber.compare(remoteConfig.version.minimum, options: .numeric) == .orderedAscending) {
                     // The app's version is below the minimum required version.
                     self.performSegue(withIdentifier: "upgrade", sender: nil)
@@ -66,16 +90,18 @@ class LoadingViewController: UIViewController {
         }
     }
     
-    // MARK: - Properties
-    
-    // MARK: - Methods
-    
     private func proceedToTheApp() {
         if let _ = UserDefaultsUtil.defaultBirthday {
             performSegue(withIdentifier: "age", sender: nil)
         } else {
             performSegue(withIdentifier: "add-age", sender: nil)
         }
+    }
+    
+    // MARK: - Actions
+    
+    @IBAction func retryButtonTapped(_ sender: Any) {
+        loadConfig()
     }
     
     // MARK: - Delegate

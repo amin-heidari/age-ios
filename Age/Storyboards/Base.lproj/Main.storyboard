@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="cNp-9p-4l4">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="cNp-9p-4l4">
     <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -220,6 +220,30 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <stackView hidden="YES" opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalCentering" alignment="center" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="fyU-M1-X0W">
+                                <rect key="frame" x="141" y="328.33333333333331" width="132.33333333333337" height="99.333333333333314"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Error!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U5H-NM-5m2">
+                                        <rect key="frame" x="44.666666666666657" y="0.0" width="42.666666666666657" height="20.333333333333332"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Error description." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xee-Ep-euH">
+                                        <rect key="frame" x="0.0" y="37" width="132.33333333333334" height="20.333333333333329"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DkM-ZC-hOp">
+                                        <rect key="frame" x="47.666666666666657" y="69.333333333333371" width="37" height="30"/>
+                                        <state key="normal" title="Retry"/>
+                                        <connections>
+                                            <action selector="retryButtonTapped:" destination="oA4-2j-OUW" eventType="touchUpInside" id="RcN-Kw-haR"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="8TH-yn-xqy">
                                 <rect key="frame" x="188.66666666666666" y="349.66666666666669" width="37" height="37"/>
                                 <color key="color" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -228,13 +252,21 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="8TH-yn-xqy" firstAttribute="centerY" secondItem="5j2-53-59A" secondAttribute="centerY" id="2jb-ZR-J5z"/>
+                            <constraint firstItem="fyU-M1-X0W" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="DYL-Z4-kpy" secondAttribute="leading" constant="40" id="4Bi-v0-0xf"/>
+                            <constraint firstItem="fyU-M1-X0W" firstAttribute="centerX" secondItem="DYL-Z4-kpy" secondAttribute="centerX" id="F1d-OZ-c9k"/>
                             <constraint firstItem="8TH-yn-xqy" firstAttribute="centerX" secondItem="5j2-53-59A" secondAttribute="centerX" id="avX-Ex-mq7"/>
+                            <constraint firstItem="fyU-M1-X0W" firstAttribute="centerY" secondItem="DYL-Z4-kpy" secondAttribute="centerY" id="ydP-oo-aqP"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="DYL-Z4-kpy"/>
                     </view>
                     <navigationItem key="navigationItem" id="Mon-Z6-AzX"/>
                     <nil key="simulatedTopBarMetrics"/>
                     <connections>
+                        <outlet property="activityIndicator" destination="8TH-yn-xqy" id="yen-fP-Xww"/>
+                        <outlet property="errorDescriptionLabel" destination="xee-Ep-euH" id="iHY-6F-of5"/>
+                        <outlet property="errorStackView" destination="fyU-M1-X0W" id="BNx-Z7-TBG"/>
+                        <outlet property="errorTitleLabel" destination="U5H-NM-5m2" id="rnK-VP-Fjn"/>
+                        <outlet property="retryButton" destination="DkM-ZC-hOp" id="Uju-b0-sD0"/>
                         <segue destination="ueg-9m-lRh" kind="show" identifier="age" customClass="ReplaceRootSegue" customModule="Age" customModuleProvider="target" id="bEz-d8-EvV"/>
                         <segue destination="zHl-dr-dNN" kind="show" identifier="add-age" customClass="ReplaceRootSegue" customModule="Age" customModuleProvider="target" id="SgZ-8b-CBo"/>
                         <segue destination="6aZ-Ug-Eqs" kind="show" identifier="upgrade" customClass="ReplaceRootSegue" customModule="Age" customModuleProvider="target" id="dVE-Eo-gK5"/>
