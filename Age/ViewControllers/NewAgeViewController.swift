@@ -8,7 +8,7 @@
 
 import UIKit
 
-class NewAgeViewController: UIViewController {
+class NewAgeViewController: BaseViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

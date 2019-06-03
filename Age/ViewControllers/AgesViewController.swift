@@ -9,7 +9,7 @@
 import UIKit
 import CoreData
 
-class AgesViewController: UIViewController {
+class AgesViewController: BaseViewController {
     
     @IBOutlet weak var tableView: UITableView!
 

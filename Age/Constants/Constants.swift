@@ -11,7 +11,7 @@ import Foundation
 class Constants {
     
     class RemoteConfig {
-        static let url = "https://api.config.aminheidari.com/projects/agepal/ios"
+        static let url = "https://api.config.aminheidari.com/projects/age/ios"
         static let apiKeyHeaderField = "X-API-Key"
         static let apiKeyHeaderValue = "TBD"
         static let freshCacheTime: TimeInterval = 30 // Time interval (in seconds) during which the cache will be used rather than making a new api call.

@@ -179,7 +179,7 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please upgrade to the latest version!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MU8-nP-PJG">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please upgrade to the latest version!" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MU8-nP-PJG">
                                         <rect key="frame" x="0.0" y="42" width="279" height="20.333333333333329"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
@@ -188,10 +188,16 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zON-NF-7Aa">
                                         <rect key="frame" x="83.333333333333314" y="79.333333333333371" width="112" height="30"/>
                                         <state key="normal" title="Get the upgrade"/>
+                                        <connections>
+                                            <action selector="upgradeButtonTapped:" destination="6aZ-Ug-Eqs" eventType="touchUpInside" id="9Jw-OF-HX0"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C1I-94-pjU">
                                         <rect key="frame" x="124.33333333333331" y="121.33333333333337" width="30" height="30"/>
                                         <state key="normal" title="Skip"/>
+                                        <connections>
+                                            <action selector="skipButtonTapped:" destination="6aZ-Ug-Eqs" eventType="touchUpInside" id="Aqe-2T-EO4"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -200,10 +206,15 @@
                         <constraints>
                             <constraint firstItem="dlS-aU-vXi" firstAttribute="centerY" secondItem="oaH-dq-wJV" secondAttribute="centerY" id="Akj-CS-Tmi"/>
                             <constraint firstItem="dlS-aU-vXi" firstAttribute="centerX" secondItem="oaH-dq-wJV" secondAttribute="centerX" id="WXM-Ob-8kH"/>
+                            <constraint firstItem="dlS-aU-vXi" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="9mn-hu-A8I" secondAttribute="leading" constant="40" id="pdB-Ws-hrj"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="9mn-hu-A8I"/>
                     </view>
                     <connections>
+                        <outlet property="skipButton" destination="C1I-94-pjU" id="hCS-qs-Png"/>
+                        <outlet property="upgradeButton" destination="zON-NF-7Aa" id="xzd-hK-XpZ"/>
+                        <outlet property="upgradeDescriptionLabel" destination="MU8-nP-PJG" id="Vfh-TM-Y0M"/>
+                        <outlet property="upgradeTitleLabel" destination="xbH-pX-3a6" id="LsO-PJ-8si"/>
                         <segue destination="zHl-dr-dNN" kind="show" identifier="add-age" customClass="ReplaceRootSegue" customModule="Age" customModuleProvider="target" id="gv6-WD-V1K"/>
                         <segue destination="ueg-9m-lRh" kind="show" identifier="age" customClass="ReplaceRootSegue" customModule="Age" customModuleProvider="target" id="ji9-ug-faE"/>
                     </connections>
@@ -316,7 +327,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="bEz-d8-EvV"/>
-        <segue reference="SgZ-8b-CBo"/>
+        <segue reference="ji9-ug-faE"/>
+        <segue reference="gv6-WD-V1K"/>
     </inferredMetricsTieBreakers>
 </document>

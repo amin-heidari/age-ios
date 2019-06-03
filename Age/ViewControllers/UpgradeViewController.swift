@@ -8,23 +8,68 @@
 
 import UIKit
 
-class UpgradeViewController: UIViewController {
+class UpgradeViewController: BaseViewController {
 
+    // MARK: - Constants/Types
+    
+    // MARK: - Static
+    
+    // MARK: - API
+    
+    // MARK: - Life Cycle
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        switch RemoteConfigManager.shared.remoteConfig.version.compare(appVersion: Bundle.main.versionNumber) {
+        case .forcedUpgrade:
+            upgradeTitleLabel.text = "Please upgrade to latest version."
+            upgradeDescriptionLabel.text = "You need to upgrade to the latest version of this application to enjoy all the super coolness of it."
+            skipButton.isHidden = true
+        case .optionalUpgrade:
+            upgradeTitleLabel.text = "There's a new version available :)"
+            upgradeDescriptionLabel.text = "We recommend you upgrade to the latest version of this application to enjoy all the super coolness of it."
+            skipButton.isHidden = false
+        default:
+            fatalError("Not supported!")
+        }
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    // MARK: - Properties
+    
+    // MARK: - Outlets
+    @IBOutlet weak var upgradeTitleLabel: UILabel!
+    @IBOutlet weak var upgradeDescriptionLabel: UILabel!
+    @IBOutlet weak var upgradeButton: UIButton!
+    @IBOutlet weak var skipButton: UIButton!
+    
+    // MARK: - Methods
+    
+    @IBAction func upgradeButtonTapped(_ sender: Any) {
+        let url = URL(string: RemoteConfigManager.shared.remoteConfig.storeURL)!
+        if UIApplication.shared.canOpenURL(url) {
+            UIApplication.shared.open(url, options: [:], completionHandler: nil)
+        } else {
+            let alert = UIAlertController(
+                title: "Cannot open App Store",
+                message: "We failed to open App Store. Please open it yourself.",
+                preferredStyle: .alert
+            )
+            alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "Default action"), style: .default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
+        }
     }
-    */
+    
+    @IBAction func skipButtonTapped(_ sender: Any) {
+        assert(RemoteConfigManager.shared.remoteConfig.version.compare(appVersion: Bundle.main.versionNumber) != .forcedUpgrade)
+        
+        if let _ = UserDefaultsUtil.defaultBirthday {
+            performSegue(withIdentifier: "age", sender: nil)
+        } else {
+            performSegue(withIdentifier: "add-age", sender: nil)
+        }
+    }
+    
+    // MARK: - Actions
 
 }

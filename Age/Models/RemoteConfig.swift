@@ -11,6 +11,23 @@ import Foundation
 class RemoteConfig: Codable {
     
     class Version: Codable {
+        
+        enum CompareResult {
+            case latestVersion
+            case optionalUpgrade
+            case forcedUpgrade
+        }
+        
+        func compare(appVersion: String) -> CompareResult {
+            if (appVersion.compare(minimum, options: .numeric) == .orderedAscending) {
+                return .forcedUpgrade
+            } else if (appVersion.compare(latest, options: .numeric) == .orderedAscending) {
+                return .optionalUpgrade
+            } else {
+                return .latestVersion
+            }
+        }
+        
         let minimum: String
         let latest: String
         

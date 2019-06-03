@@ -8,7 +8,7 @@
 
 import UIKit
 
-class LoadingViewController: UIViewController {
+class LoadingViewController: BaseViewController {
     
     // MARK: - Constants/Types
     
@@ -71,10 +71,13 @@ class LoadingViewController: UIViewController {
             case .success(let remoteConfig):
                 self.errorStackView.isHidden = true
                 
-                if (Bundle.main.versionNumber.compare(remoteConfig.version.minimum, options: .numeric) == .orderedAscending) {
+                let versionCompareResult = remoteConfig.version.compare(appVersion: Bundle.main.versionNumber)
+                
+                switch versionCompareResult {
+                case .forcedUpgrade:
                     // The app's version is below the minimum required version.
                     self.performSegue(withIdentifier: "upgrade", sender: nil)
-                } else if (Bundle.main.versionNumber.compare(remoteConfig.version.latest, options: .numeric) == .orderedAscending) {
+                case .optionalUpgrade:
                     // The app's version is below the latest version.
                     if let skippedVersion = UserDefaultsUtil.skippedLatestVersion, skippedVersion.compare(remoteConfig.version.latest, options: .numeric) == .orderedSame {
                         // User has already skipped to upgrade to that version before.
@@ -83,7 +86,7 @@ class LoadingViewController: UIViewController {
                         // User has never skipped an upgrade to this version.
                         self.performSegue(withIdentifier: "upgrade", sender: nil)
                     }
-                } else {
+                case .latestVersion:
                     self.proceedToTheApp()
                 }
             }
