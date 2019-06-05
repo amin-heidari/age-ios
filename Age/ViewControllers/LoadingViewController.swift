@@ -71,9 +71,7 @@ class LoadingViewController: BaseViewController {
             case .success(let remoteConfig):
                 self.errorStackView.isHidden = true
                 
-                let versionCompareResult = remoteConfig.version.compare(appVersion: Bundle.main.versionNumber)
-                
-                switch versionCompareResult {
+                switch remoteConfig.version.compare(appVersion: Bundle.main.versionNumber) {
                 case .forcedUpgrade:
                     // The app's version is below the minimum required version.
                     self.performSegue(withIdentifier: "upgrade", sender: nil)
@@ -106,9 +104,5 @@ class LoadingViewController: BaseViewController {
     @IBAction func retryButtonTapped(_ sender: Any) {
         loadConfig()
     }
-    
-    // MARK: - Delegate
-    
-    // MARK: - Delegate
 
 }
