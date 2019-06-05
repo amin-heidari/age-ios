@@ -77,7 +77,7 @@ class LoadingViewController: BaseViewController {
                     self.performSegue(withIdentifier: "upgrade", sender: nil)
                 case .optionalUpgrade:
                     // The app's version is below the latest version.
-                    if let skippedVersion = UserDefaultsUtil.skippedLatestVersion, skippedVersion.compare(remoteConfig.version.latest, options: .numeric) == .orderedSame {
+                    if let skippedVersion = UserDefaultsUtil.skippedLatestVersion, skippedVersion.compare(remoteConfig.version.latest, options: .numeric) != .orderedAscending {
                         // User has already skipped to upgrade to that version before.
                         self.proceedToTheApp()
                     } else {

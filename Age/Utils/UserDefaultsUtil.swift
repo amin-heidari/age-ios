@@ -44,6 +44,10 @@ class UserDefaultsUtil {
         }
     }
     
+    /// The latestVersion which has been skipped at the moment.
+    /// For example, user may have skipped upgrade to the latestVersion of 2.2.0 (and `2.2.0` will be persisted here),
+    /// however, when the latestVersion on the store turns out to be `2.3.0`,
+    /// then we'll know that we haven't presented that to the user yet.
     static var skippedLatestVersion: String? {
         get {
             return UserDefaults.standard.string(forKey: Keys.skippedLatestVersion.rawValue)
