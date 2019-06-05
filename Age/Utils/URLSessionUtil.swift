@@ -24,16 +24,15 @@ func urlSessionHttpCompletion<T: Decodable>(_ completion: @escaping Completion<T
             }
         } else {
             if let urlResponse = urlResponse as? HTTPURLResponse {
-                switch (urlResponse.statusCode) {
-                case 403:
-                    DispatchQueue.main.async { completion(.failure(AppError.authentication)) }
-                case 200:
+                if ((200..<300).contains(urlResponse.statusCode)) {
                     if let data = data, let parsedData = try? JSONDecoder().decode(T.self, from: data) {
                         DispatchQueue.main.async { completion(.success(parsedData)) }
                     } else {
                         DispatchQueue.main.async { completion(.failure(AppError.parsing)) }
                     }
-                default:
+                } else if (urlResponse.statusCode == 403) {
+                    DispatchQueue.main.async { completion(.failure(AppError.authentication)) }
+                } else {
                     DispatchQueue.main.async { completion(.failure(AppError.unknown)) }
                 }
             } else {
