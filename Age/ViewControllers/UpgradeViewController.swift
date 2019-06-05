@@ -45,6 +45,8 @@ class UpgradeViewController: BaseViewController {
     
     // MARK: - Methods
     
+    // MARK: - Actions
+
     @IBAction func upgradeButtonTapped(_ sender: Any) {
         let url = URL(string: RemoteConfigManager.shared.remoteConfig.storeURL)!
         if UIApplication.shared.canOpenURL(url) {
@@ -70,6 +72,4 @@ class UpgradeViewController: BaseViewController {
         }
     }
     
-    // MARK: - Actions
-
 }
