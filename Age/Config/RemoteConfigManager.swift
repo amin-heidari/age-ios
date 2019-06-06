@@ -32,10 +32,11 @@ class RemoteConfigManager: NSObject {
     
     // MARK: - API
     
-    func fetchConfig(completion: @escaping Completion<RemoteConfig>) {
+    func fetchConfig(completion: @escaping Completion<RemoteConfig>) -> URLSessionTask? {
         // Check if there's a fresh copy of the remote config cached.
         if let freshCache = cachedRemoteConfig, freshCache.isFresh {
             completion(.success(freshCache.remoteConfig))
+            return nil
         } else {
             // There either isn't a cache, or if there is one, it's not fresh. So try to make the api call.
             // https://stackoverflow.com/a/30788735
@@ -64,7 +65,10 @@ class RemoteConfigManager: NSObject {
             request.addValue(Constants.RemoteConfig.apiKeyHeaderValue, forHTTPHeaderField: Constants.RemoteConfig.apiKeyHeaderField)
             
             // Send the request.
-            urlSession.dataTask(with: request, completionHandler: urlSessionHttpCompletion(dataTaskCompletion)).resume()
+            let task = urlSession.dataTask(with: request, completionHandler: urlSessionHttpCompletion(dataTaskCompletion))
+            task.resume()
+            
+            return task
         }
     }
     

@@ -25,7 +25,13 @@ class LoadingViewController: BaseViewController {
         loadConfig()
     }
     
+    deinit {
+        configTask?.cancel()
+    }
+    
     // MARK: - Properties
+    
+    private var configTask: URLSessionTask?
     
     // MARK: - Outlets
     
@@ -42,7 +48,8 @@ class LoadingViewController: BaseViewController {
         activityIndicator.isHidden = false
         errorStackView.isHidden = true
         
-        RemoteConfigManager.shared.fetchConfig { [weak self] (result) in
+        configTask?.cancel()
+        configTask = RemoteConfigManager.shared.fetchConfig { [weak self] (result) in
             guard let `self` = self else { return }
             
             self.activityIndicator.isHidden = true
