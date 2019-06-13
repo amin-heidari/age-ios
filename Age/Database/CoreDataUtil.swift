@@ -11,8 +11,8 @@ import Foundation
 extension BirthdayEntity {
     
     var birthday: Birthday? {
-        guard let birthDate = birth_date, let name = name else { return nil }
-        return Birthday(birthDate: birthDate, name: name)
+        guard let name = name else { return nil }
+        return Birthday(birthDate: BirthDate(year: year, month: day, day: day), name: name)
     }
     
 }

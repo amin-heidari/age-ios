@@ -49,7 +49,9 @@ class DatabaseManager {
                 fatalError("Failed!")
             }
             
-            birthdayEntity.birth_date = birthday.birthDate
+            birthdayEntity.year = birthday.birthDate.year
+            birthdayEntity.month = birthday.birthDate.month
+            birthdayEntity.day = birthday.birthDate.day
             birthdayEntity.name = birthday.name
             birthdayEntity.created = Date()
             
@@ -66,7 +68,9 @@ class DatabaseManager {
         guard let birthdayEntity = NSEntityDescription.insertNewObject(forEntityName: Entity.BirthdayEntity.rawValue, into: persistentContainer.viewContext) as? BirthdayEntity else {
             fatalError("Failed!")
         }
-        birthdayEntity.birth_date = birthday.birthDate
+        birthdayEntity.year = birthday.birthDate.year
+        birthdayEntity.month = birthday.birthDate.month
+        birthdayEntity.day = birthday.birthDate.day
         birthdayEntity.name = birthday.name
         birthdayEntity.created = Date()
         
@@ -75,7 +79,9 @@ class DatabaseManager {
     
     // method for updating a birthday.
     func updateBirthday(_ birthdayEntity: BirthdayEntity, with newBirthday: Birthday) {
-        birthdayEntity.birth_date = newBirthday.birthDate
+        birthdayEntity.year = newBirthday.birthDate.year
+        birthdayEntity.month = newBirthday.birthDate.month
+        birthdayEntity.day = newBirthday.birthDate.day
         birthdayEntity.name = newBirthday.name
     }
     

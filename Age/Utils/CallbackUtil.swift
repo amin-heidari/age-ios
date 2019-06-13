@@ -1,8 +1,8 @@
 //
-//  Either.swift
+//  CallbackUtil.swift
 //  Age
 //
-//  Created by Amin on 2019-05-29.
+//  Created by Amin on 2019-06-13.
 //  Copyright © 2019 Amin Heidari. All rights reserved.
 //
 
@@ -12,3 +12,7 @@ enum Either<T> {
     case success(_ data: T)
     case failure(_ error: Error)
 }
+
+typealias Completion<T> = (_ result: Either<T>) -> Void
+
+typealias Finish<T> = (_ result: T) -> Void

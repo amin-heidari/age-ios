@@ -9,10 +9,10 @@
 import Foundation
 
 class Birthday: Codable {
-    let birthDate: Date
+    let birthDate: BirthDate
     let name: String
     
-    init(birthDate: Date, name: String) {
+    init(birthDate: BirthDate, name: String) {
         self.birthDate = birthDate
         self.name = name
     }

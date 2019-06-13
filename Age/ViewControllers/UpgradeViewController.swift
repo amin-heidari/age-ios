@@ -65,6 +65,8 @@ class UpgradeViewController: BaseViewController {
     @IBAction func skipButtonTapped(_ sender: Any) {
         assert(RemoteConfigManager.shared.remoteConfig.version.compare(appVersion: Bundle.main.versionNumber) != .forcedUpgrade)
         
+        UserDefaultsUtil.skippedLatestVersion = RemoteConfigManager.shared.remoteConfig.version.latest
+        
         if let _ = UserDefaultsUtil.defaultBirthday {
             performSegue(withIdentifier: "age", sender: nil)
         } else {

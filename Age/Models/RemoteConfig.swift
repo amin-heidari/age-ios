@@ -37,12 +37,26 @@ class RemoteConfig: Codable {
         }
     }
     
-    let version: Version
+    class AgeSpecs: Codable {
+        // Default age shown when launching the app on the date picker, in terms of years.
+        let defaultAge: Int
+        // Max allowable age (to be picked initially), in terms of years.
+        let maxAge: Int
+        
+        private enum CodingKeys: String, CodingKey {
+            case defaultAge = "default_age"
+            case maxAge = "max_age"
+        }
+    }
+    
     let storeURL: String
+    let version: Version
+    let ageSpecs: AgeSpecs
     
     private enum CodingKeys: String, CodingKey {
-        case version
         case storeURL = "store_url"
+        case version
+        case ageSpecs = "age_specs"
     }
     
 }

@@ -29,7 +29,7 @@ class NewAgeViewController: BaseViewController {
     
     @IBAction func saveButtonTapped(_ sender: Any) {
 //        _ = DatabaseManager.shared.addBirthday(Birthday(birthDate: Date(), name: "Amin"))
-        _ = DatabaseManager.shared.addBirthday(Birthday(birthDate: Date(), name: "Amin")) { [weak self] _ in
+        _ = DatabaseManager.shared.addBirthday(Birthday(birthDate: BirthDate(year: 1988, month: 6, day: 24), name: "Amin")) { [weak self] _ in
             self?.dismiss(animated: true, completion: nil)
         }
     }

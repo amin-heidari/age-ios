@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="14490.99" systemVersion="18E226" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="BirthdayEntity" representedClassName="BirthdayEntity" syncable="YES" codeGenerationType="class">
-        <attribute name="birth_date" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
         <attribute name="created" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="day" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="month" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="name" attributeType="String" syncable="YES"/>
+        <attribute name="year" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
     </entity>
     <elements>
-        <element name="BirthdayEntity" positionX="-3717.0390625" positionY="-3343.28125" width="128" height="88"/>
+        <element name="BirthdayEntity" positionX="-3439.4609375" positionY="-3337.65234375" width="128" height="120"/>
     </elements>
 </model>
