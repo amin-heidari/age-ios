@@ -29,18 +29,24 @@ class LoadingViewController: BaseViewController {
         configTask?.cancel()
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let destination = segue.destination as? NewAgeViewController {
+            destination.scenario = .newDefault
+        }
+    }
+    
     // MARK: - Properties
     
     private var configTask: URLSessionTask?
     
     // MARK: - Outlets
     
-    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
-    @IBOutlet weak var errorStackView: UIStackView!
+    @IBOutlet private weak var activityIndicator: UIActivityIndicatorView!
+    @IBOutlet private weak var errorStackView: UIStackView!
     
-    @IBOutlet weak var errorTitleLabel: UILabel!
-    @IBOutlet weak var errorDescriptionLabel: UILabel!
-    @IBOutlet weak var retryButton: UIButton!
+    @IBOutlet private weak var errorTitleLabel: UILabel!
+    @IBOutlet private weak var errorDescriptionLabel: UILabel!
+    @IBOutlet private weak var retryButton: UIButton!
     
     // MARK: - Methods
     
@@ -58,7 +64,7 @@ class LoadingViewController: BaseViewController {
             case .failure(let error):
                 self.errorStackView.isHidden = false
                 
-                switch (error) {
+                switch error {
                 case AppError.connection:
                     // Not connected to the internet.
                     self.errorTitleLabel.text = "No Internet!"

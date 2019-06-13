@@ -43,7 +43,7 @@ class RemoteConfigManager: NSObject {
             let dataTaskCompletion: Completion<RemoteConfig> = { [unowned self] (result) in
                 switch result {
                 case .failure(let error):
-                    switch (error) {
+                    switch error {
                     case AppError.connection:
                         if let cached = self.cachedRemoteConfig, !cached.isExpired {
                             completion(.success(cached.remoteConfig))

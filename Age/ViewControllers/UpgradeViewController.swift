@@ -38,10 +38,10 @@ class UpgradeViewController: BaseViewController {
     // MARK: - Properties
     
     // MARK: - Outlets
-    @IBOutlet weak var upgradeTitleLabel: UILabel!
-    @IBOutlet weak var upgradeDescriptionLabel: UILabel!
-    @IBOutlet weak var upgradeButton: UIButton!
-    @IBOutlet weak var skipButton: UIButton!
+    @IBOutlet private weak var upgradeTitleLabel: UILabel!
+    @IBOutlet private weak var upgradeDescriptionLabel: UILabel!
+    @IBOutlet private weak var upgradeButton: UIButton!
+    @IBOutlet private weak var skipButton: UIButton!
     
     // MARK: - Methods
     

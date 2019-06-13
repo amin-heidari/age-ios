@@ -12,7 +12,7 @@ extension BirthdayEntity {
     
     var birthday: Birthday? {
         guard let name = name else { return nil }
-        return Birthday(birthDate: BirthDate(year: year, month: day, day: day), name: name)
+        return Birthday(birthDate: BirthDate(year: Int(year), month: Int(month), day: Int(day)), name: name)
     }
     
 }

@@ -9,11 +9,11 @@
 import Foundation
 
 class BirthDate: Codable {
-    let year: Int16
-    let month: Int16
-    let day: Int16
+    let year: Int
+    let month: Int
+    let day: Int
     
-    init(year: Int16, month: Int16, day: Int16) {
+    init(year: Int, month: Int, day: Int) {
         self.year = year
         self.month = month
         self.day = day
