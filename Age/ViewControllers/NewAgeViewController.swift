@@ -59,6 +59,8 @@ class NewAgeViewController: BaseViewController {
             fatalError("Not implemented yet!")
         }
         
+        datePicker.date = editingBirthDate.date
+        
 //        nameTextFieldDelegate = NameTextFieldDelegate(self)
 //        nameTextField.delegate = nameTextFieldDelegate
         
@@ -100,13 +102,13 @@ class NewAgeViewController: BaseViewController {
         }
     }
     
-    private var editingBirthDate: BirthDate? {
+    private var editingBirthDate: BirthDate! {
         didSet {
             guard let value = editingBirthDate else {
                 dateTextField.text = nil
                 return
             }
-            dateTextField.text = String(format: "%d - %d - %d", value.year, value.month, value.year)
+            dateTextField.text = String(format: "%d - %d - %d", value.year, value.month, value.day)
         }
     }
     
@@ -137,7 +139,20 @@ class NewAgeViewController: BaseViewController {
     }
     
     @IBAction private func proceedButtonTapped(_ sender: Any) {
+        let birthday = Birthday(birthDate: editingBirthDate, name: (nameTextField.text ?? ""))
         
+        switch scenario! {
+        case .newDefault:
+            UserDefaultsUtil.defaultBirthday = birthday
+            performSegue(withIdentifier: "age", sender: nil)
+        case .editDefault:
+            _ = 1
+        case .newEntity:
+            fatalError("Not implemented yet!")
+        case .editEntity(let birthdayEntity):
+            _ = birthdayEntity
+            fatalError("Not implemented yet!")
+        }
         
 //        _ = DatabaseManager.shared.addBirthday(Birthday(birthDate: BirthDate(year: 1988, month: 6, day: 24), name: "Amin")) { [weak self] _ in
 //            self?.dismiss(animated: true, completion: nil)
@@ -155,6 +170,11 @@ class NewAgeViewController: BaseViewController {
     @IBAction private func nameTextFieldReturned(_ sender: Any) {
         nameTextField.resignFirstResponder()
     }
+    
+    @IBAction func datePickerValueChanged(_ sender: Any) {
+        editingBirthDate = datePicker.date.birthDate
+    }
+    
     
     // This is my way of mimicing Anonymous classes/objects on Android.
     // Because I don't like to set the ViewController as the delegate for everything all the time.
@@ -194,9 +214,15 @@ class NewAgeViewController: BaseViewController {
         }
         
     }
-    
-    // MARK: - Delegate
-    
-    // MARK: - Delegate
 
+}
+
+private extension BirthDate {
+    var date: Date {
+        var components = DateComponents()
+        components.year = year
+        components.month = month
+        components.day = day
+        return Calendar.current.date(from: components)!
+    }
 }

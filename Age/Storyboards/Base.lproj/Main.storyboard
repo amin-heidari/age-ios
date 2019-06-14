@@ -176,6 +176,9 @@
                     <date key="date" timeIntervalSinceReferenceDate="582217043.90981197">
                         <!--2019-06-14 14:57:23 +0000-->
                     </date>
+                    <connections>
+                        <action selector="datePickerValueChanged:" destination="zHl-dr-dNN" eventType="valueChanged" id="Ww5-Vj-ftN"/>
+                    </connections>
                 </datePicker>
             </objects>
             <point key="canvasLocation" x="-600" y="-14"/>
