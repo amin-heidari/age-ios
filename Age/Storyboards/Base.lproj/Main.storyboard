@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="cNp-9p-4l4">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="cNp-9p-4l4">
     <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -101,7 +101,11 @@
                                         <rect key="frame" x="0.0" y="0.0" width="334" height="30"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="next" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no" textContentType="name"/>
+                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="done" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no" textContentType="name"/>
+                                        <connections>
+                                            <action selector="nameTextFieldEdited:" destination="zHl-dr-dNN" eventType="editingChanged" id="cMr-aS-C8Y"/>
+                                            <action selector="nameTextFieldReturned:" destination="zHl-dr-dNN" eventType="primaryActionTriggered" id="MxA-T1-fzb"/>
+                                        </connections>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="JYA-DS-aNy">
                                         <rect key="frame" x="0.0" y="50" width="334" height="30"/>
@@ -130,8 +134,8 @@
                                     </stackView>
                                 </subviews>
                             </stackView>
-                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" misplaced="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="ayD-v7-UWd">
-                                <rect key="frame" x="189" y="350" width="37" height="37"/>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="ayD-v7-UWd">
+                                <rect key="frame" x="188.66666666666666" y="359.66666666666669" width="37" height="37"/>
                                 <color key="color" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </activityIndicatorView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FWC-Ql-rcA">
@@ -157,6 +161,7 @@
                     <connections>
                         <outlet property="activityIndicator" destination="ayD-v7-UWd" id="4KM-qL-GTK"/>
                         <outlet property="closeButton" destination="FWC-Ql-rcA" id="rAr-Yp-q3F"/>
+                        <outlet property="datePicker" destination="Em6-Xt-HPT" id="qws-OO-P49"/>
                         <outlet property="dateTextField" destination="JYA-DS-aNy" id="Vq1-fp-ixB"/>
                         <outlet property="deleteButton" destination="999-ss-IyG" id="gWQ-5d-TmJ"/>
                         <outlet property="nameTextField" destination="W1F-NR-A4S" id="3oc-cQ-Nzj"/>
@@ -165,6 +170,13 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CMq-W0-4BF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" id="Em6-Xt-HPT">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="216"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                    <date key="date" timeIntervalSinceReferenceDate="582217043.90981197">
+                        <!--2019-06-14 14:57:23 +0000-->
+                    </date>
+                </datePicker>
             </objects>
             <point key="canvasLocation" x="-600" y="-14"/>
         </scene>

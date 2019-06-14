@@ -59,11 +59,13 @@ class NewAgeViewController: BaseViewController {
             fatalError("Not implemented yet!")
         }
         
-        nameTextFieldDelegate = NameTextFieldDelegate(self)
-        nameTextField.delegate = nameTextFieldDelegate
+//        nameTextFieldDelegate = NameTextFieldDelegate(self)
+//        nameTextField.delegate = nameTextFieldDelegate
         
-        dateTextFieldDelegate = DateTextFieldDelegate(self)
-        dateTextField.delegate = dateTextFieldDelegate
+//        dateTextFieldDelegate = DateTextFieldDelegate(self)
+//        dateTextField.delegate = dateTextFieldDelegate
+        
+        dateTextField.inputView = datePicker
         
         isProcessing = false
     }
@@ -109,6 +111,8 @@ class NewAgeViewController: BaseViewController {
     @IBOutlet private weak var nameTextField: UITextField!
     @IBOutlet private weak var dateTextField: UITextField!
     
+    @IBOutlet private weak var datePicker: UIDatePicker!
+    
     @IBOutlet private weak var deleteButton: UIButton!
     @IBOutlet private weak var proceedButton: UIButton!
     @IBOutlet private weak var closeButton: UIButton!
@@ -123,12 +127,12 @@ class NewAgeViewController: BaseViewController {
     
     // MARK: - Actions
     
-    @IBAction func closeButtonTapped(_ sender: Any) {
+    @IBAction private func closeButtonTapped(_ sender: Any) {
         guard !isProcessing else { return }
         dismiss(animated: true, completion: nil)
     }
     
-    @IBAction func proceedButtonTapped(_ sender: Any) {
+    @IBAction private func proceedButtonTapped(_ sender: Any) {
         
         
 //        _ = DatabaseManager.shared.addBirthday(Birthday(birthDate: BirthDate(year: 1988, month: 6, day: 24), name: "Amin")) { [weak self] _ in
@@ -136,9 +140,18 @@ class NewAgeViewController: BaseViewController {
 //        }
     }
     
-    @IBAction func deleteButtonTapped(_ sender: Any) {
+    @IBAction private func deleteButtonTapped(_ sender: Any) {
         
     }
+    
+    @IBAction private func nameTextFieldEdited(_ sender: Any) {
+        updateProceedButton()
+    }
+    
+    @IBAction private func nameTextFieldReturned(_ sender: Any) {
+        nameTextField.resignFirstResponder()
+    }
+    
     
     // This is my way of mimicing Anonymous classes/objects on Android.
     // Because I don't like to set the ViewController as the delegate for everything all the time.
