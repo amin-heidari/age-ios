@@ -76,6 +76,10 @@ class NewAgeViewController: BaseViewController {
         updateProceedButton()
     }
     
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        view.endEditing(true)
+    }
+    
     // MARK: - Properties
     
     private var isProcessing: Bool = false {
@@ -151,7 +155,6 @@ class NewAgeViewController: BaseViewController {
     @IBAction private func nameTextFieldReturned(_ sender: Any) {
         nameTextField.resignFirstResponder()
     }
-    
     
     // This is my way of mimicing Anonymous classes/objects on Android.
     // Because I don't like to set the ViewController as the delegate for everything all the time.
