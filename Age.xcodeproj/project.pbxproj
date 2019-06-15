@@ -11,10 +11,6 @@
 		274EC0A0226118D000D5E263 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 274EC09F226118D000D5E263 /* Assets.xcassets */; };
 		2771407F22B4005100F4ED05 /* DateUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2771407E22B4005100F4ED05 /* DateUtil.swift */; };
 		2771408022B4005100F4ED05 /* DateUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2771407E22B4005100F4ED05 /* DateUtil.swift */; };
-		2771408722B5276000F4ED05 /* BirthdayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2771408622B5276000F4ED05 /* BirthdayView.swift */; };
-		2771408822B5276000F4ED05 /* BirthdayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2771408622B5276000F4ED05 /* BirthdayView.swift */; };
-		2771408B22B528EF00F4ED05 /* BirthdayView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2771408A22B528EF00F4ED05 /* BirthdayView.xib */; };
-		2771408C22B528EF00F4ED05 /* BirthdayView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2771408A22B528EF00F4ED05 /* BirthdayView.xib */; };
 		27AA5AE02299F8B90059D1A2 /* Birthday.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27AA5AC22299F8B80059D1A2 /* Birthday.swift */; };
 		27AA5AE12299F8B90059D1A2 /* RemoteConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27AA5AC32299F8B80059D1A2 /* RemoteConfig.swift */; };
 		27AA5AE22299F8B90059D1A2 /* Age.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 27AA5AC52299F8B80059D1A2 /* Age.xcdatamodeld */; };
@@ -82,8 +78,6 @@
 		274EC095226118CC00D5E263 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		274EC09F226118D000D5E263 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2771407E22B4005100F4ED05 /* DateUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateUtil.swift; sourceTree = "<group>"; };
-		2771408622B5276000F4ED05 /* BirthdayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BirthdayView.swift; sourceTree = "<group>"; };
-		2771408A22B528EF00F4ED05 /* BirthdayView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BirthdayView.xib; sourceTree = "<group>"; };
 		27AA5AC22299F8B80059D1A2 /* Birthday.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Birthday.swift; sourceTree = "<group>"; };
 		27AA5AC32299F8B80059D1A2 /* RemoteConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RemoteConfig.swift; sourceTree = "<group>"; };
 		27AA5AC62299F8B80059D1A2 /* Age.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Age.xcdatamodel; sourceTree = "<group>"; };
@@ -162,9 +156,6 @@
 			children = (
 				274EC095226118CC00D5E263 /* AppDelegate.swift */,
 				27AA5AF32299FB0E0059D1A2 /* Constants */,
-				2771408422B41E2200F4ED05 /* DataSources */,
-				2771408522B5271700F4ED05 /* Controls */,
-				2771408922B528DD00F4ED05 /* Xibs */,
 				27AA5AD12299F8B90059D1A2 /* Cells */,
 				27AA5AD32299F8B90059D1A2 /* Certificates */,
 				27AA5AC42299F8B80059D1A2 /* Database */,
@@ -178,29 +169,6 @@
 				274EC09F226118D000D5E263 /* Assets.xcassets */,
 			);
 			path = Age;
-			sourceTree = "<group>";
-		};
-		2771408422B41E2200F4ED05 /* DataSources */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = DataSources;
-			sourceTree = "<group>";
-		};
-		2771408522B5271700F4ED05 /* Controls */ = {
-			isa = PBXGroup;
-			children = (
-				2771408622B5276000F4ED05 /* BirthdayView.swift */,
-			);
-			path = Controls;
-			sourceTree = "<group>";
-		};
-		2771408922B528DD00F4ED05 /* Xibs */ = {
-			isa = PBXGroup;
-			children = (
-				2771408A22B528EF00F4ED05 /* BirthdayView.xib */,
-			);
-			path = Xibs;
 			sourceTree = "<group>";
 		};
 		27AA5AC12299F8B80059D1A2 /* Models */ = {
@@ -417,7 +385,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				27AA5B29229DF7AA0059D1A2 /* Config.cer in Resources */,
-				2771408B22B528EF00F4ED05 /* BirthdayView.xib in Resources */,
 				274EC0A0226118D000D5E263 /* Assets.xcassets in Resources */,
 				27AA5AF22299F8B90059D1A2 /* Main.storyboard in Resources */,
 				27AA5AF12299F8B90059D1A2 /* LaunchScreen.storyboard in Resources */,
@@ -429,7 +396,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				27AA5B0C2299FC090059D1A2 /* Assets.xcassets in Resources */,
-				2771408C22B528EF00F4ED05 /* BirthdayView.xib in Resources */,
 				27AA5B0F2299FC090059D1A2 /* Main.storyboard in Resources */,
 				27AA5B2C229DF7AA0059D1A2 /* Config.cer in Resources */,
 				27AA5B102299FC090059D1A2 /* LaunchScreen.storyboard in Resources */,
@@ -458,7 +424,6 @@
 				27AA5B3122A422EB0059D1A2 /* BundleUtil.swift in Sources */,
 				2771407F22B4005100F4ED05 /* DateUtil.swift in Sources */,
 				27C8C00A22B2D8F300C064D5 /* BirthDate.swift in Sources */,
-				2771408722B5276000F4ED05 /* BirthdayView.swift in Sources */,
 				27C257E922A3138400EFAA33 /* UpgradeViewController.swift in Sources */,
 				27C8C00D22B2D99D00C064D5 /* CallbackUtil.swift in Sources */,
 				27AA5AE32299F8B90059D1A2 /* DatabaseManager.swift in Sources */,
@@ -494,7 +459,6 @@
 				27AA5B3222A422EB0059D1A2 /* BundleUtil.swift in Sources */,
 				2771408022B4005100F4ED05 /* DateUtil.swift in Sources */,
 				27C8C00B22B2D8F500C064D5 /* BirthDate.swift in Sources */,
-				2771408822B5276000F4ED05 /* BirthdayView.swift in Sources */,
 				27C257EA22A3138400EFAA33 /* UpgradeViewController.swift in Sources */,
 				27AA5B042299FC090059D1A2 /* DatabaseManager.swift in Sources */,
 				27C257D722A2102600EFAA33 /* AppError.swift in Sources */,

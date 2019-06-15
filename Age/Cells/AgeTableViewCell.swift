@@ -9,23 +9,71 @@
 import UIKit
 
 class AgeTableViewCell: UITableViewCell {
-
-    var birthday: Birthday? {
+    
+    // MARK: - Constants/Types
+    
+    // Could be an enum with associated values, could be a struct, or anything else, they are all the same.
+    // Decided to go with the simplest here.
+    typealias Item = (birthday: Birthday, isDefault: Bool)
+    
+    // MARK: - Static
+    
+    // MARK: - API
+    
+    var item: Item? {
         didSet {
-            guard let birthday = birthday else { return }
-            _ = birthday
+            guard let item = item else {
+                return
+            }
+            nameLabel.text = item.birthday.name
+            ageLabel.text = String(format: "%d - %d - %d", item.birthday.birthDate.year, item.birthday.birthDate.month, item.birthday.birthDate.day)
         }
     }
+    
+    // MARK: - Life Cycle
     
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
     }
-
+    
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
+        
         // Configure the view for the selected state
     }
+    
+    override func setHighlighted(_ highlighted: Bool, animated: Bool) {
+        super.setHighlighted(highlighted, animated: animated)
+        
+        
+    }
+    
+    override func willMove(toSuperview newSuperview: UIView?) {
+        super.willMove(toSuperview: newSuperview)
+        
+        
+    }
+    
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        
+        contentView
+    }
+    
+    // MARK: - Properties
+    
+    // MARK: - Outlets
+    
+    @IBOutlet private weak var nameLabel: UILabel!
+    @IBOutlet private weak var ageLabel: UILabel!
+    
+    // MARK: - Methods
+    
+    // MARK: - Actions
+    
+    
+    
+    
 
 }
