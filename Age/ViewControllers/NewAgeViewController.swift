@@ -117,7 +117,9 @@ class NewAgeViewController: BaseViewController {
     @IBOutlet private weak var nameTextField: UITextField!
     @IBOutlet private weak var dateTextField: UITextField!
     
-    @IBOutlet private weak var datePicker: UIDatePicker!
+    // Because the datePicker is not a permanent subview of the view, it has to be strong.
+    // Read this again if you got confused: https://cocoacasts.com/should-outlets-be-weak-or-strong
+    @IBOutlet private var datePicker: UIDatePicker!
     
     @IBOutlet private weak var deleteButton: UIButton!
     @IBOutlet private weak var proceedButton: UIButton!
@@ -146,7 +148,8 @@ class NewAgeViewController: BaseViewController {
             UserDefaultsUtil.defaultBirthday = birthday
             performSegue(withIdentifier: "age", sender: nil)
         case .editDefault:
-            _ = 1
+            UserDefaultsUtil.defaultBirthday = birthday
+            dismiss(animated: true, completion: nil)
         case .newEntity:
             fatalError("Not implemented yet!")
         case .editEntity(let birthdayEntity):

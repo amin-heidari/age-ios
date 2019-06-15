@@ -26,27 +26,26 @@
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <subviews>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tkh-ad-Ju8">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
-                                            <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                            <rect key="frame" x="105.66666666666669" y="10" width="203" height="24"/>
+                                            <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
                                             <state key="normal" title="Add New Birthday"/>
                                         </button>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstAttribute="trailing" secondItem="Tkh-ad-Ju8" secondAttribute="trailing" id="T0p-EP-c1e"/>
-                                        <constraint firstAttribute="bottom" secondItem="Tkh-ad-Ju8" secondAttribute="bottom" id="UjT-le-Tv9"/>
-                                        <constraint firstItem="Tkh-ad-Ju8" firstAttribute="top" secondItem="tio-Je-zpn" secondAttribute="top" id="Y9m-GC-rfD"/>
-                                        <constraint firstItem="Tkh-ad-Ju8" firstAttribute="leading" secondItem="tio-Je-zpn" secondAttribute="leading" id="mHo-DS-8Sa"/>
+                                        <constraint firstItem="Tkh-ad-Ju8" firstAttribute="top" relation="greaterThanOrEqual" secondItem="tio-Je-zpn" secondAttribute="top" constant="10" id="L8o-0c-bag"/>
+                                        <constraint firstItem="Tkh-ad-Ju8" firstAttribute="centerX" secondItem="tio-Je-zpn" secondAttribute="centerX" id="TGU-5z-iN2"/>
+                                        <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="Tkh-ad-Ju8" secondAttribute="bottom" constant="10" id="Zgh-Tj-8IW"/>
                                     </constraints>
                                 </view>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="age" rowHeight="85" id="tHW-R0-GNd" customClass="AgeTableViewCell" customModule="Age" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="age" rowHeight="85" id="78Y-Xl-qMb" customClass="AgeTableViewCell" customModule="Age" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="414" height="85"/>
                                         <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="tHW-R0-GNd" id="dJ3-RG-L0q">
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="78Y-Xl-qMb" id="PR7-u9-dVl">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="84.666666666666671"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xe1-9D-kd2">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Nv-Bt-9ex">
                                                     <rect key="frame" x="20" y="19.999999999999996" width="42" height="44.666666666666657"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
@@ -54,10 +53,10 @@
                                                 </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="xe1-9D-kd2" firstAttribute="top" secondItem="dJ3-RG-L0q" secondAttribute="top" constant="20" id="2a8-5B-rbY"/>
-                                                <constraint firstAttribute="bottom" secondItem="xe1-9D-kd2" secondAttribute="bottom" constant="20" id="HLU-NL-kP0"/>
-                                                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="xe1-9D-kd2" secondAttribute="trailing" constant="20" symbolic="YES" id="HrW-t5-xXd"/>
-                                                <constraint firstItem="xe1-9D-kd2" firstAttribute="leading" secondItem="dJ3-RG-L0q" secondAttribute="leading" constant="20" id="fCt-aa-Yii"/>
+                                                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="5Nv-Bt-9ex" secondAttribute="trailing" constant="20" symbolic="YES" id="8S2-p4-fOY"/>
+                                                <constraint firstItem="5Nv-Bt-9ex" firstAttribute="leading" secondItem="PR7-u9-dVl" secondAttribute="leading" constant="20" id="8zd-Ni-qxm"/>
+                                                <constraint firstItem="5Nv-Bt-9ex" firstAttribute="top" secondItem="PR7-u9-dVl" secondAttribute="top" constant="20" id="I0X-1x-hsQ"/>
+                                                <constraint firstAttribute="bottom" secondItem="5Nv-Bt-9ex" secondAttribute="bottom" constant="20" id="qOY-zA-Iwm"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -149,6 +148,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="6qR-GG-XOH" firstAttribute="top" secondItem="A0a-No-Eui" secondAttribute="top" constant="80" id="NIg-Ui-y5r"/>
+                            <constraint firstItem="FWC-Ql-rcA" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="A0a-No-Eui" secondAttribute="leading" id="Sgp-mg-v3r"/>
                             <constraint firstItem="ayD-v7-UWd" firstAttribute="centerY" secondItem="A0a-No-Eui" secondAttribute="centerY" id="Zu1-nU-dyq"/>
                             <constraint firstItem="A0a-No-Eui" firstAttribute="trailing" secondItem="FWC-Ql-rcA" secondAttribute="trailing" constant="20" id="hvw-FY-T8V"/>
                             <constraint firstItem="6qR-GG-XOH" firstAttribute="centerX" secondItem="A0a-No-Eui" secondAttribute="centerX" id="iaO-DI-hpQ"/>
@@ -367,10 +367,20 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qT6-f5-dfA">
+                                <rect key="frame" x="359" y="20" width="35" height="30"/>
+                                <state key="normal" title="Ages"/>
+                                <connections>
+                                    <action selector="agesButtonTapped:" destination="ueg-9m-lRh" eventType="primaryActionTriggered" id="DT9-qx-9Z3"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="Hjn-sw-q9H" firstAttribute="trailing" secondItem="qT6-f5-dfA" secondAttribute="trailing" constant="20" id="6Wy-Ce-d1h"/>
+                            <constraint firstItem="qT6-f5-dfA" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Hjn-sw-q9H" secondAttribute="leading" id="CFP-kq-U6f"/>
                             <constraint firstItem="L02-oc-39U" firstAttribute="centerX" secondItem="LT6-ND-lG0" secondAttribute="centerX" id="Ewa-GI-a3l"/>
+                            <constraint firstItem="qT6-f5-dfA" firstAttribute="top" secondItem="Hjn-sw-q9H" secondAttribute="top" id="mJO-rt-gpt"/>
                             <constraint firstItem="L02-oc-39U" firstAttribute="centerY" secondItem="LT6-ND-lG0" secondAttribute="centerY" id="ysM-BI-FV2"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Hjn-sw-q9H"/>

@@ -9,22 +9,25 @@
 import UIKit
 
 class AgeViewController: BaseViewController {
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+    
+    // MARK: - Constants/Types
+    
+    // MARK: - Static
+    
+    // MARK: - API
+    
+    // MARK: - Life Cycle
+    
+    // MARK: - Properties
+    
+    // MARK: - Outlets
+    
+    // MARK: - Methods
+    
+    // MARK: - Actions
+    
+    @IBAction func agesButtonTapped(_ sender: Any) {
+        performSegue(withIdentifier: "ages", sender: nil)
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

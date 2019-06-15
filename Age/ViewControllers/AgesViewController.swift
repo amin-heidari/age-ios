@@ -13,6 +13,8 @@ class AgesViewController: BaseViewController {
     
     @IBOutlet private weak var tableView: UITableView!
 
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -26,17 +28,35 @@ class AgesViewController: BaseViewController {
 extension AgesViewController: UITableViewDataSource {
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return DatabaseManager.shared.birthdaysFetchResultsController.sections?.count ?? 0
+        return 1;
+//        return DatabaseManager.shared.birthdaysFetchResultsController.sections?.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return DatabaseManager.shared.birthdaysFetchResultsController.sections?[section].numberOfObjects ?? 0
+        return 0
+//        return DatabaseManager.shared.birthdaysFetchResultsController.sections?[section].numberOfObjects ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "age", for: indexPath) as! AgeTableViewCell
         cell.birthday = DatabaseManager.shared.birthdaysFetchResultsController.object(at: indexPath).birthday
         return cell
+    }
+    
+}
+
+extension AgesViewController: UITableViewDelegate {
+    
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        return BirthdayView(frame: .zero)
+    }
+    
+    func tableView(_ tableView: UITableView, estimatedHeightForHeaderInSection section: Int) -> CGFloat {
+        return 100
+    }
+    
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return UITableView.automaticDimension
     }
     
 }
