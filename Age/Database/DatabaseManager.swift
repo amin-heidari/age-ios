@@ -43,7 +43,7 @@ class DatabaseManager {
     // MARK: Database Operations
     
     // Async.
-    func addBirthday(_ birthday: Birthday, completion: @escaping Completion<BirthdayEntity>) {
+    func addBirthday(_ birthday: Birthday, completion: @escaping Finish<BirthdayEntity>) {
         backgroundContext.perform {
             guard let birthdayEntity = NSEntityDescription.insertNewObject(forEntityName: Entity.BirthdayEntity.rawValue, into: self.backgroundContext) as? BirthdayEntity else {
                 fatalError("Failed!")
@@ -55,29 +55,20 @@ class DatabaseManager {
             birthdayEntity.name = birthday.name
             birthdayEntity.created = Date()
             
-            try? self.backgroundContext.save()
+            do {
+                try self.backgroundContext.save()
+            } catch {
+                fatalError("Unresolved error: \(error)")
+            }
             
             DispatchQueue.main.async {
-                completion(.success(birthdayEntity))
+                completion(birthdayEntity)
             }
         }
     }
     
-    // Sync.
-    func addBirthday(_ birthday: Birthday) -> BirthdayEntity {
-        guard let birthdayEntity = NSEntityDescription.insertNewObject(forEntityName: Entity.BirthdayEntity.rawValue, into: persistentContainer.viewContext) as? BirthdayEntity else {
-            fatalError("Failed!")
-        }
-        birthdayEntity.year = Int16(birthday.birthDate.year)
-        birthdayEntity.month = Int16(birthday.birthDate.month)
-        birthdayEntity.day = Int16(birthday.birthDate.day)
-        birthdayEntity.name = birthday.name
-        birthdayEntity.created = Date()
-        
-        return birthdayEntity
-    }
-    
     // method for updating a birthday.
+    // This one could be sync I assume.
     func updateBirthday(_ birthdayEntity: BirthdayEntity, with newBirthday: Birthday) {
         birthdayEntity.year = Int16(newBirthday.birthDate.year)
         birthdayEntity.month = Int16(newBirthday.birthDate.month)
@@ -86,8 +77,22 @@ class DatabaseManager {
     }
     
     // method for remove birthday with bg context.
-    func deleteBirthday(_ birthdayEntity: BirthdayEntity) {
-        persistentContainer.viewContext.delete(birthdayEntity)
+    func deleteBirthday(_ birthdayEntity: BirthdayEntity, completion: @escaping Finish<Any?>) {
+        // https://stackoverflow.com/a/21245844
+        let objectId = birthdayEntity.objectID
+        backgroundContext.perform {
+            self.backgroundContext.delete(self.backgroundContext.object(with: objectId))
+            
+            do {
+                try self.backgroundContext.save()
+            } catch {
+                fatalError("Unresolved error: \(error)")
+            }
+            
+            DispatchQueue.main.async {
+                completion(nil)
+            }
+        }
     }
     
     /// A fetchedResultsController.

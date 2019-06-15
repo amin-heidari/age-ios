@@ -25,6 +25,9 @@ class AgeTableViewCell: UITableViewCell {
             guard let item = item else {
                 return
             }
+            
+            defaultLabel.isHidden = !item.isDefault
+                
             nameLabel.text = item.birthday.name
             ageLabel.text = String(format: "%d - %d - %d", item.birthday.birthDate.year, item.birthday.birthDate.month, item.birthday.birthDate.day)
         }
@@ -45,20 +48,14 @@ class AgeTableViewCell: UITableViewCell {
     
     override func setHighlighted(_ highlighted: Bool, animated: Bool) {
         super.setHighlighted(highlighted, animated: animated)
-        
-        
     }
     
     override func willMove(toSuperview newSuperview: UIView?) {
         super.willMove(toSuperview: newSuperview)
-        
-        
     }
     
     override func prepareForReuse() {
         super.prepareForReuse()
-        
-        contentView
     }
     
     // MARK: - Properties
@@ -67,6 +64,7 @@ class AgeTableViewCell: UITableViewCell {
     
     @IBOutlet private weak var nameLabel: UILabel!
     @IBOutlet private weak var ageLabel: UILabel!
+    @IBOutlet private weak var defaultLabel: UILabel!
     
     // MARK: - Methods
     

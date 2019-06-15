@@ -52,20 +52,17 @@ class NewAgeViewController: BaseViewController {
             nameTextField.text = birthday.name
         case .newEntity:
             closeButton.isHidden = false
-            fatalError("Not implemented yet!")
+            deleteButton.isHidden = true
+            editingBirthDate = NewAgeViewController.evaluateDefaultBirthDate()
         case .editEntity(let birthdayEntity):
-            _ = birthdayEntity
             closeButton.isHidden = false
-            fatalError("Not implemented yet!")
+            deleteButton.isHidden = false
+            let birthday = birthdayEntity.birthday!
+            editingBirthDate = birthday.birthDate
+            nameTextField.text = birthday.name
         }
         
         datePicker.date = editingBirthDate.date
-        
-//        nameTextFieldDelegate = NameTextFieldDelegate(self)
-//        nameTextField.delegate = nameTextFieldDelegate
-        
-//        dateTextFieldDelegate = DateTextFieldDelegate(self)
-//        dateTextField.delegate = dateTextFieldDelegate
         
         dateTextField.inputView = datePicker
         
@@ -151,19 +148,27 @@ class NewAgeViewController: BaseViewController {
             UserDefaultsUtil.defaultBirthday = birthday
             dismiss(animated: true, completion: nil)
         case .newEntity:
-            fatalError("Not implemented yet!")
+            isProcessing = true
+            DatabaseManager.shared.addBirthday(birthday) { [weak self] _ in
+                self?.dismiss(animated: true, completion: nil)
+            }
         case .editEntity(let birthdayEntity):
-            _ = birthdayEntity
-            fatalError("Not implemented yet!")
+            isProcessing = true
+            DatabaseManager.shared.updateBirthday(birthdayEntity, with: birthday)
+            dismiss(animated: true, completion: nil)
         }
-        
-//        _ = DatabaseManager.shared.addBirthday(Birthday(birthDate: BirthDate(year: 1988, month: 6, day: 24), name: "Amin")) { [weak self] _ in
-//            self?.dismiss(animated: true, completion: nil)
-//        }
     }
     
     @IBAction private func deleteButtonTapped(_ sender: Any) {
-        
+        switch scenario! {
+        case .editEntity(let birthdayEntity):
+            isProcessing = true
+            DatabaseManager.shared.deleteBirthday(birthdayEntity) { [weak self] _ in
+                self?.dismiss(animated: true, completion: nil)
+            }
+        default:
+            break
+        }
     }
     
     @IBAction private func nameTextFieldEdited(_ sender: Any) {
@@ -177,48 +182,10 @@ class NewAgeViewController: BaseViewController {
     @IBAction func datePickerValueChanged(_ sender: Any) {
         editingBirthDate = datePicker.date.birthDate
     }
-    
-    
-    // This is my way of mimicing Anonymous classes/objects on Android.
-    // Because I don't like to set the ViewController as the delegate for everything all the time.
-    var nameTextFieldDelegate: NameTextFieldDelegate!
-    class NameTextFieldDelegate: NSObject, UITextFieldDelegate {
-        
-        private weak var viewController: NewAgeViewController?
-        
-        init(_ viewController: NewAgeViewController) {
-            self.viewController = viewController
-        }
-        
-        func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-            viewController?.dateTextField.becomeFirstResponder()
-            return true
-        }
-        
-        func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-            viewController?.updateProceedButton()
-            return true
-        }
-        
-    }
-    
-    var dateTextFieldDelegate: DateTextFieldDelegate!
-    class DateTextFieldDelegate: NSObject, UITextFieldDelegate {
-        
-        private weak var viewController: NewAgeViewController?
-        
-        init(_ viewController: NewAgeViewController) {
-            self.viewController = viewController
-        }
-        
-        func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-            viewController?.dateTextField.resignFirstResponder()
-            return true
-        }
-        
-    }
 
 }
+
+// MARK: - Utils
 
 private extension BirthDate {
     var date: Date {

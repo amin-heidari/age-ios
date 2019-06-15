@@ -63,19 +63,28 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="(My Age)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0pT-67-eo8">
+                                                    <rect key="frame" x="324" y="60.333333333333336" width="70" height="20.333333333333336"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="esF-UR-jXa" secondAttribute="trailing" id="0id-uE-fYT"/>
                                                 <constraint firstAttribute="bottom" secondItem="esF-UR-jXa" secondAttribute="bottom" constant="20" id="2mP-Wt-wYY"/>
                                                 <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="5Nv-Bt-9ex" secondAttribute="trailing" constant="20" symbolic="YES" id="8S2-p4-fOY"/>
                                                 <constraint firstItem="5Nv-Bt-9ex" firstAttribute="leading" secondItem="PR7-u9-dVl" secondAttribute="leading" constant="20" id="8zd-Ni-qxm"/>
                                                 <constraint firstItem="5Nv-Bt-9ex" firstAttribute="top" secondItem="PR7-u9-dVl" secondAttribute="top" constant="20" id="I0X-1x-hsQ"/>
+                                                <constraint firstAttribute="bottom" secondItem="0pT-67-eo8" secondAttribute="bottom" constant="20" id="MrA-4N-W8c"/>
+                                                <constraint firstItem="0pT-67-eo8" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="esF-UR-jXa" secondAttribute="trailing" constant="20" id="NFN-je-xEE"/>
                                                 <constraint firstItem="esF-UR-jXa" firstAttribute="top" secondItem="5Nv-Bt-9ex" secondAttribute="bottom" constant="20" id="OvZ-2r-0T5"/>
                                                 <constraint firstItem="esF-UR-jXa" firstAttribute="leading" secondItem="PR7-u9-dVl" secondAttribute="leading" constant="20" id="ix6-zk-p0A"/>
+                                                <constraint firstAttribute="trailing" secondItem="0pT-67-eo8" secondAttribute="trailing" constant="20" id="x0Q-1A-SF5"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="ageLabel" destination="esF-UR-jXa" id="Zns-L1-YQk"/>
+                                            <outlet property="defaultLabel" destination="0pT-67-eo8" id="R2x-cU-41O"/>
                                             <outlet property="nameLabel" destination="5Nv-Bt-9ex" id="4SM-Aj-spX"/>
                                         </connections>
                                     </tableViewCell>
