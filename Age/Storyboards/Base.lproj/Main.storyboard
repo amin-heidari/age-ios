@@ -26,15 +26,18 @@
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <subviews>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tkh-ad-Ju8">
-                                            <rect key="frame" x="105.66666666666669" y="10" width="203" height="24"/>
-                                            <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                                            <rect key="frame" x="148.66666666666666" y="10" width="116.99999999999997" height="24"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <state key="normal" title="Add New Birthday"/>
                                         </button>
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="Tkh-ad-Ju8" firstAttribute="top" relation="greaterThanOrEqual" secondItem="tio-Je-zpn" secondAttribute="top" constant="10" id="L8o-0c-bag"/>
-                                        <constraint firstItem="Tkh-ad-Ju8" firstAttribute="centerX" secondItem="tio-Je-zpn" secondAttribute="centerX" id="TGU-5z-iN2"/>
+                                        <constraint firstItem="Tkh-ad-Ju8" firstAttribute="centerX" secondItem="tio-Je-zpn" secondAttribute="centerX" id="Laf-FW-wNF"/>
+                                        <constraint firstItem="Tkh-ad-Ju8" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="tio-Je-zpn" secondAttribute="leading" constant="10" id="QIW-o0-l8O"/>
+                                        <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Tkh-ad-Ju8" secondAttribute="trailing" constant="10" id="RiL-1N-9vy"/>
                                         <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="Tkh-ad-Ju8" secondAttribute="bottom" constant="10" id="Zgh-Tj-8IW"/>
+                                        <constraint firstItem="Tkh-ad-Ju8" firstAttribute="centerY" secondItem="tio-Je-zpn" secondAttribute="centerY" id="s5k-9z-tqk"/>
                                     </constraints>
                                 </view>
                                 <prototypes>
