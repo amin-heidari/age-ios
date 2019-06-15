@@ -71,6 +71,8 @@
 		27C8C00E22B2DE1000C064D5 /* CallbackUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27C8C00C22B2D99D00C064D5 /* CallbackUtil.swift */; };
 		27C8C01022B3016800C064D5 /* StringUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27C8C00F22B3016800C064D5 /* StringUtil.swift */; };
 		27C8C01122B3016800C064D5 /* StringUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27C8C00F22B3016800C064D5 /* StringUtil.swift */; };
+		27C8C01422B58AF000C064D5 /* AgeCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27C8C01322B58AF000C064D5 /* AgeCalculator.swift */; };
+		27C8C01522B58AF000C064D5 /* AgeCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27C8C01322B58AF000C064D5 /* AgeCalculator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -114,6 +116,7 @@
 		27C8C00922B2D8F300C064D5 /* BirthDate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BirthDate.swift; sourceTree = "<group>"; };
 		27C8C00C22B2D99D00C064D5 /* CallbackUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CallbackUtil.swift; sourceTree = "<group>"; };
 		27C8C00F22B3016800C064D5 /* StringUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringUtil.swift; sourceTree = "<group>"; };
+		27C8C01322B58AF000C064D5 /* AgeCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgeCalculator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -164,6 +167,7 @@
 				27C257C8229F0CEA00EFAA33 /* Config */,
 				27AA5ADB2299F8B90059D1A2 /* Storyboards */,
 				27AA5AC92299F8B80059D1A2 /* Utils */,
+				27C8C01222B58AE700C064D5 /* Calculator */,
 				27C257D822A30A2E00EFAA33 /* Navigation */,
 				27AA5AD52299F8B90059D1A2 /* ViewControllers */,
 				274EC09F226118D000D5E263 /* Assets.xcassets */,
@@ -308,6 +312,14 @@
 			path = Navigation;
 			sourceTree = "<group>";
 		};
+		27C8C01222B58AE700C064D5 /* Calculator */ = {
+			isa = PBXGroup;
+			children = (
+				27C8C01322B58AF000C064D5 /* AgeCalculator.swift */,
+			);
+			path = Calculator;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -428,6 +440,7 @@
 				27C8C00D22B2D99D00C064D5 /* CallbackUtil.swift in Sources */,
 				27AA5AE32299F8B90059D1A2 /* DatabaseManager.swift in Sources */,
 				27C257D622A2102600EFAA33 /* AppError.swift in Sources */,
+				27C8C01422B58AF000C064D5 /* AgeCalculator.swift in Sources */,
 				27AA5AE22299F8B90059D1A2 /* Age.xcdatamodeld in Sources */,
 				27AA5AEE2299F8B90059D1A2 /* AgesViewController.swift in Sources */,
 				27AA5AE02299F8B90059D1A2 /* Birthday.swift in Sources */,
@@ -463,6 +476,7 @@
 				27AA5B042299FC090059D1A2 /* DatabaseManager.swift in Sources */,
 				27C257D722A2102600EFAA33 /* AppError.swift in Sources */,
 				27AA5B052299FC090059D1A2 /* Age.xcdatamodeld in Sources */,
+				27C8C01522B58AF000C064D5 /* AgeCalculator.swift in Sources */,
 				27C8C00E22B2DE1000C064D5 /* CallbackUtil.swift in Sources */,
 				27AA5B062299FC090059D1A2 /* AgesViewController.swift in Sources */,
 				27AA5B082299FC090059D1A2 /* Birthday.swift in Sources */,

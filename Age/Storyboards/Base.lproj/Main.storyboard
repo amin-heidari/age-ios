@@ -414,6 +414,7 @@
                         <viewLayoutGuide key="safeArea" id="Hjn-sw-q9H"/>
                     </view>
                     <connections>
+                        <outlet property="ageLabel" destination="L02-oc-39U" id="tpe-Ui-FXr"/>
                         <segue destination="BYZ-38-t0r" kind="show" identifier="ages" id="DbE-vn-EuT"/>
                     </connections>
                 </viewController>
