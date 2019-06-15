@@ -36,7 +36,35 @@ class AgeCalculator {
     var currentAge: Age {
         counter += 1
         
-        return Age(full: counter, rational: 0.783652)
+        var thisYearBirthdayComponents = DateComponents()
+        thisYearBirthdayComponents.year = birthDate.year
+        thisYearBirthdayComponents.month = birthDate.month
+        thisYearBirthdayComponents.day = birthDate.day
+        thisYearBirthdayComponents.minute = 0
+        thisYearBirthdayComponents.hour = 0
+        thisYearBirthdayComponents.second = 0
+        thisYearBirthdayComponents.nanosecond = 0
+        
+        let thisYearBirthday = Calendar.current.date(from: thisYearBirthdayComponents)!
+        
+        var lastBirthday: Date
+        var nextBirthday: Date
+        let now = Date()
+        
+        if (now > thisYearBirthday) { // We are past this year's birthday.
+            lastBirthday = thisYearBirthday
+            nextBirthday = Calendar.current.date(byAdding: .year, value: 1, to: lastBirthday)!
+        } else { // The birthday is still ahead of us this year.
+            nextBirthday = thisYearBirthday
+            lastBirthday = Calendar.current.date(byAdding: .year, value: -1, to: nextBirthday)!
+        }
+        
+        let fullYears = Calendar.current.component(.year, from: lastBirthday) - birthDate.year
+        let secondsLastToNextBday = nextBirthday.timeIntervalSince(lastBirthday)
+        let secondsLastBdayToNow = now.timeIntervalSince(lastBirthday)
+        let yearFraction: Double = Double(secondsLastBdayToNow) / Double(secondsLastToNextBday)
+        
+        return Age(full: fullYears, rational: yearFraction)
     }
     
     // MARK: - Life Cycle
