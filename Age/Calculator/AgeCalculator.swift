@@ -34,10 +34,10 @@ class AgeCalculator {
     }
     
     var currentAge: Age {
-        counter += 1
+        let now = Date()
         
         var thisYearBirthdayComponents = DateComponents()
-        thisYearBirthdayComponents.year = birthDate.year
+        thisYearBirthdayComponents.year = Calendar.current.component(.year, from: now)
         thisYearBirthdayComponents.month = birthDate.month
         thisYearBirthdayComponents.day = birthDate.day
         thisYearBirthdayComponents.minute = 0
@@ -49,7 +49,6 @@ class AgeCalculator {
         
         var lastBirthday: Date
         var nextBirthday: Date
-        let now = Date()
         
         if (now > thisYearBirthday) { // We are past this year's birthday.
             lastBirthday = thisYearBirthday
@@ -70,8 +69,6 @@ class AgeCalculator {
     // MARK: - Life Cycle
     
     // MARK: - Properties
-    
-    private var counter = 0
     
     private let birthDate: BirthDate
     

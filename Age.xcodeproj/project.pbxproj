@@ -11,6 +11,8 @@
 		274EC0A0226118D000D5E263 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 274EC09F226118D000D5E263 /* Assets.xcassets */; };
 		2771407F22B4005100F4ED05 /* DateUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2771407E22B4005100F4ED05 /* DateUtil.swift */; };
 		2771408022B4005100F4ED05 /* DateUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2771407E22B4005100F4ED05 /* DateUtil.swift */; };
+		279D139F22B7DE22006B649E /* FontUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 279D139E22B7DE22006B649E /* FontUtil.swift */; };
+		279D13A022B7DE22006B649E /* FontUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 279D139E22B7DE22006B649E /* FontUtil.swift */; };
 		27AA5AE02299F8B90059D1A2 /* Birthday.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27AA5AC22299F8B80059D1A2 /* Birthday.swift */; };
 		27AA5AE12299F8B90059D1A2 /* RemoteConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27AA5AC32299F8B80059D1A2 /* RemoteConfig.swift */; };
 		27AA5AE22299F8B90059D1A2 /* Age.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 27AA5AC52299F8B80059D1A2 /* Age.xcdatamodeld */; };
@@ -80,6 +82,7 @@
 		274EC095226118CC00D5E263 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		274EC09F226118D000D5E263 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2771407E22B4005100F4ED05 /* DateUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateUtil.swift; sourceTree = "<group>"; };
+		279D139E22B7DE22006B649E /* FontUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontUtil.swift; sourceTree = "<group>"; };
 		27AA5AC22299F8B80059D1A2 /* Birthday.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Birthday.swift; sourceTree = "<group>"; };
 		27AA5AC32299F8B80059D1A2 /* RemoteConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RemoteConfig.swift; sourceTree = "<group>"; };
 		27AA5AC62299F8B80059D1A2 /* Age.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Age.xcdatamodel; sourceTree = "<group>"; };
@@ -207,6 +210,7 @@
 				27C8C00C22B2D99D00C064D5 /* CallbackUtil.swift */,
 				27C8C00F22B3016800C064D5 /* StringUtil.swift */,
 				2771407E22B4005100F4ED05 /* DateUtil.swift */,
+				279D139E22B7DE22006B649E /* FontUtil.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -441,6 +445,7 @@
 				27AA5AE32299F8B90059D1A2 /* DatabaseManager.swift in Sources */,
 				27C257D622A2102600EFAA33 /* AppError.swift in Sources */,
 				27C8C01422B58AF000C064D5 /* AgeCalculator.swift in Sources */,
+				279D139F22B7DE22006B649E /* FontUtil.swift in Sources */,
 				27AA5AE22299F8B90059D1A2 /* Age.xcdatamodeld in Sources */,
 				27AA5AEE2299F8B90059D1A2 /* AgesViewController.swift in Sources */,
 				27AA5AE02299F8B90059D1A2 /* Birthday.swift in Sources */,
@@ -477,6 +482,7 @@
 				27C257D722A2102600EFAA33 /* AppError.swift in Sources */,
 				27AA5B052299FC090059D1A2 /* Age.xcdatamodeld in Sources */,
 				27C8C01522B58AF000C064D5 /* AgeCalculator.swift in Sources */,
+				279D13A022B7DE22006B649E /* FontUtil.swift in Sources */,
 				27C8C00E22B2DE1000C064D5 /* CallbackUtil.swift in Sources */,
 				27AA5B062299FC090059D1A2 /* AgesViewController.swift in Sources */,
 				27AA5B082299FC090059D1A2 /* Birthday.swift in Sources */,

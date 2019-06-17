@@ -53,7 +53,7 @@ class AgeViewController: BaseViewController {
             return
         }
         
-        ageLabel.text = String(format: "%10.8f", ageCalculator.currentAge.value)
+        ageLabel.text = String(format: "%.8f", ageCalculator.currentAge.value)
     }
     
     // MARK: - Actions
