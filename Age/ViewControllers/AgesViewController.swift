@@ -28,7 +28,7 @@ class AgesViewController: BaseViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        super.viewDidLoad()
+        super.viewWillAppear(animated)
         
         // Section 1 will be done through the fetch results controller.
         tableView.reloadSections([0], with: .automatic)

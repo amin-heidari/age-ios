@@ -37,6 +37,8 @@ class UpgradeViewController: BaseViewController {
     
     // MARK: - Properties
     
+    override var isNavigationBarHidden: Bool { return true }
+    
     // MARK: - Outlets
     @IBOutlet private weak var upgradeTitleLabel: UILabel!
     @IBOutlet private weak var upgradeDescriptionLabel: UILabel!

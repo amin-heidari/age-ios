@@ -20,8 +20,7 @@ class LoadingViewController: BaseViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
         loadConfig()
     }
     
@@ -36,6 +35,8 @@ class LoadingViewController: BaseViewController {
     }
     
     // MARK: - Properties
+    
+    override var isNavigationBarHidden: Bool { return true }
     
     private var configTask: URLSessionTask?
     

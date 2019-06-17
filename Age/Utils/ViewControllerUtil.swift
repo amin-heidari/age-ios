@@ -6,8 +6,6 @@
 //  Copyright © 2019 Amin Heidari. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
-//extension UIViewController {
-//    
-//}
+extension UIViewController { }

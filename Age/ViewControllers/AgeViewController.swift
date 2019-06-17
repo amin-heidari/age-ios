@@ -18,6 +18,11 @@ class AgeViewController: BaseViewController {
     
     // MARK: - Life Cycle
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+    }
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
@@ -38,6 +43,8 @@ class AgeViewController: BaseViewController {
     }
     
     // MARK: - Properties
+    
+    override var isNavigationBarHidden: Bool { return true }
     
     private var ageCalculator: AgeCalculator = AgeCalculator(birthDate: UserDefaultsUtil.defaultBirthday!.birthDate)
     private var timer: Timer?
