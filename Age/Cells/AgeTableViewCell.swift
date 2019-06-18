@@ -8,10 +8,6 @@
 
 import UIKit
 
-protocol AgeUpdateDelegate: class {
-    func shouldUpdateAge() -> Bool
-}
-
 class AgeTableViewCell: UITableViewCell {
     
     // MARK: - Constants/Types
@@ -23,8 +19,6 @@ class AgeTableViewCell: UITableViewCell {
     // MARK: - Static
     
     // MARK: - API
-    
-    weak var ageUpdateDelegate: AgeUpdateDelegate?
     
     var item: Item? {
         didSet {
@@ -38,21 +32,13 @@ class AgeTableViewCell: UITableViewCell {
             ageLabel.text = String(format: "%d - %d - %d", item.birthday.birthDate.year, item.birthday.birthDate.month, item.birthday.birthDate.day)
             
             ageCalculator = AgeCalculator(birthDate: item.birthday.birthDate)
-            
-            timer = Timer.scheduledTimer(
-                withTimeInterval: Constants.AgeCalculation.refreshInterval,
-                repeats: true,
-                block: { [weak self] (timer) in
-                    guard let _ = self else {
-                        timer.invalidate()
-                        return
-                    }
-                    
-                    self?.refreshAge()
-            })
-            
-            refreshAge()
         }
+    }
+    
+    func refreshAge() {
+        guard let calculator = ageCalculator else { return }
+        
+        ageLabel.text = String(format: "%.8f", calculator.currentAge.value)
     }
     
     // MARK: - Life Cycle
@@ -64,21 +50,16 @@ class AgeTableViewCell: UITableViewCell {
     override func prepareForReuse() {
         super.prepareForReuse()
         
-        timer?.invalidate()
-        timer = nil
         ageCalculator = nil
     }
     
     deinit {
-        timer?.invalidate()
-        timer = nil
         ageCalculator = nil
     }
     
     // MARK: - Properties
     
     private var ageCalculator: AgeCalculator?
-    private var timer: Timer?
     
     // MARK: - Outlets
     
@@ -87,13 +68,6 @@ class AgeTableViewCell: UITableViewCell {
     @IBOutlet private weak var defaultLabel: UILabel!
     
     // MARK: - Methods
-    
-    @objc private func refreshAge() {
-        guard let calculator = ageCalculator else { return }
-        guard let delegate = ageUpdateDelegate, delegate.shouldUpdateAge() else { return }
-        
-        ageLabel.text = String(format: "%.8f", calculator.currentAge.value)
-    }
     
     // MARK: - Actions
     

@@ -31,13 +31,9 @@ class AgeCalculator {
     
     init(birthDate: BirthDate) {
         self.birthDate = birthDate
-        
-        print("\(objectHash(object: self)) -> Initiated!")
     }
     
-    deinit {
-        print("\(objectHash(object: self)) -> Destroyed!")
-    }
+    deinit { }
     
     var currentAge: Age {
         let now = Date()

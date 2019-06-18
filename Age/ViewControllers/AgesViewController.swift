@@ -32,10 +32,26 @@ class AgesViewController: BaseViewController {
         
         // Section 1 will be done through the fetch results controller.
         tableView.reloadSections([0], with: .automatic)
+        
+        timer = Timer.scheduledTimer(
+            withTimeInterval: Constants.AgeCalculation.refreshInterval,
+            repeats: true,
+            block: { [weak self] (timer) in
+                guard let _ = self else {
+                    timer.invalidate()
+                    return
+                }
+                
+                self?.refreshAllAges()
+        })
+        RunLoop.main.add(timer!, forMode: .common)
     }
     
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
+        
+        timer?.invalidate()
+        timer = nil
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -44,11 +60,23 @@ class AgesViewController: BaseViewController {
         }
     }
     
+    deinit {
+        DatabaseManager.shared.birthdaysFetchResultsController.delegate = nil
+    }
+    
     // MARK: - Properties
+    
+    private var timer: Timer?
     
     // MARK: - Outlets
     
     // MARK: - Methods
+    
+    private func refreshAllAges() {
+        tableView.visibleCells.forEach { (cell) in
+            (cell as? AgeTableViewCell)?.refreshAge()
+        }
+    }
     
     // MARK: - Actions
     
@@ -82,8 +110,6 @@ extension AgesViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Age", for: indexPath) as! AgeTableViewCell
         
-        cell.ageUpdateDelegate = self
-        
         switch indexPath.section {
         case 0:
             cell.item = (UserDefaultsUtil.defaultBirthday!, true)
@@ -92,6 +118,8 @@ extension AgesViewController: UITableViewDataSource {
         default:
             fatalError("Not supported!")
         }
+        
+        cell.refreshAge()
         
         return cell
     }
@@ -142,14 +170,5 @@ extension AgesViewController: NSFetchedResultsControllerDelegate {
         // https://developer.apple.com/documentation/coredata/nsfetchedresultscontrollerdelegate
     }
     
-}
-
-// MARK: - AgeUpdateDelegate
-
-extension AgesViewController: AgeUpdateDelegate {
-    func shouldUpdateAge() -> Bool {
-        guard isViewLoaded, let _ = viewIfLoaded?.window else { return false }
-        return true
-    }
 }
 
