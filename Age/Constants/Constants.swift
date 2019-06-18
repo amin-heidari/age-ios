@@ -19,7 +19,7 @@ class Constants {
     }
     
     class AgeCalculation {
-        static let refreshInterval: TimeInterval = 0.005
+        static let refreshInterval: TimeInterval = 0.01
     }
     
 }
