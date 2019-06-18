@@ -46,7 +46,7 @@ class AgeViewController: BaseViewController {
     
     override var isNavigationBarHidden: Bool { return true }
     
-    private var ageCalculator: AgeCalculator = AgeCalculator(birthDate: UserDefaultsUtil.defaultBirthday!.birthDate)
+    private var ageCalculator: AgeCalculator?
     private var timer: Timer?
     
     // MARK: - Outlets
@@ -56,11 +56,11 @@ class AgeViewController: BaseViewController {
     // MARK: - Methods
     
     @objc private func refreshAge() {
-        guard isViewLoaded else {
+        guard let calculator = ageCalculator, isViewLoaded else {
             return
         }
         
-        ageLabel.text = String(format: "%.8f", ageCalculator.currentAge.value)
+        ageLabel.text = String(format: "%.8f", calculator.currentAge.value)
     }
     
     // MARK: - Actions

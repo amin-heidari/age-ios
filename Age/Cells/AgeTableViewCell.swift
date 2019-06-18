@@ -30,14 +30,44 @@ class AgeTableViewCell: UITableViewCell {
                 
             nameLabel.text = item.birthday.name
             ageLabel.text = String(format: "%d - %d - %d", item.birthday.birthDate.year, item.birthday.birthDate.month, item.birthday.birthDate.day)
+            
+            ageCalculator = AgeCalculator(birthDate: item.birthday.birthDate)
+            timer = Timer.scheduledTimer(timeInterval: 0.01,
+                                         target: self,
+                                         selector: #selector(refreshAge),
+                                         userInfo: nil,
+                                         repeats: true)
         }
     }
     
+//    var isRefreshingAge: Bool = false {
+//        didSet {
+//            if (isRefreshingAge) {
+//                timer = Timer.scheduledTimer(timeInterval: 0.01,
+//                                             target: self,
+//                                             selector: #selector(refreshAge),
+//                                             userInfo: nil,
+//                                             repeats: true)
+//            } else {
+//                timer?.invalidate()
+//                timer = nil
+//            }
+//        }
+//    }
+    
     // MARK: - Life Cycle
+    
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        
+        print("\(hash) -> Created")
+    }
     
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        
+        print("\(hash) -> awakeFromNib")
     }
     
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -56,9 +86,14 @@ class AgeTableViewCell: UITableViewCell {
     
     override func prepareForReuse() {
         super.prepareForReuse()
+        
+        print("\(hash) -> Prepare for reuse")
     }
     
     // MARK: - Properties
+    
+    private var ageCalculator: AgeCalculator?
+    private var timer: Timer?
     
     // MARK: - Outlets
     
@@ -67,6 +102,14 @@ class AgeTableViewCell: UITableViewCell {
     @IBOutlet private weak var defaultLabel: UILabel!
     
     // MARK: - Methods
+    
+    @objc private func refreshAge() {
+        guard let calculator = ageCalculator else {
+            return
+        }
+        
+        ageLabel.text = String(format: "%.8f", calculator.currentAge.value)
+    }
     
     // MARK: - Actions
     

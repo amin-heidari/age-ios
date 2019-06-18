@@ -34,6 +34,10 @@ class AgesViewController: BaseViewController {
         tableView.reloadSections([0], with: .automatic)
     }
     
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+    }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let destination = segue.destination as? NewAgeViewController {
             destination.scenario = sender as? NewAgeViewController.Scenario

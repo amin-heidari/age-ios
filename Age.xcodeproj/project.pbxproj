@@ -77,6 +77,7 @@
 		27C8C01122B3016800C064D5 /* StringUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27C8C00F22B3016800C064D5 /* StringUtil.swift */; };
 		27C8C01422B58AF000C064D5 /* AgeCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27C8C01322B58AF000C064D5 /* AgeCalculator.swift */; };
 		27C8C01522B58AF000C064D5 /* AgeCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27C8C01322B58AF000C064D5 /* AgeCalculator.swift */; };
+		27C8C01722B875EC00C064D5 /* ObjectUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27C8C01622B875EC00C064D5 /* ObjectUtil.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -123,6 +124,7 @@
 		27C8C00C22B2D99D00C064D5 /* CallbackUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CallbackUtil.swift; sourceTree = "<group>"; };
 		27C8C00F22B3016800C064D5 /* StringUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringUtil.swift; sourceTree = "<group>"; };
 		27C8C01322B58AF000C064D5 /* AgeCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgeCalculator.swift; sourceTree = "<group>"; };
+		27C8C01622B875EC00C064D5 /* ObjectUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectUtil.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -215,6 +217,7 @@
 				27C8C00F22B3016800C064D5 /* StringUtil.swift */,
 				2771407E22B4005100F4ED05 /* DateUtil.swift */,
 				279D139E22B7DE22006B649E /* FontUtil.swift */,
+				27C8C01622B875EC00C064D5 /* ObjectUtil.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -429,6 +432,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				27C8C01722B875EC00C064D5 /* ObjectUtil.swift in Sources */,
 				27C257EF22A58BC800EFAA33 /* ViewControllerUtil.swift in Sources */,
 				27AA5AE62299F8B90059D1A2 /* UserDefaultsUtil.swift in Sources */,
 				27C257CA229F0CEA00EFAA33 /* RemoteConfigManager.swift in Sources */,
