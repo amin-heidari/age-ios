@@ -8,6 +8,10 @@
 
 import UIKit
 
+protocol AgeUpdateDelegate: class {
+    func shouldUpdateAge() -> Bool
+}
+
 class AgeTableViewCell: UITableViewCell {
     
     // MARK: - Constants/Types
@@ -19,6 +23,8 @@ class AgeTableViewCell: UITableViewCell {
     // MARK: - Static
     
     // MARK: - API
+    
+    weak var ageUpdateDelegate: AgeUpdateDelegate?
     
     var item: Item? {
         didSet {
@@ -32,62 +38,41 @@ class AgeTableViewCell: UITableViewCell {
             ageLabel.text = String(format: "%d - %d - %d", item.birthday.birthDate.year, item.birthday.birthDate.month, item.birthday.birthDate.day)
             
             ageCalculator = AgeCalculator(birthDate: item.birthday.birthDate)
-            timer = Timer.scheduledTimer(timeInterval: 0.01,
-                                         target: self,
-                                         selector: #selector(refreshAge),
-                                         userInfo: nil,
-                                         repeats: true)
+            
+            timer = Timer.scheduledTimer(
+                withTimeInterval: Constants.AgeCalculation.refreshInterval,
+                repeats: true,
+                block: { [weak self] (timer) in
+                    guard let _ = self else {
+                        timer.invalidate()
+                        return
+                    }
+                    
+                    self?.refreshAge()
+            })
+            
+            refreshAge()
         }
     }
     
-//    var isRefreshingAge: Bool = false {
-//        didSet {
-//            if (isRefreshingAge) {
-//                timer = Timer.scheduledTimer(timeInterval: 0.01,
-//                                             target: self,
-//                                             selector: #selector(refreshAge),
-//                                             userInfo: nil,
-//                                             repeats: true)
-//            } else {
-//                timer?.invalidate()
-//                timer = nil
-//            }
-//        }
-//    }
-    
     // MARK: - Life Cycle
-    
-    required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
-        
-        print("\(hash) -> Created")
-    }
-    
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-        
-        print("\(hash) -> awakeFromNib")
-    }
-    
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-        
-        // Configure the view for the selected state
-    }
     
     override func setHighlighted(_ highlighted: Bool, animated: Bool) {
         super.setHighlighted(highlighted, animated: animated)
     }
     
-    override func willMove(toSuperview newSuperview: UIView?) {
-        super.willMove(toSuperview: newSuperview)
-    }
-    
     override func prepareForReuse() {
         super.prepareForReuse()
         
-        print("\(hash) -> Prepare for reuse")
+        timer?.invalidate()
+        timer = nil
+        ageCalculator = nil
+    }
+    
+    deinit {
+        timer?.invalidate()
+        timer = nil
+        ageCalculator = nil
     }
     
     // MARK: - Properties
@@ -104,9 +89,8 @@ class AgeTableViewCell: UITableViewCell {
     // MARK: - Methods
     
     @objc private func refreshAge() {
-        guard let calculator = ageCalculator else {
-            return
-        }
+        guard let calculator = ageCalculator else { return }
+        guard let delegate = ageUpdateDelegate, delegate.shouldUpdateAge() else { return }
         
         ageLabel.text = String(format: "%.8f", calculator.currentAge.value)
     }

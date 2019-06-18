@@ -28,7 +28,7 @@ class AgeViewController: BaseViewController {
         
         ageCalculator = AgeCalculator(birthDate: UserDefaultsUtil.defaultBirthday!.birthDate)
         
-        timer = Timer.scheduledTimer(timeInterval: 0.01,
+        timer = Timer.scheduledTimer(timeInterval: Constants.AgeCalculation.refreshInterval,
                                      target: self,
                                      selector: #selector(refreshAge),
                                      userInfo: nil,
@@ -38,6 +38,7 @@ class AgeViewController: BaseViewController {
     override func viewDidDisappear(_ animated: Bool) {
         timer?.invalidate()
         timer = nil
+        ageCalculator = nil
         
         super.viewDidDisappear(animated)
     }
@@ -56,7 +57,7 @@ class AgeViewController: BaseViewController {
     // MARK: - Methods
     
     @objc private func refreshAge() {
-        guard let calculator = ageCalculator, isViewLoaded else {
+        guard let calculator = ageCalculator, isViewLoaded, let _ = view.window else {
             return
         }
         

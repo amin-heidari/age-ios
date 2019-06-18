@@ -8,10 +8,6 @@
 
 import Foundation
 
-extension AnyObject {
-    
-    var uniqueId: String {
-        return String(UInt(bitPattern: ObjectIdentifier(self)))
-    }
-    
+func objectHash(object: AnyObject) -> String {
+    return String(UInt(bitPattern: ObjectIdentifier(object)))
 }

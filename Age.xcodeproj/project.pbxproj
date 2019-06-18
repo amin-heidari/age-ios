@@ -53,6 +53,7 @@
 		27AA5B2F229DFD520059D1A2 /* CoreDataUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27AA5B2D229DFD520059D1A2 /* CoreDataUtil.swift */; };
 		27AA5B3122A422EB0059D1A2 /* BundleUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27AA5B3022A422EB0059D1A2 /* BundleUtil.swift */; };
 		27AA5B3222A422EB0059D1A2 /* BundleUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27AA5B3022A422EB0059D1A2 /* BundleUtil.swift */; };
+		27ABE05C22B92A9B009B60B4 /* ObjectUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27C8C01622B875EC00C064D5 /* ObjectUtil.swift */; };
 		27C257CA229F0CEA00EFAA33 /* RemoteConfigManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27C257C9229F0CEA00EFAA33 /* RemoteConfigManager.swift */; };
 		27C257CB229F0CEA00EFAA33 /* RemoteConfigManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27C257C9229F0CEA00EFAA33 /* RemoteConfigManager.swift */; };
 		27C257D322A20F5200EFAA33 /* URLSessionUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27C257D222A20F5200EFAA33 /* URLSessionUtil.swift */; };
@@ -471,6 +472,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				27ABE05C22B92A9B009B60B4 /* ObjectUtil.swift in Sources */,
 				27C257F022A58BC800EFAA33 /* ViewControllerUtil.swift in Sources */,
 				27AA5AFA2299FC090059D1A2 /* UserDefaultsUtil.swift in Sources */,
 				27C257CB229F0CEA00EFAA33 /* RemoteConfigManager.swift in Sources */,

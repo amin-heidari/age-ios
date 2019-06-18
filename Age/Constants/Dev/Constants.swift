@@ -18,4 +18,8 @@ class Constants {
         static let expireTime: TimeInterval = 60 * 10 // Time interval (in seconds) after which the cache expires and a fresh remote config MUST be fetched.
     }
     
+    class AgeCalculation {
+        static let refreshInterval: TimeInterval = 0.005
+    }
+    
 }

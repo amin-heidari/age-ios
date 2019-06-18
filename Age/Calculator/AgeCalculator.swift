@@ -31,12 +31,16 @@ class AgeCalculator {
     
     init(birthDate: BirthDate) {
         self.birthDate = birthDate
+        
+        print("\(objectHash(object: self)) -> Initiated!")
+    }
+    
+    deinit {
+        print("\(objectHash(object: self)) -> Destroyed!")
     }
     
     var currentAge: Age {
         let now = Date()
-        
-//        print("\(now.timeIntervalSince1970) -> Doing age calculation!")
         
         var thisYearBirthdayComponents = DateComponents()
         thisYearBirthdayComponents.year = Calendar.current.component(.year, from: now)

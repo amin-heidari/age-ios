@@ -81,6 +81,9 @@ extension AgesViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Age", for: indexPath) as! AgeTableViewCell
+        
+        cell.ageUpdateDelegate = self
+        
         switch indexPath.section {
         case 0:
             cell.item = (UserDefaultsUtil.defaultBirthday!, true)
@@ -89,6 +92,7 @@ extension AgesViewController: UITableViewDataSource {
         default:
             fatalError("Not supported!")
         }
+        
         return cell
     }
     
@@ -138,5 +142,14 @@ extension AgesViewController: NSFetchedResultsControllerDelegate {
         // https://developer.apple.com/documentation/coredata/nsfetchedresultscontrollerdelegate
     }
     
+}
+
+// MARK: - AgeUpdateDelegate
+
+extension AgesViewController: AgeUpdateDelegate {
+    func shouldUpdateAge() -> Bool {
+        guard isViewLoaded, let _ = viewIfLoaded?.window else { return false }
+        return true
+    }
 }
 
