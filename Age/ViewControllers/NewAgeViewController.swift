@@ -81,6 +81,8 @@ class NewAgeViewController: BaseViewController {
     
     // MARK: - Properties
     
+    override var isNavigationBarHidden: Bool { return true }
+    
     private var isProcessing: Bool = false {
         didSet {
             if (isProcessing) {
