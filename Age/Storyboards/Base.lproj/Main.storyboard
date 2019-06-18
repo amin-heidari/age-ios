@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="cNp-9p-4l4">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="cNp-9p-4l4">
     <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -147,14 +147,14 @@
                                                 <rect key="frame" x="0.0" y="0.0" width="167" height="30"/>
                                                 <state key="normal" title="Delete"/>
                                                 <connections>
-                                                    <action selector="deleteButtonTapped:" destination="zHl-dr-dNN" eventType="touchUpInside" id="1E6-Tm-hNO"/>
+                                                    <action selector="deleteButtonTapped:" destination="zHl-dr-dNN" eventType="primaryActionTriggered" id="b4h-Yr-FdJ"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rZF-xR-FAu">
                                                 <rect key="frame" x="167" y="0.0" width="167" height="30"/>
                                                 <state key="normal" title="Proceed"/>
                                                 <connections>
-                                                    <action selector="proceedButtonTapped:" destination="zHl-dr-dNN" eventType="touchUpInside" id="xHc-hB-WCY"/>
+                                                    <action selector="proceedButtonTapped:" destination="zHl-dr-dNN" eventType="primaryActionTriggered" id="F10-s5-T4L"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -169,7 +169,7 @@
                                 <rect key="frame" x="355" y="64" width="39" height="30"/>
                                 <state key="normal" title="Close"/>
                                 <connections>
-                                    <action selector="closeButtonTapped:" destination="zHl-dr-dNN" eventType="touchUpInside" id="Ttm-oy-W0R"/>
+                                    <action selector="closeButtonTapped:" destination="zHl-dr-dNN" eventType="primaryActionTriggered" id="kZq-FJ-sdL"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -283,14 +283,14 @@
                                         <rect key="frame" x="83.333333333333314" y="79.333333333333371" width="112" height="30"/>
                                         <state key="normal" title="Get the upgrade"/>
                                         <connections>
-                                            <action selector="upgradeButtonTapped:" destination="6aZ-Ug-Eqs" eventType="touchUpInside" id="9Jw-OF-HX0"/>
+                                            <action selector="upgradeButtonTapped:" destination="6aZ-Ug-Eqs" eventType="primaryActionTriggered" id="jBQ-0e-UEg"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C1I-94-pjU">
                                         <rect key="frame" x="124.33333333333331" y="121.33333333333337" width="30" height="30"/>
                                         <state key="normal" title="Skip"/>
                                         <connections>
-                                            <action selector="skipButtonTapped:" destination="6aZ-Ug-Eqs" eventType="touchUpInside" id="Aqe-2T-EO4"/>
+                                            <action selector="skipButtonTapped:" destination="6aZ-Ug-Eqs" eventType="primaryActionTriggered" id="89n-6u-TqX"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -344,7 +344,7 @@
                                         <rect key="frame" x="47.666666666666657" y="69.333333333333371" width="37" height="30"/>
                                         <state key="normal" title="Retry"/>
                                         <connections>
-                                            <action selector="retryButtonTapped:" destination="oA4-2j-OUW" eventType="touchUpInside" id="RcN-Kw-haR"/>
+                                            <action selector="retryButtonTapped:" destination="oA4-2j-OUW" eventType="primaryActionTriggered" id="hpH-hu-bSw"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -431,7 +431,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="bEz-d8-EvV"/>
-        <segue reference="SgZ-8b-CBo"/>
+        <segue reference="lVK-B6-Itq"/>
+        <segue reference="gv6-WD-V1K"/>
     </inferredMetricsTieBreakers>
 </document>
