@@ -185,7 +185,7 @@ class NewAgeViewController: BaseViewController {
         // Adjust the min/max on the date picker.
         let todayBirthDate = Date().birthDate
         
-        datePicker.maximumDate = BirthDate(
+        datePicker.minimumDate = BirthDate(
             year: todayBirthDate.year - RemoteConfigManager.shared.remoteConfig.ageSpecs.maxAge,
             month: todayBirthDate.month,
             day: todayBirthDate.day

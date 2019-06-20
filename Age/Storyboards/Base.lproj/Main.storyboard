@@ -140,7 +140,7 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" returnKeyType="done"/>
                                         <connections>
-                                            <action selector="dateTextFieldAction:" destination="zHl-dr-dNN" eventType="editingDidBegin" id="TGK-zQ-v81"/>
+                                            <action selector="dateTextFieldEditingBegan:" destination="zHl-dr-dNN" eventType="editingDidBegin" id="v6Q-vE-IIs"/>
                                         </connections>
                                     </textField>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="4Ml-Hv-EEg">
