@@ -139,6 +139,9 @@
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" returnKeyType="done"/>
+                                        <connections>
+                                            <action selector="dateTextFieldAction:" destination="zHl-dr-dNN" eventType="editingDidBegin" id="TGK-zQ-v81"/>
+                                        </connections>
                                     </textField>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="4Ml-Hv-EEg">
                                         <rect key="frame" x="0.0" y="100" width="334" height="30"/>

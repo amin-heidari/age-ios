@@ -22,11 +22,11 @@ class NewAgeViewController: BaseViewController {
     // MARK: - Static
     
     static private func evaluateDefaultBirthDate() -> BirthDate {
-        let calendar = Calendar.current
+        let todayBirthDate = Date().birthDate
         return BirthDate(
-            year: calendar.component(.year, from: Date()) - RemoteConfigManager.shared.remoteConfig.ageSpecs.defaultAge,
-            month: calendar.component(.month, from: Date()),
-            day: calendar.component(.day, from: Date())
+            year: todayBirthDate.year - RemoteConfigManager.shared.remoteConfig.ageSpecs.defaultAge,
+            month: todayBirthDate.month,
+            day: todayBirthDate.day
         )
     }
         
@@ -181,20 +181,21 @@ class NewAgeViewController: BaseViewController {
         nameTextField.resignFirstResponder()
     }
     
+    @IBAction func dateTextFieldEditingBegan(_ sender: Any) {
+        // Adjust the min/max on the date picker.
+        let todayBirthDate = Date().birthDate
+        
+        datePicker.maximumDate = BirthDate(
+            year: todayBirthDate.year - RemoteConfigManager.shared.remoteConfig.ageSpecs.maxAge,
+            month: todayBirthDate.month,
+            day: todayBirthDate.day
+        ).date
+        datePicker.maximumDate = Date()
+    }
+    
+    
     @IBAction func datePickerValueChanged(_ sender: Any) {
         editingBirthDate = datePicker.date.birthDate
     }
 
-}
-
-// MARK: - Utils
-
-private extension BirthDate {
-    var date: Date {
-        var components = DateComponents()
-        components.year = year
-        components.month = month
-        components.day = day
-        return Calendar.current.date(from: components)!
-    }
 }

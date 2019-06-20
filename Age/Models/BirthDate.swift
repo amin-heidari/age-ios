@@ -18,4 +18,12 @@ class BirthDate: Codable {
         self.month = month
         self.day = day
     }
+    
+    var date: Date {
+        var components = DateComponents()
+        components.year = year
+        components.month = month
+        components.day = day
+        return Calendar.current.date(from: components)!
+    }
 }
