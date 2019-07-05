@@ -19,6 +19,10 @@
 		27764F6222CF1ACC00C4B13D /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27764F4A22CF1AA100C4B13D /* NotificationCenter.framework */; };
 		27764F6422CF1ACC00C4B13D /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 27764F4F22CF1AA100C4B13D /* MainInterface.storyboard */; };
 		27764F6A22CF1AEA00C4B13D /* Widget Dev.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 27764F6822CF1ACC00C4B13D /* Widget Dev.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		27764FE822CF214200C4B13D /* AgeData.h in Headers */ = {isa = PBXBuildFile; fileRef = 27764FE622CF214200C4B13D /* AgeData.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		27764FEB22CF214200C4B13D /* AgeData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27764FE422CF214100C4B13D /* AgeData.framework */; };
+		27764FEC22CF214200C4B13D /* AgeData.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 27764FE422CF214100C4B13D /* AgeData.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		27764FF322CF215700C4B13D /* AgeData.h in Headers */ = {isa = PBXBuildFile; fileRef = 27764FE622CF214200C4B13D /* AgeData.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		279D139F22B7DE22006B649E /* FontUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 279D139E22B7DE22006B649E /* FontUtil.swift */; };
 		279D13A022B7DE22006B649E /* FontUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 279D139E22B7DE22006B649E /* FontUtil.swift */; };
 		279D13A222B83858006B649E /* NavigationUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 279D13A122B83858006B649E /* NavigationUtil.swift */; };
@@ -104,6 +108,13 @@
 			remoteGlobalIDString = 27764F5E22CF1ACC00C4B13D;
 			remoteInfo = "Widget Dev";
 		};
+		27764FE922CF214200C4B13D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 274EC08A226118CC00D5E263 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 27764FE322CF214100C4B13D;
+			remoteInfo = AgeData;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -129,6 +140,17 @@
 			name = "Embed App Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		27764FF022CF214200C4B13D /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				27764FEC22CF214200C4B13D /* AgeData.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
@@ -143,6 +165,15 @@
 		27764F5222CF1AA100C4B13D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		27764F6822CF1ACC00C4B13D /* Widget Dev.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Widget Dev.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
 		27764F6922CF1ACC00C4B13D /* Widget copy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "Widget copy-Info.plist"; path = "/Users/amin/Development/iOS/Projects/age-ios/Widget copy-Info.plist"; sourceTree = "<absolute>"; };
+		27764FE422CF214100C4B13D /* AgeData.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = AgeData.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		27764FE622CF214200C4B13D /* AgeData.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AgeData.h; sourceTree = "<group>"; };
+		27764FE722CF214200C4B13D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		27764FFA22CF215700C4B13D /* AgeData Dev.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = "AgeData Dev.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		27764FFB22CF215700C4B13D /* AgeData copy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "AgeData copy-Info.plist"; path = "/Users/amin/Development/iOS/Projects/age-ios/AgeData copy-Info.plist"; sourceTree = "<absolute>"; };
+		27764FFC22CF222600C4B13D /* Age Dev.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Age Dev.entitlements"; sourceTree = "<group>"; };
+		27764FFD22CF222D00C4B13D /* Age.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Age.entitlements; sourceTree = "<group>"; };
+		27764FFE22CF224A00C4B13D /* Widget.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Widget.entitlements; sourceTree = "<group>"; };
+		27764FFF22CF225600C4B13D /* Widget Dev.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; name = "Widget Dev.entitlements"; path = "Widget Dev/Widget Dev.entitlements"; sourceTree = "<group>"; };
 		279D139E22B7DE22006B649E /* FontUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontUtil.swift; sourceTree = "<group>"; };
 		279D13A122B83858006B649E /* NavigationUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationUtil.swift; sourceTree = "<group>"; };
 		27AA5AC22299F8B80059D1A2 /* Birthday.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Birthday.swift; sourceTree = "<group>"; };
@@ -190,6 +221,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				27764FEB22CF214200C4B13D /* AgeData.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -209,6 +241,20 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		27764FE122CF214100C4B13D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		27764FF522CF215700C4B13D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		27AA5B0A2299FC090059D1A2 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -222,11 +268,15 @@
 		274EC089226118CC00D5E263 = {
 			isa = PBXGroup;
 			children = (
+				27764FFF22CF225600C4B13D /* Widget Dev.entitlements */,
+				27764FFC22CF222600C4B13D /* Age Dev.entitlements */,
 				274EC094226118CC00D5E263 /* Age */,
 				27764F4C22CF1AA100C4B13D /* Widget */,
+				27764FE522CF214200C4B13D /* AgeData */,
 				27764F4922CF1AA100C4B13D /* Frameworks */,
 				274EC093226118CC00D5E263 /* Products */,
 				27764F6922CF1ACC00C4B13D /* Widget copy-Info.plist */,
+				27764FFB22CF215700C4B13D /* AgeData copy-Info.plist */,
 			);
 			sourceTree = "<group>";
 		};
@@ -237,6 +287,8 @@
 				27AA5B142299FC090059D1A2 /* Age Dev.app */,
 				27764F4822CF1AA100C4B13D /* Widget.appex */,
 				27764F6822CF1ACC00C4B13D /* Widget Dev.appex */,
+				27764FE422CF214100C4B13D /* AgeData.framework */,
+				27764FFA22CF215700C4B13D /* AgeData Dev.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -244,6 +296,7 @@
 		274EC094226118CC00D5E263 /* Age */ = {
 			isa = PBXGroup;
 			children = (
+				27764FFD22CF222D00C4B13D /* Age.entitlements */,
 				274EC095226118CC00D5E263 /* AppDelegate.swift */,
 				27AA5AF32299FB0E0059D1A2 /* Constants */,
 				27AA5AD12299F8B90059D1A2 /* Cells */,
@@ -273,11 +326,21 @@
 		27764F4C22CF1AA100C4B13D /* Widget */ = {
 			isa = PBXGroup;
 			children = (
+				27764FFE22CF224A00C4B13D /* Widget.entitlements */,
 				27764F4D22CF1AA100C4B13D /* TodayViewController.swift */,
 				27764F4F22CF1AA100C4B13D /* MainInterface.storyboard */,
 				27764F5222CF1AA100C4B13D /* Info.plist */,
 			);
 			path = Widget;
+			sourceTree = "<group>";
+		};
+		27764FE522CF214200C4B13D /* AgeData */ = {
+			isa = PBXGroup;
+			children = (
+				27764FE622CF214200C4B13D /* AgeData.h */,
+				27764FE722CF214200C4B13D /* Info.plist */,
+			);
+			path = AgeData;
 			sourceTree = "<group>";
 		};
 		27AA5AC12299F8B80059D1A2 /* Models */ = {
@@ -430,6 +493,25 @@
 		};
 /* End PBXGroup section */
 
+/* Begin PBXHeadersBuildPhase section */
+		27764FDF22CF214100C4B13D /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				27764FE822CF214200C4B13D /* AgeData.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		27764FF222CF215700C4B13D /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				27764FF322CF215700C4B13D /* AgeData.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
 /* Begin PBXNativeTarget section */
 		274EC091226118CC00D5E263 /* Age */ = {
 			isa = PBXNativeTarget;
@@ -439,11 +521,13 @@
 				274EC08F226118CC00D5E263 /* Frameworks */,
 				274EC090226118CC00D5E263 /* Resources */,
 				27764F5922CF1AA100C4B13D /* Embed App Extensions */,
+				27764FF022CF214200C4B13D /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 				27764F5422CF1AA100C4B13D /* PBXTargetDependency */,
+				27764FEA22CF214200C4B13D /* PBXTargetDependency */,
 			);
 			name = Age;
 			productName = Age;
@@ -484,6 +568,42 @@
 			productReference = 27764F6822CF1ACC00C4B13D /* Widget Dev.appex */;
 			productType = "com.apple.product-type.app-extension";
 		};
+		27764FE322CF214100C4B13D /* AgeData */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 27764FEF22CF214200C4B13D /* Build configuration list for PBXNativeTarget "AgeData" */;
+			buildPhases = (
+				27764FDF22CF214100C4B13D /* Headers */,
+				27764FE022CF214100C4B13D /* Sources */,
+				27764FE122CF214100C4B13D /* Frameworks */,
+				27764FE222CF214100C4B13D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = AgeData;
+			productName = AgeData;
+			productReference = 27764FE422CF214100C4B13D /* AgeData.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		27764FF122CF215700C4B13D /* AgeData Dev */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 27764FF722CF215700C4B13D /* Build configuration list for PBXNativeTarget "AgeData Dev" */;
+			buildPhases = (
+				27764FF222CF215700C4B13D /* Headers */,
+				27764FF422CF215700C4B13D /* Sources */,
+				27764FF522CF215700C4B13D /* Frameworks */,
+				27764FF622CF215700C4B13D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "AgeData Dev";
+			productName = AgeData;
+			productReference = 27764FFA22CF215700C4B13D /* AgeData Dev.framework */;
+			productType = "com.apple.product-type.framework";
+		};
 		27AA5AF82299FC090059D1A2 /* Age Dev */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 27AA5B112299FC090059D1A2 /* Build configuration list for PBXNativeTarget "Age Dev" */;
@@ -515,9 +635,36 @@
 				TargetAttributes = {
 					274EC091226118CC00D5E263 = {
 						CreatedOnToolsVersion = 10.1;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 					27764F4722CF1AA100C4B13D = {
 						CreatedOnToolsVersion = 10.2.1;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+						};
+					};
+					27764F5E22CF1ACC00C4B13D = {
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+						};
+					};
+					27764FE322CF214100C4B13D = {
+						CreatedOnToolsVersion = 10.2.1;
+					};
+					27AA5AF82299FC090059D1A2 = {
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -538,6 +685,8 @@
 				27AA5AF82299FC090059D1A2 /* Age Dev */,
 				27764F4722CF1AA100C4B13D /* Widget */,
 				27764F5E22CF1ACC00C4B13D /* Widget Dev */,
+				27764FE322CF214100C4B13D /* AgeData */,
+				27764FF122CF215700C4B13D /* AgeData Dev */,
 			);
 		};
 /* End PBXProject section */
@@ -567,6 +716,20 @@
 			buildActionMask = 2147483647;
 			files = (
 				27764F6422CF1ACC00C4B13D /* MainInterface.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		27764FE222CF214100C4B13D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		27764FF622CF215700C4B13D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -639,6 +802,20 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		27764FE022CF214100C4B13D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		27764FF422CF215700C4B13D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		27AA5AF92299FC090059D1A2 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -690,6 +867,11 @@
 			isa = PBXTargetDependency;
 			target = 27764F5E22CF1ACC00C4B13D /* Widget Dev */;
 			targetProxy = 27764F6B22CF1AEA00C4B13D /* PBXContainerItemProxy */;
+		};
+		27764FEA22CF214200C4B13D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 27764FE322CF214100C4B13D /* AgeData */;
+			targetProxy = 27764FE922CF214200C4B13D /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -844,6 +1026,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Age/Age.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = T25FTV2NX7;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -862,6 +1045,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Age/Age.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = T25FTV2NX7;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -878,6 +1062,7 @@
 		27764F5622CF1AA100C4B13D /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = Widget/Widget.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = T25FTV2NX7;
 				INFOPLIST_FILE = Widget/Info.plist;
@@ -898,6 +1083,7 @@
 		27764F5722CF1AA100C4B13D /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = Widget/Widget.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = T25FTV2NX7;
 				INFOPLIST_FILE = Widget/Info.plist;
@@ -918,6 +1104,7 @@
 		27764F6622CF1ACC00C4B13D /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = "Widget Dev/Widget Dev.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = T25FTV2NX7;
 				INFOPLIST_FILE = "Widget copy-Info.plist";
@@ -938,6 +1125,7 @@
 		27764F6722CF1ACC00C4B13D /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = "Widget Dev/Widget Dev.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = T25FTV2NX7;
 				INFOPLIST_FILE = "Widget copy-Info.plist";
@@ -955,11 +1143,128 @@
 			};
 			name = Release;
 		};
+		27764FED22CF214200C4B13D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = T25FTV2NX7;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = AgeData/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.aminheidari.Age.Data;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		27764FEE22CF214200C4B13D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = T25FTV2NX7;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = AgeData/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.aminheidari.Age.Data;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		27764FF822CF215700C4B13D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = T25FTV2NX7;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "AgeData copy-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.aminheidari.Age.Data;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		27764FF922CF215700C4B13D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = T25FTV2NX7;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "AgeData copy-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.aminheidari.Age.Data;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
 		27AA5B122299FC090059D1A2 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "Age Dev.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = T25FTV2NX7;
 				INFOPLIST_FILE = Age/Plists/Dev/Info.plist;
@@ -979,6 +1284,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "Age Dev.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = T25FTV2NX7;
 				INFOPLIST_FILE = Age/Plists/Dev/Info.plist;
@@ -1028,6 +1334,24 @@
 			buildConfigurations = (
 				27764F6622CF1ACC00C4B13D /* Debug */,
 				27764F6722CF1ACC00C4B13D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		27764FEF22CF214200C4B13D /* Build configuration list for PBXNativeTarget "AgeData" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				27764FED22CF214200C4B13D /* Debug */,
+				27764FEE22CF214200C4B13D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		27764FF722CF215700C4B13D /* Build configuration list for PBXNativeTarget "AgeData Dev" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				27764FF822CF215700C4B13D /* Debug */,
+				27764FF922CF215700C4B13D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
