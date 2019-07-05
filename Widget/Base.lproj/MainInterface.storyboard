@@ -30,6 +30,7 @@
                                 </subviews>
                             </stackView>
                         </subviews>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="ssy-KU-ocm" firstAttribute="top" secondItem="SNg-aZ-Buk" secondAttribute="top" id="02m-gU-LPz"/>
                             <constraint firstItem="ssy-KU-ocm" firstAttribute="trailing" secondItem="SNg-aZ-Buk" secondAttribute="trailing" id="6zA-wT-UYb"/>
@@ -37,6 +38,9 @@
                             <constraint firstItem="SNg-aZ-Buk" firstAttribute="leading" secondItem="ssy-KU-ocm" secondAttribute="leading" id="ZUb-jQ-jLW"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="ssy-KU-ocm"/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="G2x-M1-P2N" appends="YES" id="ynS-Pr-5wI"/>
+                        </connections>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout"/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
@@ -46,6 +50,11 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vXp-U4-Rya" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="G2x-M1-P2N">
+                    <connections>
+                        <action selector="widgetTapped:" destination="M4Y-Lb-cyx" id="Qf5-GI-7hU"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
         </scene>
     </scenes>

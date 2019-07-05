@@ -17,4 +17,9 @@ class Constants {
     class UserDefaults {
         static let suiteName = "group.com.aminheidari.Age.dev"
     }
+    
+    class URLs {
+        static let containingAppScheme = "agepaldev"
+    }
+    
 }

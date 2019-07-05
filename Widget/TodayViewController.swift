@@ -84,6 +84,12 @@ class TodayViewController: UIViewController, NCWidgetProviding {
     
     // MARK: - Actions
     
+    @IBAction func widgetTapped(_ sender: Any) {
+        guard let url = URL(string: Constants.URLs.containingAppScheme + "://") else { return }
+        extensionContext?.open(url, completionHandler: nil)
+    }
+    
+    
     // MARK: - NCWidgetProviding
         
     func widgetPerformUpdate(completionHandler: (@escaping (NCUpdateResult) -> Void)) {
