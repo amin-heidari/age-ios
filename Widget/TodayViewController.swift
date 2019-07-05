@@ -8,12 +8,14 @@
 
 import UIKit
 import NotificationCenter
+import AgeData
 
 class TodayViewController: UIViewController, NCWidgetProviding {
         
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        
+        SuiteDefaultsUtil.suiteName = Constants.UserDefaults.suiteName
     }
         
     func widgetPerformUpdate(completionHandler: (@escaping (NCUpdateResult) -> Void)) {

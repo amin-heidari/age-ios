@@ -22,4 +22,8 @@ class Constants {
         static let refreshInterval: TimeInterval = 0.01
     }
     
+    class UserDefaults {
+        static let suiteName = "group.com.aminheidari.Age"
+    }
+    
 }

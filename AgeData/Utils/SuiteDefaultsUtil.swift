@@ -18,9 +18,15 @@ public class SuiteDefaultsUtil {
     
     // MARK: - API
     
+    public static var suiteName: String = "" {
+        didSet {
+            suiteUserDefaults = UserDefaults(suiteName: suiteName)
+        }
+    }
+    
     public static var defaultBirthday: Birthday? {
         get {
-            guard let data = UserDefaults(suiteName: "SuiteDefaultsUtil")!.object(forKey: Keys.defaultBirthday.rawValue) as? Data,
+            guard let data = suiteUserDefaults.object(forKey: Keys.defaultBirthday.rawValue) as? Data,
                 let birthday = try? PropertyListDecoder().decode(Birthday.self, from: data) else { return nil }
             return birthday
         }
@@ -29,4 +35,7 @@ public class SuiteDefaultsUtil {
         }
     }
     
+    // MARK: - Properties
+    
+    private static var suiteUserDefaults: UserDefaults!
 }
