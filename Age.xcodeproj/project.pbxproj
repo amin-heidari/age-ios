@@ -175,6 +175,10 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		272785B522CFD83F00E1C189 /* Widget.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Widget.entitlements; sourceTree = "<group>"; };
+		272785B722CFD83F00E1C189 /* Widget Dev.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Widget Dev.entitlements"; sourceTree = "<group>"; };
+		272785B922CFD8AF00E1C189 /* Age.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Age.entitlements; sourceTree = "<group>"; };
+		272785BB22CFD8AF00E1C189 /* Age.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Age.entitlements; sourceTree = "<group>"; };
 		274EC092226118CC00D5E263 /* Age.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Age.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		274EC095226118CC00D5E263 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		274EC09F226118D000D5E263 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -187,10 +191,6 @@
 		27764FE422CF214100C4B13D /* AgeData.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = AgeData.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		27764FE622CF214200C4B13D /* AgeData.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AgeData.h; sourceTree = "<group>"; };
 		27764FE722CF214200C4B13D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		27764FFC22CF222600C4B13D /* Age Dev.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Age Dev.entitlements"; sourceTree = "<group>"; };
-		27764FFD22CF222D00C4B13D /* Age.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Age.entitlements; sourceTree = "<group>"; };
-		27764FFE22CF224A00C4B13D /* Widget.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Widget.entitlements; sourceTree = "<group>"; };
-		27764FFF22CF225600C4B13D /* Widget Dev.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; name = "Widget Dev.entitlements"; path = "Widget Dev/Widget Dev.entitlements"; sourceTree = "<group>"; };
 		2776500422CF23BE00C4B13D /* BirthDate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BirthDate.swift; sourceTree = "<group>"; };
 		2776500C22CF24E100C4B13D /* AgeCalculator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AgeCalculator.swift; sourceTree = "<group>"; };
 		2776501122CF258A00C4B13D /* Birthday.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Birthday.swift; sourceTree = "<group>"; };
@@ -283,11 +283,43 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		272785B422CFD83F00E1C189 /* Entitlements */ = {
+			isa = PBXGroup;
+			children = (
+				272785B522CFD83F00E1C189 /* Widget.entitlements */,
+				272785B622CFD83F00E1C189 /* Dev */,
+			);
+			path = Entitlements;
+			sourceTree = "<group>";
+		};
+		272785B622CFD83F00E1C189 /* Dev */ = {
+			isa = PBXGroup;
+			children = (
+				272785B722CFD83F00E1C189 /* Widget Dev.entitlements */,
+			);
+			path = Dev;
+			sourceTree = "<group>";
+		};
+		272785B822CFD8AF00E1C189 /* Entitlements */ = {
+			isa = PBXGroup;
+			children = (
+				272785B922CFD8AF00E1C189 /* Age.entitlements */,
+				272785BA22CFD8AF00E1C189 /* Dev */,
+			);
+			path = Entitlements;
+			sourceTree = "<group>";
+		};
+		272785BA22CFD8AF00E1C189 /* Dev */ = {
+			isa = PBXGroup;
+			children = (
+				272785BB22CFD8AF00E1C189 /* Age.entitlements */,
+			);
+			path = Dev;
+			sourceTree = "<group>";
+		};
 		274EC089226118CC00D5E263 = {
 			isa = PBXGroup;
 			children = (
-				27764FFF22CF225600C4B13D /* Widget Dev.entitlements */,
-				27764FFC22CF222600C4B13D /* Age Dev.entitlements */,
 				274EC094226118CC00D5E263 /* Age */,
 				27764F4C22CF1AA100C4B13D /* Widget */,
 				27764FE522CF214200C4B13D /* AgeData */,
@@ -311,8 +343,8 @@
 		274EC094226118CC00D5E263 /* Age */ = {
 			isa = PBXGroup;
 			children = (
-				27764FFD22CF222D00C4B13D /* Age.entitlements */,
 				274EC095226118CC00D5E263 /* AppDelegate.swift */,
+				272785B822CFD8AF00E1C189 /* Entitlements */,
 				27AA5AF32299FB0E0059D1A2 /* Constants */,
 				27AA5AD12299F8B90059D1A2 /* Cells */,
 				27AA5AD32299F8B90059D1A2 /* Certificates */,
@@ -340,11 +372,11 @@
 		27764F4C22CF1AA100C4B13D /* Widget */ = {
 			isa = PBXGroup;
 			children = (
-				27764FFE22CF224A00C4B13D /* Widget.entitlements */,
 				27764F4D22CF1AA100C4B13D /* TodayViewController.swift */,
 				2776501522CF285800C4B13D /* Constants */,
 				27764F4F22CF1AA100C4B13D /* MainInterface.storyboard */,
 				2776501B22CF29AA00C4B13D /* Plists */,
+				272785B422CFD83F00E1C189 /* Entitlements */,
 			);
 			path = Widget;
 			sourceTree = "<group>";
@@ -1060,7 +1092,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = Age/Age.entitlements;
+				CODE_SIGN_ENTITLEMENTS = Age/Entitlements/Age.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = T25FTV2NX7;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1079,7 +1111,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = Age/Age.entitlements;
+				CODE_SIGN_ENTITLEMENTS = Age/Entitlements/Age.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = T25FTV2NX7;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1096,7 +1128,7 @@
 		27764F5622CF1AA100C4B13D /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_ENTITLEMENTS = Widget/Widget.entitlements;
+				CODE_SIGN_ENTITLEMENTS = Widget/Entitlements/Widget.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = T25FTV2NX7;
 				INFOPLIST_FILE = Widget/Plists/Info.plist;
@@ -1117,7 +1149,7 @@
 		27764F5722CF1AA100C4B13D /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_ENTITLEMENTS = Widget/Widget.entitlements;
+				CODE_SIGN_ENTITLEMENTS = Widget/Entitlements/Widget.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = T25FTV2NX7;
 				INFOPLIST_FILE = Widget/Plists/Info.plist;
@@ -1138,7 +1170,7 @@
 		27764F6622CF1ACC00C4B13D /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_ENTITLEMENTS = "Widget Dev/Widget Dev.entitlements";
+				CODE_SIGN_ENTITLEMENTS = Widget/Entitlements/Dev/Widget.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = T25FTV2NX7;
 				INFOPLIST_FILE = Widget/Plists/Dev/Info.plist;
@@ -1159,7 +1191,7 @@
 		27764F6722CF1ACC00C4B13D /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_ENTITLEMENTS = "Widget Dev/Widget Dev.entitlements";
+				CODE_SIGN_ENTITLEMENTS = Widget/Entitlements/Dev/Widget.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = T25FTV2NX7;
 				INFOPLIST_FILE = Widget/Plists/Dev/Info.plist;
@@ -1243,7 +1275,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = "Age Dev.entitlements";
+				CODE_SIGN_ENTITLEMENTS = Age/Entitlements/Dev/Age.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = T25FTV2NX7;
 				INFOPLIST_FILE = Age/Plists/Dev/Info.plist;
@@ -1263,7 +1295,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = "Age Dev.entitlements";
+				CODE_SIGN_ENTITLEMENTS = Age/Entitlements/Dev/Age.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = T25FTV2NX7;
 				INFOPLIST_FILE = Age/Plists/Dev/Info.plist;
