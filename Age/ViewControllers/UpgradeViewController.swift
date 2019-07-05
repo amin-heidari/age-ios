@@ -36,6 +36,12 @@ class UpgradeViewController: BaseViewController {
         }
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let destination = segue.destination as? NewAgeViewController {
+            destination.scenario = .newDefault
+        }
+    }
+    
     // MARK: - Properties
     
     override var isNavigationBarHidden: Bool { return true }

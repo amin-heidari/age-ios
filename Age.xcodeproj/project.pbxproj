@@ -30,8 +30,6 @@
 		2776501422CF267000C4B13D /* SuiteDefaultsUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2776501322CF267000C4B13D /* SuiteDefaultsUtil.swift */; };
 		2776501922CF286000C4B13D /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2776501622CF285800C4B13D /* Constants.swift */; };
 		2776501A22CF286400C4B13D /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2776501822CF285800C4B13D /* Constants.swift */; };
-		2776501F22CF29AF00C4B13D /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2776501E22CF29AA00C4B13D /* Info.plist */; };
-		2776502022CF29B300C4B13D /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2776501D22CF29AA00C4B13D /* Info.plist */; };
 		2776502122CF2A2D00C4B13D /* AgeData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27764FE422CF214100C4B13D /* AgeData.framework */; };
 		2776502222CF2A3000C4B13D /* AgeData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27764FE422CF214100C4B13D /* AgeData.framework */; };
 		279D139F22B7DE22006B649E /* FontUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 279D139E22B7DE22006B649E /* FontUtil.swift */; };
@@ -752,7 +750,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2776501F22CF29AF00C4B13D /* Info.plist in Resources */,
 				27764F5122CF1AA100C4B13D /* MainInterface.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -761,7 +758,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2776502022CF29B300C4B13D /* Info.plist in Resources */,
 				27764F6422CF1ACC00C4B13D /* MainInterface.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

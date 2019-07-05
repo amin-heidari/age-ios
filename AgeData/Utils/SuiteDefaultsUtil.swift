@@ -31,7 +31,7 @@ public class SuiteDefaultsUtil {
             return birthday
         }
         set(newValue){
-            UserDefaults.standard.set(try? PropertyListEncoder().encode(newValue), forKey: Keys.defaultBirthday.rawValue)
+            suiteUserDefaults.set(try? PropertyListEncoder().encode(newValue), forKey: Keys.defaultBirthday.rawValue)
         }
     }
     
