@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AgeData
 
 class LoadingViewController: BaseViewController {
     
@@ -106,7 +107,7 @@ class LoadingViewController: BaseViewController {
     }
     
     private func proceedToTheApp() {
-        if let _ = UserDefaultsUtil.defaultBirthday {
+        if let _ = SuiteDefaultsUtil.defaultBirthday {
             performSegue(withIdentifier: "age", sender: nil)
         } else {
             performSegue(withIdentifier: "add-age", sender: nil)

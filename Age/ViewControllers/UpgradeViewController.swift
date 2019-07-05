@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AgeData
 
 class UpgradeViewController: BaseViewController {
 
@@ -69,7 +70,7 @@ class UpgradeViewController: BaseViewController {
         
         UserDefaultsUtil.skippedLatestVersion = RemoteConfigManager.shared.remoteConfig.version.latest
         
-        if let _ = UserDefaultsUtil.defaultBirthday {
+        if let _ = SuiteDefaultsUtil.defaultBirthday {
             performSegue(withIdentifier: "age", sender: nil)
         } else {
             performSegue(withIdentifier: "add-age", sender: nil)

@@ -8,11 +8,11 @@
 
 import Foundation
 
-class Birthday: Codable {
-    let birthDate: BirthDate
-    let name: String
+public class Birthday: Codable {
+    public let birthDate: BirthDate
+    public let name: String
     
-    init(birthDate: BirthDate, name: String) {
+    public init(birthDate: BirthDate, name: String) {
         self.birthDate = birthDate
         self.name = name
     }

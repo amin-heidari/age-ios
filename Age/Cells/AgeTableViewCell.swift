@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AgeData
 
 class AgeTableViewCell: UITableViewCell {
     

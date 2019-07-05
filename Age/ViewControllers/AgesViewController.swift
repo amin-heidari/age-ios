@@ -8,6 +8,7 @@
 
 import UIKit
 import CoreData
+import AgeData
 
 class AgesViewController: BaseViewController {
     
@@ -112,7 +113,7 @@ extension AgesViewController: UITableViewDataSource {
         
         switch indexPath.section {
         case 0:
-            cell.item = (UserDefaultsUtil.defaultBirthday!, true)
+            cell.item = (SuiteDefaultsUtil.defaultBirthday!, true)
         case 1:
             cell.item = (DatabaseManager.shared.birthdaysFetchResultsController.fetchedObjects![indexPath.row].birthday!, false)
         default:

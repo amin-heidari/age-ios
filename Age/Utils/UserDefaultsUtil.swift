@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import AgeData
 
 // https://fluffy.es/saving-custom-object-into-userdefaults/
 class UserDefaultsUtil {
@@ -20,17 +21,6 @@ class UserDefaultsUtil {
     }
     
     // MARK: - API
-    
-    static var defaultBirthday: Birthday? {
-        get {
-            guard let data = UserDefaults.standard.object(forKey: Keys.defaultBirthday.rawValue) as? Data,
-                let birthday = try? PropertyListDecoder().decode(Birthday.self, from: data) else { return nil }
-            return birthday
-        }
-        set(newValue){
-            UserDefaults.standard.set(try? PropertyListEncoder().encode(newValue), forKey: Keys.defaultBirthday.rawValue)
-        }
-    }
     
     /// To be accessed only by the private computed property `cachedRemoteConfig`, of `RemoteConfigManager`.
     static var cachedRemoteConfig: RemoteConfigManager.CachedRemoteConfig? {

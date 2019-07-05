@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AgeData
 
 class NewAgeViewController: BaseViewController {
     
@@ -47,7 +48,7 @@ class NewAgeViewController: BaseViewController {
         case .editDefault:
             closeButton.isHidden = false
             deleteButton.isHidden = true
-            let birthday = UserDefaultsUtil.defaultBirthday!
+            let birthday = SuiteDefaultsUtil.defaultBirthday!
             editingBirthDate = birthday.birthDate
             nameTextField.text = birthday.name
         case .newEntity:
@@ -144,10 +145,10 @@ class NewAgeViewController: BaseViewController {
         
         switch scenario! {
         case .newDefault:
-            UserDefaultsUtil.defaultBirthday = birthday
+            SuiteDefaultsUtil.defaultBirthday = birthday
             performSegue(withIdentifier: "age", sender: nil)
         case .editDefault:
-            UserDefaultsUtil.defaultBirthday = birthday
+            SuiteDefaultsUtil.defaultBirthday = birthday
             dismiss(animated: true, completion: nil)
         case .newEntity:
             isProcessing = true
