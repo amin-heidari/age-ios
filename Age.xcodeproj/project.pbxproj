@@ -32,6 +32,7 @@
 		2776501A22CF286400C4B13D /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2776501822CF285800C4B13D /* Constants.swift */; };
 		2776502122CF2A2D00C4B13D /* AgeData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27764FE422CF214100C4B13D /* AgeData.framework */; };
 		2776502222CF2A3000C4B13D /* AgeData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27764FE422CF214100C4B13D /* AgeData.framework */; };
+		2789EA9422D2CBE7003BD427 /* AppWidgetOverride.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2789EA9322D2CBE7003BD427 /* AppWidgetOverride.swift */; };
 		279D139F22B7DE22006B649E /* FontUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 279D139E22B7DE22006B649E /* FontUtil.swift */; };
 		279D13A022B7DE22006B649E /* FontUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 279D139E22B7DE22006B649E /* FontUtil.swift */; };
 		279D13A222B83858006B649E /* NavigationUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 279D13A122B83858006B649E /* NavigationUtil.swift */; };
@@ -199,6 +200,7 @@
 		2776501822CF285800C4B13D /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		2776501D22CF29AA00C4B13D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2776501E22CF29AA00C4B13D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2789EA9322D2CBE7003BD427 /* AppWidgetOverride.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppWidgetOverride.swift; sourceTree = "<group>"; };
 		279D139E22B7DE22006B649E /* FontUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontUtil.swift; sourceTree = "<group>"; };
 		279D13A122B83858006B649E /* NavigationUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationUtil.swift; sourceTree = "<group>"; };
 		27AA5AC32299F8B80059D1A2 /* RemoteConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RemoteConfig.swift; sourceTree = "<group>"; };
@@ -398,6 +400,7 @@
 			children = (
 				2776501122CF258A00C4B13D /* Birthday.swift */,
 				2776500422CF23BE00C4B13D /* BirthDate.swift */,
+				2789EA9322D2CBE7003BD427 /* AppWidgetOverride.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -876,6 +879,7 @@
 				2776501422CF267000C4B13D /* SuiteDefaultsUtil.swift in Sources */,
 				2776501222CF258A00C4B13D /* Birthday.swift in Sources */,
 				2776500D22CF24E200C4B13D /* AgeCalculator.swift in Sources */,
+				2789EA9422D2CBE7003BD427 /* AppWidgetOverride.swift in Sources */,
 				2776500522CF23BE00C4B13D /* BirthDate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1141,7 +1145,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.aminheidari.Age.Widget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 5.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -1162,7 +1166,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.aminheidari.Age.Widget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 5.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
@@ -1183,7 +1187,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.aminheidari.Age.dev.Widget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 5.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -1204,7 +1208,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.aminheidari.Age.dev.Widget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 5.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
@@ -1233,7 +1237,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 5.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -1263,7 +1267,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.aminheidari.Age.Data;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 5.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
