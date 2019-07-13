@@ -13,5 +13,6 @@ enum AppError: Error {
     case certificateExpired
     case authentication
     case parsing
+    case incorrectDeviceDateTime
     case unknown
 }

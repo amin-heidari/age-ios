@@ -33,6 +33,8 @@
 		2776502122CF2A2D00C4B13D /* AgeData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27764FE422CF214100C4B13D /* AgeData.framework */; };
 		2776502222CF2A3000C4B13D /* AgeData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27764FE422CF214100C4B13D /* AgeData.framework */; };
 		2789EA9422D2CBE7003BD427 /* AppWidgetOverride.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2789EA9322D2CBE7003BD427 /* AppWidgetOverride.swift */; };
+		2789EA9A22D53595003BD427 /* DataUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2789EA9922D53595003BD427 /* DataUtil.swift */; };
+		2789EA9B22D53595003BD427 /* DataUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2789EA9922D53595003BD427 /* DataUtil.swift */; };
 		279D139F22B7DE22006B649E /* FontUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 279D139E22B7DE22006B649E /* FontUtil.swift */; };
 		279D13A022B7DE22006B649E /* FontUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 279D139E22B7DE22006B649E /* FontUtil.swift */; };
 		279D13A222B83858006B649E /* NavigationUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 279D13A122B83858006B649E /* NavigationUtil.swift */; };
@@ -201,6 +203,7 @@
 		2776501D22CF29AA00C4B13D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2776501E22CF29AA00C4B13D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2789EA9322D2CBE7003BD427 /* AppWidgetOverride.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppWidgetOverride.swift; sourceTree = "<group>"; };
+		2789EA9922D53595003BD427 /* DataUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataUtil.swift; sourceTree = "<group>"; };
 		279D139E22B7DE22006B649E /* FontUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontUtil.swift; sourceTree = "<group>"; };
 		279D13A122B83858006B649E /* NavigationUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationUtil.swift; sourceTree = "<group>"; };
 		27AA5AC32299F8B80059D1A2 /* RemoteConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RemoteConfig.swift; sourceTree = "<group>"; };
@@ -486,6 +489,7 @@
 				27C8C00C22B2D99D00C064D5 /* CallbackUtil.swift */,
 				27C8C00F22B3016800C064D5 /* StringUtil.swift */,
 				2771407E22B4005100F4ED05 /* DateUtil.swift */,
+				2789EA9922D53595003BD427 /* DataUtil.swift */,
 				279D139E22B7DE22006B649E /* FontUtil.swift */,
 				27C8C01622B875EC00C064D5 /* ObjectUtil.swift */,
 			);
@@ -841,6 +845,7 @@
 				27C257E922A3138400EFAA33 /* UpgradeViewController.swift in Sources */,
 				27C8C00D22B2D99D00C064D5 /* CallbackUtil.swift in Sources */,
 				27AA5AE32299F8B90059D1A2 /* DatabaseManager.swift in Sources */,
+				2789EA9A22D53595003BD427 /* DataUtil.swift in Sources */,
 				27C257D622A2102600EFAA33 /* AppError.swift in Sources */,
 				279D139F22B7DE22006B649E /* FontUtil.swift in Sources */,
 				27AA5AE22299F8B90059D1A2 /* Age.xcdatamodeld in Sources */,
@@ -907,6 +912,7 @@
 				27C257EA22A3138400EFAA33 /* UpgradeViewController.swift in Sources */,
 				27AA5B042299FC090059D1A2 /* DatabaseManager.swift in Sources */,
 				27C257D722A2102600EFAA33 /* AppError.swift in Sources */,
+				2789EA9B22D53595003BD427 /* DataUtil.swift in Sources */,
 				27AA5B052299FC090059D1A2 /* Age.xcdatamodeld in Sources */,
 				279D13A022B7DE22006B649E /* FontUtil.swift in Sources */,
 				27C8C00E22B2DE1000C064D5 /* CallbackUtil.swift in Sources */,

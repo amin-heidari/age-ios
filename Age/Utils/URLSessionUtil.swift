@@ -8,8 +8,26 @@
 
 import Foundation
 
+typealias FullHttpResponse<T> = (data: T, headers: [AnyHashable: Any])
+
 /// This function always invokes the `completion` closure on the main thread.
+/// This is a light weight version of `urlSessionFullHttpCompletion` which does not return the headers.
 func urlSessionHttpCompletion<T: Decodable>(_ completion: @escaping Completion<T>) -> ((Data?, URLResponse?, Error?) -> Void) {
+    let fullCompletion: Completion<FullHttpResponse<T>> = { (fullResult) in
+        // No need to spawn main thread here as we're sure this entire block is being executed on the main thread because of the function below.
+        switch fullResult {
+        case .failure(let error):
+            completion(.failure(error))
+        case .success(let response):
+            completion(.success(response.data))
+        }
+    }
+    
+    return urlSessionFullHttpCompletion(fullCompletion)
+}
+
+/// This function always invokes the `completion` closure on the main thread.
+func urlSessionFullHttpCompletion<T: Decodable>(_ completion: @escaping Completion<FullHttpResponse<T>>) -> ((Data?, URLResponse?, Error?) -> Void) {
     return { (data, urlResponse, error) in
         if let error = error {
             if error.code == NSURLErrorCancelled {
@@ -26,7 +44,7 @@ func urlSessionHttpCompletion<T: Decodable>(_ completion: @escaping Completion<T
             if let urlResponse = urlResponse as? HTTPURLResponse {
                 if ((200..<300).contains(urlResponse.statusCode)) {
                     if let data = data, let parsedData = try? JSONDecoder().decode(T.self, from: data) {
-                        DispatchQueue.main.async { completion(.success(parsedData)) }
+                        DispatchQueue.main.async { completion(.success((parsedData, urlResponse.allHeaderFields))) }
                     } else {
                         DispatchQueue.main.async { completion(.failure(AppError.parsing)) }
                     }
