@@ -40,7 +40,7 @@ class RemoteConfigManager: NSObject {
         } else {
             // There either isn't a cache, or if there is one, it's not fresh. So try to make the api call.
             // https://stackoverflow.com/a/30788735
-            let dataTaskCompletion: Completion<RemoteConfig> = { [unowned self] (result) in
+            let dataTaskCompletion: Completion<FullHttpResponse<RemoteConfig>> = { [unowned self] (result) in
                 switch result {
                 case .failure(let error):
                     switch error {
@@ -53,10 +53,29 @@ class RemoteConfigManager: NSObject {
                     default:
                         completion(.failure(error))
                     }
-                case .success(let data):
-                    // Update the cache.
-                    self.cachedRemoteConfig = CachedRemoteConfig(remoteConfig: data, cachedTime: Date())
-                    completion(.success(data))
+                case .success(let response):
+                    // Success block to execute.
+                    let completeSuccess = {
+                        // Update the cache.
+                        self.cachedRemoteConfig = CachedRemoteConfig(remoteConfig: response.data, cachedTime: Date())
+                        
+                        completion(.success(response.data))
+                    }
+                    
+                    // Check if the response has a header named `Date`,
+                    // and use it to make sure the server time and client time are in sync (and throw an error otherwise).
+                    if let apiDateString = response.headers["Date"] as? String,
+                        let apiDate = DateFormatters.apiGatewayDateHeader.date(from: apiDateString) {
+                        // There is a date coming back from the api, use to to validate the integrity of the time on the device.
+                        if (Date().timeIntervalSince(apiDate) > Constants.DeviceIntegrity.maxAllowedApiTimeDifference) {
+                            // If the device date is off, then it's a failure.
+                            completion(.failure(AppError.incorrectDeviceDateTime))
+                        } else {
+                            completeSuccess()
+                        }
+                    } else {
+                        completeSuccess()
+                    }
                 }
             }
             
@@ -65,7 +84,7 @@ class RemoteConfigManager: NSObject {
             request.addValue(Constants.RemoteConfig.apiKeyHeaderValue, forHTTPHeaderField: Constants.RemoteConfig.apiKeyHeaderField)
             
             // Send the request.
-            let task = urlSession.dataTask(with: request, completionHandler: urlSessionHttpCompletion(dataTaskCompletion))
+            let task = urlSession.dataTask(with: request, completionHandler: urlSessionFullHttpCompletion(dataTaskCompletion))
             task.resume()
             
             return task

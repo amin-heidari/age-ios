@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AgeData
 
 class AgeViewController: BaseViewController {
     
@@ -26,7 +27,7 @@ class AgeViewController: BaseViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        ageCalculator = AgeCalculator(birthDate: UserDefaultsUtil.defaultBirthday!.birthDate)
+        ageCalculator = AgeCalculator(birthDate: SuiteDefaultsUtil.defaultBirthday!.birthDate)
         
         timer = Timer.scheduledTimer(timeInterval: Constants.AgeCalculation.refreshInterval,
                                      target: self,

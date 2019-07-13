@@ -22,4 +22,13 @@ class Constants {
         static let refreshInterval: TimeInterval = 0.01
     }
     
+    class UserDefaults {
+        static let suiteName = "group.com.aminheidari.Age.dev"
+    }
+    
+    class DeviceIntegrity {
+        // Maximum time the device is allowed to have a time diff from the api.
+        static let maxAllowedApiTimeDifference: TimeInterval = 10 * 60
+    }
+    
 }

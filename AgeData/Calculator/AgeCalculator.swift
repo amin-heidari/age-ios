@@ -2,20 +2,20 @@
 //  AgeCalculator.swift
 //  Age
 //
-//  Created by Amin on 2019-06-15.
+//  Created by Amin on 2019-07-05.
 //  Copyright © 2019 Amin Heidari. All rights reserved.
 //
 
 import Foundation
 
-class AgeCalculator {
+public class AgeCalculator {
     
     // MARK: - Constants/Types
     
-    class Age {
-        let full: Int
-        let rational: Double
-        var value: Double {
+    public class Age {
+        public let full: Int
+        public let rational: Double
+        public var value: Double {
             return Double(full) + rational
         }
         
@@ -29,13 +29,13 @@ class AgeCalculator {
     
     // MARK: - API
     
-    init(birthDate: BirthDate) {
+    public init(birthDate: BirthDate) {
         self.birthDate = birthDate
     }
     
     deinit { }
     
-    var currentAge: Age {
+    public var currentAge: Age {
         let now = Date()
         
         var thisYearBirthdayComponents = DateComponents()
@@ -81,3 +81,4 @@ class AgeCalculator {
     // MARK: - Actions
     
 }
+

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AgeData
 
 class UpgradeViewController: BaseViewController {
 
@@ -32,6 +33,12 @@ class UpgradeViewController: BaseViewController {
             skipButton.isHidden = false
         default:
             fatalError("Not supported!")
+        }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let destination = segue.destination as? NewAgeViewController {
+            destination.scenario = .newDefault
         }
     }
     
@@ -69,7 +76,7 @@ class UpgradeViewController: BaseViewController {
         
         UserDefaultsUtil.skippedLatestVersion = RemoteConfigManager.shared.remoteConfig.version.latest
         
-        if let _ = UserDefaultsUtil.defaultBirthday {
+        if let _ = SuiteDefaultsUtil.defaultBirthday {
             performSegue(withIdentifier: "age", sender: nil)
         } else {
             performSegue(withIdentifier: "add-age", sender: nil)

@@ -7,6 +7,21 @@
 //
 
 import Foundation
+import AgeData
+
+// https://stackoverflow.com/a/47374042
+// all global variables are lazy by default,
+// that is why no need (and not allowed) to place keyword "lazy" before the global variable declaration:
+// they are already lazy by their nature.
+class DateFormatters {
+    
+    static private(set) var apiGatewayDateHeader: DateFormatter = {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "EEE, dd MMM yyyy HH:mm:ss zzz"
+        return dateFormatter
+    }()
+    
+}
 
 extension Date {
     

@@ -12,6 +12,8 @@
 	<dict>
 		<key>com.aminheidari.Age</key>
 		<string>Age</string>
+		<key>com.aminheidari.Age.widget</key>
+		<string>Age Widget</string>
 	</dict>
 	<key>signingStyle</key>
 	<string>manual</string>

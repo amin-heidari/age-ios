@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AgeData
 
 class LoadingViewController: BaseViewController {
     
@@ -71,16 +72,24 @@ class LoadingViewController: BaseViewController {
                     self.errorTitleLabel.text = "No Internet!"
                     self.errorDescriptionLabel.text = "It looks like you're not connected to the internet. Please connect and try again!"
                     self.retryButton.isHidden = false
+                    
+                    SuiteDefaultsUtil.appWidgetOverride = .openApp
+                    
                 case AppError.certificateExpired:
                     // Please udpate the app.
                     self.errorTitleLabel.text = "Please upgrade!"
                     self.errorDescriptionLabel.text = "Please upgrade the application from the app store!"
                     self.retryButton.isHidden = true
+                    
+                    SuiteDefaultsUtil.appWidgetOverride = .openApp
+                    
                 default:
                     // Generic message.
                     self.errorTitleLabel.text = "Error!"
                     self.errorDescriptionLabel.text = "An error occured, please try again!"
                     self.retryButton.isHidden = false
+                    
+                    SuiteDefaultsUtil.appWidgetOverride = .openApp
                 }
             case .success(let remoteConfig):
                 self.errorStackView.isHidden = true
@@ -88,9 +97,16 @@ class LoadingViewController: BaseViewController {
                 switch remoteConfig.version.compare(appVersion: Bundle.main.versionNumber) {
                 case .forcedUpgrade:
                     // The app's version is below the minimum required version.
+                    
+                    SuiteDefaultsUtil.appWidgetOverride = .upgrade(storeUrl: remoteConfig.storeURL)
+                    
                     self.performSegue(withIdentifier: "upgrade", sender: nil)
+                    
                 case .optionalUpgrade:
                     // The app's version is below the latest version.
+                    
+                    SuiteDefaultsUtil.appWidgetOverride = .none
+                    
                     if let skippedVersion = UserDefaultsUtil.skippedLatestVersion, skippedVersion.compare(remoteConfig.version.latest, options: .numeric) != .orderedAscending {
                         // User has already skipped to upgrade to that version before.
                         self.proceedToTheApp()
@@ -99,6 +115,8 @@ class LoadingViewController: BaseViewController {
                         self.performSegue(withIdentifier: "upgrade", sender: nil)
                     }
                 case .latestVersion:
+                    SuiteDefaultsUtil.appWidgetOverride = .none
+                    
                     self.proceedToTheApp()
                 }
             }
@@ -106,7 +124,7 @@ class LoadingViewController: BaseViewController {
     }
     
     private func proceedToTheApp() {
-        if let _ = UserDefaultsUtil.defaultBirthday {
+        if let _ = SuiteDefaultsUtil.defaultBirthday {
             performSegue(withIdentifier: "age", sender: nil)
         } else {
             performSegue(withIdentifier: "add-age", sender: nil)
