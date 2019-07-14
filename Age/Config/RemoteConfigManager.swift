@@ -53,21 +53,21 @@ class RemoteConfigManager: NSObject {
                     default:
                         completion(.failure(error))
                     }
-                case .success(let response):
+                case .success(let data):
                     // Success block to execute.
                     let completeSuccess = {
                         // Update the cache.
-                        self.cachedRemoteConfig = CachedRemoteConfig(remoteConfig: response.data, cachedTime: Date())
+                        self.cachedRemoteConfig = CachedRemoteConfig(remoteConfig: data.data, cachedTime: Date())
                         
-                        completion(.success(response.data))
+                        completion(.success(data.data))
                     }
                     
                     // Check if the response has a header named `Date`,
                     // and use it to make sure the server time and client time are in sync (and throw an error otherwise).
-                    if let apiDateString = response.headers["Date"] as? String,
+                    if let apiDateString = data.response.allHeaderFields["Date"] as? String,
                         let apiDate = DateFormatters.apiGatewayDateHeader.date(from: apiDateString) {
                         // There is a date coming back from the api, use to to validate the integrity of the time on the device.
-                        if (Date().timeIntervalSince(apiDate) > Constants.DeviceIntegrity.maxAllowedApiTimeDifference) {
+                        if (abs(Date().timeIntervalSince(apiDate)) > Constants.DeviceIntegrity.maxAllowedApiTimeDifference) {
                             // If the device date is off, then it's a failure.
                             completion(.failure(AppError.incorrectDeviceDateTime))
                         } else {

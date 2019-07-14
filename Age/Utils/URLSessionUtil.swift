@@ -8,7 +8,7 @@
 
 import Foundation
 
-typealias FullHttpResponse<T> = (data: T, headers: [AnyHashable: Any])
+typealias FullHttpResponse<T> = (data: T, response: HTTPURLResponse)
 
 /// This function always invokes the `completion` closure on the main thread.
 /// This is a light weight version of `urlSessionFullHttpCompletion` which does not return the headers.
@@ -44,7 +44,7 @@ func urlSessionFullHttpCompletion<T: Decodable>(_ completion: @escaping Completi
             if let urlResponse = urlResponse as? HTTPURLResponse {
                 if ((200..<300).contains(urlResponse.statusCode)) {
                     if let data = data, let parsedData = try? JSONDecoder().decode(T.self, from: data) {
-                        DispatchQueue.main.async { completion(.success((parsedData, urlResponse.allHeaderFields))) }
+                        DispatchQueue.main.async { completion(.success((parsedData, urlResponse))) }
                     } else {
                         DispatchQueue.main.async { completion(.failure(AppError.parsing)) }
                     }
