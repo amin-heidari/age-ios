@@ -31,4 +31,8 @@ class Constants {
         static let maxAllowedApiTimeDifference: TimeInterval = 10 * 60
     }
     
+    class InAppPurchase {
+        static let multipleAgeProductId = "com.aminheidari.Age.dev.multiple"
+    }
+    
 }

@@ -13,6 +13,8 @@ enum Either<T> {
     case failure(_ error: Error)
 }
 
+struct Unit { }
+
 typealias Completion<T> = (_ result: Either<T>) -> Void
 
 typealias Finish<T> = (_ result: T) -> Void

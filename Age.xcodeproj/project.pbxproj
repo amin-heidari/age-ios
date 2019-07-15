@@ -35,6 +35,12 @@
 		2789EA9422D2CBE7003BD427 /* AppWidgetOverride.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2789EA9322D2CBE7003BD427 /* AppWidgetOverride.swift */; };
 		2789EA9A22D53595003BD427 /* DataUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2789EA9922D53595003BD427 /* DataUtil.swift */; };
 		2789EA9B22D53595003BD427 /* DataUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2789EA9922D53595003BD427 /* DataUtil.swift */; };
+		2795732022DBDAED0039E7E1 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2795731F22DBDAED0039E7E1 /* StoreKit.framework */; };
+		2795732122DBDAF30039E7E1 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2795731F22DBDAED0039E7E1 /* StoreKit.framework */; };
+		2795732622DBE9750039E7E1 /* StoreKitManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2795732522DBE9750039E7E1 /* StoreKitManager.swift */; };
+		2795732722DBE9750039E7E1 /* StoreKitManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2795732522DBE9750039E7E1 /* StoreKitManager.swift */; };
+		2795732922DBEC890039E7E1 /* StoreKitUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2795732822DBEC890039E7E1 /* StoreKitUtil.swift */; };
+		2795732A22DBEC890039E7E1 /* StoreKitUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2795732822DBEC890039E7E1 /* StoreKitUtil.swift */; };
 		279D139F22B7DE22006B649E /* FontUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 279D139E22B7DE22006B649E /* FontUtil.swift */; };
 		279D13A022B7DE22006B649E /* FontUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 279D139E22B7DE22006B649E /* FontUtil.swift */; };
 		279D13A222B83858006B649E /* NavigationUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 279D13A122B83858006B649E /* NavigationUtil.swift */; };
@@ -204,6 +210,9 @@
 		2776501E22CF29AA00C4B13D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2789EA9322D2CBE7003BD427 /* AppWidgetOverride.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppWidgetOverride.swift; sourceTree = "<group>"; };
 		2789EA9922D53595003BD427 /* DataUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataUtil.swift; sourceTree = "<group>"; };
+		2795731F22DBDAED0039E7E1 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		2795732522DBE9750039E7E1 /* StoreKitManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreKitManager.swift; sourceTree = "<group>"; };
+		2795732822DBEC890039E7E1 /* StoreKitUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreKitUtil.swift; sourceTree = "<group>"; };
 		279D139E22B7DE22006B649E /* FontUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontUtil.swift; sourceTree = "<group>"; };
 		279D13A122B83858006B649E /* NavigationUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationUtil.swift; sourceTree = "<group>"; };
 		27AA5AC32299F8B80059D1A2 /* RemoteConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RemoteConfig.swift; sourceTree = "<group>"; };
@@ -249,6 +258,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				27764FEB22CF214200C4B13D /* AgeData.framework in Frameworks */,
+				2795732122DBDAF30039E7E1 /* StoreKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -282,6 +292,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2776500622CF23D600C4B13D /* AgeData.framework in Frameworks */,
+				2795732022DBDAED0039E7E1 /* StoreKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -357,6 +368,7 @@
 				27AA5AC12299F8B80059D1A2 /* Models */,
 				27AA5ACE2299F8B90059D1A2 /* Plists */,
 				27C257C8229F0CEA00EFAA33 /* Config */,
+				2795732422DBE9660039E7E1 /* Store */,
 				27AA5ADB2299F8B90059D1A2 /* Storyboards */,
 				27AA5AC92299F8B80059D1A2 /* Utils */,
 				27C257D822A30A2E00EFAA33 /* Navigation */,
@@ -369,6 +381,7 @@
 		27764F4922CF1AA100C4B13D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				2795731F22DBDAED0039E7E1 /* StoreKit.framework */,
 				27764F4A22CF1AA100C4B13D /* NotificationCenter.framework */,
 			);
 			name = Frameworks;
@@ -458,6 +471,14 @@
 			path = Dev;
 			sourceTree = "<group>";
 		};
+		2795732422DBE9660039E7E1 /* Store */ = {
+			isa = PBXGroup;
+			children = (
+				2795732522DBE9750039E7E1 /* StoreKitManager.swift */,
+			);
+			path = Store;
+			sourceTree = "<group>";
+		};
 		27AA5AC12299F8B80059D1A2 /* Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -492,6 +513,7 @@
 				2789EA9922D53595003BD427 /* DataUtil.swift */,
 				279D139E22B7DE22006B649E /* FontUtil.swift */,
 				27C8C01622B875EC00C064D5 /* ObjectUtil.swift */,
+				2795732822DBEC890039E7E1 /* StoreKitUtil.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -721,6 +743,9 @@
 							com.apple.ApplicationGroups.iOS = {
 								enabled = 1;
 							};
+							com.apple.InAppPurchase = {
+								enabled = 1;
+							};
 						};
 					};
 					27764F4722CF1AA100C4B13D = {
@@ -745,6 +770,9 @@
 					27AA5AF82299FC090059D1A2 = {
 						SystemCapabilities = {
 							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+							com.apple.InAppPurchase = {
 								enabled = 1;
 							};
 						};
@@ -828,6 +856,8 @@
 			files = (
 				27C8C01722B875EC00C064D5 /* ObjectUtil.swift in Sources */,
 				27C257EF22A58BC800EFAA33 /* ViewControllerUtil.swift in Sources */,
+				2795732622DBE9750039E7E1 /* StoreKitManager.swift in Sources */,
+				2795732922DBEC890039E7E1 /* StoreKitUtil.swift in Sources */,
 				27AA5AE62299F8B90059D1A2 /* UserDefaultsUtil.swift in Sources */,
 				27C257CA229F0CEA00EFAA33 /* RemoteConfigManager.swift in Sources */,
 				27AA5AEF2299F8B90059D1A2 /* AgeViewController.swift in Sources */,
@@ -895,6 +925,8 @@
 			files = (
 				27ABE05C22B92A9B009B60B4 /* ObjectUtil.swift in Sources */,
 				27C257F022A58BC800EFAA33 /* ViewControllerUtil.swift in Sources */,
+				2795732722DBE9750039E7E1 /* StoreKitManager.swift in Sources */,
+				2795732A22DBEC890039E7E1 /* StoreKitUtil.swift in Sources */,
 				27AA5AFA2299FC090059D1A2 /* UserDefaultsUtil.swift in Sources */,
 				27C257CB229F0CEA00EFAA33 /* RemoteConfigManager.swift in Sources */,
 				27AA5AFB2299FC090059D1A2 /* AgeViewController.swift in Sources */,
