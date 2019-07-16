@@ -22,6 +22,9 @@ class AgeViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        StoreKitManager.shared.fetchProducts { (result) in
+            //
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {

@@ -9,7 +9,7 @@
 import Foundation
 import StoreKit
 
-class StoreKitManager: NSObject {
+class StoreKitManager: NSObject, SKProductsRequestDelegate, SKPaymentTransactionObserver {
     
     // MARK: - Constants/Types
     
@@ -19,11 +19,14 @@ class StoreKitManager: NSObject {
     static let shared = StoreKitManager()
     
     // MARK: - API
+    
+    private(set) var productsResponse: SKProductsResponse?
 
-    func fetchProducts(completion: Completion<Unit>) {
+    func fetchProducts(completion: @escaping Completion<SKProductsResponse>) {
         productsRequest?.cancel()
-        productsRequest = SKProductsRequest(productIdentifiers: Set(Constants.InAppPurchase.multipleAgeProductId))
+        productsRequest = SKProductsRequest(productIdentifiers: Set([Constants.InAppPurchase.multipleAgeProductId]))
         productsRequest?.delegate = self
+        fetchProductsCompletion = completion
         productsRequest?.start()
     }
 
@@ -35,6 +38,7 @@ class StoreKitManager: NSObject {
     // MARK: - Properties
     
     private var productsRequest: SKProductsRequest?
+    private var fetchProductsCompletion: Completion<SKProductsResponse>?
     
     // MARK: - Outlets
     
@@ -42,8 +46,31 @@ class StoreKitManager: NSObject {
     
     // MARK: - Actions
     
-    // MARK: - Delegate
+    // MARK: - SKProductsRequestDelegate
     
-    // MARK: - Delegate
+    func requestDidFinish(_ request: SKRequest) { }
+    
+    func request(_ request: SKRequest, didFailWithError error: Error) {
+        if (productsRequest == request) {
+            fetchProductsCompletion?(Either.failure(error))
+            fetchProductsCompletion = nil
+            productsRequest = nil
+        }
+    }
+    
+    func productsRequest(_ request: SKProductsRequest, didReceive response: SKProductsResponse) {
+        if (productsRequest == request) {
+            productsResponse = response
+            fetchProductsCompletion?(Either.success(response))
+            fetchProductsCompletion = nil
+            productsRequest = nil
+        }
+    }
+    
+    // MARK: - SKPaymentTransactionObserver
+    
+    func paymentQueue(_ queue: SKPaymentQueue, updatedTransactions transactions: [SKPaymentTransaction]) {
+//        transactions.first!.transactionState == .
+    }
     
 }
