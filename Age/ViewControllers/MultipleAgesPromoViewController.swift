@@ -16,8 +16,6 @@ class MultipleAgesPromoViewController: BaseViewController {
     
     // MARK: - API
     
-    var finish: Finish<Result>?
-    
     // MARK: - Life Cycle
     
     override func viewDidLoad() {
