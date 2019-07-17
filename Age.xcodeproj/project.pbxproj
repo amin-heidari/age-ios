@@ -86,6 +86,8 @@
 		27B7885F22DEC8E000BBC64A /* StoreObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27B7885D22DEC8E000BBC64A /* StoreObserver.swift */; };
 		27B7886122DEC8E800BBC64A /* StoreManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27B7886022DEC8E800BBC64A /* StoreManager.swift */; };
 		27B7886222DEC8E800BBC64A /* StoreManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27B7886022DEC8E800BBC64A /* StoreManager.swift */; };
+		27B7886422DED27600BBC64A /* MultipleAgesPromoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27B7886322DED27600BBC64A /* MultipleAgesPromoViewController.swift */; };
+		27B7886522DED27600BBC64A /* MultipleAgesPromoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27B7886322DED27600BBC64A /* MultipleAgesPromoViewController.swift */; };
 		27C257CA229F0CEA00EFAA33 /* RemoteConfigManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27C257C9229F0CEA00EFAA33 /* RemoteConfigManager.swift */; };
 		27C257CB229F0CEA00EFAA33 /* RemoteConfigManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27C257C9229F0CEA00EFAA33 /* RemoteConfigManager.swift */; };
 		27C257D322A20F5200EFAA33 /* URLSessionUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27C257D222A20F5200EFAA33 /* URLSessionUtil.swift */; };
@@ -245,6 +247,7 @@
 		27B7885A22DEC51000BBC64A /* NotificationUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationUtil.swift; sourceTree = "<group>"; };
 		27B7885D22DEC8E000BBC64A /* StoreObserver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreObserver.swift; sourceTree = "<group>"; };
 		27B7886022DEC8E800BBC64A /* StoreManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreManager.swift; sourceTree = "<group>"; };
+		27B7886322DED27600BBC64A /* MultipleAgesPromoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultipleAgesPromoViewController.swift; sourceTree = "<group>"; };
 		27C257C9229F0CEA00EFAA33 /* RemoteConfigManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RemoteConfigManager.swift; sourceTree = "<group>"; };
 		27C257D222A20F5200EFAA33 /* URLSessionUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionUtil.swift; sourceTree = "<group>"; };
 		27C257D522A2102600EFAA33 /* AppError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppError.swift; sourceTree = "<group>"; };
@@ -563,6 +566,7 @@
 				27AA5AD92299F8B90059D1A2 /* AgeViewController.swift */,
 				27AA5AD82299F8B90059D1A2 /* AgesViewController.swift */,
 				27AA5AD72299F8B90059D1A2 /* NewAgeViewController.swift */,
+				27B7886322DED27600BBC64A /* MultipleAgesPromoViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -862,6 +866,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				27B7886422DED27600BBC64A /* MultipleAgesPromoViewController.swift in Sources */,
 				27C8C01722B875EC00C064D5 /* ObjectUtil.swift in Sources */,
 				27C257EF22A58BC800EFAA33 /* ViewControllerUtil.swift in Sources */,
 				2795732922DBEC890039E7E1 /* StoreKitUtil.swift in Sources */,
@@ -933,6 +938,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				27B7886522DED27600BBC64A /* MultipleAgesPromoViewController.swift in Sources */,
 				27ABE05C22B92A9B009B60B4 /* ObjectUtil.swift in Sources */,
 				27C257F022A58BC800EFAA33 /* ViewControllerUtil.swift in Sources */,
 				2795732A22DBEC890039E7E1 /* StoreKitUtil.swift in Sources */,

@@ -71,6 +71,12 @@ class AgesViewController: BaseViewController {
     
     private var timer: Timer?
     
+    private var isMultipleAgesPurchased: Bool {
+        return StoreObserver.shared.purchased.contains(where: { (transaction) -> Bool in
+            transaction.payment.productIdentifier == Constants.Store.multipleAgeProductId
+        })
+    }
+    
     // MARK: - Outlets
     
     // MARK: - Methods
@@ -84,7 +90,11 @@ class AgesViewController: BaseViewController {
     // MARK: - Actions
     
     @IBAction func addBirthdayButtonTapped(_ sender: Any) {
-        performSegue(withIdentifier: "add-age", sender: NewAgeViewController.Scenario.newEntity)
+        if (isMultipleAgesPurchased) {
+            performSegue(withIdentifier: "add-age", sender: NewAgeViewController.Scenario.newEntity)
+        } else {
+            performSegue(withIdentifier: "multiples-promo", sender: nil)
+        }
     }
 
 }
