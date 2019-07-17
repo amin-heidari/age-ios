@@ -22,12 +22,25 @@ class StoreKitManager: NSObject, SKProductsRequestDelegate, SKPaymentTransaction
     
     private(set) var productsResponse: SKProductsResponse?
 
-    func fetchProducts(completion: @escaping Completion<SKProductsResponse>) {
+    @discardableResult
+    func fetchProducts(completion: @escaping Completion<SKProductsResponse>) -> SKProductsRequest {
+        fetchProductsCompletion?(Either.failure(AppError.unknown))
         productsRequest?.cancel()
-        productsRequest = SKProductsRequest(productIdentifiers: Set([Constants.InAppPurchase.multipleAgeProductId]))
-        productsRequest?.delegate = self
+        let request = SKProductsRequest(productIdentifiers: Set([Constants.InAppPurchase.multipleAgeProductId]))
+        request.delegate = self
+        productsRequest = request
         fetchProductsCompletion = completion
-        productsRequest?.start()
+        request.start()
+        return request
+    }
+    
+    func buy(product: SKProduct) {
+        let payment = SKMutablePayment(product: product)
+        SKPaymentQueue.default().add(payment)
+    }
+    
+    func restore() {
+        SKPaymentQueue.default().restoreCompletedTransactions()
     }
 
     // MARK: - Life Cycle
@@ -69,8 +82,51 @@ class StoreKitManager: NSObject, SKProductsRequestDelegate, SKPaymentTransaction
     
     // MARK: - SKPaymentTransactionObserver
     
+    // MARK: Handling Transactions
+    
     func paymentQueue(_ queue: SKPaymentQueue, updatedTransactions transactions: [SKPaymentTransaction]) {
-//        transactions.first!.transactionState == .
+        guard let txn = transactions.first else { return }
+        switch txn.transactionState {
+        case .deferred:
+            print("deferred")
+        case .failed:
+            print("failed")
+        case .purchased:
+            print("purchased")
+        case .purchasing:
+            print("purchasing")
+        case .restored:
+            print("restored")
+        }
     }
+    
+    func paymentQueue(_ queue: SKPaymentQueue, removedTransactions transactions: [SKPaymentTransaction]) {
+        print("Here!")
+    }
+    
+    // MARK: Handling Restored Transactions
+    
+    func paymentQueue(_ queue: SKPaymentQueue, restoreCompletedTransactionsFailedWithError error: Error) {
+        print("Here!")
+    }
+    
+    func paymentQueueRestoreCompletedTransactionsFinished(_ queue: SKPaymentQueue) {
+        print("Here!")
+    }
+    
+    // MARK: Handling Download Actions
+    
+    func paymentQueue(_ queue: SKPaymentQueue, updatedDownloads downloads: [SKDownload]) {
+        print("Here!")
+    }
+    
+    // MARK: Handling Purchases
+    
+    func paymentQueue(_ queue: SKPaymentQueue, shouldAddStorePayment payment: SKPayment, for product: SKProduct) -> Bool {
+        print("Here!")
+        return true
+    }
+    
+    // MARK:
     
 }

@@ -23,7 +23,14 @@ class AgeViewController: BaseViewController {
         super.viewDidLoad()
         
         StoreKitManager.shared.fetchProducts { (result) in
-            //
+            switch (result) {
+            case .failure(let error):
+                print(error.localizedDescription)
+            case .success(let data):
+                if let prod = data.products.first {
+                    StoreKitManager.shared.buy(product: prod)
+                }
+            }
         }
     }
     

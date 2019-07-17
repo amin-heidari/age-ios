@@ -8,6 +8,7 @@
 
 import UIKit
 import AgeData
+import StoreKit
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -18,6 +19,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         
         SuiteDefaultsUtil.suiteName = Constants.UserDefaults.suiteName
+        
+        SKPaymentQueue.default().add(StoreKitManager.shared)
         
         return true
     }
@@ -44,7 +47,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationWillTerminate(_ application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
         // Saves changes in the application's managed object context before the application terminates.
+        
         DatabaseManager.shared.saveContext()
+        
+        SKPaymentQueue.default().remove(StoreKitManager.shared)
     }
 
 }
