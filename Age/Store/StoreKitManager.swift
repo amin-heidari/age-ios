@@ -20,7 +20,7 @@ class StoreKitManager: NSObject, SKProductsRequestDelegate, SKPaymentTransaction
     
     // MARK: - API
     
-    private(set) var productsResponse: SKProductsResponse?
+    private(set) var productsResult: Either<SKProductsResponse>?
 
     @discardableResult
     func fetchProducts(completion: @escaping Completion<SKProductsResponse>) -> SKProductsRequest {
@@ -61,23 +61,30 @@ class StoreKitManager: NSObject, SKProductsRequestDelegate, SKPaymentTransaction
     
     // MARK: - SKProductsRequestDelegate
     
-    func requestDidFinish(_ request: SKRequest) { }
+    func requestDidFinish(_ request: SKRequest) { /* No implementation needed for this. */ }
     
     func request(_ request: SKRequest, didFailWithError error: Error) {
         if (productsRequest == request) {
-            fetchProductsCompletion?(Either.failure(error))
+            let result = Either<SKProductsResponse>.failure(error)
+            productsResult = result
+            DispatchQueue.main.async { self.fetchProductsCompletion?(result) }
             fetchProductsCompletion = nil
             productsRequest = nil
         }
+        
+        NotificationCenter.default.post(name: .storeKitUpdated, object: nil)
     }
     
     func productsRequest(_ request: SKProductsRequest, didReceive response: SKProductsResponse) {
         if (productsRequest == request) {
-            productsResponse = response
-            fetchProductsCompletion?(Either.success(response))
+            let result = Either.success(response)
+            productsResult = result
+            DispatchQueue.main.async { self.fetchProductsCompletion?(result) }
             fetchProductsCompletion = nil
             productsRequest = nil
         }
+        
+        NotificationCenter.default.post(name: .storeKitUpdated, object: nil)
     }
     
     // MARK: - SKPaymentTransactionObserver
@@ -98,32 +105,37 @@ class StoreKitManager: NSObject, SKProductsRequestDelegate, SKPaymentTransaction
         case .restored:
             print("restored")
         }
+        
+        NotificationCenter.default.post(name: .storeKitUpdated, object: nil)
     }
     
     func paymentQueue(_ queue: SKPaymentQueue, removedTransactions transactions: [SKPaymentTransaction]) {
-        print("Here!")
+        
+        NotificationCenter.default.post(name: .storeKitUpdated, object: nil)
     }
     
     // MARK: Handling Restored Transactions
     
     func paymentQueue(_ queue: SKPaymentQueue, restoreCompletedTransactionsFailedWithError error: Error) {
-        print("Here!")
+        
+        NotificationCenter.default.post(name: .storeKitUpdated, object: nil)
     }
     
     func paymentQueueRestoreCompletedTransactionsFinished(_ queue: SKPaymentQueue) {
-        print("Here!")
+        
+        NotificationCenter.default.post(name: .storeKitUpdated, object: nil)
     }
     
     // MARK: Handling Download Actions
     
     func paymentQueue(_ queue: SKPaymentQueue, updatedDownloads downloads: [SKDownload]) {
-        print("Here!")
+        
+        NotificationCenter.default.post(name: .storeKitUpdated, object: nil)
     }
     
     // MARK: Handling Purchases
     
     func paymentQueue(_ queue: SKPaymentQueue, shouldAddStorePayment payment: SKPayment, for product: SKProduct) -> Bool {
-        print("Here!")
         return true
     }
     

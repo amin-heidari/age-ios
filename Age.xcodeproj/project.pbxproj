@@ -82,6 +82,8 @@
 		27AA5B3122A422EB0059D1A2 /* BundleUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27AA5B3022A422EB0059D1A2 /* BundleUtil.swift */; };
 		27AA5B3222A422EB0059D1A2 /* BundleUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27AA5B3022A422EB0059D1A2 /* BundleUtil.swift */; };
 		27ABE05C22B92A9B009B60B4 /* ObjectUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27C8C01622B875EC00C064D5 /* ObjectUtil.swift */; };
+		27B7885B22DEC51000BBC64A /* NotificationUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27B7885A22DEC51000BBC64A /* NotificationUtil.swift */; };
+		27B7885C22DEC51000BBC64A /* NotificationUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27B7885A22DEC51000BBC64A /* NotificationUtil.swift */; };
 		27C257CA229F0CEA00EFAA33 /* RemoteConfigManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27C257C9229F0CEA00EFAA33 /* RemoteConfigManager.swift */; };
 		27C257CB229F0CEA00EFAA33 /* RemoteConfigManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27C257C9229F0CEA00EFAA33 /* RemoteConfigManager.swift */; };
 		27C257D322A20F5200EFAA33 /* URLSessionUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27C257D222A20F5200EFAA33 /* URLSessionUtil.swift */; };
@@ -239,6 +241,7 @@
 		27AA5B28229DF7AA0059D1A2 /* Config.cer */ = {isa = PBXFileReference; lastKnownFileType = file; path = Config.cer; sourceTree = "<group>"; };
 		27AA5B2D229DFD520059D1A2 /* CoreDataUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CoreDataUtil.swift; path = Age/Database/CoreDataUtil.swift; sourceTree = SOURCE_ROOT; };
 		27AA5B3022A422EB0059D1A2 /* BundleUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BundleUtil.swift; sourceTree = "<group>"; };
+		27B7885A22DEC51000BBC64A /* NotificationUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationUtil.swift; sourceTree = "<group>"; };
 		27C257C9229F0CEA00EFAA33 /* RemoteConfigManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RemoteConfigManager.swift; sourceTree = "<group>"; };
 		27C257D222A20F5200EFAA33 /* URLSessionUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionUtil.swift; sourceTree = "<group>"; };
 		27C257D522A2102600EFAA33 /* AppError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppError.swift; sourceTree = "<group>"; };
@@ -514,6 +517,7 @@
 				279D139E22B7DE22006B649E /* FontUtil.swift */,
 				27C8C01622B875EC00C064D5 /* ObjectUtil.swift */,
 				2795732822DBEC890039E7E1 /* StoreKitUtil.swift */,
+				27B7885A22DEC51000BBC64A /* NotificationUtil.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -873,6 +877,7 @@
 				2771407F22B4005100F4ED05 /* DateUtil.swift in Sources */,
 				279D13A222B83858006B649E /* NavigationUtil.swift in Sources */,
 				27C257E922A3138400EFAA33 /* UpgradeViewController.swift in Sources */,
+				27B7885B22DEC51000BBC64A /* NotificationUtil.swift in Sources */,
 				27C8C00D22B2D99D00C064D5 /* CallbackUtil.swift in Sources */,
 				27AA5AE32299F8B90059D1A2 /* DatabaseManager.swift in Sources */,
 				2789EA9A22D53595003BD427 /* DataUtil.swift in Sources */,
@@ -942,6 +947,7 @@
 				2771408022B4005100F4ED05 /* DateUtil.swift in Sources */,
 				279D13A322B83858006B649E /* NavigationUtil.swift in Sources */,
 				27C257EA22A3138400EFAA33 /* UpgradeViewController.swift in Sources */,
+				27B7885C22DEC51000BBC64A /* NotificationUtil.swift in Sources */,
 				27AA5B042299FC090059D1A2 /* DatabaseManager.swift in Sources */,
 				27C257D722A2102600EFAA33 /* AppError.swift in Sources */,
 				2789EA9B22D53595003BD427 /* DataUtil.swift in Sources */,
