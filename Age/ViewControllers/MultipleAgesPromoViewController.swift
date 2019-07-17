@@ -12,12 +12,6 @@ class MultipleAgesPromoViewController: BaseViewController {
     
     // MARK: - Constants/Types
     
-    enum Result {
-        case dismiss
-        case purchase
-        case restore
-    }
-    
     // MARK: - Static
     
     // MARK: - API
@@ -41,21 +35,23 @@ class MultipleAgesPromoViewController: BaseViewController {
     // MARK: - Methods
     
     @IBAction func purchaseTapped(_ sender: Any) {
-        dismiss(animated: true) { [weak self] in
-            self?.finish?(.purchase)
+        if let product = StoreManager.shared.availableProducts.first(where: { (product) -> Bool in
+            product.productIdentifier == Constants.Store.multipleAgeProductId
+        }) {
+            StoreObserver.shared.buy(product)
         }
+        
+        dismiss(animated: true, completion: nil)
     }
     
     @IBAction func restoreTapped(_ sender: Any) {
-        dismiss(animated: true) { [weak self] in
-            self?.finish?(.restore)
-        }
+        StoreObserver.shared.restore()
+        
+        dismiss(animated: true, completion: nil)
     }
     
     @IBAction func closeTapped(_ sender: Any) {
-        dismiss(animated: true) { [weak self] in
-            self?.finish?(.dismiss)
-        }
+        dismiss(animated: true, completion: nil)
     }
     
     
