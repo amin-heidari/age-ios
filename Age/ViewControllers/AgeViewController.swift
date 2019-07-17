@@ -23,6 +23,7 @@ class AgeViewController: BaseViewController, StoreManagerDelegate {
         super.viewDidLoad()
         
         StoreManager.shared.delegate = self
+        StoreManager.shared.startProductRequest(with: [Constants.Store.multipleAgeProductId])
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -56,6 +57,8 @@ class AgeViewController: BaseViewController, StoreManagerDelegate {
     
     @IBOutlet private weak var ageLabel: UILabel!
     
+    @IBOutlet private weak var agesButton: UIButton!
+    
     // MARK: - Methods
     
     @objc private func refreshAge() {
@@ -75,10 +78,17 @@ class AgeViewController: BaseViewController, StoreManagerDelegate {
     // MARK: - StoreManagerDelegate
     
     func storeManagerDidReceiveMessage(_ message: String) {
-        
+        print("App: storeManagerDidReceiveMessage -> \(message)")
     }
     
     func storeManagerDidReceiveResponse(_ response: [StoreManager.Section]) {
+        if StoreManager.shared.availableProducts.contains(where: { (product) -> Bool in
+            product.productIdentifier == Constants.Store.multipleAgeProductId
+        }) && StoreObserver.shared.isAuthorizedForPayments {
+            agesButton.isHidden = false
+        } else {
+            agesButton.isHidden = true
+        }
     }
     
 }

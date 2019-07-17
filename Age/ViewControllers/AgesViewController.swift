@@ -26,6 +26,8 @@ class AgesViewController: BaseViewController {
         super.viewDidLoad()
         
         DatabaseManager.shared.birthdaysFetchResultsController.delegate = self
+        
+        StoreObserver.shared.delegate = self
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -169,6 +171,20 @@ extension AgesViewController: NSFetchedResultsControllerDelegate {
     func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>, didChange anObject: Any, at indexPath: IndexPath?, for type: NSFetchedResultsChangeType, newIndexPath: IndexPath?) {
         // TODO: See if you can animate things here.
         // https://developer.apple.com/documentation/coredata/nsfetchedresultscontrollerdelegate
+    }
+    
+}
+
+// MARK: - StoreObserverDelegate
+
+extension AgesViewController: StoreObserverDelegate {
+    
+    func storeObserverRestoreDidSucceed() {
+        print("App: storeObserverRestoreDidSucceed")
+    }
+    
+    func storeObserverDidReceiveMessage(_ message: String) {
+        print("App: storeObserverDidReceiveMessage -> \(message)")
     }
     
 }
