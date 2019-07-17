@@ -20,7 +20,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         SuiteDefaultsUtil.suiteName = Constants.UserDefaults.suiteName
         
-        SKPaymentQueue.default().add(StoreKitManager.shared)
+        SKPaymentQueue.default().add(StoreObserver.shared)
         
         return true
     }
@@ -50,7 +50,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         DatabaseManager.shared.saveContext()
         
-        SKPaymentQueue.default().remove(StoreKitManager.shared)
+        SKPaymentQueue.default().remove(StoreObserver.shared)
     }
 
 }

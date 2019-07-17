@@ -37,8 +37,6 @@
 		2789EA9B22D53595003BD427 /* DataUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2789EA9922D53595003BD427 /* DataUtil.swift */; };
 		2795732022DBDAED0039E7E1 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2795731F22DBDAED0039E7E1 /* StoreKit.framework */; };
 		2795732122DBDAF30039E7E1 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2795731F22DBDAED0039E7E1 /* StoreKit.framework */; };
-		2795732622DBE9750039E7E1 /* StoreKitManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2795732522DBE9750039E7E1 /* StoreKitManager.swift */; };
-		2795732722DBE9750039E7E1 /* StoreKitManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2795732522DBE9750039E7E1 /* StoreKitManager.swift */; };
 		2795732922DBEC890039E7E1 /* StoreKitUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2795732822DBEC890039E7E1 /* StoreKitUtil.swift */; };
 		2795732A22DBEC890039E7E1 /* StoreKitUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2795732822DBEC890039E7E1 /* StoreKitUtil.swift */; };
 		279D139F22B7DE22006B649E /* FontUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 279D139E22B7DE22006B649E /* FontUtil.swift */; };
@@ -84,6 +82,10 @@
 		27ABE05C22B92A9B009B60B4 /* ObjectUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27C8C01622B875EC00C064D5 /* ObjectUtil.swift */; };
 		27B7885B22DEC51000BBC64A /* NotificationUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27B7885A22DEC51000BBC64A /* NotificationUtil.swift */; };
 		27B7885C22DEC51000BBC64A /* NotificationUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27B7885A22DEC51000BBC64A /* NotificationUtil.swift */; };
+		27B7885E22DEC8E000BBC64A /* StoreObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27B7885D22DEC8E000BBC64A /* StoreObserver.swift */; };
+		27B7885F22DEC8E000BBC64A /* StoreObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27B7885D22DEC8E000BBC64A /* StoreObserver.swift */; };
+		27B7886122DEC8E800BBC64A /* StoreManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27B7886022DEC8E800BBC64A /* StoreManager.swift */; };
+		27B7886222DEC8E800BBC64A /* StoreManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27B7886022DEC8E800BBC64A /* StoreManager.swift */; };
 		27C257CA229F0CEA00EFAA33 /* RemoteConfigManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27C257C9229F0CEA00EFAA33 /* RemoteConfigManager.swift */; };
 		27C257CB229F0CEA00EFAA33 /* RemoteConfigManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27C257C9229F0CEA00EFAA33 /* RemoteConfigManager.swift */; };
 		27C257D322A20F5200EFAA33 /* URLSessionUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27C257D222A20F5200EFAA33 /* URLSessionUtil.swift */; };
@@ -213,7 +215,6 @@
 		2789EA9322D2CBE7003BD427 /* AppWidgetOverride.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppWidgetOverride.swift; sourceTree = "<group>"; };
 		2789EA9922D53595003BD427 /* DataUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataUtil.swift; sourceTree = "<group>"; };
 		2795731F22DBDAED0039E7E1 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
-		2795732522DBE9750039E7E1 /* StoreKitManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreKitManager.swift; sourceTree = "<group>"; };
 		2795732822DBEC890039E7E1 /* StoreKitUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreKitUtil.swift; sourceTree = "<group>"; };
 		279D139E22B7DE22006B649E /* FontUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontUtil.swift; sourceTree = "<group>"; };
 		279D13A122B83858006B649E /* NavigationUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationUtil.swift; sourceTree = "<group>"; };
@@ -242,6 +243,8 @@
 		27AA5B2D229DFD520059D1A2 /* CoreDataUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CoreDataUtil.swift; path = Age/Database/CoreDataUtil.swift; sourceTree = SOURCE_ROOT; };
 		27AA5B3022A422EB0059D1A2 /* BundleUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BundleUtil.swift; sourceTree = "<group>"; };
 		27B7885A22DEC51000BBC64A /* NotificationUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationUtil.swift; sourceTree = "<group>"; };
+		27B7885D22DEC8E000BBC64A /* StoreObserver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreObserver.swift; sourceTree = "<group>"; };
+		27B7886022DEC8E800BBC64A /* StoreManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreManager.swift; sourceTree = "<group>"; };
 		27C257C9229F0CEA00EFAA33 /* RemoteConfigManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RemoteConfigManager.swift; sourceTree = "<group>"; };
 		27C257D222A20F5200EFAA33 /* URLSessionUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionUtil.swift; sourceTree = "<group>"; };
 		27C257D522A2102600EFAA33 /* AppError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppError.swift; sourceTree = "<group>"; };
@@ -477,7 +480,8 @@
 		2795732422DBE9660039E7E1 /* Store */ = {
 			isa = PBXGroup;
 			children = (
-				2795732522DBE9750039E7E1 /* StoreKitManager.swift */,
+				27B7885D22DEC8E000BBC64A /* StoreObserver.swift */,
+				27B7886022DEC8E800BBC64A /* StoreManager.swift */,
 			);
 			path = Store;
 			sourceTree = "<group>";
@@ -860,7 +864,6 @@
 			files = (
 				27C8C01722B875EC00C064D5 /* ObjectUtil.swift in Sources */,
 				27C257EF22A58BC800EFAA33 /* ViewControllerUtil.swift in Sources */,
-				2795732622DBE9750039E7E1 /* StoreKitManager.swift in Sources */,
 				2795732922DBEC890039E7E1 /* StoreKitUtil.swift in Sources */,
 				27AA5AE62299F8B90059D1A2 /* UserDefaultsUtil.swift in Sources */,
 				27C257CA229F0CEA00EFAA33 /* RemoteConfigManager.swift in Sources */,
@@ -885,6 +888,8 @@
 				279D139F22B7DE22006B649E /* FontUtil.swift in Sources */,
 				27AA5AE22299F8B90059D1A2 /* Age.xcdatamodeld in Sources */,
 				27AA5AEE2299F8B90059D1A2 /* AgesViewController.swift in Sources */,
+				27B7885E22DEC8E000BBC64A /* StoreObserver.swift in Sources */,
+				27B7886122DEC8E800BBC64A /* StoreManager.swift in Sources */,
 				27C257E022A30AA100EFAA33 /* ReplaceRootSegue.swift in Sources */,
 				27C257EC22A58B6600EFAA33 /* BaseViewController.swift in Sources */,
 				27C257D322A20F5200EFAA33 /* URLSessionUtil.swift in Sources */,
@@ -930,7 +935,6 @@
 			files = (
 				27ABE05C22B92A9B009B60B4 /* ObjectUtil.swift in Sources */,
 				27C257F022A58BC800EFAA33 /* ViewControllerUtil.swift in Sources */,
-				2795732722DBE9750039E7E1 /* StoreKitManager.swift in Sources */,
 				2795732A22DBEC890039E7E1 /* StoreKitUtil.swift in Sources */,
 				27AA5AFA2299FC090059D1A2 /* UserDefaultsUtil.swift in Sources */,
 				27C257CB229F0CEA00EFAA33 /* RemoteConfigManager.swift in Sources */,
@@ -955,6 +959,8 @@
 				279D13A022B7DE22006B649E /* FontUtil.swift in Sources */,
 				27C8C00E22B2DE1000C064D5 /* CallbackUtil.swift in Sources */,
 				27AA5B062299FC090059D1A2 /* AgesViewController.swift in Sources */,
+				27B7885F22DEC8E000BBC64A /* StoreObserver.swift in Sources */,
+				27B7886222DEC8E800BBC64A /* StoreManager.swift in Sources */,
 				27C257E122A30AA100EFAA33 /* ReplaceRootSegue.swift in Sources */,
 				27C257ED22A58B6600EFAA33 /* BaseViewController.swift in Sources */,
 				27C257D422A20F5200EFAA33 /* URLSessionUtil.swift in Sources */,

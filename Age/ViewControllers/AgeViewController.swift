@@ -9,7 +9,7 @@
 import UIKit
 import AgeData
 
-class AgeViewController: BaseViewController {
+class AgeViewController: BaseViewController, StoreManagerDelegate {
     
     // MARK: - Constants/Types
     
@@ -22,16 +22,7 @@ class AgeViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        StoreKitManager.shared.fetchProducts { (result) in
-            switch (result) {
-            case .failure(let error):
-                print(error.localizedDescription)
-            case .success(let data):
-                if let prod = data.products.first {
-                    StoreKitManager.shared.buy(product: prod)
-                }
-            }
-        }
+        StoreManager.shared.delegate = self
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -79,6 +70,15 @@ class AgeViewController: BaseViewController {
     
     @IBAction func agesButtonTapped(_ sender: Any) {
         performSegue(withIdentifier: "ages", sender: nil)
+    }
+    
+    // MARK: - StoreManagerDelegate
+    
+    func storeManagerDidReceiveMessage(_ message: String) {
+        
+    }
+    
+    func storeManagerDidReceiveResponse(_ response: [StoreManager.Section]) {
     }
     
 }
