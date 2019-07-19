@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="cNp-9p-4l4">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="cNp-9p-4l4">
     <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -107,11 +107,72 @@
                     <connections>
                         <outlet property="tableView" destination="Bft-Jd-HtC" id="73M-OM-LuE"/>
                         <segue destination="RgY-1j-0ud" kind="presentation" identifier="add-age" id="4UU-jf-VE9"/>
+                        <segue destination="kRD-B9-E7q" kind="presentation" identifier="multiples-promo" id="mb5-Sa-NyU"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="642" y="990"/>
+        </scene>
+        <!--Multiple Ages Promo View Controller-->
+        <scene sceneID="rYK-Za-6s1">
+            <objects>
+                <viewController id="kRD-B9-E7q" customClass="MultipleAgesPromoViewController" customModule="Age" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="0hf-e2-icH">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Buy it!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c1n-Me-1zL">
+                                <rect key="frame" x="183" y="368" width="48.333333333333343" height="20.333333333333314"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="IfZ-U7-IG5">
+                                <rect key="frame" x="175" y="428.33333333333331" width="64" height="60"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kpI-BW-C64">
+                                        <rect key="frame" x="0.0" y="0.0" width="64" height="30"/>
+                                        <state key="normal" title="Purchase"/>
+                                        <connections>
+                                            <action selector="purchaseTapped:" destination="kRD-B9-E7q" eventType="touchUpInside" id="DQs-Nh-2Fr"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5xC-zF-X04">
+                                        <rect key="frame" x="0.0" y="30" width="64" height="30"/>
+                                        <state key="normal" title="Restore"/>
+                                        <connections>
+                                            <action selector="restoreTapped:" destination="kRD-B9-E7q" eventType="touchUpInside" id="yQL-o8-FVS"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6R9-vo-uYH">
+                                <rect key="frame" x="355" y="40" width="39" height="30"/>
+                                <state key="normal" title="Close"/>
+                                <connections>
+                                    <action selector="closeTapped:" destination="kRD-B9-E7q" eventType="touchUpInside" id="RFK-P4-XQf"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="c1n-Me-1zL" firstAttribute="centerX" secondItem="Hcr-h3-UKY" secondAttribute="centerX" id="8Pi-Vp-cQj"/>
+                            <constraint firstItem="Hcr-h3-UKY" firstAttribute="trailing" secondItem="6R9-vo-uYH" secondAttribute="trailing" constant="20" id="9ZK-2o-oNC"/>
+                            <constraint firstItem="6R9-vo-uYH" firstAttribute="top" secondItem="Hcr-h3-UKY" secondAttribute="top" constant="20" id="DVV-b2-SsZ"/>
+                            <constraint firstItem="IfZ-U7-IG5" firstAttribute="top" secondItem="c1n-Me-1zL" secondAttribute="bottom" constant="40" id="Mjp-ta-qJ6"/>
+                            <constraint firstItem="c1n-Me-1zL" firstAttribute="centerY" secondItem="Hcr-h3-UKY" secondAttribute="centerY" id="rcm-NE-Tf6"/>
+                            <constraint firstItem="IfZ-U7-IG5" firstAttribute="centerX" secondItem="Hcr-h3-UKY" secondAttribute="centerX" id="rxv-M3-8G5"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Hcr-h3-UKY"/>
+                    </view>
+                    <connections>
+                        <outlet property="descriptionLabel" destination="c1n-Me-1zL" id="9sk-US-Twx"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="I8l-JH-5wx" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="641" y="1758"/>
         </scene>
         <!--New Age View Controller-->
         <scene sceneID="KTh-Ed-DuL">
@@ -397,7 +458,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qT6-f5-dfA">
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qT6-f5-dfA">
                                 <rect key="frame" x="359" y="64" width="35" height="30"/>
                                 <state key="normal" title="Ages"/>
                                 <connections>
@@ -417,6 +478,7 @@
                     </view>
                     <connections>
                         <outlet property="ageLabel" destination="L02-oc-39U" id="tpe-Ui-FXr"/>
+                        <outlet property="agesButton" destination="qT6-f5-dfA" id="s72-NX-Ftz"/>
                         <segue destination="BYZ-38-t0r" kind="show" identifier="ages" id="DbE-vn-EuT"/>
                     </connections>
                 </viewController>

@@ -26,6 +26,8 @@ class AgesViewController: BaseViewController {
         super.viewDidLoad()
         
         DatabaseManager.shared.birthdaysFetchResultsController.delegate = self
+        
+        StoreObserver.shared.delegate = self
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -82,7 +84,14 @@ class AgesViewController: BaseViewController {
     // MARK: - Actions
     
     @IBAction func addBirthdayButtonTapped(_ sender: Any) {
-        performSegue(withIdentifier: "add-age", sender: NewAgeViewController.Scenario.newEntity)
+        switch StoreObserver.shared.productStatus(forProductId: Constants.Store.multipleAgeProductId) {
+        case .pending:
+            return
+        case .purhcased, .restored:
+            performSegue(withIdentifier: "add-age", sender: NewAgeViewController.Scenario.newEntity)
+        case .unknown:
+            performSegue(withIdentifier: "multiples-promo", sender: nil)
+        }
     }
 
 }
@@ -169,6 +178,25 @@ extension AgesViewController: NSFetchedResultsControllerDelegate {
     func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>, didChange anObject: Any, at indexPath: IndexPath?, for type: NSFetchedResultsChangeType, newIndexPath: IndexPath?) {
         // TODO: See if you can animate things here.
         // https://developer.apple.com/documentation/coredata/nsfetchedresultscontrollerdelegate
+    }
+    
+}
+
+// MARK: - StoreObserverDelegate
+
+extension AgesViewController: StoreObserverDelegate {
+    
+    func storeObserverRestoreDidSucceed() { }
+    
+    func storeObserverDidReceiveMessage(_ message: String) { }
+    
+    func storeObserverTransactionsStateUpdated() {
+        // Probably quite a bit of state tracking here, but totally worth it!
+        // Adjust the add-age button (perhaps a loading when )
+        
+        if let transaction = StoreObserver.shared.findDeliverableProductTransaction(forProductId: Constants.Store.multipleAgeProductId) {
+            UserDefaultsUtil.multipleAgesIAPTransactionId = transaction.transactionIdentifier
+        }
     }
     
 }

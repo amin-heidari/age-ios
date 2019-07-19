@@ -35,6 +35,10 @@
 		2789EA9422D2CBE7003BD427 /* AppWidgetOverride.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2789EA9322D2CBE7003BD427 /* AppWidgetOverride.swift */; };
 		2789EA9A22D53595003BD427 /* DataUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2789EA9922D53595003BD427 /* DataUtil.swift */; };
 		2789EA9B22D53595003BD427 /* DataUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2789EA9922D53595003BD427 /* DataUtil.swift */; };
+		2795732022DBDAED0039E7E1 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2795731F22DBDAED0039E7E1 /* StoreKit.framework */; };
+		2795732122DBDAF30039E7E1 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2795731F22DBDAED0039E7E1 /* StoreKit.framework */; };
+		2795732922DBEC890039E7E1 /* StoreKitUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2795732822DBEC890039E7E1 /* StoreKitUtil.swift */; };
+		2795732A22DBEC890039E7E1 /* StoreKitUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2795732822DBEC890039E7E1 /* StoreKitUtil.swift */; };
 		279D139F22B7DE22006B649E /* FontUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 279D139E22B7DE22006B649E /* FontUtil.swift */; };
 		279D13A022B7DE22006B649E /* FontUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 279D139E22B7DE22006B649E /* FontUtil.swift */; };
 		279D13A222B83858006B649E /* NavigationUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 279D13A122B83858006B649E /* NavigationUtil.swift */; };
@@ -76,6 +80,14 @@
 		27AA5B3122A422EB0059D1A2 /* BundleUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27AA5B3022A422EB0059D1A2 /* BundleUtil.swift */; };
 		27AA5B3222A422EB0059D1A2 /* BundleUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27AA5B3022A422EB0059D1A2 /* BundleUtil.swift */; };
 		27ABE05C22B92A9B009B60B4 /* ObjectUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27C8C01622B875EC00C064D5 /* ObjectUtil.swift */; };
+		27B7885B22DEC51000BBC64A /* NotificationUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27B7885A22DEC51000BBC64A /* NotificationUtil.swift */; };
+		27B7885C22DEC51000BBC64A /* NotificationUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27B7885A22DEC51000BBC64A /* NotificationUtil.swift */; };
+		27B7885E22DEC8E000BBC64A /* StoreObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27B7885D22DEC8E000BBC64A /* StoreObserver.swift */; };
+		27B7885F22DEC8E000BBC64A /* StoreObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27B7885D22DEC8E000BBC64A /* StoreObserver.swift */; };
+		27B7886122DEC8E800BBC64A /* StoreManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27B7886022DEC8E800BBC64A /* StoreManager.swift */; };
+		27B7886222DEC8E800BBC64A /* StoreManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27B7886022DEC8E800BBC64A /* StoreManager.swift */; };
+		27B7886422DED27600BBC64A /* MultipleAgesPromoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27B7886322DED27600BBC64A /* MultipleAgesPromoViewController.swift */; };
+		27B7886522DED27600BBC64A /* MultipleAgesPromoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27B7886322DED27600BBC64A /* MultipleAgesPromoViewController.swift */; };
 		27C257CA229F0CEA00EFAA33 /* RemoteConfigManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27C257C9229F0CEA00EFAA33 /* RemoteConfigManager.swift */; };
 		27C257CB229F0CEA00EFAA33 /* RemoteConfigManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27C257C9229F0CEA00EFAA33 /* RemoteConfigManager.swift */; };
 		27C257D322A20F5200EFAA33 /* URLSessionUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27C257D222A20F5200EFAA33 /* URLSessionUtil.swift */; };
@@ -204,6 +216,8 @@
 		2776501E22CF29AA00C4B13D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2789EA9322D2CBE7003BD427 /* AppWidgetOverride.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppWidgetOverride.swift; sourceTree = "<group>"; };
 		2789EA9922D53595003BD427 /* DataUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataUtil.swift; sourceTree = "<group>"; };
+		2795731F22DBDAED0039E7E1 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		2795732822DBEC890039E7E1 /* StoreKitUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreKitUtil.swift; sourceTree = "<group>"; };
 		279D139E22B7DE22006B649E /* FontUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontUtil.swift; sourceTree = "<group>"; };
 		279D13A122B83858006B649E /* NavigationUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationUtil.swift; sourceTree = "<group>"; };
 		27AA5AC32299F8B80059D1A2 /* RemoteConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RemoteConfig.swift; sourceTree = "<group>"; };
@@ -230,6 +244,10 @@
 		27AA5B28229DF7AA0059D1A2 /* Config.cer */ = {isa = PBXFileReference; lastKnownFileType = file; path = Config.cer; sourceTree = "<group>"; };
 		27AA5B2D229DFD520059D1A2 /* CoreDataUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CoreDataUtil.swift; path = Age/Database/CoreDataUtil.swift; sourceTree = SOURCE_ROOT; };
 		27AA5B3022A422EB0059D1A2 /* BundleUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BundleUtil.swift; sourceTree = "<group>"; };
+		27B7885A22DEC51000BBC64A /* NotificationUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationUtil.swift; sourceTree = "<group>"; };
+		27B7885D22DEC8E000BBC64A /* StoreObserver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreObserver.swift; sourceTree = "<group>"; };
+		27B7886022DEC8E800BBC64A /* StoreManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreManager.swift; sourceTree = "<group>"; };
+		27B7886322DED27600BBC64A /* MultipleAgesPromoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultipleAgesPromoViewController.swift; sourceTree = "<group>"; };
 		27C257C9229F0CEA00EFAA33 /* RemoteConfigManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RemoteConfigManager.swift; sourceTree = "<group>"; };
 		27C257D222A20F5200EFAA33 /* URLSessionUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionUtil.swift; sourceTree = "<group>"; };
 		27C257D522A2102600EFAA33 /* AppError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppError.swift; sourceTree = "<group>"; };
@@ -249,6 +267,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				27764FEB22CF214200C4B13D /* AgeData.framework in Frameworks */,
+				2795732122DBDAF30039E7E1 /* StoreKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -282,6 +301,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2776500622CF23D600C4B13D /* AgeData.framework in Frameworks */,
+				2795732022DBDAED0039E7E1 /* StoreKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -357,6 +377,7 @@
 				27AA5AC12299F8B80059D1A2 /* Models */,
 				27AA5ACE2299F8B90059D1A2 /* Plists */,
 				27C257C8229F0CEA00EFAA33 /* Config */,
+				2795732422DBE9660039E7E1 /* Store */,
 				27AA5ADB2299F8B90059D1A2 /* Storyboards */,
 				27AA5AC92299F8B80059D1A2 /* Utils */,
 				27C257D822A30A2E00EFAA33 /* Navigation */,
@@ -369,6 +390,7 @@
 		27764F4922CF1AA100C4B13D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				2795731F22DBDAED0039E7E1 /* StoreKit.framework */,
 				27764F4A22CF1AA100C4B13D /* NotificationCenter.framework */,
 			);
 			name = Frameworks;
@@ -458,6 +480,15 @@
 			path = Dev;
 			sourceTree = "<group>";
 		};
+		2795732422DBE9660039E7E1 /* Store */ = {
+			isa = PBXGroup;
+			children = (
+				27B7885D22DEC8E000BBC64A /* StoreObserver.swift */,
+				27B7886022DEC8E800BBC64A /* StoreManager.swift */,
+			);
+			path = Store;
+			sourceTree = "<group>";
+		};
 		27AA5AC12299F8B80059D1A2 /* Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -492,6 +523,8 @@
 				2789EA9922D53595003BD427 /* DataUtil.swift */,
 				279D139E22B7DE22006B649E /* FontUtil.swift */,
 				27C8C01622B875EC00C064D5 /* ObjectUtil.swift */,
+				2795732822DBEC890039E7E1 /* StoreKitUtil.swift */,
+				27B7885A22DEC51000BBC64A /* NotificationUtil.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -533,6 +566,7 @@
 				27AA5AD92299F8B90059D1A2 /* AgeViewController.swift */,
 				27AA5AD82299F8B90059D1A2 /* AgesViewController.swift */,
 				27AA5AD72299F8B90059D1A2 /* NewAgeViewController.swift */,
+				27B7886322DED27600BBC64A /* MultipleAgesPromoViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -721,6 +755,9 @@
 							com.apple.ApplicationGroups.iOS = {
 								enabled = 1;
 							};
+							com.apple.InAppPurchase = {
+								enabled = 1;
+							};
 						};
 					};
 					27764F4722CF1AA100C4B13D = {
@@ -745,6 +782,9 @@
 					27AA5AF82299FC090059D1A2 = {
 						SystemCapabilities = {
 							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+							com.apple.InAppPurchase = {
 								enabled = 1;
 							};
 						};
@@ -826,8 +866,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				27B7886422DED27600BBC64A /* MultipleAgesPromoViewController.swift in Sources */,
 				27C8C01722B875EC00C064D5 /* ObjectUtil.swift in Sources */,
 				27C257EF22A58BC800EFAA33 /* ViewControllerUtil.swift in Sources */,
+				2795732922DBEC890039E7E1 /* StoreKitUtil.swift in Sources */,
 				27AA5AE62299F8B90059D1A2 /* UserDefaultsUtil.swift in Sources */,
 				27C257CA229F0CEA00EFAA33 /* RemoteConfigManager.swift in Sources */,
 				27AA5AEF2299F8B90059D1A2 /* AgeViewController.swift in Sources */,
@@ -843,6 +885,7 @@
 				2771407F22B4005100F4ED05 /* DateUtil.swift in Sources */,
 				279D13A222B83858006B649E /* NavigationUtil.swift in Sources */,
 				27C257E922A3138400EFAA33 /* UpgradeViewController.swift in Sources */,
+				27B7885B22DEC51000BBC64A /* NotificationUtil.swift in Sources */,
 				27C8C00D22B2D99D00C064D5 /* CallbackUtil.swift in Sources */,
 				27AA5AE32299F8B90059D1A2 /* DatabaseManager.swift in Sources */,
 				2789EA9A22D53595003BD427 /* DataUtil.swift in Sources */,
@@ -850,6 +893,8 @@
 				279D139F22B7DE22006B649E /* FontUtil.swift in Sources */,
 				27AA5AE22299F8B90059D1A2 /* Age.xcdatamodeld in Sources */,
 				27AA5AEE2299F8B90059D1A2 /* AgesViewController.swift in Sources */,
+				27B7885E22DEC8E000BBC64A /* StoreObserver.swift in Sources */,
+				27B7886122DEC8E800BBC64A /* StoreManager.swift in Sources */,
 				27C257E022A30AA100EFAA33 /* ReplaceRootSegue.swift in Sources */,
 				27C257EC22A58B6600EFAA33 /* BaseViewController.swift in Sources */,
 				27C257D322A20F5200EFAA33 /* URLSessionUtil.swift in Sources */,
@@ -893,8 +938,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				27B7886522DED27600BBC64A /* MultipleAgesPromoViewController.swift in Sources */,
 				27ABE05C22B92A9B009B60B4 /* ObjectUtil.swift in Sources */,
 				27C257F022A58BC800EFAA33 /* ViewControllerUtil.swift in Sources */,
+				2795732A22DBEC890039E7E1 /* StoreKitUtil.swift in Sources */,
 				27AA5AFA2299FC090059D1A2 /* UserDefaultsUtil.swift in Sources */,
 				27C257CB229F0CEA00EFAA33 /* RemoteConfigManager.swift in Sources */,
 				27AA5AFB2299FC090059D1A2 /* AgeViewController.swift in Sources */,
@@ -910,6 +957,7 @@
 				2771408022B4005100F4ED05 /* DateUtil.swift in Sources */,
 				279D13A322B83858006B649E /* NavigationUtil.swift in Sources */,
 				27C257EA22A3138400EFAA33 /* UpgradeViewController.swift in Sources */,
+				27B7885C22DEC51000BBC64A /* NotificationUtil.swift in Sources */,
 				27AA5B042299FC090059D1A2 /* DatabaseManager.swift in Sources */,
 				27C257D722A2102600EFAA33 /* AppError.swift in Sources */,
 				2789EA9B22D53595003BD427 /* DataUtil.swift in Sources */,
@@ -917,6 +965,8 @@
 				279D13A022B7DE22006B649E /* FontUtil.swift in Sources */,
 				27C8C00E22B2DE1000C064D5 /* CallbackUtil.swift in Sources */,
 				27AA5B062299FC090059D1A2 /* AgesViewController.swift in Sources */,
+				27B7885F22DEC8E000BBC64A /* StoreObserver.swift in Sources */,
+				27B7886222DEC8E800BBC64A /* StoreManager.swift in Sources */,
 				27C257E122A30AA100EFAA33 /* ReplaceRootSegue.swift in Sources */,
 				27C257ED22A58B6600EFAA33 /* BaseViewController.swift in Sources */,
 				27C257D422A20F5200EFAA33 /* URLSessionUtil.swift in Sources */,

@@ -9,7 +9,7 @@
 import UIKit
 import AgeData
 
-class AgeViewController: BaseViewController {
+class AgeViewController: BaseViewController, StoreManagerDelegate {
     
     // MARK: - Constants/Types
     
@@ -22,6 +22,12 @@ class AgeViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        StoreManager.shared.delegate = self
+        StoreManager.shared.startProductRequest(with: [Constants.Store.multipleAgeProductId])
+        
+        if let _ = UserDefaultsUtil.multipleAgesIAPTransactionId {
+            agesButton.isHidden = false
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -55,6 +61,8 @@ class AgeViewController: BaseViewController {
     
     @IBOutlet private weak var ageLabel: UILabel!
     
+    @IBOutlet private weak var agesButton: UIButton!
+    
     // MARK: - Methods
     
     @objc private func refreshAge() {
@@ -69,6 +77,22 @@ class AgeViewController: BaseViewController {
     
     @IBAction func agesButtonTapped(_ sender: Any) {
         performSegue(withIdentifier: "ages", sender: nil)
+    }
+    
+    // MARK: - StoreManagerDelegate
+    
+    func storeManagerDidReceiveMessage(_ message: String) { }
+    
+    func storeManagerDidReceiveResponse(_ response: [StoreManager.Section]) {
+        if (UserDefaultsUtil.multipleAgesIAPTransactionId == nil) {
+            if StoreManager.shared.availableProducts.contains(where: { (product) -> Bool in
+                product.productIdentifier == Constants.Store.multipleAgeProductId
+            }) && StoreObserver.shared.isAuthorizedForPayments {
+                agesButton.isHidden = false
+            } else {
+                agesButton.isHidden = true
+            }
+        }
     }
     
 }
