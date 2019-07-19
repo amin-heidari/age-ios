@@ -29,6 +29,8 @@ class Constants {
     class DeviceIntegrity {
         // Maximum time the device is allowed to have a time diff from the api.
         static let maxAllowedApiTimeDifference: TimeInterval = 10 * 60
+        
+        static let hashSaltString = "GDEovBzHY2ljszUsex1U0KBhtXbNfnEP"
     }
     
     class Store {

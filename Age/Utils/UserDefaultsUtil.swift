@@ -18,6 +18,8 @@ class UserDefaultsUtil {
         case defaultBirthday
         case cachedRemoteConfig
         case skippedLatestVersion // The version which was skipped.
+        case multipleAgesIAPTransactionIdentifier
+        case cachedMonitorRate
     }
     
     // MARK: - API
@@ -44,6 +46,37 @@ class UserDefaultsUtil {
         }
         set(newValue) {
             UserDefaults.standard.set(newValue, forKey: Keys.skippedLatestVersion.rawValue)
+        }
+    }
+    
+    /// The transaction identifier for the mutliple ages IAP.
+    /// Integrity protected through salt-hashing with a secret salt.
+    static var multipleAgesIAPTransactionIdentifier: String? {
+        get {
+            if let value = UserDefaults.standard.string(forKey: Keys.multipleAgesIAPTransactionIdentifier.rawValue) {
+                let expectedHash = String(format: "%s%s", value, Constants.DeviceIntegrity.hashSaltString).data(using: .utf8)!.sha512.raw
+                if let saltedHash = UserDefaults.standard.string(forKey: Keys.multipleAgesIAPTransactionIdentifier.rawValue), saltedHash == expectedHash {
+                    return value
+                } else {
+                    UserDefaults.standard.set(nil, forKey: Keys.multipleAgesIAPTransactionIdentifier.rawValue)
+                    UserDefaults.standard.set(nil, forKey: Keys.cachedMonitorRate.rawValue)
+                    return nil
+                }
+            } else {
+                return nil
+            }
+        }
+        set(newValue) {
+            guard let newVal = newValue else {
+                UserDefaults.standard.set(nil, forKey: Keys.multipleAgesIAPTransactionIdentifier.rawValue)
+                UserDefaults.standard.set(nil, forKey: Keys.cachedMonitorRate.rawValue)
+                return
+            }
+            // Evaluate the salted-hash.
+            let saltedHash = String(format: "%s%s", newVal, Constants.DeviceIntegrity.hashSaltString).data(using: .utf8)!.sha512.raw
+            // Persist the data and its hash.
+            UserDefaults.standard.set(newVal, forKey: Keys.multipleAgesIAPTransactionIdentifier.rawValue)
+            UserDefaults.standard.set(saltedHash, forKey: Keys.cachedMonitorRate.rawValue)
         }
     }
     
