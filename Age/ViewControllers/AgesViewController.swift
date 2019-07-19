@@ -181,6 +181,8 @@ extension AgesViewController: NSFetchedResultsControllerDelegate {
     func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>, didChange anObject: Any, at indexPath: IndexPath?, for type: NSFetchedResultsChangeType, newIndexPath: IndexPath?) {
         // TODO: See if you can animate things here.
         // https://developer.apple.com/documentation/coredata/nsfetchedresultscontrollerdelegate
+        
+        Bundle.main.appStoreReceiptURL
     }
     
 }
@@ -195,6 +197,11 @@ extension AgesViewController: StoreObserverDelegate {
     
     func storeObserverDidReceiveMessage(_ message: String) {
         print("App: storeObserverDidReceiveMessage -> \(message)")
+    }
+    
+    func storeObserverTransactionsStateUpdated() {
+        // Probably quite a bit of state tracking here, but totally worth it!
+        
     }
     
 }

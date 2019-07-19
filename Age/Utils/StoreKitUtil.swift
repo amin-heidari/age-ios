@@ -39,4 +39,7 @@ protocol StoreObserverDelegate: AnyObject {
     
     /// Provides the delegate with messages.
     func storeObserverDidReceiveMessage(_ message: String)
+    
+    /// Fired when any transaction state update happens.
+    func storeObserverTransactionsStateUpdated()
 }

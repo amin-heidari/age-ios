@@ -173,12 +173,14 @@ extension StoreObserver: SKPaymentTransactionObserver {
             @unknown default: fatalError("\(Messages.unknownDefault)")
             }
         }
+        self.delegate?.storeObserverTransactionsStateUpdated()
     }
     
     /// Logs all transactions that have been removed from the payment queue.
     func paymentQueue(_ queue: SKPaymentQueue, removedTransactions transactions: [SKPaymentTransaction]) {
         for transaction in transactions {
             print ("\(transaction.payment.productIdentifier) \(Messages.removed)")
+            self.delegate?.storeObserverTransactionsStateUpdated()
         }
     }
     
@@ -187,6 +189,7 @@ extension StoreObserver: SKPaymentTransactionObserver {
         if let error = error as? SKError, error.code != .paymentCancelled {
             DispatchQueue.main.async {
                 self.delegate?.storeObserverDidReceiveMessage(error.localizedDescription)
+                self.delegate?.storeObserverTransactionsStateUpdated()
             }
         }
     }
@@ -198,6 +201,7 @@ extension StoreObserver: SKPaymentTransactionObserver {
         if !hasRestorablePurchases {
             DispatchQueue.main.async {
                 self.delegate?.storeObserverDidReceiveMessage(Messages.noRestorablePurchases)
+                self.delegate?.storeObserverTransactionsStateUpdated()
             }
         }
     }
