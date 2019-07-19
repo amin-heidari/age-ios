@@ -26,6 +26,16 @@ enum SKProductStatus {
     case purhcased
     case restored
     case unknown
+    
+    var isDeliverable: Bool {
+        switch self {
+        case .purhcased, .restored:
+            return true
+        default:
+            return false
+        }
+    }
+    
 }
 
 extension StoreObserver {
@@ -44,6 +54,22 @@ extension StoreObserver {
         }) { return .pending }
         
         return .unknown
+    }
+    
+    func findDeliverableProductTransaction(forProductId productId: String) -> SKPaymentTransaction? {
+        if let purchasedTransaction = purchased.first(where: { (transaction) -> Bool in
+            transaction.payment.productIdentifier == productId
+        }) {
+            return purchasedTransaction
+        }
+        
+        if let restoredTransaction = restored.first(where: { (transaction) -> Bool in
+            transaction.payment.productIdentifier == productId
+        }) {
+            return restoredTransaction
+        }
+        
+        return nil
     }
     
 }

@@ -193,6 +193,10 @@ extension AgesViewController: StoreObserverDelegate {
     func storeObserverTransactionsStateUpdated() {
         // Probably quite a bit of state tracking here, but totally worth it!
         // Adjust the add-age button (perhaps a loading when )
+        
+        if let transaction = StoreObserver.shared.findDeliverableProductTransaction(forProductId: Constants.Store.multipleAgeProductId) {
+            UserDefaultsUtil.multipleAgesIAPTransactionId = transaction.transactionIdentifier
+        }
     }
     
 }

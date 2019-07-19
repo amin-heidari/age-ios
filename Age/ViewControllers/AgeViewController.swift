@@ -24,6 +24,10 @@ class AgeViewController: BaseViewController, StoreManagerDelegate {
         
         StoreManager.shared.delegate = self
         StoreManager.shared.startProductRequest(with: [Constants.Store.multipleAgeProductId])
+        
+        if let _ = UserDefaultsUtil.multipleAgesIAPTransactionId {
+            agesButton.isHidden = false
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -80,12 +84,14 @@ class AgeViewController: BaseViewController, StoreManagerDelegate {
     func storeManagerDidReceiveMessage(_ message: String) { }
     
     func storeManagerDidReceiveResponse(_ response: [StoreManager.Section]) {
-        if StoreManager.shared.availableProducts.contains(where: { (product) -> Bool in
-            product.productIdentifier == Constants.Store.multipleAgeProductId
-        }) && StoreObserver.shared.isAuthorizedForPayments {
-            agesButton.isHidden = false
-        } else {
-            agesButton.isHidden = true
+        if (UserDefaultsUtil.multipleAgesIAPTransactionId == nil) {
+            if StoreManager.shared.availableProducts.contains(where: { (product) -> Bool in
+                product.productIdentifier == Constants.Store.multipleAgeProductId
+            }) && StoreObserver.shared.isAuthorizedForPayments {
+                agesButton.isHidden = false
+            } else {
+                agesButton.isHidden = true
+            }
         }
     }
     

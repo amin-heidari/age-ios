@@ -18,8 +18,8 @@ class UserDefaultsUtil {
         case defaultBirthday
         case cachedRemoteConfig
         case skippedLatestVersion // The version which was skipped.
-        case multipleAgesIAPTransactionIdentifier
-        case cachedMonitorRate // Hash for `multipleAgesIAPTransactionIdentifier`
+        case multipleAgesIAPTransactionId
+        case cachedMonitorRate // Hash for `multipleAgesIAPTransactionId`
     }
     
     // MARK: - API
@@ -51,17 +51,17 @@ class UserDefaultsUtil {
     
     /// The transaction identifier for the mutliple ages IAP.
     /// Integrity protected through salt-hashing with a secret salt.
-    static var multipleAgesIAPTransactionIdentifier: String? {
+    static var multipleAgesIAPTransactionId: String? {
         get {
             return getProtectedString(
-                originalKey: Key.multipleAgesIAPTransactionIdentifier,
+                originalKey: Key.multipleAgesIAPTransactionId,
                 hashKey: Key.cachedMonitorRate,
                 defaultValue: nil
             )
         }
         set(newValue) {
             setProtectedString(
-                originalKey: Key.multipleAgesIAPTransactionIdentifier,
+                originalKey: Key.multipleAgesIAPTransactionId,
                 hashKey: Key.cachedMonitorRate,
                 newValue: newValue
             )
