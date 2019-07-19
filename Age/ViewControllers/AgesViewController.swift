@@ -74,6 +74,8 @@ class AgesViewController: BaseViewController {
     private var isMultipleAgesPurchased: Bool {
         return StoreObserver.shared.purchased.contains(where: { (transaction) -> Bool in
             transaction.payment.productIdentifier == Constants.Store.multipleAgeProductId
+        }) || StoreObserver.shared.restored.contains(where: { (transaction) -> Bool in
+            transaction.payment.productIdentifier == Constants.Store.multipleAgeProductId
         })
     }
     
