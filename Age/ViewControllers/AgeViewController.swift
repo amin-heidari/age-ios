@@ -77,9 +77,7 @@ class AgeViewController: BaseViewController, StoreManagerDelegate {
     
     // MARK: - StoreManagerDelegate
     
-    func storeManagerDidReceiveMessage(_ message: String) {
-        print("App: storeManagerDidReceiveMessage -> \(message)")
-    }
+    func storeManagerDidReceiveMessage(_ message: String) { }
     
     func storeManagerDidReceiveResponse(_ response: [StoreManager.Section]) {
         if StoreManager.shared.availableProducts.contains(where: { (product) -> Bool in

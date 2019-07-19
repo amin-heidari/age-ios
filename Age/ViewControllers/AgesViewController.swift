@@ -186,13 +186,9 @@ extension AgesViewController: NSFetchedResultsControllerDelegate {
 
 extension AgesViewController: StoreObserverDelegate {
     
-    func storeObserverRestoreDidSucceed() {
-//        print("App: storeObserverRestoreDidSucceed")
-    }
+    func storeObserverRestoreDidSucceed() { }
     
-    func storeObserverDidReceiveMessage(_ message: String) {
-//        print("App: storeObserverDidReceiveMessage -> \(message)")
-    }
+    func storeObserverDidReceiveMessage(_ message: String) { }
     
     func storeObserverTransactionsStateUpdated() {
         // Probably quite a bit of state tracking here, but totally worth it!
