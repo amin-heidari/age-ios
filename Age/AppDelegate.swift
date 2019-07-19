@@ -20,7 +20,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         SuiteDefaultsUtil.suiteName = Constants.UserDefaults.suiteName
         
+        // Add the StoreObserver and restore all payments.
         SKPaymentQueue.default().add(StoreObserver.shared)
+        StoreObserver.shared.restore()
         
         return true
     }

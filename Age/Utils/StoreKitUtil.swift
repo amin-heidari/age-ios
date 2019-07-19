@@ -21,6 +21,33 @@ extension SKProduct {
     
 }
 
+enum SKProductStatus {
+    case pending
+    case purhcased
+    case restored
+    case unknown
+}
+
+extension StoreObserver {
+    
+    func productStatus(forProductId productId: String) -> SKProductStatus {
+        if purchased.contains(where: { (transaction) -> Bool in
+            transaction.payment.productIdentifier == productId
+        }) { return .purhcased }
+        
+        if restored.contains(where: { (transaction) -> Bool in
+            transaction.payment.productIdentifier == productId
+        }) { return .restored }
+        
+        if SKPaymentQueue.default().transactions.contains(where: { (transaction) -> Bool in
+            transaction.payment.productIdentifier == productId
+        }) { return .pending }
+        
+        return .unknown
+    }
+    
+}
+
 // MARK: - StoreManagerDelegate
 
 protocol StoreManagerDelegate: AnyObject {

@@ -71,14 +71,6 @@ class AgesViewController: BaseViewController {
     
     private var timer: Timer?
     
-    private var isMultipleAgesPurchased: Bool {
-        return StoreObserver.shared.purchased.contains(where: { (transaction) -> Bool in
-            transaction.payment.productIdentifier == Constants.Store.multipleAgeProductId
-        }) || StoreObserver.shared.restored.contains(where: { (transaction) -> Bool in
-            transaction.payment.productIdentifier == Constants.Store.multipleAgeProductId
-        })
-    }
-    
     // MARK: - Outlets
     
     // MARK: - Methods
@@ -92,9 +84,12 @@ class AgesViewController: BaseViewController {
     // MARK: - Actions
     
     @IBAction func addBirthdayButtonTapped(_ sender: Any) {
-        if (isMultipleAgesPurchased) {
+        switch StoreObserver.shared.productStatus(forProductId: Constants.Store.multipleAgeProductId) {
+        case .pending:
+            return
+        case .purhcased, .restored:
             performSegue(withIdentifier: "add-age", sender: NewAgeViewController.Scenario.newEntity)
-        } else {
+        case .unknown:
             performSegue(withIdentifier: "multiples-promo", sender: nil)
         }
     }
@@ -192,16 +187,16 @@ extension AgesViewController: NSFetchedResultsControllerDelegate {
 extension AgesViewController: StoreObserverDelegate {
     
     func storeObserverRestoreDidSucceed() {
-        print("App: storeObserverRestoreDidSucceed")
+//        print("App: storeObserverRestoreDidSucceed")
     }
     
     func storeObserverDidReceiveMessage(_ message: String) {
-        print("App: storeObserverDidReceiveMessage -> \(message)")
+//        print("App: storeObserverDidReceiveMessage -> \(message)")
     }
     
     func storeObserverTransactionsStateUpdated() {
         // Probably quite a bit of state tracking here, but totally worth it!
-        
+        // Adjust the add-age button (perhaps a loading when )
     }
     
 }
