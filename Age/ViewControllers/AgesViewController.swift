@@ -84,13 +84,18 @@ class AgesViewController: BaseViewController {
     // MARK: - Actions
     
     @IBAction func addBirthdayButtonTapped(_ sender: Any) {
-        switch StoreObserver.shared.productStatus(forProductId: Constants.Store.multipleAgeProductId) {
-        case .pending:
-            return
-        case .purhcased, .restored:
+        if let _ = UserDefaultsUtil.multipleAgesIAPTransactionId {
+            // If the items has been purchased in the past, then we're good.
             performSegue(withIdentifier: "add-age", sender: NewAgeViewController.Scenario.newEntity)
-        case .unknown:
-            performSegue(withIdentifier: "multiples-promo", sender: nil)
+        } else {
+            switch StoreObserver.shared.productStatus(forProductId: Constants.Store.multipleAgeProductId) {
+            case .pending:
+                return
+            case .purhcased, .restored:
+                performSegue(withIdentifier: "add-age", sender: NewAgeViewController.Scenario.newEntity)
+            case .unknown:
+                performSegue(withIdentifier: "multiples-promo", sender: nil)
+            }
         }
     }
 
