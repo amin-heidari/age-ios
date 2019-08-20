@@ -87,7 +87,7 @@ class AgesViewController: BaseViewController {
     // Attempts to update the persisted `multipleAgesIAPTransactionId` if possible.
     private func updateMultipleAgesIAPTransactionId() {
         // If it's already set then nothing needs to be done.
-        guard UserDefaultsUtil.multipleAgesIAPTransactionId == null else return
+        guard UserDefaultsUtil.multipleAgesIAPTransactionId == nil else { return }
         
         // Have a look at all transactions.
         if let transaction = StoreObserver.shared.findDeliverableProductTransaction(forProductId: Constants.Store.multipleAgeProductId) {
