@@ -20,9 +20,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         SuiteDefaultsUtil.suiteName = Constants.UserDefaults.suiteName
         
-        // Add the StoreObserver and restore all payments.
-        SKPaymentQueue.default().add(StoreObserver.shared)
-        StoreObserver.shared.restore()
+        // If we're not sure about the state of the in app purchase.
+        // Then setup the store utilities.
+        // Note that for a regular app we'll always do it. But here we have a single non-consumable IAP so making it simpler.
+        if (UserDefaultsUtil.multipleAgesIAPTransactionId == nil) {
+            // Add the StoreObserver and restore all payments.
+            SKPaymentQueue.default().add(StoreObserver.shared)
+            StoreObserver.shared.restore()
+        }
         
         return true
     }

@@ -28,6 +28,9 @@ class AgesViewController: BaseViewController {
         DatabaseManager.shared.birthdaysFetchResultsController.delegate = self
         
         StoreObserver.shared.delegate = self
+        
+        // In case the restore call in the beginning of the app launch has resulted in a useful restore of the in app purchase.
+        updateMultipleAgesIAPTransactionId()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -78,6 +81,17 @@ class AgesViewController: BaseViewController {
     private func refreshAllAges() {
         tableView.visibleCells.forEach { (cell) in
             (cell as? AgeTableViewCell)?.refreshAge()
+        }
+    }
+    
+    // Attempts to update the persisted `multipleAgesIAPTransactionId` if possible.
+    private func updateMultipleAgesIAPTransactionId() {
+        // If it's already set then nothing needs to be done.
+        guard UserDefaultsUtil.multipleAgesIAPTransactionId == null else return
+        
+        // Have a look at all transactions.
+        if let transaction = StoreObserver.shared.findDeliverableProductTransaction(forProductId: Constants.Store.multipleAgeProductId) {
+            UserDefaultsUtil.multipleAgesIAPTransactionId = transaction.transactionIdentifier
         }
     }
     
@@ -199,9 +213,7 @@ extension AgesViewController: StoreObserverDelegate {
         // Probably quite a bit of state tracking here, but totally worth it!
         // Adjust the add-age button (perhaps a loading when )
         
-        if let transaction = StoreObserver.shared.findDeliverableProductTransaction(forProductId: Constants.Store.multipleAgeProductId) {
-            UserDefaultsUtil.multipleAgesIAPTransactionId = transaction.transactionIdentifier
-        }
+        updateMultipleAgesIAPTransactionId()
     }
     
 }
