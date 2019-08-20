@@ -98,12 +98,16 @@ class AgesViewController: BaseViewController {
     // MARK: - Actions
     
     @IBAction func addBirthdayButtonTapped(_ sender: Any) {
+        // It's a bit silly here since the .restore call made on the delage will result in making both scenarios for showing the add-age
+        // become true (it both udpates `multipleAgesIAPTransactionId`, as well as the internal cache of StoreObserver singleton).
+        // But that's fine.
         if let _ = UserDefaultsUtil.multipleAgesIAPTransactionId {
             // If the items has been purchased in the past, then we're good.
             performSegue(withIdentifier: "add-age", sender: NewAgeViewController.Scenario.newEntity)
         } else {
             switch StoreObserver.shared.productStatus(forProductId: Constants.Store.multipleAgeProductId) {
             case .pending:
+                // A bit of an edge case which is totally fine.
                 return
             case .purhcased, .restored:
                 performSegue(withIdentifier: "add-age", sender: NewAgeViewController.Scenario.newEntity)
