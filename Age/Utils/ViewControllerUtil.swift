@@ -8,4 +8,10 @@
 
 import UIKit
 
-extension UIViewController { }
+extension UIViewController {
+    
+    var isViewVisible: Bool {
+        return isViewLoaded && view.window != nil
+    }
+    
+}

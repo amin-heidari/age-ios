@@ -39,33 +39,13 @@ class AgeViewController: BaseViewController, StoreManagerDelegate {
         
         ageCalculator = AgeCalculator(birthDate: SuiteDefaultsUtil.defaultBirthday!.birthDate)
         
-        //
-        // Age refresh timer.
-        //
         timer = Timer.scheduledTimer(timeInterval: Constants.AgeCalculation.refreshInterval,
                                      target: self,
                                      selector: #selector(refreshAge),
                                      userInfo: nil,
                                      repeats: true)
         
-        //
-        // Set up the rotation for the gauge layers.
-        //
-        ringView1.layer.removeAllAnimations()
-        let largeRotationAnimation = CABasicAnimation(keyPath: "transform.rotation")
-        largeRotationAnimation.fromValue = 0.0
-        largeRotationAnimation.toValue = -Double.pi * 2.0
-        largeRotationAnimation.duration = 80.0
-        largeRotationAnimation.repeatCount = .infinity
-        ringView1.layer.add(largeRotationAnimation, forKey: nil)
-        
-        ringView3.layer.removeAllAnimations()
-        let smallRotationAnimation = CABasicAnimation(keyPath: "transform.rotation")
-        smallRotationAnimation.fromValue = 0.0
-        smallRotationAnimation.toValue = Double.pi * 2.0
-        smallRotationAnimation.duration = 40.0
-        smallRotationAnimation.repeatCount = .infinity
-        ringView3.layer.add(smallRotationAnimation, forKey: nil)
+        startGaugeAnimations()
     }
     
     override func viewDidDisappear(_ animated: Bool) {
@@ -74,11 +54,21 @@ class AgeViewController: BaseViewController, StoreManagerDelegate {
         ageCalculator = nil
         
         // Remove the gauge layers animations.
-        
-        ringView1.layer.removeAllAnimations()
-        ringView3.layer.removeAllAnimations()
+        stopGaugeAnimations()
         
         super.viewDidDisappear(animated)
+    }
+    
+    override func applicationWillEnterForeground() {
+        super.applicationWillEnterForeground()
+        
+        startGaugeAnimations()
+    }
+    
+    override func applicationDidEnterBackground() {
+        super.applicationDidEnterBackground()
+        
+        stopGaugeAnimations()
     }
     
     // MARK: - Properties
@@ -109,6 +99,35 @@ class AgeViewController: BaseViewController, StoreManagerDelegate {
         }
         
         ageLabel.text = String(format: "%.8f", calculator.currentAge.value)
+    }
+    
+    private func startGaugeAnimations() {
+        guard (isViewLoaded) else {
+            ringView1.layer.removeAllAnimations()
+            ringView3.layer.removeAllAnimations()
+            return
+        }
+        
+        ringView1.layer.removeAllAnimations()
+        let largeRotationAnimation = CABasicAnimation(keyPath: "transform.rotation")
+        largeRotationAnimation.fromValue = 0.0
+        largeRotationAnimation.toValue = -Double.pi * 2.0
+        largeRotationAnimation.duration = 80.0
+        largeRotationAnimation.repeatCount = .infinity
+        ringView1.layer.add(largeRotationAnimation, forKey: nil)
+        
+        ringView3.layer.removeAllAnimations()
+        let smallRotationAnimation = CABasicAnimation(keyPath: "transform.rotation")
+        smallRotationAnimation.fromValue = 0.0
+        smallRotationAnimation.toValue = Double.pi * 2.0
+        smallRotationAnimation.duration = 40.0
+        smallRotationAnimation.repeatCount = .infinity
+        ringView3.layer.add(smallRotationAnimation, forKey: nil)
+    }
+    
+    private func stopGaugeAnimations() {
+        ringView1.layer.removeAllAnimations()
+        ringView3.layer.removeAllAnimations()
     }
     
     // MARK: - Actions
