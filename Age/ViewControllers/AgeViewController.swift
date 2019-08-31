@@ -28,6 +28,10 @@ class AgeViewController: BaseViewController, StoreManagerDelegate {
         if let _ = UserDefaultsUtil.multipleAgesIAPTransactionId {
             agesButton.isHidden = false
         }
+        
+        // Setting these in code here since the IB doesn't respond well to these color asset changes.
+        backgroundGradientView.startColor = .primary
+        backgroundGradientView.endColor = .accent
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -58,6 +62,8 @@ class AgeViewController: BaseViewController, StoreManagerDelegate {
     private var timer: Timer?
     
     // MARK: - Outlets
+    
+    @IBOutlet weak var backgroundGradientView: GradientView!
     
     @IBOutlet private weak var ageLabel: UILabel!
     

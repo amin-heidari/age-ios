@@ -7,8 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		270A20DC2318B47C00D5DD97 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 270A20DB2318B47C00D5DD97 /* Assets.xcassets */; };
+		270A20DD2318B47C00D5DD97 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 270A20DB2318B47C00D5DD97 /* Assets.xcassets */; };
+		270A20E12318B49D00D5DD97 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 270A20E02318B49D00D5DD97 /* Colors.xcassets */; };
+		270A20E22318B49D00D5DD97 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 270A20E02318B49D00D5DD97 /* Colors.xcassets */; };
+		270A20E82318B7D100D5DD97 /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 270A20E72318B7D100D5DD97 /* GradientView.swift */; };
+		270A20E92318B7D100D5DD97 /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 270A20E72318B7D100D5DD97 /* GradientView.swift */; };
+		270A20EB231A34C700D5DD97 /* ColorUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 270A20EA231A34C700D5DD97 /* ColorUtil.swift */; };
+		270A20EC231A34C700D5DD97 /* ColorUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 270A20EA231A34C700D5DD97 /* ColorUtil.swift */; };
 		274EC096226118CC00D5E263 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 274EC095226118CC00D5E263 /* AppDelegate.swift */; };
-		274EC0A0226118D000D5E263 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 274EC09F226118D000D5E263 /* Assets.xcassets */; };
 		2771407F22B4005100F4ED05 /* DateUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2771407E22B4005100F4ED05 /* DateUtil.swift */; };
 		2771408022B4005100F4ED05 /* DateUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2771407E22B4005100F4ED05 /* DateUtil.swift */; };
 		27764F4B22CF1AA100C4B13D /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27764F4A22CF1AA100C4B13D /* NotificationCenter.framework */; };
@@ -69,7 +76,6 @@
 		27AA5B052299FC090059D1A2 /* Age.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 27AA5AC52299F8B80059D1A2 /* Age.xcdatamodeld */; };
 		27AA5B062299FC090059D1A2 /* AgesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27AA5AD82299F8B90059D1A2 /* AgesViewController.swift */; };
 		27AA5B092299FC090059D1A2 /* RemoteConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27AA5AC32299F8B80059D1A2 /* RemoteConfig.swift */; };
-		27AA5B0C2299FC090059D1A2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 274EC09F226118D000D5E263 /* Assets.xcassets */; };
 		27AA5B0F2299FC090059D1A2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 27AA5ADE2299F8B90059D1A2 /* Main.storyboard */; };
 		27AA5B102299FC090059D1A2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 27AA5ADC2299F8B90059D1A2 /* LaunchScreen.storyboard */; };
 		27AA5B1B2299FC640059D1A2 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27AA5AF72299FB210059D1A2 /* Constants.swift */; };
@@ -190,13 +196,16 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		270A20DB2318B47C00D5DD97 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		270A20E02318B49D00D5DD97 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
+		270A20E72318B7D100D5DD97 /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
+		270A20EA231A34C700D5DD97 /* ColorUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorUtil.swift; sourceTree = "<group>"; };
 		272785B522CFD83F00E1C189 /* Widget.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Widget.entitlements; sourceTree = "<group>"; };
 		272785B722CFD83F00E1C189 /* Widget Dev.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Widget Dev.entitlements"; sourceTree = "<group>"; };
 		272785B922CFD8AF00E1C189 /* Age.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Age.entitlements; sourceTree = "<group>"; };
 		272785BB22CFD8AF00E1C189 /* Age.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Age.entitlements; sourceTree = "<group>"; };
 		274EC092226118CC00D5E263 /* Age.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Age.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		274EC095226118CC00D5E263 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		274EC09F226118D000D5E263 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2771407E22B4005100F4ED05 /* DateUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateUtil.swift; sourceTree = "<group>"; };
 		27764F4822CF1AA100C4B13D /* Widget.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = Widget.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		27764F4A22CF1AA100C4B13D /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = System/Library/Frameworks/NotificationCenter.framework; sourceTree = SDKROOT; };
@@ -308,6 +317,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		270A20DA2318B47C00D5DD97 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				270A20DB2318B47C00D5DD97 /* Assets.xcassets */,
+				270A20E02318B49D00D5DD97 /* Colors.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		270A20E62318B7BA00D5DD97 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				270A20E72318B7D100D5DD97 /* GradientView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		272785B422CFD83F00E1C189 /* Entitlements */ = {
 			isa = PBXGroup;
 			children = (
@@ -381,8 +407,9 @@
 				27AA5ADB2299F8B90059D1A2 /* Storyboards */,
 				27AA5AC92299F8B80059D1A2 /* Utils */,
 				27C257D822A30A2E00EFAA33 /* Navigation */,
+				270A20E62318B7BA00D5DD97 /* Views */,
 				27AA5AD52299F8B90059D1A2 /* ViewControllers */,
-				274EC09F226118D000D5E263 /* Assets.xcassets */,
+				270A20DA2318B47C00D5DD97 /* Resources */,
 			);
 			path = Age;
 			sourceTree = "<group>";
@@ -525,6 +552,7 @@
 				27C8C01622B875EC00C064D5 /* ObjectUtil.swift */,
 				2795732822DBEC890039E7E1 /* StoreKitUtil.swift */,
 				27B7885A22DEC51000BBC64A /* NotificationUtil.swift */,
+				270A20EA231A34C700D5DD97 /* ColorUtil.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -818,9 +846,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				270A20E12318B49D00D5DD97 /* Colors.xcassets in Resources */,
 				27AA5B29229DF7AA0059D1A2 /* Config.cer in Resources */,
-				274EC0A0226118D000D5E263 /* Assets.xcassets in Resources */,
 				27AA5AF22299F8B90059D1A2 /* Main.storyboard in Resources */,
+				270A20DC2318B47C00D5DD97 /* Assets.xcassets in Resources */,
 				27AA5AF12299F8B90059D1A2 /* LaunchScreen.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -852,9 +881,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				27AA5B0C2299FC090059D1A2 /* Assets.xcassets in Resources */,
+				270A20E22318B49D00D5DD97 /* Colors.xcassets in Resources */,
 				27AA5B0F2299FC090059D1A2 /* Main.storyboard in Resources */,
 				27AA5B2C229DF7AA0059D1A2 /* Config.cer in Resources */,
+				270A20DD2318B47C00D5DD97 /* Assets.xcassets in Resources */,
 				27AA5B102299FC090059D1A2 /* LaunchScreen.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -883,6 +913,7 @@
 				274EC096226118CC00D5E263 /* AppDelegate.swift in Sources */,
 				27AA5B3122A422EB0059D1A2 /* BundleUtil.swift in Sources */,
 				2771407F22B4005100F4ED05 /* DateUtil.swift in Sources */,
+				270A20EB231A34C700D5DD97 /* ColorUtil.swift in Sources */,
 				279D13A222B83858006B649E /* NavigationUtil.swift in Sources */,
 				27C257E922A3138400EFAA33 /* UpgradeViewController.swift in Sources */,
 				27B7885B22DEC51000BBC64A /* NotificationUtil.swift in Sources */,
@@ -892,6 +923,7 @@
 				27C257D622A2102600EFAA33 /* AppError.swift in Sources */,
 				279D139F22B7DE22006B649E /* FontUtil.swift in Sources */,
 				27AA5AE22299F8B90059D1A2 /* Age.xcdatamodeld in Sources */,
+				270A20E82318B7D100D5DD97 /* GradientView.swift in Sources */,
 				27AA5AEE2299F8B90059D1A2 /* AgesViewController.swift in Sources */,
 				27B7885E22DEC8E000BBC64A /* StoreObserver.swift in Sources */,
 				27B7886122DEC8E800BBC64A /* StoreManager.swift in Sources */,
@@ -955,6 +987,7 @@
 				27AA5B032299FC090059D1A2 /* AppDelegate.swift in Sources */,
 				27AA5B3222A422EB0059D1A2 /* BundleUtil.swift in Sources */,
 				2771408022B4005100F4ED05 /* DateUtil.swift in Sources */,
+				270A20EC231A34C700D5DD97 /* ColorUtil.swift in Sources */,
 				279D13A322B83858006B649E /* NavigationUtil.swift in Sources */,
 				27C257EA22A3138400EFAA33 /* UpgradeViewController.swift in Sources */,
 				27B7885C22DEC51000BBC64A /* NotificationUtil.swift in Sources */,
@@ -964,6 +997,7 @@
 				27AA5B052299FC090059D1A2 /* Age.xcdatamodeld in Sources */,
 				279D13A022B7DE22006B649E /* FontUtil.swift in Sources */,
 				27C8C00E22B2DE1000C064D5 /* CallbackUtil.swift in Sources */,
+				270A20E92318B7D100D5DD97 /* GradientView.swift in Sources */,
 				27AA5B062299FC090059D1A2 /* AgesViewController.swift in Sources */,
 				27B7885F22DEC8E000BBC64A /* StoreObserver.swift in Sources */,
 				27B7886222DEC8E800BBC64A /* StoreManager.swift in Sources */,
