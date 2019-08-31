@@ -15,6 +15,10 @@
 		270A20E92318B7D100D5DD97 /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 270A20E72318B7D100D5DD97 /* GradientView.swift */; };
 		270A20EB231A34C700D5DD97 /* ColorUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 270A20EA231A34C700D5DD97 /* ColorUtil.swift */; };
 		270A20EC231A34C700D5DD97 /* ColorUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 270A20EA231A34C700D5DD97 /* ColorUtil.swift */; };
+		270A20F1231A485900D5DD97 /* RingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 270A20F0231A485900D5DD97 /* RingView.swift */; };
+		270A20F2231A485900D5DD97 /* RingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 270A20F0231A485900D5DD97 /* RingView.swift */; };
+		270A20F4231A69B100D5DD97 /* CoreGraphicsUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 270A20F3231A69B100D5DD97 /* CoreGraphicsUtil.swift */; };
+		270A20F5231A69B100D5DD97 /* CoreGraphicsUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 270A20F3231A69B100D5DD97 /* CoreGraphicsUtil.swift */; };
 		274EC096226118CC00D5E263 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 274EC095226118CC00D5E263 /* AppDelegate.swift */; };
 		2771407F22B4005100F4ED05 /* DateUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2771407E22B4005100F4ED05 /* DateUtil.swift */; };
 		2771408022B4005100F4ED05 /* DateUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2771407E22B4005100F4ED05 /* DateUtil.swift */; };
@@ -200,6 +204,8 @@
 		270A20E02318B49D00D5DD97 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		270A20E72318B7D100D5DD97 /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
 		270A20EA231A34C700D5DD97 /* ColorUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorUtil.swift; sourceTree = "<group>"; };
+		270A20F0231A485900D5DD97 /* RingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RingView.swift; sourceTree = "<group>"; };
+		270A20F3231A69B100D5DD97 /* CoreGraphicsUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreGraphicsUtil.swift; sourceTree = "<group>"; };
 		272785B522CFD83F00E1C189 /* Widget.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Widget.entitlements; sourceTree = "<group>"; };
 		272785B722CFD83F00E1C189 /* Widget Dev.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Widget Dev.entitlements"; sourceTree = "<group>"; };
 		272785B922CFD8AF00E1C189 /* Age.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Age.entitlements; sourceTree = "<group>"; };
@@ -330,6 +336,7 @@
 			isa = PBXGroup;
 			children = (
 				270A20E72318B7D100D5DD97 /* GradientView.swift */,
+				270A20F0231A485900D5DD97 /* RingView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -552,6 +559,7 @@
 				27C8C01622B875EC00C064D5 /* ObjectUtil.swift */,
 				2795732822DBEC890039E7E1 /* StoreKitUtil.swift */,
 				27B7885A22DEC51000BBC64A /* NotificationUtil.swift */,
+				270A20F3231A69B100D5DD97 /* CoreGraphicsUtil.swift */,
 				270A20EA231A34C700D5DD97 /* ColorUtil.swift */,
 			);
 			path = Utils;
@@ -899,6 +907,7 @@
 				27B7886422DED27600BBC64A /* MultipleAgesPromoViewController.swift in Sources */,
 				27C8C01722B875EC00C064D5 /* ObjectUtil.swift in Sources */,
 				27C257EF22A58BC800EFAA33 /* ViewControllerUtil.swift in Sources */,
+				270A20F4231A69B100D5DD97 /* CoreGraphicsUtil.swift in Sources */,
 				2795732922DBEC890039E7E1 /* StoreKitUtil.swift in Sources */,
 				27AA5AE62299F8B90059D1A2 /* UserDefaultsUtil.swift in Sources */,
 				27C257CA229F0CEA00EFAA33 /* RemoteConfigManager.swift in Sources */,
@@ -917,6 +926,7 @@
 				279D13A222B83858006B649E /* NavigationUtil.swift in Sources */,
 				27C257E922A3138400EFAA33 /* UpgradeViewController.swift in Sources */,
 				27B7885B22DEC51000BBC64A /* NotificationUtil.swift in Sources */,
+				270A20F1231A485900D5DD97 /* RingView.swift in Sources */,
 				27C8C00D22B2D99D00C064D5 /* CallbackUtil.swift in Sources */,
 				27AA5AE32299F8B90059D1A2 /* DatabaseManager.swift in Sources */,
 				2789EA9A22D53595003BD427 /* DataUtil.swift in Sources */,
@@ -973,6 +983,7 @@
 				27B7886522DED27600BBC64A /* MultipleAgesPromoViewController.swift in Sources */,
 				27ABE05C22B92A9B009B60B4 /* ObjectUtil.swift in Sources */,
 				27C257F022A58BC800EFAA33 /* ViewControllerUtil.swift in Sources */,
+				270A20F5231A69B100D5DD97 /* CoreGraphicsUtil.swift in Sources */,
 				2795732A22DBEC890039E7E1 /* StoreKitUtil.swift in Sources */,
 				27AA5AFA2299FC090059D1A2 /* UserDefaultsUtil.swift in Sources */,
 				27C257CB229F0CEA00EFAA33 /* RemoteConfigManager.swift in Sources */,
@@ -991,6 +1002,7 @@
 				279D13A322B83858006B649E /* NavigationUtil.swift in Sources */,
 				27C257EA22A3138400EFAA33 /* UpgradeViewController.swift in Sources */,
 				27B7885C22DEC51000BBC64A /* NotificationUtil.swift in Sources */,
+				270A20F2231A485900D5DD97 /* RingView.swift in Sources */,
 				27AA5B042299FC090059D1A2 /* DatabaseManager.swift in Sources */,
 				27C257D722A2102600EFAA33 /* AppError.swift in Sources */,
 				2789EA9B22D53595003BD427 /* DataUtil.swift in Sources */,

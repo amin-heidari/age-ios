@@ -454,7 +454,7 @@
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VCd-9i-9bH" customClass="GradientView" customModule="Age" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="startPointX">
                                         <real key="value" value="0.5"/>
@@ -470,8 +470,71 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SWU-7h-rhJ">
+                                <rect key="frame" x="20" y="191" width="374" height="374"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="X2a-rt-0zW" customClass="RingView" customModule="Age" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="374"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="strokeWidth">
+                                                <real key="value" value="12"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="segmentsCount">
+                                                <integer key="value" value="3"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="strokeColor">
+                                                <color key="value" red="0.99999600649999998" green="1" blue="1" alpha="0.79968089788732399" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9YP-ud-dcA" customClass="RingView" customModule="Age" customModuleProvider="target">
+                                        <rect key="frame" x="18" y="18" width="338" height="338"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="strokeWidth">
+                                                <real key="value" value="8"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="segmentsCount">
+                                                <integer key="value" value="1"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="strokeColor">
+                                                <color key="value" red="0.99999600649999998" green="1" blue="1" alpha="0.90072073063380287" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jcX-cf-lfL" customClass="RingView" customModule="Age" customModuleProvider="target">
+                                        <rect key="frame" x="32" y="32" width="310" height="310"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="strokeWidth">
+                                                <real key="value" value="6"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="segmentsCount">
+                                                <integer key="value" value="8"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="SWU-7h-rhJ" secondAttribute="height" multiplier="1:1" id="3aR-Yc-m6l"/>
+                                    <constraint firstItem="9YP-ud-dcA" firstAttribute="leading" secondItem="X2a-rt-0zW" secondAttribute="leading" constant="18" id="M8h-Sb-5b5"/>
+                                    <constraint firstItem="9YP-ud-dcA" firstAttribute="centerX" secondItem="SWU-7h-rhJ" secondAttribute="centerX" id="NUC-Yg-LFF"/>
+                                    <constraint firstAttribute="trailing" secondItem="X2a-rt-0zW" secondAttribute="trailing" id="Uob-vT-ZQf"/>
+                                    <constraint firstItem="jcX-cf-lfL" firstAttribute="centerY" secondItem="SWU-7h-rhJ" secondAttribute="centerY" id="WSA-SL-oV9"/>
+                                    <constraint firstItem="jcX-cf-lfL" firstAttribute="centerX" secondItem="SWU-7h-rhJ" secondAttribute="centerX" id="bCM-ly-Wfh"/>
+                                    <constraint firstItem="9YP-ud-dcA" firstAttribute="centerY" secondItem="SWU-7h-rhJ" secondAttribute="centerY" id="fr0-Rh-oce"/>
+                                    <constraint firstItem="jcX-cf-lfL" firstAttribute="leading" secondItem="9YP-ud-dcA" secondAttribute="leading" constant="14" id="m5V-Kt-Fpe"/>
+                                    <constraint firstItem="X2a-rt-0zW" firstAttribute="leading" secondItem="SWU-7h-rhJ" secondAttribute="leading" id="svn-Ub-aYp"/>
+                                    <constraint firstItem="X2a-rt-0zW" firstAttribute="top" secondItem="SWU-7h-rhJ" secondAttribute="top" id="tEa-Ix-1LO"/>
+                                    <constraint firstItem="9YP-ud-dcA" firstAttribute="top" secondItem="X2a-rt-0zW" secondAttribute="top" constant="18" id="uUJ-3n-yJn"/>
+                                    <constraint firstAttribute="bottom" secondItem="X2a-rt-0zW" secondAttribute="bottom" id="wp5-Lx-X9d"/>
+                                    <constraint firstItem="jcX-cf-lfL" firstAttribute="top" secondItem="9YP-ud-dcA" secondAttribute="top" constant="14" id="yJr-fC-S12"/>
+                                </constraints>
+                            </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Current age ..." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="10" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L02-oc-39U">
-                                <rect key="frame" x="20" y="358" width="153.66666666666666" height="20"/>
+                                <rect key="frame" x="99.999999999999986" y="358" width="153.66666666666663" height="20"/>
                                 <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
@@ -488,11 +551,14 @@
                         <constraints>
                             <constraint firstItem="Hjn-sw-q9H" firstAttribute="trailing" secondItem="qT6-f5-dfA" secondAttribute="trailing" constant="20" id="6Wy-Ce-d1h"/>
                             <constraint firstItem="qT6-f5-dfA" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Hjn-sw-q9H" secondAttribute="leading" id="CFP-kq-U6f"/>
-                            <constraint firstItem="L02-oc-39U" firstAttribute="leading" secondItem="Hjn-sw-q9H" secondAttribute="leading" constant="20" id="LYO-dI-U6D"/>
+                            <constraint firstItem="L02-oc-39U" firstAttribute="leading" secondItem="Hjn-sw-q9H" secondAttribute="leading" constant="100" id="LYO-dI-U6D"/>
+                            <constraint firstItem="SWU-7h-rhJ" firstAttribute="leading" secondItem="Hjn-sw-q9H" secondAttribute="leading" constant="20" id="RFm-dJ-TnA"/>
                             <constraint firstAttribute="trailing" secondItem="VCd-9i-9bH" secondAttribute="trailing" id="VLZ-Cm-HR1"/>
                             <constraint firstItem="VCd-9i-9bH" firstAttribute="leading" secondItem="LT6-ND-lG0" secondAttribute="leading" id="YiH-vd-83u"/>
                             <constraint firstItem="VCd-9i-9bH" firstAttribute="top" secondItem="LT6-ND-lG0" secondAttribute="top" id="hRM-XW-twN"/>
+                            <constraint firstItem="SWU-7h-rhJ" firstAttribute="centerY" secondItem="Hjn-sw-q9H" secondAttribute="centerY" id="lby-nW-wc3"/>
                             <constraint firstItem="qT6-f5-dfA" firstAttribute="top" secondItem="Hjn-sw-q9H" secondAttribute="top" id="mJO-rt-gpt"/>
+                            <constraint firstItem="SWU-7h-rhJ" firstAttribute="centerX" secondItem="Hjn-sw-q9H" secondAttribute="centerX" id="qdR-Lq-tcW"/>
                             <constraint firstAttribute="bottom" secondItem="VCd-9i-9bH" secondAttribute="bottom" id="vH6-8S-V4b"/>
                             <constraint firstItem="L02-oc-39U" firstAttribute="centerY" secondItem="LT6-ND-lG0" secondAttribute="centerY" id="ysM-BI-FV2"/>
                         </constraints>
@@ -507,7 +573,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YOX-YP-LFI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-635" y="990"/>
+            <point key="canvasLocation" x="-636.23188405797111" y="989.67391304347836"/>
         </scene>
         <!--NewAgeViewController-->
         <scene sceneID="eLg-sL-UqZ">
