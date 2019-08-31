@@ -39,6 +39,9 @@ class AgeViewController: BaseViewController, StoreManagerDelegate {
         
         ageCalculator = AgeCalculator(birthDate: SuiteDefaultsUtil.defaultBirthday!.birthDate)
         
+        //
+        // Age refresh timer.
+        //
         timer = Timer.scheduledTimer(timeInterval: Constants.AgeCalculation.refreshInterval,
                                      target: self,
                                      selector: #selector(refreshAge),
@@ -48,12 +51,11 @@ class AgeViewController: BaseViewController, StoreManagerDelegate {
         //
         // Set up the rotation for the gauge layers.
         //
-        
         ringView1.layer.removeAllAnimations()
         let largeRotationAnimation = CABasicAnimation(keyPath: "transform.rotation")
         largeRotationAnimation.fromValue = 0.0
         largeRotationAnimation.toValue = -Double.pi * 2.0
-        largeRotationAnimation.duration = 90.0
+        largeRotationAnimation.duration = 80.0
         largeRotationAnimation.repeatCount = .infinity
         ringView1.layer.add(largeRotationAnimation, forKey: nil)
         
@@ -61,7 +63,7 @@ class AgeViewController: BaseViewController, StoreManagerDelegate {
         let smallRotationAnimation = CABasicAnimation(keyPath: "transform.rotation")
         smallRotationAnimation.fromValue = 0.0
         smallRotationAnimation.toValue = Double.pi * 2.0
-        smallRotationAnimation.duration = 45.0
+        smallRotationAnimation.duration = 40.0
         smallRotationAnimation.repeatCount = .infinity
         ringView3.layer.add(smallRotationAnimation, forKey: nil)
     }
