@@ -32,6 +32,22 @@ class AgeViewController: BaseViewController, StoreManagerDelegate {
         // Setting these in code here since the IB doesn't respond well to these color asset changes.
         backgroundGradientView.startColor = .primary
         backgroundGradientView.endColor = .accent
+        
+        // Set up the rotation for the gauge layers.
+        
+        let largeRotationAnimation = CABasicAnimation(keyPath: "transform.rotation")
+        largeRotationAnimation.fromValue = 0.0
+        largeRotationAnimation.toValue = -Double.pi * 2.0
+        largeRotationAnimation.duration = 60.0
+        largeRotationAnimation.repeatCount = .infinity
+        ringView1.layer.add(largeRotationAnimation, forKey: nil)
+        
+        let smallRotationAnimation = CABasicAnimation(keyPath: "transform.rotation")
+        smallRotationAnimation.fromValue = 0.0
+        smallRotationAnimation.toValue = Double.pi * 2.0
+        smallRotationAnimation.duration = 30.0
+        smallRotationAnimation.repeatCount = .infinity
+        ringView3.layer.add(smallRotationAnimation, forKey: nil)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -68,6 +84,11 @@ class AgeViewController: BaseViewController, StoreManagerDelegate {
     @IBOutlet private weak var ageLabel: UILabel!
     
     @IBOutlet private weak var agesButton: UIButton!
+    
+    @IBOutlet weak var gaugeView: UIView!
+    @IBOutlet weak var ringView1: RingView!
+    @IBOutlet weak var ringView2: RingView!
+    @IBOutlet weak var ringView3: RingView!
     
     // MARK: - Methods
     

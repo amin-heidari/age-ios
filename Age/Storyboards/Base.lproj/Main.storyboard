@@ -484,7 +484,7 @@
                                                 <integer key="value" value="3"/>
                                             </userDefinedRuntimeAttribute>
                                             <userDefinedRuntimeAttribute type="color" keyPath="strokeColor">
-                                                <color key="value" red="0.99999600649999998" green="1" blue="1" alpha="0.79968089788732399" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="value" red="0.99999600649999998" green="1" blue="1" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                     </view>
@@ -499,7 +499,7 @@
                                                 <integer key="value" value="1"/>
                                             </userDefinedRuntimeAttribute>
                                             <userDefinedRuntimeAttribute type="color" keyPath="strokeColor">
-                                                <color key="value" red="0.99999600649999998" green="1" blue="1" alpha="0.90072073063380287" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="value" red="0.99999600649999998" green="1" blue="1" alpha="0.80000000000000004" colorSpace="custom" customColorSpace="sRGB"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                     </view>
@@ -534,8 +534,8 @@
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Current age ..." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="10" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L02-oc-39U">
-                                <rect key="frame" x="99.999999999999986" y="358" width="153.66666666666663" height="20"/>
-                                <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="17"/>
+                                <rect key="frame" x="98.666666666666686" y="354" width="217" height="28"/>
+                                <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="24"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -550,8 +550,8 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="Hjn-sw-q9H" firstAttribute="trailing" secondItem="qT6-f5-dfA" secondAttribute="trailing" constant="20" id="6Wy-Ce-d1h"/>
+                            <constraint firstItem="L02-oc-39U" firstAttribute="centerX" secondItem="Hjn-sw-q9H" secondAttribute="centerX" id="Al5-d7-G62"/>
                             <constraint firstItem="qT6-f5-dfA" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Hjn-sw-q9H" secondAttribute="leading" id="CFP-kq-U6f"/>
-                            <constraint firstItem="L02-oc-39U" firstAttribute="leading" secondItem="Hjn-sw-q9H" secondAttribute="leading" constant="100" id="LYO-dI-U6D"/>
                             <constraint firstItem="SWU-7h-rhJ" firstAttribute="leading" secondItem="Hjn-sw-q9H" secondAttribute="leading" constant="20" id="RFm-dJ-TnA"/>
                             <constraint firstAttribute="trailing" secondItem="VCd-9i-9bH" secondAttribute="trailing" id="VLZ-Cm-HR1"/>
                             <constraint firstItem="VCd-9i-9bH" firstAttribute="leading" secondItem="LT6-ND-lG0" secondAttribute="leading" id="YiH-vd-83u"/>
@@ -568,6 +568,10 @@
                         <outlet property="ageLabel" destination="L02-oc-39U" id="tpe-Ui-FXr"/>
                         <outlet property="agesButton" destination="qT6-f5-dfA" id="s72-NX-Ftz"/>
                         <outlet property="backgroundGradientView" destination="VCd-9i-9bH" id="OqG-ny-8nT"/>
+                        <outlet property="gaugeView" destination="SWU-7h-rhJ" id="xlK-jf-edy"/>
+                        <outlet property="ringView1" destination="X2a-rt-0zW" id="Eoa-UB-XBe"/>
+                        <outlet property="ringView2" destination="9YP-ud-dcA" id="Pzu-1r-IXX"/>
+                        <outlet property="ringView3" destination="jcX-cf-lfL" id="3jW-cw-Xss"/>
                         <segue destination="BYZ-38-t0r" kind="show" identifier="ages" id="DbE-vn-EuT"/>
                     </connections>
                 </viewController>

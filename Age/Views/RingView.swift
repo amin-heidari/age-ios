@@ -38,6 +38,7 @@ class RingView: UIView {
         let ellipseRadius = ellipseRect.width / 2
         let ellpiseCircumference = 2.0 * CGFloat.pi * ellipseRadius
         
+        context.setShouldAntialias(true)
         context.setStrokeColor(strokeColor.cgColor)
         context.setLineWidth(strokeWidth)
         
