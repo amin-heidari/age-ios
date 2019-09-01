@@ -19,6 +19,8 @@
 		270A20F2231A485900D5DD97 /* RingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 270A20F0231A485900D5DD97 /* RingView.swift */; };
 		270A20F4231A69B100D5DD97 /* CoreGraphicsUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 270A20F3231A69B100D5DD97 /* CoreGraphicsUtil.swift */; };
 		270A20F5231A69B100D5DD97 /* CoreGraphicsUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 270A20F3231A69B100D5DD97 /* CoreGraphicsUtil.swift */; };
+		270A20F8231B4FCA00D5DD97 /* CTAButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 270A20F7231B4FCA00D5DD97 /* CTAButton.swift */; };
+		270A20F9231B4FCA00D5DD97 /* CTAButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 270A20F7231B4FCA00D5DD97 /* CTAButton.swift */; };
 		274EC096226118CC00D5E263 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 274EC095226118CC00D5E263 /* AppDelegate.swift */; };
 		2771407F22B4005100F4ED05 /* DateUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2771407E22B4005100F4ED05 /* DateUtil.swift */; };
 		2771408022B4005100F4ED05 /* DateUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2771407E22B4005100F4ED05 /* DateUtil.swift */; };
@@ -206,6 +208,7 @@
 		270A20EA231A34C700D5DD97 /* ColorUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorUtil.swift; sourceTree = "<group>"; };
 		270A20F0231A485900D5DD97 /* RingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RingView.swift; sourceTree = "<group>"; };
 		270A20F3231A69B100D5DD97 /* CoreGraphicsUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreGraphicsUtil.swift; sourceTree = "<group>"; };
+		270A20F7231B4FCA00D5DD97 /* CTAButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CTAButton.swift; sourceTree = "<group>"; };
 		272785B522CFD83F00E1C189 /* Widget.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Widget.entitlements; sourceTree = "<group>"; };
 		272785B722CFD83F00E1C189 /* Widget Dev.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Widget Dev.entitlements"; sourceTree = "<group>"; };
 		272785B922CFD8AF00E1C189 /* Age.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Age.entitlements; sourceTree = "<group>"; };
@@ -341,6 +344,14 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		270A20F6231B4FB200D5DD97 /* Controls */ = {
+			isa = PBXGroup;
+			children = (
+				270A20F7231B4FCA00D5DD97 /* CTAButton.swift */,
+			);
+			path = Controls;
+			sourceTree = "<group>";
+		};
 		272785B422CFD83F00E1C189 /* Entitlements */ = {
 			isa = PBXGroup;
 			children = (
@@ -414,6 +425,7 @@
 				27AA5ADB2299F8B90059D1A2 /* Storyboards */,
 				27AA5AC92299F8B80059D1A2 /* Utils */,
 				27C257D822A30A2E00EFAA33 /* Navigation */,
+				270A20F6231B4FB200D5DD97 /* Controls */,
 				270A20E62318B7BA00D5DD97 /* Views */,
 				27AA5AD52299F8B90059D1A2 /* ViewControllers */,
 				270A20DA2318B47C00D5DD97 /* Resources */,
@@ -934,6 +946,7 @@
 				279D139F22B7DE22006B649E /* FontUtil.swift in Sources */,
 				27AA5AE22299F8B90059D1A2 /* Age.xcdatamodeld in Sources */,
 				270A20E82318B7D100D5DD97 /* GradientView.swift in Sources */,
+				270A20F8231B4FCA00D5DD97 /* CTAButton.swift in Sources */,
 				27AA5AEE2299F8B90059D1A2 /* AgesViewController.swift in Sources */,
 				27B7885E22DEC8E000BBC64A /* StoreObserver.swift in Sources */,
 				27B7886122DEC8E800BBC64A /* StoreManager.swift in Sources */,
@@ -1010,6 +1023,7 @@
 				279D13A022B7DE22006B649E /* FontUtil.swift in Sources */,
 				27C8C00E22B2DE1000C064D5 /* CallbackUtil.swift in Sources */,
 				270A20E92318B7D100D5DD97 /* GradientView.swift in Sources */,
+				270A20F9231B4FCA00D5DD97 /* CTAButton.swift in Sources */,
 				27AA5B062299FC090059D1A2 /* AgesViewController.swift in Sources */,
 				27B7885F22DEC8E000BBC64A /* StoreObserver.swift in Sources */,
 				27B7886222DEC8E800BBC64A /* StoreManager.swift in Sources */,

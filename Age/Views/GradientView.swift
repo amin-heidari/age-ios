@@ -22,6 +22,10 @@ import UIKit
     
     // MARK: - Life Cycle
     
+    override func prepareForInterfaceBuilder() {
+        super.prepareForInterfaceBuilder()
+    }
+    
     // MARK: - Properties
     
     /// Simply shadowing the view's layer.
@@ -51,6 +55,8 @@ import UIKit
     @IBInspectable var cornerRadius: CGFloat = 0 { didSet { setNeedsLayout() } }
     
     override func layoutSubviews() {
+        super.layoutSubviews()
+        
         gradientLayer.colors = [startColor.cgColor, endColor.cgColor]
         gradientLayer.startPoint = CGPoint(x: startPointX, y: startPointY)
         gradientLayer.endPoint = CGPoint(x: endPointX, y: endPointY)
