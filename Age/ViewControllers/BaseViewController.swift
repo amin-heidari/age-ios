@@ -47,6 +47,7 @@ class BaseViewController: UIViewController {
         super.viewWillAppear(animated)
         
         navigationController?.setNavigationBarHidden(isNavigationBarHidden, animated: true)
+        (UIApplication.shared.keyWindow?.rootViewController as? RootViewController)?.appStatusBarStyle = appStatusBarStyle
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -69,9 +70,15 @@ class BaseViewController: UIViewController {
         super.viewDidLayoutSubviews()
     }
     
+    deinit {
+        NotificationCenter.default.removeObserver(self)
+    }
+    
     // MARK: - Properties
     
     var isNavigationBarHidden: Bool { return false }
+    
+    var appStatusBarStyle: UIStatusBarStyle { return .default }
     
     // MARK: - Outlets
     

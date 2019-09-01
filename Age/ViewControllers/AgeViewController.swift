@@ -74,6 +74,7 @@ class AgeViewController: BaseViewController, StoreManagerDelegate {
     // MARK: - Properties
     
     override var isNavigationBarHidden: Bool { return true }
+    override var appStatusBarStyle: UIStatusBarStyle { return .lightContent }
     
     private var ageCalculator: AgeCalculator?
     private var timer: Timer?
