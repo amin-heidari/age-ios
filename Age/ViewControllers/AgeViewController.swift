@@ -27,6 +27,7 @@ class AgeViewController: BaseViewController, StoreManagerDelegate {
         
         if let _ = UserDefaultsUtil.multipleAgesIAPTransactionId {
             agesButton.isHidden = false
+            listOfAgesButton.isHidden = false
         }
         
         // Setting these in code here since the IB doesn't respond well to these color asset changes.
@@ -81,16 +82,18 @@ class AgeViewController: BaseViewController, StoreManagerDelegate {
     
     // MARK: - Outlets
     
-    @IBOutlet weak var backgroundGradientView: GradientView!
+    @IBOutlet private weak var backgroundGradientView: GradientView!
     
+    @IBOutlet private weak var yourAgePageTitleLabel: UILabel!
     @IBOutlet private weak var ageLabel: UILabel!
     
     @IBOutlet private weak var agesButton: UIButton!
+    @IBOutlet private weak var listOfAgesButton: UIButton!
     
-    @IBOutlet weak var gaugeView: UIView!
-    @IBOutlet weak var ringView1: RingView!
-    @IBOutlet weak var ringView2: RingView!
-    @IBOutlet weak var ringView3: RingView!
+    @IBOutlet private weak var gaugeView: UIView!
+    @IBOutlet private weak var ringView1: RingView!
+    @IBOutlet private weak var ringView2: RingView!
+    @IBOutlet private weak var ringView3: RingView!
     
     // MARK: - Methods
     
@@ -147,8 +150,10 @@ class AgeViewController: BaseViewController, StoreManagerDelegate {
                 product.productIdentifier == Constants.Store.multipleAgeProductId
             }) && StoreObserver.shared.isAuthorizedForPayments {
                 agesButton.isHidden = false
+                listOfAgesButton.isHidden = false
             } else {
                 agesButton.isHidden = true
+                listOfAgesButton.isHidden = true
             }
         }
     }
