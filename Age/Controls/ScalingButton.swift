@@ -63,11 +63,11 @@ class ScalingButton: UIButton {
             super.isHighlighted = newValue
             
             if (newValue) {
-                UIView.animate(withDuration: 0.1) { [weak self] in
+                UIView.animate(withDuration: 0.08) { [weak self] in
                     self?.transform = CGAffineTransform(scaleX: 0.96, y: 0.96)
                 }
             } else {
-                UIView.animate(withDuration: 0.1) { [weak self] in
+                UIView.animate(withDuration: 0.08) { [weak self] in
                     self?.transform = .identity
                 }
             }
