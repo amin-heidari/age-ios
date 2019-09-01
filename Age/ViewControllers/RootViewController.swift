@@ -10,21 +10,28 @@ import UIKit
 
 class RootViewController: UIViewController {
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+    // MARK: - Constants/Types
+    
+    // MARK: - Static
+    
+    // MARK: - API
+    
+    var appStatusBarStyle: UIStatusBarStyle = .default {
+        didSet {
+            setNeedsStatusBarAppearanceUpdate()
+        }
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+    // MARK: - Life Cycle
+    
+    // MARK: - Properties
+    
+    override var preferredStatusBarStyle: UIStatusBarStyle { return appStatusBarStyle }
+    
+    // MARK: - Outlets
+    
+    // MARK: - Methods
+    
+    // MARK: - Actions
+    
 }
