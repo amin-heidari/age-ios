@@ -23,6 +23,12 @@ class RingView: UIView {
     
     // MARK: - Life Cycle
     
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        
+        self.backgroundColor = .clear
+    }
+    
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         

@@ -22,6 +22,9 @@ class AgeViewController: BaseViewController, StoreManagerDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        ageFullLabel.font = ageFullLabel.font.monospacedDigitFont
+        ageRationalLabel.font = ageRationalLabel.font.monospacedDigitFont
+        
         StoreManager.shared.delegate = self
         StoreManager.shared.startProductRequest(with: [Constants.Store.multipleAgeProductId])
         
@@ -84,8 +87,10 @@ class AgeViewController: BaseViewController, StoreManagerDelegate {
     
     @IBOutlet private weak var backgroundGradientView: GradientView!
     
+    @IBOutlet private weak var ageFullLabel: UILabel!
+    @IBOutlet private weak var ageRationalLabel: UILabel!
+    
     @IBOutlet private weak var yourAgePageTitleLabel: UILabel!
-    @IBOutlet private weak var ageLabel: UILabel!
     
     @IBOutlet private weak var agesButton: UIButton!
     @IBOutlet private weak var listOfAgesButton: UIButton!
@@ -98,11 +103,12 @@ class AgeViewController: BaseViewController, StoreManagerDelegate {
     // MARK: - Methods
     
     @objc private func refreshAge() {
-        guard let calculator = ageCalculator, isViewLoaded, let _ = view.window else {
+        guard let age = ageCalculator?.currentAge, isViewVisible else {
             return
         }
         
-        ageLabel.text = String(format: "%.8f", calculator.currentAge.value)
+        ageFullLabel.text = String(format: "%d", age.full)
+        ageRationalLabel.text = String(format: ".%d", Int(round(age.rational * 100000000)))
     }
     
     private func startGaugeAnimations() {
