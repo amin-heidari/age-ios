@@ -1,5 +1,5 @@
 //
-//  CTAButton.swift
+//  ScalingButton.swift
 //  Age
 //
 //  Created by Amin on 2019-08-31.
@@ -10,7 +10,7 @@ import UIKit
 
 /// https://blog.supereasyapps.com/how-to-create-round-buttons-using-ibdesignable-on-ios-11/
 @IBDesignable
-class CTAButton: UIButton {
+class ScalingButton: UIButton {
     
     // MARK: - Constants/Types
     
@@ -18,9 +18,8 @@ class CTAButton: UIButton {
     
     // MARK: - API
     
-    @IBInspectable var startColor: UIColor = .red { didSet { setNeedsLayout() } }
-    
-    @IBInspectable var endColor: UIColor = .blue { didSet { setNeedsLayout() } }
+    @IBInspectable var startColor: UIColor = .white { didSet { setNeedsLayout() } }
+    @IBInspectable var endColor: UIColor = .white { didSet { setNeedsLayout() } }
     
     // MARK: - Life Cycle
     
@@ -43,7 +42,7 @@ class CTAButton: UIButton {
         setup()
     }
     
-    func sharedInit() {
+    private func sharedInit() {
         gradientBackgroundLayer.startPoint = CGPoint(x: 0.0, y: 0.5)
         gradientBackgroundLayer.endPoint = CGPoint(x: 1.0, y: 0.5)
         layer.insertSublayer(gradientBackgroundLayer, at: 0)
@@ -65,7 +64,7 @@ class CTAButton: UIButton {
             
             if (newValue) {
                 UIView.animate(withDuration: 0.1) { [weak self] in
-                    self?.transform = CGAffineTransform(scaleX: 1.04, y: 1.04)
+                    self?.transform = CGAffineTransform(scaleX: 0.96, y: 0.96)
                 }
             } else {
                 UIView.animate(withDuration: 0.1) { [weak self] in

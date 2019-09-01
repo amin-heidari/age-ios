@@ -540,7 +540,7 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BDz-l8-XQR" customClass="CTAButton" customModule="Age" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BDz-l8-XQR" customClass="ScalingButton" customModule="Age" customModuleProvider="target">
                                 <rect key="frame" x="100" y="646" width="214" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="Cvi-rN-TQn"/>
