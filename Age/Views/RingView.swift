@@ -8,8 +8,9 @@
 
 import UIKit
 
-@IBDesignable
-class RingView: UIView {
+/// This custom view is only to be used with a 1:1 aspect ratio.
+/// Other aspect ratios are not supported.
+@IBDesignable class RingView: UIView {
     
     // MARK: - Constants/Types
     
