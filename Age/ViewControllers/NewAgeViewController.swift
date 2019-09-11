@@ -45,22 +45,26 @@ class NewAgeViewController: BaseViewController {
             closeButton.isHidden = true
             deleteButton.isHidden = true
             editingBirthDate = NewAgeViewController.evaluateDefaultBirthDate()
+            titleLabel.text = "Enter Your Age"
         case .editDefault:
             closeButton.isHidden = false
             deleteButton.isHidden = true
             let birthday = SuiteDefaultsUtil.defaultBirthday!
             editingBirthDate = birthday.birthDate
             nameTextField.text = birthday.name
+            titleLabel.text = "Your Age"
         case .newEntity:
             closeButton.isHidden = false
             deleteButton.isHidden = true
             editingBirthDate = NewAgeViewController.evaluateDefaultBirthDate()
+            titleLabel.text = "New Age"
         case .editEntity(let birthdayEntity):
             closeButton.isHidden = false
             deleteButton.isHidden = false
             let birthday = birthdayEntity.birthday!
             editingBirthDate = birthday.birthDate
             nameTextField.text = birthday.name
+            titleLabel.text = "Edit Age"
         }
         
         datePicker.date = editingBirthDate.date
@@ -113,6 +117,8 @@ class NewAgeViewController: BaseViewController {
     }
     
     // MARK: - Outlets
+    
+    @IBOutlet private weak var titleLabel: UILabel!
     
     @IBOutlet private weak var nameTextField: UITextField!
     @IBOutlet private weak var dateTextField: UITextField!

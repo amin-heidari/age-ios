@@ -271,6 +271,7 @@
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="gZl-67-382"/>
                                         </constraints>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
                                         <state key="normal" title="Delete">
                                             <color key="titleColor" name="AppText"/>
                                         </state>
@@ -315,6 +316,7 @@
                         <outlet property="deleteButton" destination="oWk-Vv-W13" id="vWs-LX-Wif"/>
                         <outlet property="nameTextField" destination="W1F-NR-A4S" id="3oc-cQ-Nzj"/>
                         <outlet property="proceedButton" destination="3DS-u0-J0u" id="roa-rG-4Yz"/>
+                        <outlet property="titleLabel" destination="T6B-Kb-Nre" id="JO1-wE-1nS"/>
                         <segue destination="ueg-9m-lRh" kind="show" identifier="age" customClass="ReplaceRootSegue" customModule="Age" customModuleProvider="target" id="lVK-B6-Itq"/>
                     </connections>
                 </viewController>
