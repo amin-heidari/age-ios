@@ -65,7 +65,8 @@ class AgeTableViewCell: UITableViewCell {
     // MARK: - Outlets
     
     @IBOutlet private weak var nameLabel: UILabel!
-    @IBOutlet private weak var ageLabel: UILabel!
+    @IBOutlet private weak var ageFullLabel: UILabel!
+    @IBOutlet private weak var ageRationalLabel: UILabel!
     @IBOutlet private weak var defaultLabel: UILabel!
     
     // MARK: - Methods

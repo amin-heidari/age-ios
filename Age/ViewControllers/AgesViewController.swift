@@ -72,6 +72,8 @@ class AgesViewController: BaseViewController {
     
     // MARK: - Properties
     
+    override var isNavigationBarHidden: Bool { return true }
+    
     private var timer: Timer?
     
     // MARK: - Outlets
