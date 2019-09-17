@@ -70,21 +70,31 @@
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="s5F-Xk-PxO">
                                                     <rect key="frame" x="20" y="10" width="335" height="279.5"/>
                                                     <subviews>
-                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="V41-Sh-Wx1" customClass="GradientView" customModule="Age" customModuleProvider="target">
+                                                        <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="V41-Sh-Wx1" customClass="GradientView" customModule="Age" customModuleProvider="target">
                                                             <rect key="frame" x="0.0" y="0.0" width="335" height="279.5"/>
+                                                            <subviews>
+                                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="age_background" translatesAutoresizingMaskIntoConstraints="NO" id="DCC-Fa-1sL">
+                                                                    <rect key="frame" x="-10" y="186.5" width="355" height="103"/>
+                                                                </imageView>
+                                                            </subviews>
                                                             <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <constraints>
+                                                                <constraint firstItem="DCC-Fa-1sL" firstAttribute="leading" secondItem="V41-Sh-Wx1" secondAttribute="leading" constant="-10" id="ciF-Hx-1K9"/>
+                                                                <constraint firstAttribute="bottom" secondItem="DCC-Fa-1sL" secondAttribute="bottom" constant="-10" id="hd6-9i-RWg"/>
+                                                                <constraint firstAttribute="trailing" secondItem="DCC-Fa-1sL" secondAttribute="trailing" constant="-10" id="qJQ-8f-2yp"/>
+                                                            </constraints>
                                                             <userDefinedRuntimeAttributes>
                                                                 <userDefinedRuntimeAttribute type="color" keyPath="startColor">
-                                                                    <color key="value" name="Accent"/>
+                                                                    <color key="value" red="0.25490196078431371" green="0.36470588235294116" blue="0.81568627450980391" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 </userDefinedRuntimeAttribute>
                                                                 <userDefinedRuntimeAttribute type="color" keyPath="endColor">
-                                                                    <color key="value" name="Primary"/>
+                                                                    <color key="value" red="0.0" green="0.54117647058823526" blue="0.9137254901960784" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 </userDefinedRuntimeAttribute>
                                                                 <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
-                                                                    <color key="value" red="0.0" green="0.97680455450000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                    <color key="value" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 </userDefinedRuntimeAttribute>
                                                                 <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                                    <real key="value" value="5"/>
+                                                                    <real key="value" value="8"/>
                                                                 </userDefinedRuntimeAttribute>
                                                                 <userDefinedRuntimeAttribute type="number" keyPath="shadowX">
                                                                     <real key="value" value="1"/>
@@ -97,16 +107,22 @@
                                                                 </userDefinedRuntimeAttribute>
                                                             </userDefinedRuntimeAttributes>
                                                         </view>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Nv-Bt-9ex">
-                                                            <rect key="frame" x="16" y="16" width="42" height="20.5"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                            <nil key="textColor"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Born on 24, June, 1988" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WX9-62-fcr">
+                                                            <rect key="frame" x="168.5" y="23.5" width="150.5" height="17"/>
+                                                            <fontDescription key="fontDescription" type="italicSystem" pointSize="14"/>
+                                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Nv-Bt-9ex">
+                                                            <rect key="frame" x="16" y="16" width="58" height="26.5"/>
+                                                            <fontDescription key="fontDescription" type="system" weight="medium" pointSize="22"/>
+                                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="(My Age)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0pT-67-eo8">
-                                                            <rect key="frame" x="249" y="243" width="70" height="20.5"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                            <nil key="textColor"/>
+                                                            <rect key="frame" x="260" y="246.5" width="59" height="17"/>
+                                                            <fontDescription key="fontDescription" type="italicSystem" pointSize="14"/>
+                                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <stackView opaque="NO" contentMode="scaleToFill" alignment="bottom" translatesAutoresizingMaskIntoConstraints="NO" id="Ci6-en-g5O">
@@ -117,7 +133,7 @@
                                                                     <subviews>
                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="38" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gb8-eP-a3g">
                                                                             <rect key="frame" x="0.0" y="0.0" width="69.5" height="127.5"/>
-                                                                            <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="54"/>
+                                                                            <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="40"/>
                                                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                             <nil key="highlightedColor"/>
                                                                         </label>
@@ -135,7 +151,7 @@
                                                                     <subviews>
                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=".12345678" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NwC-F0-G8J">
                                                                             <rect key="frame" x="0.0" y="0.0" width="153.5" height="119.5"/>
-                                                                            <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="24"/>
+                                                                            <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="20"/>
                                                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                             <nil key="highlightedColor"/>
                                                                         </label>
@@ -156,12 +172,16 @@
                                                         <constraint firstItem="5Nv-Bt-9ex" firstAttribute="leading" secondItem="s5F-Xk-PxO" secondAttribute="leading" constant="16" id="41O-01-1ei"/>
                                                         <constraint firstItem="V41-Sh-Wx1" firstAttribute="leading" secondItem="s5F-Xk-PxO" secondAttribute="leading" id="BXR-ZK-oJx"/>
                                                         <constraint firstAttribute="bottom" secondItem="0pT-67-eo8" secondAttribute="bottom" constant="16" id="E5i-qi-Jfu"/>
+                                                        <constraint firstItem="WX9-62-fcr" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="5Nv-Bt-9ex" secondAttribute="trailing" constant="20" id="K6r-EP-rVU"/>
                                                         <constraint firstItem="5Nv-Bt-9ex" firstAttribute="top" secondItem="s5F-Xk-PxO" secondAttribute="top" constant="16" id="Mhy-LT-dMv"/>
+                                                        <constraint firstAttribute="trailing" secondItem="WX9-62-fcr" secondAttribute="trailing" constant="16" id="O1f-JH-NaM"/>
                                                         <constraint firstItem="Ci6-en-g5O" firstAttribute="top" relation="greaterThanOrEqual" secondItem="5Nv-Bt-9ex" secondAttribute="bottom" constant="20" id="Pu3-pb-j8z"/>
                                                         <constraint firstAttribute="trailing" secondItem="0pT-67-eo8" secondAttribute="trailing" constant="16" id="aAI-e7-Gey"/>
+                                                        <constraint firstItem="WX9-62-fcr" firstAttribute="firstBaseline" secondItem="5Nv-Bt-9ex" secondAttribute="firstBaseline" id="ajB-Zb-Hcj"/>
                                                         <constraint firstAttribute="bottom" secondItem="Ci6-en-g5O" secondAttribute="bottom" constant="16" id="c2Y-iD-SXK"/>
                                                         <constraint firstItem="V41-Sh-Wx1" firstAttribute="top" secondItem="s5F-Xk-PxO" secondAttribute="top" id="dlc-kx-BSV"/>
                                                         <constraint firstAttribute="bottom" secondItem="V41-Sh-Wx1" secondAttribute="bottom" id="eqX-dX-1hZ"/>
+                                                        <constraint firstItem="0pT-67-eo8" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Ci6-en-g5O" secondAttribute="trailing" id="lcE-nY-9kT"/>
                                                         <constraint firstAttribute="trailing" secondItem="V41-Sh-Wx1" secondAttribute="trailing" id="mMX-pB-WwD"/>
                                                         <constraint firstItem="Ci6-en-g5O" firstAttribute="leading" secondItem="s5F-Xk-PxO" secondAttribute="leading" constant="16" id="n9N-8L-OA8"/>
                                                     </constraints>
@@ -177,6 +197,7 @@
                                         <connections>
                                             <outlet property="ageFullLabel" destination="Gb8-eP-a3g" id="PlE-JC-WTE"/>
                                             <outlet property="ageRationalLabel" destination="NwC-F0-G8J" id="M5P-Sb-Ar7"/>
+                                            <outlet property="birthDateLabel" destination="WX9-62-fcr" id="4ZP-JL-sKX"/>
                                             <outlet property="defaultLabel" destination="0pT-67-eo8" id="R2x-cU-41O"/>
                                             <outlet property="nameLabel" destination="5Nv-Bt-9ex" id="4SM-Aj-spX"/>
                                         </connections>
@@ -838,6 +859,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="age_background" width="343" height="103"/>
         <image name="close" width="16" height="16"/>
         <image name="menu" width="27" height="14"/>
         <image name="nav_back" width="23" height="16"/>

@@ -21,6 +21,12 @@ class DateFormatters {
         return dateFormatter
     }()
     
+    static private(set) var birthDate: DateFormatter = {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "dd MMM, yyyy"
+        return dateFormatter
+    }()
+    
 }
 
 extension Date {
@@ -32,6 +38,10 @@ extension Date {
             month: calendar.component(.month, from: self),
             day: calendar.component(.day, from: self)
         )
+    }
+    
+    var birthDateFormatted: String {
+        return DateFormatters.birthDate.string(from: self)
     }
     
 }

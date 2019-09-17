@@ -108,7 +108,7 @@ class AgeViewController: BaseViewController, StoreManagerDelegate {
         }
         
         ageFullLabel.text = String(format: "%d", age.full)
-        ageRationalLabel.text = String(format: ".%d", Int(round(age.rational * 100000000)))
+        ageRationalLabel.text = String(format: ".%08d", Int(round(age.rational * 100000000)))
     }
     
     private func startGaugeAnimations() {

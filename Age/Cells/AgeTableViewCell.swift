@@ -28,10 +28,8 @@ class AgeTableViewCell: UITableViewCell {
             }
             
             defaultLabel.isHidden = !item.isDefault
-                
             nameLabel.text = item.birthday.name
-            ageLabel.text = String(format: "%d - %d - %d", item.birthday.birthDate.year, item.birthday.birthDate.month, item.birthday.birthDate.day)
-            
+            birthDateLabel.text = String(format: "Born on %@", item.birthday.birthDate.date.birthDateFormatted)
             ageCalculator = AgeCalculator(birthDate: item.birthday.birthDate)
         }
     }
@@ -39,7 +37,9 @@ class AgeTableViewCell: UITableViewCell {
     func refreshAge() {
         guard let calculator = ageCalculator else { return }
         
-        ageLabel.text = String(format: "%.8f", calculator.currentAge.value)
+        let age = calculator.currentAge
+        ageFullLabel.text = String(format: "%d", age.full)
+        ageRationalLabel.text = String(format: ".%08d", Int(round(age.rational * 100000000)))
     }
     
     // MARK: - Life Cycle
@@ -68,6 +68,7 @@ class AgeTableViewCell: UITableViewCell {
     @IBOutlet private weak var ageFullLabel: UILabel!
     @IBOutlet private weak var ageRationalLabel: UILabel!
     @IBOutlet private weak var defaultLabel: UILabel!
+    @IBOutlet private weak var birthDateLabel: UILabel!
     
     // MARK: - Methods
     
