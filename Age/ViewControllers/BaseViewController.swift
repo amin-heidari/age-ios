@@ -76,6 +76,8 @@ class BaseViewController: UIViewController {
     
     // MARK: - Properties
     
+    override var preferredStatusBarStyle: UIStatusBarStyle { return appStatusBarStyle }
+    
     var isNavigationBarHidden: Bool { return false }
     
     var appStatusBarStyle: UIStatusBarStyle { return .default }

@@ -49,14 +49,28 @@ class RemoteConfig: Codable {
         }
     }
     
+    class AgesCard: Codable {
+        // Default age shown when launching the app on the date picker, in terms of years.
+        let startColor: String
+        // Max allowable age (to be picked initially), in terms of years.
+        let endColor: String
+        
+        private enum CodingKeys: String, CodingKey {
+            case startColor = "start_color"
+            case endColor = "end_color"
+        }
+    }
+    
     let storeURL: String
     let version: Version
     let ageSpecs: AgeSpecs
+    let agesCards: [AgesCard]
     
     private enum CodingKeys: String, CodingKey {
         case storeURL = "store_url"
         case version
         case ageSpecs = "age_specs"
+        case agesCards = "ages_cards"
     }
     
 }
