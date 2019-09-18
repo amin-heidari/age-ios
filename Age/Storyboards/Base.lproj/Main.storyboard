@@ -30,8 +30,7 @@
                                 <inset key="contentEdgeInsets" minX="16" minY="16" maxX="32" maxY="16"/>
                                 <state key="normal" image="nav_back"/>
                                 <connections>
-                                    <action selector="closeButtonTapped:" destination="zHl-dr-dNN" eventType="touchUpInside" id="eIT-sC-Gjm"/>
-                                    <action selector="closeTapped:" destination="kRD-B9-E7q" eventType="touchUpInside" id="119-dw-Txd"/>
+                                    <action selector="backTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ig3-sd-XtO"/>
                                 </connections>
                             </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Bft-Jd-HtC">
@@ -95,15 +94,6 @@
                                                                 </userDefinedRuntimeAttribute>
                                                                 <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                                                     <real key="value" value="8"/>
-                                                                </userDefinedRuntimeAttribute>
-                                                                <userDefinedRuntimeAttribute type="number" keyPath="shadowX">
-                                                                    <real key="value" value="1"/>
-                                                                </userDefinedRuntimeAttribute>
-                                                                <userDefinedRuntimeAttribute type="number" keyPath="shadowY">
-                                                                    <real key="value" value="1"/>
-                                                                </userDefinedRuntimeAttribute>
-                                                                <userDefinedRuntimeAttribute type="number" keyPath="shadowBlur">
-                                                                    <real key="value" value="1"/>
                                                                 </userDefinedRuntimeAttribute>
                                                             </userDefinedRuntimeAttributes>
                                                         </view>

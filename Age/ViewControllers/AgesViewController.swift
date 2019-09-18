@@ -118,6 +118,10 @@ class AgesViewController: BaseViewController {
             }
         }
     }
+    
+    @IBAction func backTapped(_ sender: Any) {
+        navigationController?.popViewController(animated: true)
+    }
 
 }
 
