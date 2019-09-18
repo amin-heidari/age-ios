@@ -91,12 +91,12 @@ class RemoteConfigManager: NSObject {
         }
     }
     
-    var remoteConfig: RemoteConfig {
+    private(set) lazy var remoteConfig: RemoteConfig = {
         guard let config = cachedRemoteConfig?.remoteConfig else {
             fatalError("Not supported!")
         }
         return config
-    }
+    }()
     
     // MARK: - Life Cycle
     
