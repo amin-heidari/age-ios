@@ -53,6 +53,14 @@ class AgeTableViewCell: UITableViewCell {
     
     override func setHighlighted(_ highlighted: Bool, animated: Bool) {
         super.setHighlighted(highlighted, animated: animated)
+
+        updateSelection()
+    }
+    
+    override func setSelected(_ selected: Bool, animated: Bool) {
+        super.setSelected(selected, animated: animated)
+        
+        updateSelection()
     }
     
     override func prepareForReuse() {
@@ -72,6 +80,8 @@ class AgeTableViewCell: UITableViewCell {
     // MARK: - Outlets
     
     @IBOutlet private weak var gradientView: GradientView!
+    @IBOutlet private weak var cardView: UIView!
+    
     @IBOutlet private weak var nameLabel: UILabel!
     @IBOutlet private weak var ageFullLabel: UILabel!
     @IBOutlet private weak var ageRationalLabel: UILabel!
@@ -79,6 +89,18 @@ class AgeTableViewCell: UITableViewCell {
     @IBOutlet private weak var birthDateLabel: UILabel!
     
     // MARK: - Methods
+    
+    private func updateSelection() {
+        if (isHighlighted || isSelected) {
+            UIView.animate(withDuration: 0.12) {
+                self.cardView.transform = .init(scaleX: 0.98, y: 0.98)
+            }
+        } else {
+            UIView.animate(withDuration: 0.10) {
+                self.cardView.transform = .identity
+            }
+        }
+    }
     
     // MARK: - Actions
     

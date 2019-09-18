@@ -33,17 +33,20 @@
                                     <action selector="backTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ig3-sd-XtO"/>
                                 </connections>
                             </button>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Bft-Jd-HtC">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Bft-Jd-HtC">
                                 <rect key="frame" x="0.0" y="74" width="375" height="593"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <view key="tableFooterView" contentMode="scaleToFill" id="tio-Je-zpn">
-                                    <rect key="frame" x="0.0" y="328" width="375" height="64"/>
+                                    <rect key="frame" x="0.0" y="268" width="375" height="64"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <subviews>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tkh-ad-Ju8">
-                                            <rect key="frame" x="122.5" y="17.5" width="130" height="29"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                            <state key="normal" title="+ Add New Birthday"/>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tkh-ad-Ju8">
+                                            <rect key="frame" x="76" y="10" width="223" height="44"/>
+                                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
+                                            <inset key="contentEdgeInsets" minX="40" minY="20" maxX="40" maxY="20"/>
+                                            <state key="normal" title="+ Add New Birthday">
+                                                <color key="titleColor" name="AppText"/>
+                                            </state>
                                             <connections>
                                                 <action selector="addBirthdayButtonTapped:" destination="BYZ-38-t0r" eventType="primaryActionTriggered" id="pRm-Tk-CDc"/>
                                             </connections>
@@ -59,21 +62,21 @@
                                     </constraints>
                                 </view>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Age" rowHeight="300" id="78Y-Xl-qMb" customClass="AgeTableViewCell" customModule="Age" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="300"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="Age" rowHeight="240" id="78Y-Xl-qMb" customClass="AgeTableViewCell" customModule="Age" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="240"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="78Y-Xl-qMb" id="PR7-u9-dVl">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="299.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="240"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="s5F-Xk-PxO">
-                                                    <rect key="frame" x="20" y="10" width="335" height="279.5"/>
+                                                    <rect key="frame" x="20" y="10" width="335" height="220"/>
                                                     <subviews>
                                                         <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="V41-Sh-Wx1" customClass="GradientView" customModule="Age" customModuleProvider="target">
-                                                            <rect key="frame" x="0.0" y="0.0" width="335" height="279.5"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="335" height="220"/>
                                                             <subviews>
                                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="age_background" translatesAutoresizingMaskIntoConstraints="NO" id="DCC-Fa-1sL">
-                                                                    <rect key="frame" x="-10" y="186.5" width="355" height="103.00000000000003"/>
+                                                                    <rect key="frame" x="-10" y="126.99999999999999" width="355" height="103.00000000000004"/>
                                                                 </imageView>
                                                             </subviews>
                                                             <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -110,19 +113,19 @@
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="(My Age)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0pT-67-eo8">
-                                                            <rect key="frame" x="260" y="246.5" width="59" height="17"/>
+                                                            <rect key="frame" x="260" y="187" width="59" height="17"/>
                                                             <fontDescription key="fontDescription" type="italicSystem" pointSize="14"/>
                                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <stackView opaque="NO" contentMode="scaleToFill" alignment="bottom" translatesAutoresizingMaskIntoConstraints="NO" id="Ci6-en-g5O">
-                                                            <rect key="frame" x="16" y="136" width="223" height="127.5"/>
+                                                            <rect key="frame" x="16" y="76.5" width="211" height="127.5"/>
                                                             <subviews>
                                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AwM-ad-kdo">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="69.5" height="127.5"/>
+                                                                    <rect key="frame" x="0.0" y="0.0" width="57.5" height="127.5"/>
                                                                     <subviews>
                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="38" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gb8-eP-a3g">
-                                                                            <rect key="frame" x="0.0" y="0.0" width="69.5" height="127.5"/>
+                                                                            <rect key="frame" x="0.0" y="0.0" width="57.5" height="127.5"/>
                                                                             <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="40"/>
                                                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                             <nil key="highlightedColor"/>
@@ -137,7 +140,7 @@
                                                                     </constraints>
                                                                 </view>
                                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kd5-u4-3og">
-                                                                    <rect key="frame" x="69.5" y="0.0" width="153.5" height="127.5"/>
+                                                                    <rect key="frame" x="57.5" y="0.0" width="153.5" height="127.5"/>
                                                                     <subviews>
                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=".12345678" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NwC-F0-G8J">
                                                                             <rect key="frame" x="0.0" y="0.0" width="153.5" height="119.5"/>
@@ -188,6 +191,7 @@
                                             <outlet property="ageFullLabel" destination="Gb8-eP-a3g" id="PlE-JC-WTE"/>
                                             <outlet property="ageRationalLabel" destination="NwC-F0-G8J" id="M5P-Sb-Ar7"/>
                                             <outlet property="birthDateLabel" destination="WX9-62-fcr" id="4ZP-JL-sKX"/>
+                                            <outlet property="cardView" destination="s5F-Xk-PxO" id="C2l-LB-oTz"/>
                                             <outlet property="defaultLabel" destination="0pT-67-eo8" id="R2x-cU-41O"/>
                                             <outlet property="gradientView" destination="V41-Sh-Wx1" id="hP4-hn-hTh"/>
                                             <outlet property="nameLabel" destination="5Nv-Bt-9ex" id="4SM-Aj-spX"/>
