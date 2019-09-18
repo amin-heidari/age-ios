@@ -145,11 +145,13 @@ extension AgesViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Age", for: indexPath) as! AgeTableViewCell
         
+        let agesCards = RemoteConfigManager.shared.remoteConfig.agesCards
+        
         switch indexPath.section {
         case 0:
-            cell.item = (SuiteDefaultsUtil.defaultBirthday!, true)
+            cell.item = (SuiteDefaultsUtil.defaultBirthday!, true, agesCards[0])
         case 1:
-            cell.item = (DatabaseManager.shared.birthdaysFetchResultsController.fetchedObjects![indexPath.row].birthday!, false)
+            cell.item = (DatabaseManager.shared.birthdaysFetchResultsController.fetchedObjects![indexPath.row].birthday!, false, agesCards[(indexPath.row + 1) % agesCards.count])
         default:
             fatalError("Not supported!")
         }

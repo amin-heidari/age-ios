@@ -9,13 +9,18 @@
 import UIKit
 import AgeData
 
+private extension RemoteConfig.AgesCard {
+    var startUIColor: UIColor { return UIColor(hex: startColor) ?? UIColor.primary }
+    var endUIColor: UIColor { return UIColor(hex: endColor) ?? UIColor.primary }
+}
+
 class AgeTableViewCell: UITableViewCell {
     
     // MARK: - Constants/Types
     
     // Could be an enum with associated values, could be a struct, or anything else, they are all the same.
     // Decided to go with the simplest here.
-    typealias Item = (birthday: Birthday, isDefault: Bool)
+    typealias Item = (birthday: Birthday, isDefault: Bool, agesCard: RemoteConfig.AgesCard)
     
     // MARK: - Static
     
@@ -31,6 +36,8 @@ class AgeTableViewCell: UITableViewCell {
             nameLabel.text = item.birthday.name
             birthDateLabel.text = String(format: "Born on %@", item.birthday.birthDate.date.birthDateFormatted)
             ageCalculator = AgeCalculator(birthDate: item.birthday.birthDate)
+            gradientView.startColor = item.agesCard.startUIColor
+            gradientView.endColor = item.agesCard.endUIColor
         }
     }
     
@@ -64,6 +71,7 @@ class AgeTableViewCell: UITableViewCell {
     
     // MARK: - Outlets
     
+    @IBOutlet private weak var gradientView: GradientView!
     @IBOutlet private weak var nameLabel: UILabel!
     @IBOutlet private weak var ageFullLabel: UILabel!
     @IBOutlet private weak var ageRationalLabel: UILabel!
