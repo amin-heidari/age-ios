@@ -47,6 +47,7 @@ class LoadingViewController: BaseViewController {
     @IBOutlet private weak var errorStackView: UIStackView!
     
     @IBOutlet private weak var errorTitleLabel: UILabel!
+    @IBOutlet private weak var errorImageView: UIImageView!
     @IBOutlet private weak var errorDescriptionLabel: UILabel!
     @IBOutlet private weak var retryButton: UIButton!
     
@@ -70,6 +71,7 @@ class LoadingViewController: BaseViewController {
                 case AppError.connection:
                     // Not connected to the internet.
                     self.errorTitleLabel.text = "No Internet!"
+                    self.errorImageView.image = #imageLiteral(resourceName: "no_internet")
                     self.errorDescriptionLabel.text = "It looks like you're not connected to the internet. Please connect and try again!"
                     self.retryButton.isHidden = false
                     
@@ -78,7 +80,8 @@ class LoadingViewController: BaseViewController {
                 case AppError.certificateExpired:
                     // Please udpate the app.
                     self.errorTitleLabel.text = "Please upgrade!"
-                    self.errorDescriptionLabel.text = "Please upgrade the application from the app store!"
+                    self.errorImageView.image = #imageLiteral(resourceName: "sad_face")
+                    self.errorDescriptionLabel.text = "Please upgrade the application to the latest version in order to continue."
                     self.retryButton.isHidden = true
                     
                     SuiteDefaultsUtil.appWidgetOverride = .openApp
@@ -86,7 +89,8 @@ class LoadingViewController: BaseViewController {
                 default:
                     // Generic message.
                     self.errorTitleLabel.text = "Error!"
-                    self.errorDescriptionLabel.text = "An error occured, please try again!"
+                    self.errorImageView.image = #imageLiteral(resourceName: "sad_face")
+                    self.errorDescriptionLabel.text = "An unknown error occurred. Please try again later!"
                     self.retryButton.isHidden = false
                     
                     SuiteDefaultsUtil.appWidgetOverride = .openApp
