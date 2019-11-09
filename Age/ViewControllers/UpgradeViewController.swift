@@ -25,11 +25,11 @@ class UpgradeViewController: BaseViewController {
         switch RemoteConfigManager.shared.remoteConfig.version.compare(appVersion: Bundle.main.versionNumber) {
         case .forcedUpgrade:
             upgradeTitleLabel.text = "Please upgrade to latest version."
-            upgradeDescriptionLabel.text = "You need to upgrade to the latest version of this application to enjoy all the super coolness of it."
+            upgradeDescriptionLabel.text = "You need to upgrade to the latest version of the application in order to continue using the app."
             skipButton.isHidden = true
         case .optionalUpgrade:
             upgradeTitleLabel.text = "There's a new version available :)"
-            upgradeDescriptionLabel.text = "We recommend you upgrade to the latest version of this application to enjoy all the super coolness of it."
+            upgradeDescriptionLabel.text = "There’s a newer, cooler version of the application available on the store."
             skipButton.isHidden = false
         default:
             fatalError("Not supported!")
