@@ -313,7 +313,7 @@ access to</string>
                                             <constraint firstAttribute="height" constant="50" id="INC-ye-zom"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
-                                        <state key="normal" title="Buy $$$"/>
+                                        <state key="normal" title="Buy"/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="color" keyPath="startColor">
                                                 <color key="value" name="PrimaryDark"/>
@@ -379,6 +379,9 @@ access to</string>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Hcr-h3-UKY"/>
                     </view>
+                    <connections>
+                        <outlet property="purchaseButton" destination="WHD-Nt-nkr" id="SMo-xI-cbd"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="I8l-JH-5wx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

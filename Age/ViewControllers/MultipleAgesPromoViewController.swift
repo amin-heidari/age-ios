@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import StoreKit
 
 class MultipleAgesPromoViewController: BaseViewController {
     
@@ -21,22 +22,30 @@ class MultipleAgesPromoViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // Do any additional setup after loading the view.
+        if let localizedPrice = product?.localizedPrice {
+            purchaseButton.setTitle("Buy " + localizedPrice, for: .normal)
+        }
     }
     
     // MARK: - Properties
     
+    private var product: SKProduct? {
+        get {
+            return StoreManager.shared.availableProducts.first(where: { (product) -> Bool in
+                product.productIdentifier == Constants.Store.multipleAgeProductId
+            })
+        }
+    }
+    
     // MARK: - Outlets
     
-    @IBOutlet weak var descriptionLabel: UILabel!
+    @IBOutlet weak var purchaseButton: UIButton!
     
     // MARK: - Methods
     
     @IBAction func purchaseTapped(_ sender: Any) {
-        if let product = StoreManager.shared.availableProducts.first(where: { (product) -> Bool in
-            product.productIdentifier == Constants.Store.multipleAgeProductId
-        }) {
-            StoreObserver.shared.buy(product)
+        if let p = product {
+            StoreObserver.shared.buy(p)
         }
         
         dismiss(animated: true, completion: nil)
