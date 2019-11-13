@@ -11,10 +11,10 @@ import Foundation
 class Constants {
     
     class RemoteConfig {
-        static let url = "https://api.config.aminheidari.com/projects/age/ios"
+        static let url = "https://api.config.barsam.io/projects/age/ios"
         static let apiKeyHeaderField = "X-API-Key"
-        static let apiKeyHeaderValue = "TBD"
-        static let freshCacheTime: TimeInterval = 30 // Time interval (in seconds) during which the cache will be used rather than making a new api call.
+        static let apiKeyHeaderValue = "nbUcfBJvaT233hew0K5IV7bJXOVCTrNI7b6PnI95"
+        static let freshCacheTime: TimeInterval = 3600 // Time interval (in seconds) during which the cache will be used rather than making a new api call.
         static let expireTime: TimeInterval = 7 * 24 * 3600 // Time interval (in seconds) after which the cache expires and a fresh remote config MUST be fetched.
     }
     

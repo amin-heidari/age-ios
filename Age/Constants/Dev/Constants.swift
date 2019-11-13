@@ -11,7 +11,7 @@ import Foundation
 class Constants {
     
     class RemoteConfig {
-        static let url = "https://dev.api.config.aminheidari.com/projects/age/ios"
+        static let url = "https://dev-api.config.barsam.io/projects/age/ios"
         static let apiKeyHeaderField = "X-API-Key"
         static let apiKeyHeaderValue = "dLP8SSrf2h74YvFrqetnM1RnLoU5VcMX820MR2gA"
         

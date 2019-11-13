@@ -144,13 +144,14 @@ extension RemoteConfigManager: URLSessionDelegate {
                 let status = SecTrustEvaluate(serverTrust, &secresult)
                 
                 if (errSecSuccess == status) {
-                    if let serverCertificate = SecTrustGetCertificateAtIndex(serverTrust, 0) {
+                    // Index is 2 because we are looking for Amazon Root CA.
+                    if let serverCertificate = SecTrustGetCertificateAtIndex(serverTrust, 2) {
                         let serverCertificateData = SecCertificateCopyData(serverCertificate)
                         let data = CFDataGetBytePtr(serverCertificateData);
                         let size = CFDataGetLength(serverCertificateData);
                         let remoteCert = NSData(bytes: data, length: size)
                         
-                        if remoteCert.isEqual(to: try! NSData(contentsOfFile: Bundle.main.path(forResource: "Config", ofType: "cer")!) as Data) {
+                        if remoteCert.isEqual(to: try! NSData(contentsOfFile: Bundle.main.path(forResource: "AmazonRootCA1", ofType: "cer")!) as Data) {
                             completionHandler(URLSession.AuthChallengeDisposition.useCredential, URLCredential(trust:serverTrust))
                             return
                         }
