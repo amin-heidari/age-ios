@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>988369106885-f0nma0mo7nfdncp5lh5klvu8bn71mfah.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.988369106885-f0nma0mo7nfdncp5lh5klvu8bn71mfah</string>
+	<key>API_KEY</key>
+	<string>AIzaSyCWhyeZny6s3M69o1ot9UimmkJTCD3Kn-c</string>
+	<key>GCM_SENDER_ID</key>
+	<string>988369106885</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.aminheidari.Age.dev</string>
+	<key>PROJECT_ID</key>
+	<string>aminheidari-age-dev</string>
+	<key>STORAGE_BUCKET</key>
+	<string>aminheidari-age-dev.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:988369106885:ios:e1373957b6d3b869d53dac</string>
+	<key>DATABASE_URL</key>
+	<string>https://aminheidari-age-dev.firebaseio.com</string>
+</dict>
+</plist>

@@ -9,6 +9,7 @@
 import UIKit
 import AgeData
 import StoreKit
+import Firebase
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -28,6 +29,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             SKPaymentQueue.default().add(StoreObserver.shared)
             StoreObserver.shared.restore()
         }
+            
+        FirebaseApp.configure()
         
         return true
     }
