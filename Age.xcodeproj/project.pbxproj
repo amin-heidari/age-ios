@@ -28,10 +28,6 @@
 		274EC096226118CC00D5E263 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 274EC095226118CC00D5E263 /* AppDelegate.swift */; };
 		2771407F22B4005100F4ED05 /* DateUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2771407E22B4005100F4ED05 /* DateUtil.swift */; };
 		2771408022B4005100F4ED05 /* DateUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2771407E22B4005100F4ED05 /* DateUtil.swift */; };
-		27764F4B22CF1AA100C4B13D /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27764F4A22CF1AA100C4B13D /* NotificationCenter.framework */; };
-		27764F4E22CF1AA100C4B13D /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27764F4D22CF1AA100C4B13D /* TodayViewController.swift */; };
-		27764F5122CF1AA100C4B13D /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 27764F4F22CF1AA100C4B13D /* MainInterface.storyboard */; };
-		27764F5522CF1AA100C4B13D /* Widget.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 27764F4822CF1AA100C4B13D /* Widget.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		27764F6022CF1ACC00C4B13D /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27764F4D22CF1AA100C4B13D /* TodayViewController.swift */; };
 		27764F6222CF1ACC00C4B13D /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27764F4A22CF1AA100C4B13D /* NotificationCenter.framework */; };
 		27764F6422CF1ACC00C4B13D /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 27764F4F22CF1AA100C4B13D /* MainInterface.storyboard */; };
@@ -45,9 +41,7 @@
 		2776500D22CF24E200C4B13D /* AgeCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2776500C22CF24E100C4B13D /* AgeCalculator.swift */; };
 		2776501222CF258A00C4B13D /* Birthday.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2776501122CF258A00C4B13D /* Birthday.swift */; };
 		2776501422CF267000C4B13D /* SuiteDefaultsUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2776501322CF267000C4B13D /* SuiteDefaultsUtil.swift */; };
-		2776501922CF286000C4B13D /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2776501622CF285800C4B13D /* Constants.swift */; };
 		2776501A22CF286400C4B13D /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2776501822CF285800C4B13D /* Constants.swift */; };
-		2776502122CF2A2D00C4B13D /* AgeData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27764FE422CF214100C4B13D /* AgeData.framework */; };
 		2776502222CF2A3000C4B13D /* AgeData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27764FE422CF214100C4B13D /* AgeData.framework */; };
 		2789EA9422D2CBE7003BD427 /* AppWidgetOverride.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2789EA9322D2CBE7003BD427 /* AppWidgetOverride.swift */; };
 		2789EA9A22D53595003BD427 /* DataUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2789EA9922D53595003BD427 /* DataUtil.swift */; };
@@ -146,13 +140,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		27764F5322CF1AA100C4B13D /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 274EC08A226118CC00D5E263 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 27764F4722CF1AA100C4B13D;
-			remoteInfo = Widget;
-		};
 		27764F6B22CF1AEA00C4B13D /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 274EC08A226118CC00D5E263 /* Project object */;
@@ -183,7 +170,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
-				27764F5522CF1AA100C4B13D /* Widget.appex in Embed App Extensions */,
 			);
 			name = "Embed App Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -242,7 +228,6 @@
 		274EC092226118CC00D5E263 /* Age Pal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Age Pal.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		274EC095226118CC00D5E263 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2771407E22B4005100F4ED05 /* DateUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateUtil.swift; sourceTree = "<group>"; };
-		27764F4822CF1AA100C4B13D /* Widget.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = Widget.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		27764F4A22CF1AA100C4B13D /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = System/Library/Frameworks/NotificationCenter.framework; sourceTree = SDKROOT; };
 		27764F4D22CF1AA100C4B13D /* TodayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayViewController.swift; sourceTree = "<group>"; };
 		27764F5022CF1AA100C4B13D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
@@ -332,15 +317,6 @@
 				27C7797023812157008D3976 /* FirebaseCoreDiagnostics.framework in Frameworks */,
 				27C7796823812157008D3976 /* GoogleUtilities.framework in Frameworks */,
 				2795732122DBDAF30039E7E1 /* StoreKit.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		27764F4522CF1AA100C4B13D /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				2776502122CF2A2D00C4B13D /* AgeData.framework in Frameworks */,
-				27764F4B22CF1AA100C4B13D /* NotificationCenter.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -476,7 +452,6 @@
 			children = (
 				274EC092226118CC00D5E263 /* Age Pal.app */,
 				27AA5B142299FC090059D1A2 /* Age Pal Dev.app */,
-				27764F4822CF1AA100C4B13D /* Widget.appex */,
 				27764F6822CF1ACC00C4B13D /* Widget Dev.appex */,
 				27764FE422CF214100C4B13D /* AgeData.framework */,
 			);
@@ -800,30 +775,12 @@
 			buildRules = (
 			);
 			dependencies = (
-				27764F5422CF1AA100C4B13D /* PBXTargetDependency */,
 				27764FEA22CF214200C4B13D /* PBXTargetDependency */,
 			);
 			name = Age;
 			productName = Age;
 			productReference = 274EC092226118CC00D5E263 /* Age Pal.app */;
 			productType = "com.apple.product-type.application";
-		};
-		27764F4722CF1AA100C4B13D /* Widget */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 27764F5822CF1AA100C4B13D /* Build configuration list for PBXNativeTarget "Widget" */;
-			buildPhases = (
-				27764F4422CF1AA100C4B13D /* Sources */,
-				27764F4522CF1AA100C4B13D /* Frameworks */,
-				27764F4622CF1AA100C4B13D /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = Widget;
-			productName = Widget;
-			productReference = 27764F4822CF1AA100C4B13D /* Widget.appex */;
-			productType = "com.apple.product-type.app-extension";
 		};
 		27764F5E22CF1ACC00C4B13D /* Widget Dev */ = {
 			isa = PBXNativeTarget;
@@ -902,14 +859,6 @@
 							};
 						};
 					};
-					27764F4722CF1AA100C4B13D = {
-						CreatedOnToolsVersion = 10.2.1;
-						SystemCapabilities = {
-							com.apple.ApplicationGroups.iOS = {
-								enabled = 1;
-							};
-						};
-					};
 					27764F5E22CF1ACC00C4B13D = {
 						SystemCapabilities = {
 							com.apple.ApplicationGroups.iOS = {
@@ -948,7 +897,6 @@
 			targets = (
 				274EC091226118CC00D5E263 /* Age */,
 				27AA5AF82299FC090059D1A2 /* Age Dev */,
-				27764F4722CF1AA100C4B13D /* Widget */,
 				27764F5E22CF1ACC00C4B13D /* Widget Dev */,
 				27764FE322CF214100C4B13D /* AgeData */,
 			);
@@ -966,14 +914,6 @@
 				270A20DC2318B47C00D5DD97 /* Assets.xcassets in Resources */,
 				27AA5AF12299F8B90059D1A2 /* LaunchScreen.storyboard in Resources */,
 				2743FAC2237DB3CE008A5C78 /* GoogleService-Info.plist in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		27764F4622CF1AA100C4B13D /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				27764F5122CF1AA100C4B13D /* MainInterface.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1055,15 +995,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		27764F4422CF1AA100C4B13D /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				27764F4E22CF1AA100C4B13D /* TodayViewController.swift in Sources */,
-				2776501922CF286000C4B13D /* Constants.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		27764F5F22CF1ACC00C4B13D /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -1135,11 +1066,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		27764F5422CF1AA100C4B13D /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 27764F4722CF1AA100C4B13D /* Widget */;
-			targetProxy = 27764F5322CF1AA100C4B13D /* PBXContainerItemProxy */;
-		};
 		27764F6C22CF1AEA00C4B13D /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 27764F5E22CF1ACC00C4B13D /* Widget Dev */;
@@ -1359,56 +1285,6 @@
 			};
 			name = Release;
 		};
-		27764F5622CF1AA100C4B13D /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_ENTITLEMENTS = Widget/Entitlements/Widget.entitlements;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = T25FTV2NX7;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Vendors",
-				);
-				INFOPLIST_FILE = Widget/Plists/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@executable_path/../../Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.aminheidari.Age.widget;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Debug;
-		};
-		27764F5722CF1AA100C4B13D /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_ENTITLEMENTS = Widget/Entitlements/Widget.entitlements;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = T25FTV2NX7;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Vendors",
-				);
-				INFOPLIST_FILE = Widget/Plists/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@executable_path/../../Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.aminheidari.Age.widget;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Release;
-		};
 		27764F6622CF1ACC00C4B13D /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -1587,15 +1463,6 @@
 			buildConfigurations = (
 				274EC0A8226118D000D5E263 /* Debug */,
 				274EC0A9226118D000D5E263 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		27764F5822CF1AA100C4B13D /* Build configuration list for PBXNativeTarget "Widget" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				27764F5622CF1AA100C4B13D /* Debug */,
-				27764F5722CF1AA100C4B13D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
